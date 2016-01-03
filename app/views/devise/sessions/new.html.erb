@@ -1,0 +1,40 @@
+<%= stylesheet_link_tag 'style' %>
+<div class="login-page">
+  <div class="panel">
+    <a href="javascript:void(0)" class="panel-item active">登录</a>
+    <a href="javascript:void(0)" class="panel-item margin-lt-36">注册</a>
+  </div>
+  <%= form_for @user, url: user_session_path, html: {class: 'login-form'} do |f| %>
+    <div class="form-item notice">
+      <%= f.text_field :email, class: 'width-260', placeholder: '用户名' %>
+      <%= link_to 'X', 'javascript:void(0)', class: 'delete warning' %>
+      <mark>用户名不能为空</mark>
+    </div>
+
+    <div class="form-item">
+      <%= f.password_field :password, class: 'width-260', placeholder: '用户名' %>
+      <%= link_to 'X', 'javascript:void(0)', class: 'delete' %>
+      <mark>密码不能为空</mark>
+    </div>
+
+    <div class="form-items">
+      <div class="form-item float-left">
+        <input type="text" class="width-125" placeholder="验证码">
+        <a href="javascript:void(0)" class="delete validate">ㄨ</a>
+            <mark>验证码不能为空</mark>
+        <mark>验证码不能为空</mark>
+      </div>
+      <div class="form-item float-right">
+        <img src="" alt="验证码" class="validate-code" />
+      </div>
+    </div>
+
+    <div class="form-item">
+      <%= f.submit '登录', class: 'btn btn-login width-260' %>
+    </div>
+  <% end %>
+
+  <div class="btn-group">
+    <a href="#" class="forget-code">忘记密码>></a>
+  </div>
+</div>

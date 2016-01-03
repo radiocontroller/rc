@@ -5,4 +5,5 @@ class UserMailer < ApplicationMailer
     @url = 'https://www.baidu.com/'
     mail(to: 'zhuangshunhe@icar99.com', subject: 'xx')
   end
+  
 end
