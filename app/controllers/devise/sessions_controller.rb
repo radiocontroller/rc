@@ -1,37 +1,28 @@
 class Devise::SessionsController < ApplicationController
+  before_action :set_user, only: [:create]
 
   def new
-    @user = User.new
   end
 
   def create
-    user = User.find_by(email: params[:user][:email])
-    if user.valid?
-      unless user.status
-        flash[:notice] = '该帐号未激活，请点击邮件中的链接激活！'
-        @user = User.new
-        render :new
-      else
-        if user.valid_password?(params[:user][:password])
-          sign_in(:user, user)
-          redirect_to 'http://localhost:3000'
-        else
-          flash[:notice] = '邮箱或密码错误!'
-          @user = User.new
-          render :new
-        end
-      end
+    status = AuthenticateUserService.call(@user, params[:password])
+    if status.success?
+      sign_in(@user)
+      # ...
     else
-      flash[:notice] = '邮箱未注册!'
-      @user = User.new
-      render :new
+      redirect_to new_user_session_path, notice: status.notice
     end
   end
 
   def destroy
-    user = User.find(current_user.id)
-    user.destroy
-    redirect_to 'http://localhost:3000'
+    sign_out(current_user)
+    # ...
   end
+
+  private
+
+    def set_user
+      @user = User.find_by_email(params[:email])
+    end
 
 end

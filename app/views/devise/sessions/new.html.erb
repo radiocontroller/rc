@@ -4,33 +4,18 @@
     <a href="javascript:void(0)" class="panel-item active">登录</a>
     <a href="javascript:void(0)" class="panel-item margin-lt-36">注册</a>
   </div>
-  <%= form_for @user, url: user_session_path, html: {class: 'login-form'} do |f| %>
+  <%= form_tag user_session, method: 'POST', class: 'login-form' do %>
     <div class="form-item notice">
-      <%= f.text_field :email, class: 'width-260', placeholder: '用户名' %>
+      <%= text_field_tag :email, nil, placeholder: '用户名', class: 'width-260', required: true %>
       <%= link_to 'X', 'javascript:void(0)', class: 'delete warning' %>
-      <mark>用户名不能为空</mark>
+      <mark><%= flash[:notice] %></mark>
     </div>
-
     <div class="form-item">
-      <%= f.password_field :password, class: 'width-260', placeholder: '用户名' %>
-      <%= link_to 'X', 'javascript:void(0)', class: 'delete' %>
-      <mark>密码不能为空</mark>
+      <%= password_field_tag :password, nil, placeholder: '密码', class: 'width-260', required: true %>
+      <%= link_to 'X', 'javascript:void(0)', class: 'delete warning' %>
     </div>
-
-    <div class="form-items">
-      <div class="form-item float-left">
-        <input type="text" class="width-125" placeholder="验证码">
-        <a href="javascript:void(0)" class="delete validate">ㄨ</a>
-            <mark>验证码不能为空</mark>
-        <mark>验证码不能为空</mark>
-      </div>
-      <div class="form-item float-right">
-        <img src="" alt="验证码" class="validate-code" />
-      </div>
-    </div>
-
     <div class="form-item">
-      <%= f.submit '登录', class: 'btn btn-login width-260' %>
+      <%= submit_tag '登录', class: 'btn btn-login width-260' %>
     </div>
   <% end %>
 
@@ -38,3 +23,14 @@
     <a href="#" class="forget-code">忘记密码>></a>
   </div>
 </div>
+<script type="text/javascript">
+  function empty_input() {
+    $(this).prev().val('');
+  }
+
+  $(function(){
+    $(document).on('click', '.delete', empty_input);
+  });
+
+
+</script>
