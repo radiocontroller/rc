@@ -21,3 +21,19 @@
     </div>
   <% end %>
 </div>
+<script type="text/javascript">
+  $(function(){
+    $(document).on('blur', '#email', valid_email);
+  });
+
+  function valid_email() {
+    if($(this).val().trim().length == 0) {
+      $(this).next().text('邮箱不能为空!');
+    }
+    else{
+      $.get('/ajax/emails?email="' + $(this).val().trim() + '"', function(data) {
+        
+      });
+    }
+  }
+</script>
