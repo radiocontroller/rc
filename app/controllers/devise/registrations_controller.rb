@@ -1,5 +1,8 @@
 class Devise::RegistrationsController < ApplicationController
-  def create
+  def new
+  end
 
+  def create
+    
   end
 end
