@@ -42,7 +42,7 @@ group :development, :test do
   gem 'pry-nav', "~> 0.2.3"
 end
 
-gem 'responders', '~> 2.0'
+  gem 'responders', '~> 2.0'
 
 # Object-based searching
 gem 'ransack', '~> 1.6.6'
@@ -51,3 +51,11 @@ gem 'ransack', '~> 1.6.6'
 gem 'carrierwave'
 
 gem 'devise'
+
+gem 'sidekiq', '3.3.4'
+
+gem 'sidekiq-scheduler', '~> 1.1'
+
+gem 'redis', '~> 3.2.1'
+
+gem 'sinatra', '>= 1.3.0', :require => nil

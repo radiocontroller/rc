@@ -22,7 +22,7 @@ Rails.application.configure do
       :port                 => 25,
       :domain               => "163.com",
       :user_name            => "zsh302643159@163.com",
-      :password             => "shakalaka123",
+      :password             => "password",
       :authentication       => :plain,
       :enable_starttls_auto => true
     }

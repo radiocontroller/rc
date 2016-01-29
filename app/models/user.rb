@@ -11,15 +11,17 @@ class User < ActiveRecord::Base
          :validatable,
          :confirmable
 
-  validates_presence_of :email, :password
 
-  validates_uniqueness_of :email
 
-  validates_confirmation_of :password
 
   private
 
     def send_email
       UserMailer.welcome_email(self).deliver_now
+    end
+
+    # 取消devise默认发送邮件
+    def send_confirmation_instructions
+      false
     end
 end
