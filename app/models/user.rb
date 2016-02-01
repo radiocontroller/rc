@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  after_create :send_email
+  # after_create :send_email
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -11,13 +11,10 @@ class User < ActiveRecord::Base
          :validatable,
          :confirmable
 
-
-
-
   private
 
     def send_email
-      UserMailer.welcome_email(self).deliver_now
+      Mailer.welcome_email(self).deliver_now
     end
 
     # 取消devise默认发送邮件
