@@ -4,7 +4,7 @@ class Devise::RegistrationsController < ApplicationController
   end
 
   def create
-    User.create!(user_params.merge(username: 'xxxxx'))
+    User.create(user_params)
     redirect_to new_user_session_path
   end
 
