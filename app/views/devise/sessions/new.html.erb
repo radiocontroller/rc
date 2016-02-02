@@ -17,8 +17,8 @@
       <%= submit_tag '登录', class: 'btn btn-login width-260' %>
     </div>
   <% end %>
-
   <div class="btn-group">
+    <%= link_to '注册', new_user_registration_path, class: 'forget-code' %>
     <%= link_to '忘记密码', new_user_password_path, class: 'forget-code' %>
   </div>
 </div>

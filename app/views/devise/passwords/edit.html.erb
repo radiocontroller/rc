@@ -1,0 +1,20 @@
+<%= stylesheet_link_tag 'style' %>
+<div class="login-page">
+  <div class="panel">
+    <a href="javascript:void(0)" class="panel-item margin-lt-36">重置密码</a>
+  </div>
+  <%= form_tag user_password_path, method: 'put', class: 'login-form' do %>
+    <%= hidden_field_tag :id, @user.id %>
+    <div class="form-item notice">
+      <%= password_field_tag :password, nil, placeholder: '密码', class: 'width-260', required: true %>
+      <mark></mark>
+    </div>
+    <div class="form-item notice">
+      <%= password_field_tag :password_confirmation, nil, placeholder: '确认密码', class: 'width-260', required: true %>
+      <mark></mark>
+    </div>
+    <div class="form-item">
+      <%= submit_tag '确认', class: 'btn btn-login width-260' %>
+    </div>
+  <% end %>
+</div>

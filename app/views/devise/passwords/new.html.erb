@@ -3,13 +3,13 @@
   <div class="panel">
     <a href="javascript:void(0)" class="panel-item margin-lt-36">重置密码</a>
   </div>
-  <%= form_tag edit_user_password_path, method: 'put', class: 'login-form' do %>
+  <%= form_tag user_password_path, class: 'login-form' do %>
     <div class="form-item notice">
       <%= text_field_tag :email, nil, placeholder: '填写要重置密码的邮箱!', class: 'width-260', required: true %>
       <mark></mark>
     </div>
     <div class="form-item">
-      <%= submit_tag '重置', class: 'btn btn-login width-260' %>
+      <%= submit_tag '发送邮件', class: 'btn btn-login width-260' %>
     </div>
   <% end %>
 </div>
