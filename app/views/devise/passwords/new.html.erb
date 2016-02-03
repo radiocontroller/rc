@@ -1,7 +1,12 @@
 <%= stylesheet_link_tag 'style' %>
 <div class="login-page">
+  <div class="tips">
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, class: "#{name.to_s}" %>
+    <% end %>
+  </div>
   <div class="panel">
-    <a href="javascript:void(0)" class="panel-item margin-lt-36">重置密码</a>
+    <a href="javascript:void(0)" class="panel-item">重置密码</a>
   </div>
   <%= form_tag user_password_path, class: 'login-form' do %>
     <div class="form-item notice">

@@ -10,7 +10,7 @@ class Devise::SessionsController < ApplicationController
       sign_in(@user)
       # ...
     else
-      redirect_to new_user_session_path, notice: status.notice
+      redirect_to new_user_session_path, alert: status.alert
     end
   end
 

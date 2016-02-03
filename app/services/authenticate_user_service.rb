@@ -9,10 +9,10 @@ class AuthenticateUserService
 
   def call
     unless @user.present? && @user.valid_password?(@password)
-      return Status.new(success: false, notice: '邮箱或密码错误')
+      return Status.new(success: false, alert: '邮箱或密码错误')
     end
-    return Status.new(success: false, notice: '帐号未激活，请进入邮箱激活') unless @user.status
-    Status.new(success: true, notice: '登录成功')
+    return Status.new(success: false, alert: '帐号未激活，请先进入邮箱激活') unless @user.status
+    Status.new(success: true)
   end
 
 end

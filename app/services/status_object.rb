@@ -1,10 +1,10 @@
 module StatusObject
   class Status
-    attr_reader :notice
+    attr_reader :alert
 
     def initialize(options = {})
       @success = options[:success]
-      @notice = options[:notice]
+      @alert = options[:alert]
     end
 
     def success?
