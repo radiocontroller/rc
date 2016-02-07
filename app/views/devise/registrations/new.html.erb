@@ -4,7 +4,7 @@
   </div>
   <%= form_for @user, url: user_registration_path, html: {class: 'login-form'} do |f| %>
     <div class="form-item notice">
-      <%= f.text_field :email, class: 'js-email width-260', required: true, placeholder: '邮箱' %>
+      <%= f.email_field :email, class: 'js-email width-260', required: true, placeholder: '邮箱' %>
       <mark></mark>
     </div>
     <div class="form-item notice">
