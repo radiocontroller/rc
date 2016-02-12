@@ -2,62 +2,36 @@
   <div class="panel">
     <a href="javascript:void(0)" class="panel-item margin-lt-36">注册</a>
   </div>
+  <div class="tips" style="margin-bottom: 0px;text-align: left">
+    <ul>
+      <% (flash[:alert]||[]).each do |msg| %>
+        <li class="alert"><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
   <%= form_for @user, url: user_registration_path, html: {class: 'login-form'} do |f| %>
     <div class="form-item notice">
-      <%= f.email_field :email, class: 'js-email width-260', required: true, placeholder: '邮箱' %>
-      <mark></mark>
+      <%= f.text_field :email, class: 'js-email width-260', placeholder: '邮箱' %>
     </div>
     <div class="form-item notice">
-      <%= f.password_field :password, class: 'js-pwd width-260', required: true, placeholder: '密码' %>
-      <mark></mark>
+      <%= f.text_field :username, class: 'js-username width-260', placeholder: '昵称' %>
     </div>
     <div class="form-item notice">
-      <%= f.password_field :password_confirmation, class: 'js-pwd-confirmation width-260', required: true, placeholder: '确认密码' %>
-      <mark></mark>
+      <%= f.password_field :password, class: 'js-pwd width-260', placeholder: '密码' %>
+    </div>
+    <div class="form-item notice">
+      <%= f.password_field :password_confirmation, class: 'js-pwd-confirmation width-260', placeholder: '确认密码' %>
+    </div>
+    <div class="form-items">
+      <div class="form-item float-left">
+        <%= rucaptcha_input_tag(class: 'width-125', placeholder: '验证码') %>
+      </div>
+      <div class="form-item float-right" style="height: 40px">
+        <%= rucaptcha_image_tag(alt: 'Captcha', class: 'captcha') %>
+      </div>
     </div>
     <div class="form-item">
       <%= f.submit '确认', class: 'btn btn-login width-260' %>
     </div>
   <% end %>
 </div>
-<script type="text/javascript">
-  $(function(){
-    $(document).on('blur', '.js-email', valid_email);
-    $(document).on('blur', '.js-pwd', valid_pwd);
-    $(document).on('blur', '.js-pwd-confirmation', valid_pwd_confirmation);
-  });
-
-  function valid_email() {
-    var email = $(this);
-    if(email.val().trim().length == 0) {
-      email.next().text('邮箱不能为空!');
-    }
-    else{
-      $.get('/ajax/emails?email=' + email.val(), function(data) {
-        email.next().text(data.notice);
-      });
-    }
-  }
-
-  function valid_pwd() {
-    var pwd = $(this);
-    if(pwd.val().trim().length == 0) {
-      pwd.next().text('密码不能为空!');
-    }
-    else if(pwd.val().trim().length < 8) {
-      pwd.next().text('密码长度不能小于8位!');
-    }
-    else {
-      pwd.next().text('');
-    }
-  }
-
-  function valid_pwd_confirmation() {
-    if($(this).val() != $('.js-pwd').val()) {
-      $(this).next().text('确认密码和密码不一致!');
-    }
-    else {
-      $(this).next().text('');
-    }
-  }
-</script>

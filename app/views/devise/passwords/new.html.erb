@@ -5,7 +5,7 @@
     <% end %>
   </div>
   <div class="panel">
-    <a href="javascript:void(0)" class="panel-item">重置密码</a>
+    <a href="javascript:void(0)" class="panel-item margin-lt-36">重置密码</a>
   </div>
   <%= form_tag user_password_path, class: 'login-form' do %>
     <div class="form-item notice">
@@ -13,9 +13,9 @@
     </div>
     <div class="form-items">
       <div class="form-item float-left">
-        <%= rucaptcha_input_tag(class: 'width-125', placeholder: '验证码') %>
+        <%= rucaptcha_input_tag(class: 'width-125', placeholder: '验证码', required: true) %>
       </div>
-      <div class="form-item float-right">
+      <div class="form-item float-right" style="height: 40px">
         <%= rucaptcha_image_tag(alt: 'Captcha', class: 'captcha') %>
       </div>
     </div>
@@ -24,13 +24,3 @@
     </div>
   <% end %>
 </div>
-<script type="text/javascript">
-  $(function() {
-    $(document).on('click', '.captcha', reload_captcha)
-  });
-
-  function reload_captcha() {
-    img = $(this).find('img');
-    img.context.src += '?' + (new Date()).getTime();
-  }
-</script>
