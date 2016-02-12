@@ -1,4 +1,3 @@
-<%= stylesheet_link_tag 'style' %>
 <div class="login-page">
   <div class="tips">
     <% flash.each do |name, msg| %>
@@ -6,12 +5,19 @@
     <% end %>
   </div>
   <div class="panel">
-    <a href="javascript:void(0)" class="panel-item">重置密码</a>
+    <a href="javascript:void(0)" class="panel-item margin-lt-36">重置密码</a>
   </div>
   <%= form_tag user_password_path, class: 'login-form' do %>
     <div class="form-item notice">
-      <%= text_field_tag :email, nil, placeholder: '填写要重置密码的邮箱!', class: 'width-260', required: true %>
-      <mark></mark>
+      <%= text_field_tag :email, nil, placeholder: '填写要重置密码的邮箱!', class: 'js-email width-260', required: true %>
+    </div>
+    <div class="form-items">
+      <div class="form-item float-left">
+        <%= rucaptcha_input_tag(class: 'width-125', placeholder: '验证码', required: true) %>
+      </div>
+      <div class="form-item float-right" style="height: 40px">
+        <%= rucaptcha_image_tag(alt: 'Captcha', class: 'captcha') %>
+      </div>
     </div>
     <div class="form-item">
       <%= submit_tag '发送邮件', class: 'btn btn-login width-260' %>

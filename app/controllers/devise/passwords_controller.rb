@@ -1,11 +1,13 @@
-class Devise::PasswordsController < ApplicationController
+class Devise::PasswordsController < Devise::BaseController
   def new
   end
 
   def create
-    user = User.find_by(email: params[:email])
-    user.send_reset_password_instructions
-    redirect_to new_user_session_path, notice: '系统已发送重置密码链接至您的邮箱,请注意查收'
+    if verify_rucaptcha?
+      verify_email
+    else
+      redirect_to new_user_password_path, alert: '验证码有误'
+    end
   end
 
   def edit
@@ -24,5 +26,16 @@ class Devise::PasswordsController < ApplicationController
 
     def digest_token(user, key, reset_password_token)
       Devise.token_generator.digest(user, key, reset_password_token)
+    end
+
+    def verify_email
+      user = User.find_by_email(params[:email])
+      if user.present?
+        user.send_reset_password_instructions
+        redirect_to new_user_session_path, notice: '系统已发送重置密码链接至您的邮箱,请注意查收'
+      else
+        redirect_to new_user_password_path, alert: '邮箱格式错误或邮箱不存在'
+      end
+      return
     end
 end

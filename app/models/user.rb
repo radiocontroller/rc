@@ -9,4 +9,9 @@ class User < ActiveRecord::Base
          :validatable,
          :confirmable
 
+  validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
+  validates_uniqueness_of :email, on: :create
+  validates_confirmation_of :password
+  validates :username, presence: true, length: { minimum: 3 }
+
 end

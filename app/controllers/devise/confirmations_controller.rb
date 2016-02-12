@@ -1,4 +1,4 @@
-class Devise::ConfirmationsController < ApplicationController
+class Devise::ConfirmationsController < Devise::BaseController
   def show
     user = User.find_by_confirmation_token(params[:confirmation_token])
     user.update(status: true, confirmed_at: Time.now)
