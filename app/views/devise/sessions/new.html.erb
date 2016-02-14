@@ -2,10 +2,9 @@
   <div class="panel">
     <a href="javascript:void(0)" class="panel-item margin-lt-36">登录radio controller</a>
   </div>
-  <div class="tips">
-    <% flash.each do |name, msg| %>
-      <%= content_tag :div, msg, class: "#{name.to_s}" %>
-    <% end %>
+  <div class="tips" style="margin-bottom: 0px;text-align: center">
+    <span class="alert"><%= flash[:alert] %></span>
+    <span class="notice"><%= flash[:notice] %></span>
   </div>
   <%= form_tag user_session_path, method: 'post', class: 'login-form' do %>
     <div class="form-item notice">
@@ -31,12 +30,3 @@
     <%= link_to '忘记密码', new_user_password_path, class: 'forget-code' %>
   </div>
 </div>
-<script type="text/javascript">
-  function empty_input() {
-    $(this).prev().val('');
-  }
-
-  $(function(){
-    $(document).on('click', '.delete', empty_input);
-  });
-</script>

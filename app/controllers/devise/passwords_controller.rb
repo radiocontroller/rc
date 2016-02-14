@@ -4,7 +4,7 @@ class Devise::PasswordsController < Devise::BaseController
 
   def create
     if verify_rucaptcha?
-      verify_email
+      send_reset_password_email
     else
       redirect_to new_user_password_path, alert: '验证码有误'
     end
@@ -28,7 +28,7 @@ class Devise::PasswordsController < Devise::BaseController
       Devise.token_generator.digest(user, key, reset_password_token)
     end
 
-    def verify_email
+    def send_reset_password_email
       user = User.find_by_email(params[:email])
       if user.present?
         user.send_reset_password_instructions
