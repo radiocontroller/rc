@@ -1,0 +1,111 @@
+body {
+  background-image: url('images/10.JPG');
+   }
+
+.tips {
+  width: 260px;
+  height: auto;
+  margin-bottom: 30px;
+  font-size: 12px;
+  line-height: 20px;
+  text-align: center;
+}
+
+.notice {color: green;}
+.alert {color: #FF4040;}
+
+.login-page {
+  width: 262px;
+  margin-left: 100px;
+  margin-top: 100px; }
+  .login-page .panel {
+    margin-bottom: 30px;
+    text-align: center; }
+    .login-page .panel .panel-item {
+      display: inline-block;
+      padding: 3px 0;
+      color: #9C9C9D;
+      font-size: 26px; }
+      .login-page .panel .panel-item.active {
+        font-size: 26px;
+        color: #fff;}
+        /*border-bottom: 1px solid #fff; }*/
+  .login-page .login-form .form-items {
+    overflow: auto; }
+  .login-page .login-form .form-item {
+    position: relative;
+    margin-bottom: 30px; }
+    .login-page .login-form .form-item input[type="text"], input[type="password"], input[type="email"]{
+      background: rgba(0, 0, 0, 0.04);
+      border: none;
+      height: 30px;
+      border-radius: 3px;
+      text-indent: 8px; }
+    .login-page .login-form .form-item .delete {
+      position: absolute;
+      right: 10px;
+      top: 8px;
+      background: #fff;
+      padding: 0 3px;
+      font-size: 12px;
+      border-radius: 3px;
+      color: #808080; }
+      .login-page .login-form .form-item .delete.warning {
+        color: #ff0000; }
+    .login-page .login-form .form-item.notice mark {
+      display: block; }
+    .login-page .login-form .form-item mark {
+      display: none;
+      position: absolute;
+      left: 30px;
+      bottom: -26px;
+      font-size: 12px;
+      background: none;
+      color: #C14949; }
+    .login-page .login-form .form-item .validate-code {
+      width: 100px;
+      height: 32px; }
+  .login-page .btn-group {
+    margin-top: -26px; }
+    .login-page .btn-group .forget-code {
+      margin-left: 10px;
+      color: #F4F468;
+      font-size: 12px; }
+
+::-webkit-input-placeholder {
+  color: #fff; }
+
+a {
+  text-decoration: none; }
+
+.btn {
+  border: none;
+  border-radius: 5px; }
+
+.btn-login {
+  color: #F4F468;
+  font-size: 26px;
+  background: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  cursor: pointer;
+  padding: 5px 0; }
+
+.inline-block {
+  display: inline-block; }
+
+.float-left {
+  float: left; }
+
+.float-right {
+  float: right; }
+
+.width-125 {
+  width: 125px; }
+
+.width-260 {
+  width: 260px; }
+
+.margin-lt-36 {
+  margin-left: 36px; }
+
+/*# sourceMappingURL=style.css.map */
