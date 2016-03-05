@@ -62,3 +62,5 @@ gem 'sinatra', '>= 1.3.0', :require => nil
 
 # 验证码
 gem 'rucaptcha'
+
+gem 'simple_form'
