@@ -12,8 +12,8 @@
   <%= simple_form_for @user, url: user_registration_path do |f| %>
     <%= f.input :email, as: :string %>
     <%= f.input :username, required: false %>
-    <%= f.input :password, as: :string %>
-    <%= f.input :password_confirmation, as: :string %>
+    <%= f.input :password %>
+    <%= f.input :password_confirmation %>
     <div class="form-item float-left">
       <%= rucaptcha_input_tag(class: 'width-125 optional form-control', placeholder: '验证码') %>
     </div>

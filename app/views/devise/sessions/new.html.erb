@@ -7,8 +7,8 @@
     <span class="notice"><%= flash[:notice] %></span>
   </div>
   <%= simple_form_for "", url: user_session_path do |f| %>
-    <%= f.input :email, required: false, label: '邮箱', as: :string %>
-    <%= f.input :password, required: false, label: '密码', as: :string %>
+    <%= f.input :email, required: false, label: '邮箱' %>
+    <%= f.input :password, required: false, label: '密码' %>
     <div class="form-item float-left">
       <%= rucaptcha_input_tag(class: 'width-125 optional form-control', placeholder: '验证码') %>
     </div>
