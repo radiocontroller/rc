@@ -64,3 +64,5 @@ gem 'sinatra', '>= 1.3.0', :require => nil
 gem 'rucaptcha'
 
 gem 'simple_form'
+
+gem 'font-awesome-rails'
