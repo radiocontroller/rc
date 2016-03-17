@@ -11,5 +11,7 @@
  * file per style scope.
  *
  *= require font-awesome
+ *= require login/login
+ *= require login/base
  *= require_self
  */
