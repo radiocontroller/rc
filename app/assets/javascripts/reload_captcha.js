@@ -3,6 +3,6 @@ $(function() {
 });
 
 function reload_captcha() {
-  img = $(this).find('img');
-  img.context.src = img.context.src.split('?')[0] + '?' + (new Date()).getTime();
+  var img = $('.rucaptcha-image')[0];
+  img.src = img.src.split('?')[0] + '?' + (new Date()).getTime();
 }
