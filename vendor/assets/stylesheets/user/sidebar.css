@@ -1,6 +1,6 @@
 .sidebar-wrap{
   position: fixed;
-  left:0;
+  left: 0;
   top: 0;
   background: transparent;
   z-index: 100;
@@ -11,14 +11,14 @@
 
 .sidebar{
   position: fixed;
-  right: 0;
+  right: 0px;
   background: #313131;
   color: #fff;
   width: 320px;
   font-weight: bold;
   font-size: 16px;
   height: 100%;
-
+  display: none;
 }
 
 .sidebar-top{
