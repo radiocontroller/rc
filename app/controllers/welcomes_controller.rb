@@ -1,5 +1,5 @@
 class WelcomesController < ApplicationController
   def index
-    @fighter_planes = FighterPlane.all
+    @fighter_planes = Article.all
   end
 end
