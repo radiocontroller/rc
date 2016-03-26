@@ -1,38 +1,33 @@
 class VideoType
-  attr_reader :id, :name
 
   ID_TYPES = {
     0 => '固定翼',
     1 => '穿越机',
     2 => '滑翔机',
     3 => '直升机',
-    4 => '穿越机'
+  }
+
+  ID_ENGLISH_TYPES = {
+    0 => 'fixed_wing',
+    1 => 'fpv',
+    2 => 'glider',
+    3 => 'helicopter'
   }
 
   TYPES_ID = ID_TYPES.invert
 
-  def initialize(id, name)
-    @id = id
-    @name = name
+  def self.find_id_by(type)
+    TYPES_ID[type]
   end
 
-  def self.find(id)
+  def self.find_type_by(id)
     id = id.to_i
-    if ID_TYPES[id].present?
-      self.new(id, ID_TYPES[id])
-    else
-      nil
-    end
+    ID_TYPES[id]
   end
 
-  def self.find_by_name(name)
-    name = name.to_s
-    if TYPES_ID[name].present?
-      self.new(TYPES_ID[name], name)
-    else
-      nil
-    end
+  def self.find_english_type_by(id)
+    id = id.to_i
+    ID_ENGLISH_TYPES[id]
   end
-
 
 end

@@ -9,30 +9,33 @@
 
     <div class="video-items">
       <div class="clasification">
-        <h2>固定翼</h2>
-        <% 4.times do %>
-          <div class="video-item">
-            <%= image_tag 'logo.jpg', class: 'item' %>
-            <h3 class="title">见过这样的飞机么</h3>
-            <div class="fns">
-              <a href="javascript:void(0)" class="fn-follow">
-                <i class="fa fa-heart"></i>
-                <span>300</span>
-              </a>
-              <a href="javascript:void(0)">
-                <i class="fa fa-comment"></i>
-                <span>300</span>
-              </a>
+        <% @videos.each do |video| %>
+          <h2><%= video[:type] %></h2>
+          <% video[:lists].each do |v| %>
+            <div class="video-item">
+              <%= image_tag 'logo.jpg', class: 'item cursor-pointer' %>
+              <h3 class="title"><%= v.description %></h3>
+              <div class="fns">
+                <a href="javascript:void(0)" class="fn-follow">
+                  <i class="fa fa-heart"></i>
+                  <span>300</span>
+                </a>
+                <a href="javascript:void(0)">
+                  <i class="fa fa-comment"></i>
+                  <span>300</span>
+                </a>
+              </div>
             </div>
+          <% end %>
+
+          <div class="more-video">
+            <a href="/videos/<%= video[:english_type] %>", target="_blank">
+              更多视频
+              <i class="fa fa-chevron-circle-right"></i>
+            </a>
           </div>
         <% end %>
 
-        <div class="more-video">
-          <a href="javascrip:void(0)">
-            更多视频
-            <i class="fa fa-chevron-circle-right"></i>
-          </a>
-        </div>
       </div>
     </div>
   </div>
