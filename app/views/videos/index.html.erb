@@ -1,0 +1,39 @@
+<a href="javascript:void(0)" class="setting">
+  <i class="fa fa-bars"></i>
+</a>
+<div class="content">
+  <div class="video-list">
+    <div class="title">
+      <h2>视频赏析</h2>
+    </div>
+
+    <div class="video-items">
+      <div class="clasification">
+        <h2>固定翼</h2>
+        <% 4.times do %>
+          <div class="video-item">
+            <%= image_tag 'logo.jpg', class: 'item' %>
+            <h3 class="title">见过这样的飞机么</h3>
+            <div class="fns">
+              <a href="javascript:void(0)" class="fn-follow">
+                <i class="fa fa-heart"></i>
+                <span>300</span>
+              </a>
+              <a href="javascript:void(0)">
+                <i class="fa fa-comment"></i>
+                <span>300</span>
+              </a>
+            </div>
+          </div>
+        <% end %>
+
+        <div class="more-video">
+          <a href="javascrip:void(0)">
+            更多视频
+            <i class="fa fa-chevron-circle-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

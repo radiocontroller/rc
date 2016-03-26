@@ -1,0 +1,2 @@
+class VideosController < BaseController
+end

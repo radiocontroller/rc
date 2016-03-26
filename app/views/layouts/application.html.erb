@@ -9,8 +9,21 @@
   </head>
 
   <body>
+    <header class="header">
+      <%= image_tag 'top-0.jpg', class: 'background-header' %>
+      <div class="logo">
+        <%= image_tag 'logo.jpg' %>
+      </div>
+    </header>
 
-  <%= yield %>
+    <div class="main">
+      <%= yield %>
+      <%= render 'common/foot' %>
+    </div>
+
+    <div class="sidebar-wrap">
+      <%= render 'common/sidebar' %>
+    </div>
 
   </body>
 </html>

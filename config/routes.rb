@@ -9,5 +9,6 @@ Rails.application.routes.draw do
 
   resources :welcomes, only: [:index]
   resources :users, only: [:index, :show, :update]
+  resources :videos, only: [:index, :show]
 
 end

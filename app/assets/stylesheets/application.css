@@ -14,5 +14,6 @@
  *= require base
  *= require user
  *= require welcome
+ *= require video
  *= require_self
  */

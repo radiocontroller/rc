@@ -5,6 +5,7 @@ class CreateVideos < ActiveRecord::Migration
       t.integer :type_id
       t.string :image
       t.text :url
+      t.boolean :deleted
       t.timestamps null: false
     end
   end
