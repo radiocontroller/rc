@@ -50,6 +50,8 @@ gem 'ransack', '~> 1.6.6'
 # 文件上传
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 
+gem 'mini_magick'
+
 gem 'devise'
 
 gem 'sidekiq', '3.3.4'
