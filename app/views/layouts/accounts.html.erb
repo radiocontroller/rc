@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8">
+    <title>Rc</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <header class="header">
+      <%= image_tag 'top-0.jpg', class: 'background-header' %>
+      <div class="logo">
+        <%= image_tag 'logo.jpg' %>
+      </div>
+    </header>
+
+    <div class="main">
+      <div class="login-wrap">
+        <header>
+          <h2 class="explain"><strong>RC</strong>是radio control的简称, 即无线电操纵</h2>
+        </header>
+        
+        <%= yield %>
+      </div>
+    </div>
+
+  </body>
+</html>
