@@ -3,9 +3,9 @@
     <div class="img">
       <%= image_tag 'nav.jpg' %>
     </div>
-    <% if @user.present? %>
+    <% if current_user.present? %>
       <div class="user-info">
-        <span class="name"><%= @user.username %></span>
+        <span class="name"><%= current_user.username %></span>
         <div class="message">
           <a>消息<span class="number">(6)</span></a>|
           <%= link_to '退出', destroy_user_session_path, method: :delete %>

@@ -20,8 +20,7 @@
 .header .tips{
   width: 260px;
   height: auto;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px;
   text-align: center;
   position: absolute;
   top: 0px;
@@ -30,5 +29,7 @@
   margin-top: 20px;
   border-radius: 5px;
   background-color: #f73a4c;
+  color: #fff;
+  font-size: 14px;
   display: none;
 }
