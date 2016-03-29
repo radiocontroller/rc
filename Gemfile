@@ -42,13 +42,15 @@ group :development, :test do
   gem 'pry-nav', "~> 0.2.3"
 end
 
-  gem 'responders', '~> 2.0'
+gem 'responders', '~> 2.0'
 
 # Object-based searching
 gem 'ransack', '~> 1.6.6'
 
 # 文件上传
-gem 'carrierwave'
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+
+gem 'mini_magick'
 
 gem 'devise'
 
@@ -62,3 +64,5 @@ gem 'sinatra', '>= 1.3.0', :require => nil
 
 # 验证码
 gem 'rucaptcha'
+
+gem 'font-awesome-rails'

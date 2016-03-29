@@ -1,32 +1,37 @@
-<div class="login-page">
-  <div class="panel">
-    <a href="javascript:void(0)" class="panel-item margin-lt-36">登录radio controller</a>
-  </div>
-  <div class="tips" style="margin-bottom: 0px;text-align: center">
-    <span class="alert"><%= flash[:alert] %></span>
-    <span class="notice"><%= flash[:notice] %></span>
-  </div>
-  <%= form_tag user_session_path, method: 'post', class: 'login-form' do %>
-    <div class="form-item notice">
-      <%= text_field_tag :email, nil, placeholder: '邮箱', class: 'width-260', required: true %>
+<fieldset class="title">
+  <legend>
+    <%= link_to '登录', new_user_session_path, class: 'active' %>
+    <i class="fa fa-circle"></i>
+    <%= link_to '注册', new_user_registration_path %>
+  </legend>
+</fieldset>
+
+<div class="login">
+  <%= form_for '', url: user_session_path do |f| %>
+    <div class="pass-form-item  pass-form-username">
+      <label class="form-label"><i class="fa fa-user"></i></label>
+      <%= f.text_field :email, class: 'form-item', placeholder: '邮箱' %>
     </div>
-    <div class="form-item">
-      <%= password_field_tag :password, nil, placeholder: '密码', class: 'width-260', required: true %>
+
+    <div class="pass-form-item  pass-form-password">
+      <label class="form-label"><i class="fa fa-lock"></i></label>
+      <%= f.password_field :password, class: 'form-item', placeholder: '密码' %>
     </div>
-    <div class="form-items">
-      <div class="form-item float-left">
-        <%= rucaptcha_input_tag(class: 'width-125', placeholder: '验证码') %>
-      </div>
-      <div class="form-item float-right" style="height: 40px">
-        <%= rucaptcha_image_tag(alt: 'Captcha', class: 'captcha') %>
-      </div>
+
+    <div class="pass-form-item  pass-form-captcha">
+      <%= rucaptcha_input_tag(class: 'form-captcha', placeholder: '验证码') %>
+      <span class="captcha-img">
+        <%= rucaptcha_image_tag(alt: 'Captcha') %>
+        <a href="javascript:void(0)" class="tip captcha">看不清，换一张</a>
+      </span>
     </div>
-    <div class="form-item">
-      <%= submit_tag '登录', class: 'btn btn-login width-260' %>
+
+    <div class="pass-form-item pass-form-item-memberPass">
+      <%= link_to '忘记密码?', new_user_password_path, class: 'forget-pass' %>
+    </div>
+
+    <div class="pass-form-item pass-form-login">
+      <%= f.submit '登录', class: 'btn-login' %>
     </div>
   <% end %>
-  <div class="btn-group">
-    <%= link_to '注册', new_user_registration_path, class: 'forget-code' %>
-    <%= link_to '忘记密码', new_user_password_path, class: 'forget-code' %>
-  </div>
 </div>

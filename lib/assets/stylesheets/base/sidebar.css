@@ -1,0 +1,117 @@
+.sidebar-wrap{
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: transparent;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.sidebar{
+  position: fixed;
+  right: 0px;
+  background: #313131;
+  color: #fff;
+  width: 320px;
+  font-weight: bold;
+  font-size: 16px;
+  height: 100%;
+  display: none;
+}
+
+.sidebar-top{
+  text-align: center;
+}
+
+.sidebar-top  a{
+  color: inherit;
+}
+
+.sidebar-top .img{
+  margin-top: 84px;
+}
+
+.sidebar-top .img img{
+  width: 152px;
+  border-radius: 76px;
+}
+
+.user-info{
+  color: #fff;
+  margin-top: 30px;
+}
+
+.user-info .name{
+  font-size: 18px;
+  text-align: center;
+  display: block;
+  padding: 15px 0;
+}
+
+.user-info .message{
+  font-size: 15px;
+  color: #cfcfcf;
+  padding-bottom: 30px;
+}
+.user-info .message a{
+  font-size: 14px;
+  color: inherit;
+  padding: 0 17px;
+}
+
+.user-info .message .number{
+  color: #28F5A3;
+}
+
+.sidebar-top .dropdown ul{
+  margin: 42px 0;
+}
+
+.sidebar-top .dropdown ul li{
+  display: inline-block;
+  padding: 0 10px;
+}
+
+.nav{
+  margin-top: 60px;
+  padding-left: 45px;
+  width: 230px;
+}
+
+.nav>ul>li{
+  padding-bottom: 30px;
+  font-size: 18px;
+}
+
+.nav ul li.active{
+  color: #f73a4c;
+}
+
+.rd-width-ul{
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.rd-width-ul .submenu-toggle{
+  position: absolute;
+  top: 50%;
+  right: 11px;
+  margin-top: -8.5px;
+}
+
+.nav .sub-nav{
+  margin-top: 21px;
+  margin-left: 21px;
+}
+
+.nav .sub-nav li{
+  padding-bottom: 21px;
+  font-size: 16px;
+}
+
+.nav a{
+  color: inherit;
+}

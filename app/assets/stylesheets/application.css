@@ -10,8 +10,10 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require bootstrap.min
- *= require account
+ *= require font-awesome
+ *= require base
+ *= require accounts
+ *= require welcomes
+ *= require videos
  *= require_self
- *= require_tree .
  */
