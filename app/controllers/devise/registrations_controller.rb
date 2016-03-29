@@ -7,7 +7,7 @@ class Devise::RegistrationsController < Devise::BaseController
     if verify_rucaptcha?
       create_user!
     else
-      redirect_to new_user_registration_path, alert: ['验证码错误']
+      redirect_to new_user_registration_path, alert: '验证码错误'
     end
   end
 

@@ -14,6 +14,19 @@
       <div class="logo">
         <%= image_tag 'logo.jpg' %>
       </div>
+
+      <div class="tips">
+        <ul>
+          <% if flash[:alert].present? %>
+            <% [flash[:alert]].flatten.each do |alert| %>
+              <li><%= alert %></li>
+            <% end %>
+          <% elsif flash[:notice].present? %>
+            <li><%= flash[:notice] %></li>
+          <% end %>
+        </ul>
+      </div>
+
     </header>
 
     <div class="main">
@@ -21,10 +34,20 @@
         <header>
           <h2 class="explain"><strong>RC</strong>是radio control的简称, 即无线电操纵</h2>
         </header>
-        
+
         <%= yield %>
       </div>
     </div>
-
   </body>
+
+  <script type="text/javascript">
+    $(function() {
+      if($('.tips ul li').length > 0){
+        $('.tips').slideDown();
+        setTimeout(function() {
+          $('.tips').slideUp();
+        },3000);
+      }
+    });
+  </script>
 </html>
