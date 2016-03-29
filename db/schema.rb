@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 20160324113456) do
 
   create_table "videos", force: :cascade do |t|
     t.string   "description"
-    t.integer  "type_id"
+    t.integer  "category"
     t.string   "image"
     t.text     "url"
     t.boolean  "deleted"
