@@ -52,6 +52,8 @@ gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 
 gem 'devise'
 
+gem 'cancancan', '~> 1.10'
+
 gem 'sidekiq', '3.3.4'
 
 gem 'sidekiq-scheduler', '~> 1.1'

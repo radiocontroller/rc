@@ -51,6 +51,7 @@ GEM
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
     byebug (8.2.0)
+    cancancan (1.13.1)
     celluloid (0.17.3)
       celluloid-essentials
       celluloid-extras
@@ -226,6 +227,7 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
+  cancancan (~> 1.10)
   carrierwave!
   coffee-rails (~> 4.1.0)
   devise
