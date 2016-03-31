@@ -6,7 +6,7 @@ class Devise::SessionsController < Devise::BaseController
 
   def create
     if verify_rucaptcha?
-      sign_in_user
+      sign_in
     else
       redirect_to new_user_session_path, alert: '验证码有误'
     end
@@ -23,7 +23,7 @@ class Devise::SessionsController < Devise::BaseController
       @user = User.find_by_email(params[:email])
     end
 
-    def sign_in_user
+    def sign_in
       status = AuthenticateUserService.call(@user, params[:password])
       if status.success?
         sign_in(@user)
