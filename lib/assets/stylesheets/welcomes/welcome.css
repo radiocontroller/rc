@@ -135,7 +135,9 @@ h2,h3{
   color: #333;
   padding:0;
   margin: 0;
-  padding-bottom: 78px;
+  margin-bottom: 78px;
+  display: inline-block;
+  border-bottom: 3px solid red;
 }
 
 .picture .picture_nav{
@@ -217,8 +219,7 @@ h2,h3{
 .synopsis{
   text-align: center;
   padding-top: 90px;
-  padding-bottom: 129px;
-  border-bottom: 1px solid #ededed;
+  padding-bottom: 90px;
 }
 
 .synopsis h2{
@@ -246,15 +247,17 @@ h2,h3{
 }
 
 .video{
-  padding: 78px 0 228px;
+  padding: 0 0 228px;
   text-align: center;
 }
 
 .video h2{
-  padding-bottom: 75px;
+  margin-bottom: 85px;
   font-size: 36px;
   font-weight: bold;
   color: #333;
+  display: inline-block;
+  border-bottom: 3px solid red;
 }
 
 .video_thumb{
