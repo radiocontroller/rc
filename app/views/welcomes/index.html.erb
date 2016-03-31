@@ -1,10 +1,3 @@
-<% content_for :javascripts do %>
-  <script type="text/javascript">
-    $(function() {
-      $(".fancybox").fancybox();
-    });
-  </script>
-<% end %>
 <div class="maxim">
   <h2>航模箴言</h2>
   <p>航模爱好趣无穷，正确操纵是关键。莫把器材当玩具，忽视安全悔一生。</p>
@@ -27,9 +20,12 @@
 
 <%= render 'paragraph' %>
 
-<div class="video">
-  <h2>今日视频</h2>
-  <div class="video_thumb">
-    <embed height="570" width="1050" class="player" allowFullScreenInteractive="true" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" AllowScriptAccess="always" rel="noreferrer" flashvars="type=page&url=http://www.acfun.tv/v/ac2615847" src="http://cdn.aixifan.com/player/ACFlashPlayer.out.swf" type="application/x-shockwave-flash" allowfullscreen="true" quality="high" wmode="window"></embed>
-  </div>
-</div>
+<%= render 'video' %>
+
+<% content_for :javascripts do %>
+  <script type="text/javascript">
+    $(function() {
+      $(".fancybox").fancybox();
+    });
+  </script>
+<% end %>

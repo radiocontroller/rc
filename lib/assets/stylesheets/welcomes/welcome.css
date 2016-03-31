@@ -289,6 +289,10 @@ h2,h3{
   background: #000;
 }
 
+.setting:hover{
+  background-color: #FF4040;
+}
+
 .setting i{
   font-size: 30px;
   color: #fff;
@@ -313,5 +317,4 @@ h2,h3{
   font-size: 24px;
   display: block;
   text-align: center;
-
 }
