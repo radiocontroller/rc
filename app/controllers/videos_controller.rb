@@ -2,7 +2,7 @@ class VideosController < BaseController
   before_action :set_limit, only: [:index]
 
   def index
-    set_videos
+    set_categories
   end
 
   def show
@@ -27,13 +27,13 @@ class VideosController < BaseController
       @limit = 4
     end
 
-    def set_videos
-      @videos = VideoType::ID_TYPES.map do |type_id, type_name|
+    def set_categories
+      @categories = Video::CATEGORIES.map do |english, chinese|
                   {
-                    type: type_name,
-                    english_type: VideoType.find_english_type_by(type_id),
-                    lists: Video.videos_by(type_id).order('id desc').limit(@limit)
+                    chinese: chinese,
+                    english: english,
+                    videos: Video.send(english.to_sym).order('id desc').limit(@limit)
                   }
-                end
+               end
     end
 end
