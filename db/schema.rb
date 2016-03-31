@@ -62,11 +62,7 @@ ActiveRecord::Schema.define(version: 20160329132905) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "videos", force: :cascade do |t|
-<<<<<<< HEAD
-    t.integer  "type_id"
-=======
     t.integer  "category"
->>>>>>> videos
     t.string   "description"
     t.string   "image"
     t.text     "url"
