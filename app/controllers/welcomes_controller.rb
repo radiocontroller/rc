@@ -2,6 +2,6 @@ class WelcomesController < BaseController
   layout 'welcome'
 
   def index
-    @fighter_planes = FighterPlane.all
+    @fighter_planes = Article.all
   end
 end
