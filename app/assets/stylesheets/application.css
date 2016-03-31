@@ -12,7 +12,8 @@
  *
  *= require font-awesome
  *= require base
- *= require user
- *= require welcome
+ *= require accounts
+ *= require welcomes
+ *= require videos
  *= require_self
  */

@@ -1,0 +1,22 @@
+<fieldset class="title">
+  <legend>
+    重置密码
+  </legend>
+</fieldset>
+<div class="login">
+  <%= form_for @user, url: user_password_path do |f| %>
+    <%= hidden_field_tag :id, @user.id %>
+    <div class="pass-form-item  pass-form-email">
+      <label class="form-label"><i class="fa fa-envelope"></i></label>
+      <%= f.password_field :password, class: 'form-item', placeholder: '新密码' %>
+    </div>
+    <div class="pass-form-item  pass-form-email">
+      <label class="form-label"><i class="fa fa-envelope"></i></label>
+      <%= f.password_field :password_confirmation, class: 'form-item', placeholder: '确认密码' %>
+    </div>
+
+    <div class="pass-form-item pass-form-login">
+      <%= f.submit '确认', class: 'btn-login' %>
+    </div>
+  <% end %>
+</div>

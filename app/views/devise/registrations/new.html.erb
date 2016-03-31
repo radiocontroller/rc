@@ -1,51 +1,41 @@
-<div class="main">
-  <div class="login-wrap">
-    <header>
-      <div class="logo">
-        <%= image_tag 'logo-s.jpg' %>
-      </div>
-      <h2 class="explain"><strong>RC</strong>是radio control的简称, 即无线电操纵</h2>
-    </header>
-    <fieldset class="title">
-      <legend>
-        <%= link_to '登录', new_user_session_path %>
-        <i class="fa fa-circle"></i>
-        <%= link_to '注册', new_user_registration_path, class: 'active' %>
-      </legend>
-    </fieldset>
-    <div class="login">
-      <%= form_for @user, url: user_registration_path do |f| %>
-        <div class="pass-form-item  pass-form-email">
-          <label class="form-label"><i class="fa fa-envelope"></i></label>
-          <%= f.text_field :email, class: 'form-item', placeholder: '邮箱' %>
-        </div>
-
-        <div class="pass-form-item  pass-form-username">
-          <label class="form-label"><i class="fa fa-user"></i></label>
-          <%= f.text_field :username, class: 'form-item', placeholder: '昵称' %>
-        </div>
-
-        <div class="pass-form-item  pass-form-password">
-          <label class="form-label"><i class="fa fa-lock"></i></label>
-          <%= f.text_field :password, class: 'form-item', placeholder: '密码' %>
-        </div>
-
-        <div class="pass-form-item  pass-form-password">
-          <label class="form-label"><i class="fa fa-lock"></i></label>
-          <%= f.text_field :password_confirmation, class: 'form-item', placeholder: '确认密码' %>
-        </div>
-
-        <div class="pass-form-item  pass-form-captcha">
-          <%= rucaptcha_input_tag(class: 'form-captcha', placeholder: '验证码') %>
-          <span class="captcha-img">
-            <%= rucaptcha_image_tag(alt: 'Captcha') %>
-            <a href="javascript:void(0)" class="tip captcha">看不清，换一张</a>
-          </span>
-        </div>
-        <div class="pass-form-item pass-form-login">
-          <%= f.submit '注册', class: 'btn-login' %>
-        </div>
-      <% end %>
+<fieldset class="title">
+  <legend>
+    <%= link_to '登录', new_user_session_path %>
+    <i class="fa fa-circle"></i>
+    <%= link_to '注册', new_user_registration_path, class: 'active' %>
+  </legend>
+</fieldset>
+<div class="login">
+  <%= form_for @user, url: user_registration_path do |f| %>
+    <div class="pass-form-item  pass-form-email">
+      <label class="form-label"><i class="fa fa-envelope"></i></label>
+      <%= f.text_field :email, class: 'form-item', placeholder: '邮箱' %>
     </div>
-  </div>
+
+    <div class="pass-form-item  pass-form-username">
+      <label class="form-label"><i class="fa fa-user"></i></label>
+      <%= f.text_field :username, class: 'form-item', placeholder: '昵称' %>
+    </div>
+
+    <div class="pass-form-item  pass-form-password">
+      <label class="form-label"><i class="fa fa-lock"></i></label>
+      <%= f.password_field :password, class: 'form-item', placeholder: '密码' %>
+    </div>
+
+    <div class="pass-form-item  pass-form-password">
+      <label class="form-label"><i class="fa fa-lock"></i></label>
+      <%= f.password_field :password_confirmation, class: 'form-item', placeholder: '确认密码' %>
+    </div>
+
+    <div class="pass-form-item  pass-form-captcha">
+      <%= rucaptcha_input_tag(class: 'form-captcha', placeholder: '验证码') %>
+      <span class="captcha-img">
+        <%= rucaptcha_image_tag(alt: 'Captcha') %>
+        <a href="javascript:void(0)" class="tip captcha">看不清，换一张</a>
+      </span>
+    </div>
+    <div class="pass-form-item pass-form-login">
+      <%= f.submit '注册', class: 'btn-login' %>
+    </div>
+  <% end %>
 </div>

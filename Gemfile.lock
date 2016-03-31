@@ -1,3 +1,12 @@
+GIT
+  remote: git://github.com/carrierwaveuploader/carrierwave.git
+  revision: a2c93fe1a9d3a3f60d1662e5ec34fdba7bf2b304
+  specs:
+    carrierwave (0.10.0)
+      activemodel (>= 4.0.0)
+      activesupport (>= 4.0.0)
+      mime-types (>= 1.16)
+
 GEM
   remote: https://ruby.taobao.org/
   specs:
@@ -42,11 +51,7 @@ GEM
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
     byebug (8.2.0)
-    carrierwave (0.10.0)
-      activemodel (>= 3.2.0)
-      activesupport (>= 3.2.0)
-      json (>= 1.7)
-      mime-types (>= 1.16)
+    cancancan (1.13.1)
     celluloid (0.17.3)
       celluloid-essentials
       celluloid-extras
@@ -103,6 +108,7 @@ GEM
       mime-types (>= 1.16, < 3)
     method_source (0.8.2)
     mime-types (2.99)
+    mini_magick (4.4.0)
     mini_portile (0.6.2)
     minitest (5.8.3)
     multi_json (1.11.2)
@@ -222,12 +228,14 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
-  carrierwave
+  cancancan (~> 1.10)
+  carrierwave!
   coffee-rails (~> 4.1.0)
   devise
   font-awesome-rails
   jbuilder (~> 2.0)
   jquery-rails
+  mini_magick
   pg (~> 0.18.3)
   pry (~> 0.9.12)
   pry-nav (~> 0.2.3)

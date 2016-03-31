@@ -42,15 +42,19 @@ group :development, :test do
   gem 'pry-nav', "~> 0.2.3"
 end
 
-  gem 'responders', '~> 2.0'
+gem 'responders', '~> 2.0'
 
 # Object-based searching
 gem 'ransack', '~> 1.6.6'
 
 # 文件上传
-gem 'carrierwave'
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+
+gem 'mini_magick'
 
 gem 'devise'
+
+gem 'cancancan', '~> 1.10'
 
 gem 'sidekiq', '3.3.4'
 

@@ -3,24 +3,32 @@
     <div class="img">
       <%= image_tag 'nav.jpg' %>
     </div>
-    <div class="user-info">
-      <span class="name">巴尔德斯&塞尚</span>
-      <div class="message"><a>消息 <span class="number">(6)</span></a>|<a href="https://www.baidu.com">退出</a></div>
-    </div>
-    <div class="dropdown" style="display:none">
-      <ul>
-        <li><a href="#">登陆</a></li>
-        <li><span>|</span></li>
-        <li><a href="#">注册</a></li>
-      </ul>
-    </div>
+    <% if current_user.present? %>
+      <div class="user-info">
+        <span class="name"><%= current_user.username %></span>
+        <div class="message">
+          <a>消息<span class="number">(6)</span></a>|
+          <%= link_to '退出', destroy_user_session_path, method: :delete %>
+        </div>
+      </div>
+    <% else %>
+      <div class="dropdown">
+        <ul>
+          <li><%= link_to '登录', new_user_session_path %></li>
+          <li><span>|</span></li>
+          <li><%= link_to '注册', new_user_registration_path %></li>
+        </ul>
+      </div>
+    <% end %>
   </div>
 
   <div class="nav">
     <ul>
-      <li class="active"><a href="#">主页</a></li>
+      <li class="active">
+        <%= link_to '主页', root_path %>
+      </li>
       <li><a href="#">文章专区</a></li>
-      <li><a href="#">视频专区</a></li>
+      <li><%= link_to '视频赏析', videos_path %></li>
       <li>
         <a href="#" class="rd-width-ul"><span>其他板块</span><span class="fa fa-chevron-down submenu-toggle"></span></a>
         <ul class="sub-nav">
