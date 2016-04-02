@@ -1,0 +1,34 @@
+<%= render 'common/setting' %>
+
+<div class="content">
+  <div class="video-list">
+    <div class="title">
+      <h2><%= title %></h2>
+      <div class="search">
+        <input type="text" name="name" value="">
+        <a class="btn-search" href="#"><i class="fa fa-search"></i></a>
+      </div>
+    </div>
+
+    <div class="video-items">
+      <% videos.each do |video| %>
+      <div class="video-item">
+        <a href="/videos/<%= video.id %>">
+          <%= image_tag(video.image, class: 'item') %>
+        </a>
+        <h3 class="title">见过这样的飞机么</h3>
+        <div class="fns">
+          <a href="#" class="fn-follow">
+            <i class="fa fa-heart"></i>
+            <span>300</span>
+          </a>
+          <a href="#">
+            <i class="fa fa-comment"></i>
+            <span>300</span>
+          </a>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
