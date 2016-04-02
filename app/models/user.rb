@@ -18,4 +18,8 @@ class User < ActiveRecord::Base
   validates_confirmation_of :password
   validates :username, presence: true, length: { minimum: 3 }
 
+  def admin?
+    self.admin
+  end
+
 end
