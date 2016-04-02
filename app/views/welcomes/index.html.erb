@@ -1,3 +1,12 @@
+<% content_for :javascripts do %>
+  <script type="text/javascript">
+    $(function() {
+      $('#js-image').on('click', function() {
+        $('body').append("<%= j render 'welcomes/floatwindow' %>")
+      });
+    });
+  </script>
+<% end %>
 <div class="maxim">
   <h2>航模箴言</h2>
   <p>航模爱好趣无穷，正确操纵是关键。莫把器材当玩具，忽视安全悔一生。</p>
@@ -28,7 +37,7 @@
   <div class="img">
     <ul>
       <li>
-        <a href="#" class=" thumb">
+        <a href="#" class=" thumb" id='js-image'>
           <%= image_tag 'nav.jpg', class: 'circle' %>
           <span class="thumb_overlay"></span>
         </a>

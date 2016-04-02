@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       get 'fixed_wing', 'glider', 'helicopter', 'fpv'
     end
   end
+  resources :pictures
 
   resources :admin, only: [:index]
 

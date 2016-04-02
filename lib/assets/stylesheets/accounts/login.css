@@ -1,10 +1,10 @@
 .login-wrap{
   width: 966px;
-  margin: 0 auto;
+  margin: 0 auto 80px auto;
 }
 
 .login-wrap header{
-  padding-top: 96px;
+  padding-top: 30px;
 }
 
 .login-wrap .logo{
@@ -160,7 +160,7 @@
 }
 
 .forget-pass{
-  color: #333;
+  color: #7171C6;
   font-size: 16px;
   text-align: right;
   float: right;
@@ -173,6 +173,7 @@
   color: #fff;
   font-size: 18px;
   border: 0;
+  cursor: pointer;
 }
 
 .pass-form-login{
