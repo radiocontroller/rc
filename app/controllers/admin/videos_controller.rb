@@ -2,7 +2,8 @@ module Admin
   class VideosController < BaseController
 
     def index
-      @videos = Video.all
+      q = Video.ransack(params[:q])
+      @videos = q.result(distinct: true).order(created_at: :desc)
     end
 
   end

@@ -1,0 +1,12 @@
+.select-videos{
+  width: 100%;
+  height: 45px;
+  font-size: 14px;
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+.select-videos select{
+  width: 80px;
+  height: 25px;
+}

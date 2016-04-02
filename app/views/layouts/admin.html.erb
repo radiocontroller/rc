@@ -17,16 +17,17 @@
     </header>
 
     <div class="main">
-      <a href="javascript:void(0)" class="setting">
-        <i class="fa fa-bars"></i>
-      </a>
+      <%= render 'common/setting' %>
 
       <%= render 'common/left_sidebar' %>
-      <%= yield %>
+
+      <div class="operate-wrap">
+        <%= yield %>
+      </div>
     </div>
 
     <div class="sidebar-wrap">
-      <%= render 'common/sidebar' %>
+      <%= render 'common/right_sidebar' %>
     </div>
 
     <script type="text/javascript">

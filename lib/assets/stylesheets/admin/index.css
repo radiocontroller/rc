@@ -1,5 +1,7 @@
 /*
 *= require admin/left_sidebar
 *= require admin/content
+*= require admin/video
+*= require admin/page_nav
 *= require_self
 */
