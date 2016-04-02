@@ -1,11 +1,5 @@
-<%= form_for '', url: videos_path do |f| %>
-  <%= f.file_field :image %>
-  <%= f.submit '上传' %>
-<% end %>
+<%= render 'common/setting' %>
 
-<a href="javascript:void(0)" class="setting">
-  <i class="fa fa-bars"></i>
-</a>
 <div class="content">
   <div class="video-list">
     <div class="title">
