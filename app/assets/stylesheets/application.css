@@ -15,5 +15,6 @@
  *= require accounts
  *= require welcomes
  *= require videos
+ *= require admin
  *= require_self
  */

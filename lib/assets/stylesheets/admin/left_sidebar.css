@@ -1,0 +1,46 @@
+.left-sidebar-wrap{
+  width: 200px;
+  height: 100%;
+  border-right: 1px solid #CCCCCC;
+  color: #000000;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 10px;
+  float: left;
+}
+
+.left-sidebar{
+  text-align: center;
+  width: 100%;
+  padding-top: 10px;
+  border-top: #ccc 1px solid;
+}
+
+.left-sidebar-title{
+  height: 40px;
+  line-height: 40px;
+  cursor: pointer;
+  font-size: 13px;
+  position: relative;
+  border-bottom: #ccc 1px dotted;
+}
+
+.left-sidebar-detail{
+  display: none;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.left-sidebar-detail ul{
+  margin: 0;
+  padding: 0;
+}
+
+.left-sidebar-detail li{
+  height: 30px;
+  line-height: 30px;
+  list-style: none;
+  border-bottom: #ccc 1px dotted;
+  text-align: center;
+  padding-left: 40px;
+}

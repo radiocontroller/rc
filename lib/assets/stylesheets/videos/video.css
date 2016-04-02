@@ -12,10 +12,14 @@
 
 .video-list .title>h2{
   font-size: 36px;
+  display: inline-block;
+  margin-top: -80px;
+  border-bottom: 3px solid red;
 }
 
 .video-list .title .search{
   position: absolute;
+  margin-top: -60px;
   top: 0;
   right: 0;
 }

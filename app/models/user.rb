@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
-  mount_uploader :avatar, ImageUploader
+  mount_uploader :avatar, AvatarUploader
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -17,5 +17,9 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email, on: :create
   validates_confirmation_of :password
   validates :username, presence: true, length: { minimum: 3 }
+
+  def admin?
+    self.admin
+  end
 
 end

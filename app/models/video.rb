@@ -1,6 +1,6 @@
 class Video < ActiveRecord::Base
 
-  mount_uploader :image, ImageUploader
+  mount_uploader :image, VideoImageUploader
 
   enum category: [:fixed_wing, :glider, :helicopter, :fpv]
 

@@ -1,6 +1,5 @@
-<a href="javascript:void(0)" class="setting">
-  <i class="fa fa-bars"></i>
-</a>
+<%= render 'common/setting' %>
+
 <div class="content">
   <div class="video-list">
     <div class="title">
@@ -13,7 +12,7 @@
           <h2><%= category[:chinese] %></h2>
           <% category[:videos].each do |video| %>
             <div class="video-item">
-              <%= image_tag 'logo.jpg', class: 'item cursor-pointer' %>
+              <%= image_tag(video.image, class: 'item cursor-pointer') %>
               <h3 class="title"><%= video.description %></h3>
               <div class="fns">
                 <a href="javascript:void(0)" class="fn-follow">

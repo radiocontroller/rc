@@ -8,12 +8,18 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :welcomes, only: [:index]
-  resources :users, only: [:index, :show, :update]
   resources :videos, only: [:index, :show] do
     collection do
       get 'fixed_wing', 'glider', 'helicopter', 'fpv'
     end
   end
   resources :pictures
+
+  resources :admin, only: [:index]
+
+  namespace :admin do
+    resources :videos, only: [:index]
+  end
+
 
 end
