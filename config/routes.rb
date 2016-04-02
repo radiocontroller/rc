@@ -17,8 +17,8 @@ Rails.application.routes.draw do
 
   resources :admin, only: [:index]
 
-  resource :admin, only: [] do
-    resources :videos
+  namespace :admin do
+    resources :videos, only: [:index]
   end
 
 
