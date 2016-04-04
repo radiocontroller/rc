@@ -24,15 +24,15 @@ $(document).ready(function() {
 });
 
 function showSidebar() {
-  $('.sidebar-wrap').show();
+  $('.right-sidebar-wrap').show();
   $('.sidebar').slideLeftShow(200);
 }
 
 function hideSidebar(e) {
-  if($(e.target).attr('class') == 'sidebar-wrap')
+  if($(e.target).attr('class') == 'right-sidebar-wrap')
     $('.sidebar').slideRightHide(200);
 }
 
 function hideSidebarWrap() {
-  $('.sidebar-wrap').hide();
+  $('.right-sidebar-wrap').hide();
 }
