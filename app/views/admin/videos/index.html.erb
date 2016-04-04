@@ -8,32 +8,50 @@
 
 <div class="select-videos">
   视频类别:
-  <select>
-    <option value="1">全部</option>
-    <option value="2">固定翼</option>
-    <option value="3">滑翔机</option>
-    <option value="4">直升机</option>
-    <option value="5">穿越机</option>
-  </select>
+  <%= form_tag(admin_videos_path, method: :get) do %>
+    <%= select_tag 'q[category_eq]', options_for_select(@types, @search[:category]), include_blank: '全部' %>
+    <%= text_field_tag 'q[description_cont]', @search[:description] %>
+    <%= submit_tag '搜索' %>
+  <% end %>
 </div>
 
 <div class="video-items margin-left-20">
-  <% 5.times.each do %>
+  <% @videos.each do |video| %>
     <div class="video-item">
       <a href="javascript:void(0)">
         <%= image_tag('logo.jpg', class: 'item') %>
       </a>
       <h3 class="title">见过这样的飞机么</h3>
       <div class="fns">
-        <a href="#" class="fn-follow">
-          <i class="fa fa-heart"></i>
-          <span>300</span>
+        <a href="javascript:void(0)" class="fn-follow">
+          <span>编辑</span>
         </a>
-        <a href="#">
-          <i class="fa fa-comment"></i>
-          <span>300</span>
-        </a>
+        <%= link_to '删除', 'javascript:void(0)', class: 'js-delete-video', data: {id: video.id} %>
       </div>
     </div>
   <% end %>
 </div>
+<script type="text/javascript">
+  $(function() {
+    $(document).on('click', '.js-delete-video', delete_video);
+  });
+
+  function delete_video() {
+    var self = $(this);
+    swal({
+     title: "您确定要删除吗？",
+     type: "warning",
+     showCancelButton: true,
+     closeOnConfirm: false,
+     confirmButtonText: "是的，我要删除",
+     confirmButtonColor: "#ec6c62"
+     }, function() {
+       $.ajax({
+         url: "/api/videos/"+ self.data('id'),
+         type: "DELETE",
+         dataType: 'script',
+         function(){}
+       })
+     });
+  }
+</script>
