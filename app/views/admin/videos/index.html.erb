@@ -23,9 +23,9 @@
       <a href="javascript:void(0)">
         <%= image_tag('logo.jpg', class: 'item') %>
       </a>
-      <h3 class="title">见过这样的飞机么</h3>
+      <h3 class="title"><%= video.description %></h3>
       <div class="fns">
-        <%= link_to '编辑', 'javascript:void(0)', class: 'js-edit-video', data: {id: video.id} %>
+        <%= link_to '编辑', 'javascript:void(0)', id: "js-video-#{video.id}", class: 'js-edit-video', data: {id: video.id, url: video.url, description: video.description} %>
         <%= link_to '删除', 'javascript:void(0)', class: 'js-delete-video', data: {id: video.id} %>
       </div>
     </div>
@@ -36,7 +36,8 @@
   $(function() {
     $(document).on('click', '.js-delete-video', deleteVideo);
     $(document).on('click', '.js-edit-video', editVideo);
-    $(document).on('click', '.js-cancel', hideFloatwindow);
+    $(document).on('click', '#js-update-video', updateVideo)
+    $(document).on('click', '#js-cancel', hideFloatwindow);
   });
 
   function deleteVideo() {
@@ -46,7 +47,7 @@
      type: "warning",
      showCancelButton: true,
      closeOnConfirm: false,
-     confirmButtonText: "是的，我要删除",
+     confirmButtonText: "是的，强行删除",
      confirmButtonColor: "#ec6c62"
      }, function() {
        $.ajax({
@@ -59,9 +60,21 @@
   }
 
   function editVideo() {
-    var self = $(this);
     $('.video-edit-wrap').html('<%= j render "edit_window" %>');
+    $('#js-video-id').val($(this).data('id'));
+    $('#js-video-url').val($(this).data('url'));
+    $('#js-video-description').val($(this).data('description'));
     $('.video-edit-wrap').show();
+  }
+
+  function updateVideo() {
+    $.ajax({
+      url: "/api/videos/"+ $('#js-video-id').val(),
+      type: "PUT",
+      data: { description: $('#js-video-description').val(), url: $('#js-video-url').val() },
+      dataType: 'script',
+      function(){}
+    });
   }
 
   function hideFloatwindow() {

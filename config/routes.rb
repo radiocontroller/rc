@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   end
 
   namespace :api do
-    resources :videos, only: [:destroy]
+    resources :videos, only: [:update, :destroy]
   end
 
 end
