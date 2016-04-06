@@ -1,6 +1,6 @@
 class VideosController < BaseController
   before_action :set_limit, only: [:index]
-  before_action :set_videos, only: [:fixed_wing, :helicopter, :fpv, :glider]
+  before_action :set_videos, :set_search_value, only: [:fixed_wing, :helicopter, :fpv, :glider]
 
   def index
     set_categories
@@ -43,7 +43,13 @@ class VideosController < BaseController
     end
 
     def set_videos
-      @videos = Video.send(action_name.to_sym)
+      q = Video.send(action_name.to_sym).ransack(params[:q])
+      @videos = q.result(distinct: true).order("id desc")
+    end
+
+    def set_search_value
+      params[:q] ||= {}
+      @search = params[:q][:description_cont]
     end
 
 end
