@@ -5,19 +5,25 @@
       <p>
         <%= f.label :url, '视频地址' %>
       </p>
-      <%= f.text_field :url, class: 'form-item' %>
+      <%= f.text_field :url %>
     </div>
     <div>
       <p>
         <%= f.label :description, '视频描述' %>
       </p>
-      <%= f.text_field :description, class: 'form-item' %>
+      <%= f.text_field :description %>
     </div>
     <div>
       <p>
         <%= f.label :image, '视频封面' %>
       </p>
-      <%= f.file_field :image, class: 'form-item' %>
+      <%= f.file_field :image %>
+    </div>
+    <div>
+      <p>
+        <%= f.label :url, '视频分类' %>
+      </p>
+      <%= f.select :category, options_for_select(@categories) %>
     </div>
     <%= f.submit '创建' %>
   <% end %>

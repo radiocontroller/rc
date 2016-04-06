@@ -11,7 +11,7 @@
 <div class="videos-search">
   视频类别:
   <%= form_tag(admin_videos_path, method: :get) do %>
-    <%= select_tag 'q[category_eq]', options_for_select(@types, @search[:category]), include_blank: '全部' %>
+    <%= select_tag 'q[category_eq]', options_for_select(@categories, @search[:category]), include_blank: '全部' %>
     <%= text_field_tag 'q[description_cont]', @search[:description] %>
     <%= submit_tag '搜索' %>
   <% end %>
@@ -52,7 +52,7 @@
      confirmButtonColor: "#ec6c62"
      }, function() {
        $.ajax({
-         url: "/api/videos/"+ self.data('id'),
+         url: "/ajax/videos/"+ self.data('id'),
          type: "DELETE",
          dataType: 'script',
          function(){}
@@ -62,20 +62,14 @@
 
   function editVideo() {
     $('.video-edit-wrap').html('<%= j render "edit" %>');
-    $('#js-video-id').val($(this).data('id'));
+    $('#js-update-video').data('id', $(this).data('id'));
     $('#js-video-url').val($(this).data('url'));
     $('#js-video-description').val($(this).data('description'));
     $('.video-edit-wrap').show();
   }
 
   function updateVideo() {
-    $.ajax({
-      url: "/api/videos/"+ $('#js-video-id').val(),
-      type: "PUT",
-      data: { description: $('#js-video-description').val(), url: $('#js-video-url').val() },
-      dataType: 'script',
-      function(){}
-    });
+    $('#videoForm').attr('action', '/videos/'+ $(this).data('id')).submit();
   }
 
   function hideFloatwindow() {

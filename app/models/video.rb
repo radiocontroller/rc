@@ -1,5 +1,4 @@
 class Video < ActiveRecord::Base
-
   mount_uploader :image, VideoImageUploader
 
   enum category: [:fixed_wing, :glider, :helicopter, :fpv]
@@ -8,7 +7,7 @@ class Video < ActiveRecord::Base
 
   scope :normal, ->{ where(deleted: false) }
 
-  validates :description, :url, :image, presence: true
+  validates :description, :url, presence: true
 
   CATEGORIES = {
     'fixed_wing': '固定翼',

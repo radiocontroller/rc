@@ -1,5 +1,6 @@
 class VideosController < BaseController
   before_action :set_limit, only: [:index]
+  before_action :set_video, only: [:update]
   before_action :set_videos, only: [:fixed_wing, :helicopter, :fpv, :glider]
 
   def index
@@ -16,7 +17,13 @@ class VideosController < BaseController
   end
 
   def show
+  end
 
+  def update
+    video_params = { description: params[:description], url: params[:url] }
+    video_params.merge!(image: params[:image]) if params[:image].present?
+    @video.update video_params
+    redirect_to admin_videos_path
   end
 
   def fixed_wing
@@ -56,7 +63,7 @@ class VideosController < BaseController
     end
 
     def video_params
-      params.require(:video).permit(:description, :url, :image)
+      params.require(:video).permit(:description, :url, :image, :category)
     end
 
 end
