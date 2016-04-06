@@ -3,35 +3,42 @@
   <head>
     <meta charset="utf-8">
     <title>Rc</title>
+    <link href="/images/favicon.ico" type="image/x-icon" rel=icon>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
+    <script>
+      $(function() {
+        $('#camera').camera({
+          height: '700px',
+  				loader: 'bar',
+  				pagination: false,
+  				thumbnails: true,
+  				hover: false,
+  				opacityOnGrid: false
+        });
+      })
+    </script>
   </head>
 
   <body>
-
     <div class="main">
+      <div class="camera_wrap" id="camera">
+        <div data-thumb="/images/logo.jpg" data-src="/images/top-0.jpg">
+        </div>
+        <div data-thumb="/images/logo.jpg" data-src="/images/top-0.jpg">
+        </div>
+        <div data-thumb="/images/logo.jpg" data-src="/images/top-0.jpg">
+        </div>
+      </div>
+
       <div class="banner">
-        <div class="img">
-          <%= image_tag 'top-0.jpg' %>
-          <div class="logo">
-            <%= image_tag 'logo.jpg' %>
-          </div>
+        <div class="logo">
+          <%= image_tag 'logo.jpg' %>
         </div>
       </div>
 
       <div class="content">
-        <div class="thumbs">
-          <div class="thumb circle">
-            <%= image_tag 'nav.jpg' %>
-          </div>
-          <div class="thumb circle">
-            <%= image_tag 'nav.jpg' %>
-          </div>
-          <div class="thumb circle">
-            <%= image_tag 'nav.jpg' %>
-          </div>
-        </div>
 
         <%= yield %>
 
@@ -42,8 +49,8 @@
       <%= render 'common/setting' %>
     </div>
 
-    <div class="sidebar-wrap">
-      <%= render 'common/sidebar' %>
+    <div class="right-sidebar-wrap">
+      <%= render 'common/right_sidebar' %>
     </div>
 
     <%= yield :javascripts %>

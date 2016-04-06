@@ -4,6 +4,7 @@ body{
   font-family: "微软雅黑";
   padding: 0;
   margin: 0;
+  overflow-x: hidden;
 }
 
 ul{
@@ -27,4 +28,8 @@ a{
 
 .cursor-pointer{
   cursor: pointer;
+}
+
+.margin-left-20{
+  margin-left: 20px;
 }

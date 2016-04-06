@@ -8,10 +8,6 @@ h2,h3{
   position: relative;
 }
 
-.banner .img img{
-  width: 100%;
-}
-
 .banner .logo{
   position: absolute;
   width: 180px;
@@ -24,41 +20,6 @@ h2,h3{
 .content{
   width: 1200px;
   margin: 0 auto;
-}
-
-.thumbs{
-  height: 162px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-bottom: 1px solid #ededed;
-
-}
-.thumbs .thumb {
-  width: 105px;
-  height: 105px;
-  cursor: pointer;
-  position: relative;
-  margin-right: 10px;
-}
-.thumbs .thumb:hover:before{
-  content: '';
-  width: 0;
-  height: 0;
-  border: 62px solid transparent;
-  border-bottom-color: #deddde;
-  position: absolute;
-  top: -9.5px;
-  left: -9.5px;
-  border-radius: 50%;
-  z-index: -1;
-}
-
-.thumbs .thumb img{
-  border-radius: 50%;
-  opacity: 1 !important;
-  width: 105px;
-  height: 105px;
 }
 
 .maxim{

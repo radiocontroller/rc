@@ -27,12 +27,16 @@ class VideosController < BaseController
       @limit = 4
     end
 
+    def set_video
+      @video = Video.normal.find(params[:id])
+    end
+
     def set_categories
       @categories = Video::CATEGORIES.map do |english, chinese|
                   {
                     chinese: chinese,
                     english: english,
-                    videos: Video.send(english.to_sym).order('id desc').limit(@limit)
+                    videos: Video.normal.send(english.to_sym).order('id desc').limit(@limit)
                   }
                end
     end

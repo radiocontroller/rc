@@ -21,5 +21,8 @@ Rails.application.routes.draw do
     resources :videos, only: [:index]
   end
 
+  namespace :api do
+    resources :videos, only: [:update, :destroy]
+  end
 
 end

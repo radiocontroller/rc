@@ -16,5 +16,8 @@
  *= require welcomes
  *= require videos
  *= require admin
+ *= require alert/sweetalert
+ *= require fancybox/jquery.fancybox
+ *= require camera/camera
  *= require_self
  */

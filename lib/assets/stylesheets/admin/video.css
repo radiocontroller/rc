@@ -1,0 +1,24 @@
+.videos-search{
+  width: 100%;
+  height: 45px;
+  font-size: 14px;
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+.videos-search select{
+  width: 80px;
+  height: 25px;
+}
+
+.video-edit-wrap{
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: transparent;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.4);
+}

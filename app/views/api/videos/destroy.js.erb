@@ -1,0 +1,6 @@
+<% if @video.deleted? %>
+  $("#js-video-<%= @video.id %>").parents('.video-item').remove();
+  swal("操作成功!", "成功删除视频！", "success");
+<% else %>
+  swal("操作失败!", "删除视频失败!", "error");
+<% end %>
