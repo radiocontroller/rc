@@ -8,6 +8,8 @@ class Video < ActiveRecord::Base
 
   scope :normal, ->{ where(deleted: false) }
 
+  validates :description, :url, :image, presence: true
+
   CATEGORIES = {
     'fixed_wing': '固定翼',
     'glider': '滑翔机',

@@ -1,11 +1,16 @@
 module Admin
   class VideosController < BaseController
+    layout 'admin'
 
     def index
       q = Video.normal.ransack(params[:q])
       @videos = q.result(distinct: true).order(created_at: :desc)
       set_search_values
       @types = Video::ID_CATEGORIES.invert.to_a
+    end
+
+    def new
+      @video = Video.new
     end
 
     private

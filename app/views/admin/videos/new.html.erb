@@ -1,0 +1,24 @@
+<div class="video-create-wrap">
+  <h2>新建视频</h2>
+  <%= form_for @video, url: videos_path do |f| %>
+    <div>
+      <p>
+        <%= f.label :url, '视频地址' %>
+      </p>
+      <%= f.text_field :url, class: 'form-item' %>
+    </div>
+    <div>
+      <p>
+        <%= f.label :description, '视频描述' %>
+      </p>
+      <%= f.text_field :description, class: 'form-item' %>
+    </div>
+    <div>
+      <p>
+        <%= f.label :image, '视频封面' %>
+      </p>
+      <%= f.file_field :image, class: 'form-item' %>
+    </div>
+    <%= f.submit '创建' %>
+  <% end %>
+</div>

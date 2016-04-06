@@ -1,15 +1,11 @@
 module Admin
   class BaseController < ActionController::Base
-    protect_from_forgery with: :exception
-    layout 'admin'
-
-    before_action :authenticate_user!
-    before_filter :verify_admin
+    before_action :verify_admin
 
     private
 
       def verify_admin
-        redirect_to root_url if !current_user.admin?
+        redirect_to root_url if !current_user.try(:admin?)
       end
   end
 end

@@ -13,7 +13,7 @@ class VideoImageUploader < CarrierWave::Uploader::Base
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
-    "images/#{model.class.to_s.underscore}s/#{mounted_as}"
+    "images/#{model.class.to_s.underscore}s/#{model.id}/#{mounted_as}"
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
@@ -32,9 +32,9 @@ class VideoImageUploader < CarrierWave::Uploader::Base
   # end
 
   # Create different versions of your uploaded files:
-  # version :thumb do
-  #   process :resize_to_fit => [50, 50]
-  # end
+  version :normal do
+    process :resize_to_fit => [282, 185]
+  end
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
