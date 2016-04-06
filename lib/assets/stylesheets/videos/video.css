@@ -12,14 +12,10 @@
 
 .video-list .title>h2{
   font-size: 36px;
-  display: inline-block;
-  margin-top: -80px;
-  border-bottom: 3px solid red;
 }
 
 .video-list .title .search{
   position: absolute;
-  margin-top: -60px;
   top: 0;
   right: 0;
 }
@@ -34,6 +30,11 @@
 .video-list .title .search input:focus{
   outline: none;
   border-color:  rgba(82,168,236,0.8);
+}
+
+.video-list .video-items{
+  margin-top: 70px;
+  text-align: left;
 }
 
 .btn-search{
@@ -65,9 +66,44 @@
 }
 
 .video-item .item{
+  position: relative;
+  cursor: pointer;
+}
+
+.video-item .item img{
   width: 282px;
   height: 185px;
   border-radius: 13px;
+}
+
+.video-item .item:hover .thumb_overlay{
+  opacity: 1;
+  background: rgba(0,0,0,0.5);
+}
+
+.video-item .thumb_overlay{
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  width: 282px;
+  height: 185px;
+  border-radius: 13px;
+  -moz-transition: 0.3s all ease;
+  -o-transition: 0.3s all ease;
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+  color: #fff;
+  background: transparent;
+  text-align: center;
+}
+
+.video-item .thumb_overlay:before{
+
+  line-height: 185px;
+  font-size: 45px;
 }
 
 .video-item .title{
@@ -101,7 +137,11 @@
   padding-top: 84px;
 }
 
-
+.more-video{
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
 
 .more-video a{
   font-size: 18px;

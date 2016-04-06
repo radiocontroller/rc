@@ -3,6 +3,7 @@
     <h2>视频赏析</h2>
   </div>
 
+<<<<<<< HEAD
   <div class="video-items">
     <div class="clasification">
       <% @categories.each do |category| %>
@@ -20,6 +21,29 @@
                 <i class="fa fa-comment"></i>
                 <span>300</span>
               </a>
+=======
+    <div class="video-items">
+      <div class="clasification">
+        <% @categories.each do |category| %>
+          <h2><%= category[:chinese] %></h2>
+          <% category[:videos].each do |video| %>
+            <div class="video-item">
+              <div class="item">
+                <%= image_tag(video.image, class: 'item') %>
+                <span class="thumb_overlay fa fa-play-circle-o"></span>
+                <h3 class="title"><%= video.description %></h3>
+              </div>
+              <div class="fns">
+                <a href="javascript:void(0)" class="fn-follow">
+                  <i class="fa fa-heart"></i>
+                  <span>300</span>
+                </a>
+                <a href="javascript:void(0)">
+                  <i class="fa fa-comment"></i>
+                  <span>300</span>
+                </a>
+              </div>
+>>>>>>> videos
             </div>
           </div>
         <% end %>

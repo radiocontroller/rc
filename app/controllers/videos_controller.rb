@@ -1,5 +1,6 @@
 class VideosController < BaseController
   before_action :set_limit, only: [:index]
+  before_action :set_videos, only: [:fixed_wing, :helicopter, :fpv, :glider]
 
   def index
     set_categories
@@ -40,4 +41,9 @@ class VideosController < BaseController
                   }
                end
     end
+
+    def set_videos
+      @videos = Video.send(action_name.to_sym)
+    end
+
 end
