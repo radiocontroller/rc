@@ -1,0 +1,150 @@
+.comment .comment-title{
+  height: 38px;
+  border-bottom: 3px solid #e5e5e5;
+}
+
+.comment .comment-title h2{
+  height: 38px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  display: inline-block;
+  border-bottom: 3px solid #F04458;
+  padding-right: 55px;
+}
+
+.comment .comment-title .count{
+  font-size: 14px;
+  color: #999;
+}
+
+.comment  .items{
+  padding-top: 42px;
+}
+
+.comment  .items .item{
+  display: flex;
+  margin-bottom: 21px;
+}
+
+.comment  .items .item img{
+  width: 108px;
+  height: 108px;
+  border-radius: 50%;
+}
+
+.comment  .items .item .user-comment{
+  position: relative;
+  display: inline-block;
+  width: 755px;
+  background: #ededed;
+  border: 1px solid #dedede;
+  border-radius: 9px;
+  padding: 18px;
+  box-sizing: border-box;
+  margin-left: 18px;
+}
+
+
+.user-comment .user-title{
+  font-size: 14px;
+  color: #999;
+  display: flex;
+  justify-content: space-between;
+}
+
+.comment  .item .user-comment p{
+  color: #333;
+  font-size: 14px;
+}
+
+.other-user{
+  position: relative;
+}
+
+.other-user .other-comment{
+  width: 585px;
+  position: relative;
+  display: inline-block;
+  background: #ededed;
+  border: 1px solid #dedede;
+  border-radius: 9px;
+  padding: 18px;
+  box-sizing: border-box;
+  margin-left: 18px;
+}
+
+
+.arrow{
+  position:absolute;
+  width:40px;
+  height:40px;
+  top: 53px;
+  left:-36px;
+}
+
+.arrow *{
+  display:block;
+  position:absolute;
+  border-style:solid dashed dashed dashed;
+  font-size:0;
+  line-height:0;
+}
+
+.arrow em{
+  border-color: transparent  #dedede transparent transparent ;
+  border-width:7px 18px;
+}
+
+.arrow span{
+  border-color: transparent #ededed transparent transparent ;
+  top:0px;
+  left:3px;
+  border-width:7px 18px;
+}
+
+.reply{
+  text-align: right;
+  padding-top: 21px;
+}
+
+.reply a{
+  font-size: 14px;
+  color: #999;
+}
+
+.replay-box{
+  width: 756px;
+  border: 1px solid #dedede;
+  border-radius: 9px;
+  margin-left: 123px;
+  box-sizing: border-box;
+  margin-bottom: 21px;
+}
+
+.replay-box textarea{
+  background: #ededed;
+  border: 1px solid #dedede;
+  text-indent: 16px;
+  line-height: 20px;
+  width: 754px;
+  box-sizing: border-box;
+  height: 105px;
+  border-radius: 9px;
+  outline: none;
+}
+
+.replay-box .btn-group{
+  padding: 9px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.replay-box  .btn-submit{
+  width: 82px;
+  height: 30px;
+  font-size: 14px;
+  color: #fff;
+  background: #FF3C57;
+  border: 0;
+}

@@ -1,0 +1,150 @@
+.guide-reading{
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.guide-reading .title{
+  margin-top: 156px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 3px solid #e5e5e5;
+}
+
+
+.guide-reading .title h2{
+  font-size: 24px;
+  color: #333;
+  font-weight: bold;
+  width: 165px;
+  height: 50px;
+  border-bottom: 3px solid #FF3D53;
+}
+
+.guide-reading .search {
+  width: 228px;
+  height: 36px;
+  font-size: 18px;
+  color: #333;
+}
+
+.guide-reading .search .search-input{
+  width: 190px;
+  padding: 5px 0;
+  box-sizing: border-box;
+  height: 35px;
+  border: 1px solid #e5e5e5;
+}
+
+.guide-reading .search .search-input:focus{
+  outline: none;
+  border-color: rgba(82,168,236,0.8);
+}
+
+.guide-reading .search .btn-search{
+  color: #333;
+  background: none;
+  width: 36px;
+  height: 36px;
+  text-align: center;
+  box-sizing: border-box;
+  border: 1px solid #e5e5e5;
+  border-left: none;
+}
+
+.guide-reading  .items{
+  margin-top: 42px;
+  margin-bottom: 121px;
+}
+
+.guide-reading  .items .item{
+  display: flex;
+  justify-content: space-between;
+  padding: 21px 0;
+  border-bottom: 1px dotted #D6D2D2;
+}
+
+.guide-reading .item .text{
+  font-size:14px;
+}
+
+.guide-reading .item .username{
+  font-size: 14px;
+  color: #206ea8;
+}
+
+.guide-reading .item .date{
+  color: #999;
+  margin-left: 30px;
+}
+
+.article-title{
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  padding: 16px 0;
+}
+
+.guide-reading .item .img img{
+  width:213px;
+  height: 126px;
+  border-radius: 7px;
+}
+
+.operation a{
+  margin-right: 27px;
+  color: #999;
+  font-size: 14px;
+}
+
+
+.infos{
+  width: 900px;
+  margin: 138px auto 0 auto;
+}
+
+.infos .title{
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 36px;
+}
+
+.infos .text{
+  width: 600px;
+}
+
+.infos .text h2{
+  font-size: 24px;
+  color: #333;
+  padding: 30px 0;
+}
+
+.infos .text .username{
+  font-size: 14px;
+  color: #206ea8;
+}
+
+.infos .text .date{
+  color: #999;
+  font-size: 12px;
+  margin-left: 20px;
+}
+
+.infos  .operation{
+  display: flex;
+  align-items: flex-end;
+}
+
+.infos .details img{
+  width: 900px;
+  height: 510px;
+  border-radius: 9px;
+}
+
+.infos .details p{
+  color: #333;
+  font-size: 14px;
+  text-indent: 27px;
+  margin-bottom: 54px;
+}
