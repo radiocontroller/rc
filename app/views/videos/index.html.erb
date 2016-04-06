@@ -1,19 +1,18 @@
-<%= render 'common/setting' %>
-
-<div class="content">
-  <div class="video-list">
-    <div class="title">
-      <h2>视频赏析</h2>
-    </div>
-
+<div class="video-list">
+  <div class="title">
+    <h2>视频赏析</h2>
+  </div>
     <div class="video-items">
       <div class="clasification">
         <% @categories.each do |category| %>
           <h2><%= category[:chinese] %></h2>
           <% category[:videos].each do |video| %>
             <div class="video-item">
-              <%= image_tag(video.image, class: 'item cursor-pointer') %>
-              <h3 class="title"><%= video.description %></h3>
+              <div class="item">
+                <%= image_tag(video.image, class: 'item') %>
+                <span class="thumb_overlay fa fa-play-circle-o"></span>
+                <h3 class="title"><%= video.description %></h3>
+              </div>
               <div class="fns">
                 <a href="javascript:void(0)" class="fn-follow">
                   <i class="fa fa-heart"></i>
@@ -26,7 +25,6 @@
               </div>
             </div>
           <% end %>
-
           <div class="more-video">
             <a href="/videos/<%= category[:english] %>", target="_blank">
               更多视频
@@ -34,8 +32,6 @@
             </a>
           </div>
         <% end %>
-
       </div>
     </div>
-  </div>
 </div>

@@ -4,19 +4,20 @@
     <meta charset="utf-8">
     <title>Rc</title>
     <link href="/images/favicon.ico" type="image/x-icon" rel=icon>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
     <script>
       $(function() {
         $('#camera').camera({
           height: '700px',
-  				loader: 'bar',
-  				pagination: false,
-  				thumbnails: true,
-  				hover: false,
-  				opacityOnGrid: false
+          loader: 'bar',
+          pagination: false,
+          thumbnails: true,
+          hover: false,
+          opacityOnGrid: false
         });
+        $(".fancybox").fancybox();
       })
     </script>
   </head>
@@ -52,8 +53,6 @@
     <div class="right-sidebar-wrap">
       <%= render 'common/right_sidebar' %>
     </div>
-
-    <%= yield :javascripts %>
 
   </body>
 </html>

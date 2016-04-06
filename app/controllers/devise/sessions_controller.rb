@@ -14,7 +14,7 @@ class Devise::SessionsController < Devise::BaseController
 
   def destroy
     sign_out(current_user)
-    redirect_to root_path
+    redirect_to root_url
   end
 
   private
@@ -28,7 +28,7 @@ class Devise::SessionsController < Devise::BaseController
       if status.success?
         sign_in(@user)
         current_user.timeout_in
-        redirect_to root_path
+        redirect_to root_url
       else
         redirect_to new_user_session_path, alert: status.alert
       end

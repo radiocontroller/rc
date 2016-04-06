@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <title>Rc</title>
     <link href="/images/favicon.ico" type="image/x-icon" rel=icon>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
   </head>
 
@@ -18,7 +18,10 @@
     </header>
 
     <div class="main">
-      <%= yield %>
+      <div class="content">
+        <%= yield %>
+      </div>
+      <%= render 'common/setting' %>
     </div>
 
     <div class="right-sidebar-wrap">

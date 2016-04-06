@@ -9,6 +9,6 @@ class AdminController < ApplicationController
   private
 
     def verify_admin
-      redirect_to root_path if !current_user.admin?
+      redirect_to root_url if !current_user.admin?
     end
 end
