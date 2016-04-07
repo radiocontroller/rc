@@ -6,7 +6,7 @@
   <%= form_tag(admin_videos_path, method: :get) do %>
     <%= select_tag 'q[category_eq]', options_for_select(@categories, @search[:category]), include_blank: '全部' %>
     <%= text_field_tag 'q[description_cont]', @search[:description] %>
-    <%= submit_tag '搜索' %>
+    <%= submit_tag '搜索', class: 'cursor-pointer' %>
   <% end %>
 </div>
 
