@@ -1,8 +1,8 @@
 .operate-wrap{
-  width: 82%;
-  height: 800px;
-  margin: 10px 0px 100px 28px;
-  padding-top: 20px;
-  float: left;
+  width: 83%;
+  float: right;
+  margin-top: 10px;
+  padding-bottom: 50px;
+  margin-bottom: 200px;
   border: 1px solid #CCCCCC;
 }
