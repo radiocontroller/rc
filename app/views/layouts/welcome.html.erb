@@ -10,14 +10,16 @@
     <script>
       $(function() {
         $('#camera').camera({
-          height: '700px',
           loader: 'bar',
           pagination: false,
           thumbnails: true,
           hover: false,
           opacityOnGrid: false
         });
-        $(".fancybox").fancybox();
+        $(".fancybox").fancybox({
+          maxWidth: 900,
+          openEffect: 'elastic'
+        });
       })
     </script>
   </head>
