@@ -1,13 +1,29 @@
 class VideosController < BaseController
   before_action :set_limit, only: [:index]
-  before_action :set_videos, only: [:fixed_wing, :helicopter, :fpv, :glider]
+  before_action :set_videos, :set_search_value, only: [:fixed_wing, :helicopter, :fpv, :glider]
+  before_action :set_video, only: [:update]
 
   def index
     set_categories
   end
 
-  def show
+  def create
+    redirect_to '/500' and return if !current_user.try(:admin?)
+    if Video.create(video_params)
+      redirect_to admin_videos_path
+    else
+      new_admin_video_path
+    end
+  end
 
+  def show
+  end
+
+  def update
+    video_params = { description: params[:description], url: params[:url] }
+    video_params.merge!(image: params[:image]) if params[:image].present?
+    @video.update video_params
+    redirect_to admin_videos_path
   end
 
   def fixed_wing
@@ -43,7 +59,17 @@ class VideosController < BaseController
     end
 
     def set_videos
-      @videos = Video.send(action_name.to_sym)
+      q = Video.send(action_name.to_sym).ransack(params[:q])
+      @videos = q.result(distinct: true).order("id desc")
+    end
+
+    def set_search_value
+      params[:q] ||= {}
+      @search = params[:q][:description_cont]
+    end
+
+    def video_params
+      params.require(:video).permit(:description, :url, :image, :category)
     end
 
 end

@@ -25,10 +25,13 @@
   <div class="nav">
     <ul>
       <li class="active">
-        <%= link_to '主页', root_url %>
+        <%= link_to '主页', root_path %>
       </li>
       <li><%= link_to '文章专区', articles_path %></li>
       <li><%= link_to '视频赏析', videos_path %></li>
+      <% if current_user.try(:admin?) %>
+        <li><%= link_to '后台管理', admin_index_path %></li>
+      <% end %>
       <li>
         <a href="#" class="rd-width-ul"><span>其他板块</span><span class="fa fa-chevron-down submenu-toggle"></span></a>
         <ul class="sub-nav">

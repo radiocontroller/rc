@@ -1,29 +1,23 @@
 <div class="video-edit-wrap">
 </div>
-<div class="page-nav">
-  <ul>
-    <li>后台管理</li>
-    <li><i class="fa fa-angle-right"></i></li>
-    <li>视频操作</li>
-  </ul>
-</div>
 
 <div class="videos-search">
   视频类别:
   <%= form_tag(admin_videos_path, method: :get) do %>
-    <%= select_tag 'q[category_eq]', options_for_select(@types, @search[:category]), include_blank: '全部' %>
+    <%= select_tag 'q[category_eq]', options_for_select(@categories, @search[:category]), include_blank: '全部' %>
     <%= text_field_tag 'q[description_cont]', @search[:description] %>
-    <%= submit_tag '搜索' %>
+    <%= submit_tag '搜索', class: 'cursor-pointer' %>
   <% end %>
 </div>
 
-<div class="video-items margin-left-20">
+<div class="video-items" style='margin-left: 20px;'>
   <% @videos.each do |video| %>
     <div class="video-item">
-      <a href="javascript:void(0)">
-        <%= image_tag('logo.jpg', class: 'item') %>
-      </a>
-      <h3 class="title"><%= video.description %></h3>
+      <div class="item">
+        <img src="<%= video.image.normal.url %>" class='item' />
+        <span class="thumb_overlay fa fa-play-circle-o"></span>
+        <h3 class="title"><%= video.description %></h3>
+      </div>
       <div class="fns">
         <%= link_to '编辑', 'javascript:void(0)', id: "js-video-#{video.id}", class: 'js-edit-video', data: {id: video.id, url: video.url, description: video.description} %>
         <%= link_to '删除', 'javascript:void(0)', class: 'js-delete-video', data: {id: video.id} %>
@@ -51,7 +45,7 @@
      confirmButtonColor: "#ec6c62"
      }, function() {
        $.ajax({
-         url: "/api/videos/"+ self.data('id'),
+         url: "/ajax/videos/"+ self.data('id'),
          type: "DELETE",
          dataType: 'script',
          function(){}
@@ -60,21 +54,15 @@
   }
 
   function editVideo() {
-    $('.video-edit-wrap').html('<%= j render "edit_window" %>');
-    $('#js-video-id').val($(this).data('id'));
+    $('.video-edit-wrap').html('<%= j render "edit" %>');
+    $('#js-update-video').data('id', $(this).data('id'));
     $('#js-video-url').val($(this).data('url'));
     $('#js-video-description').val($(this).data('description'));
     $('.video-edit-wrap').show();
   }
 
   function updateVideo() {
-    $.ajax({
-      url: "/api/videos/"+ $('#js-video-id').val(),
-      type: "PUT",
-      data: { description: $('#js-video-description').val(), url: $('#js-video-url').val() },
-      dataType: 'script',
-      function(){}
-    });
+    $('#videoForm').attr('action', '/videos/'+ $(this).data('id')).submit();
   }
 
   function hideFloatwindow() {
