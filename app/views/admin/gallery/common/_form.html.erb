@@ -1,0 +1,12 @@
+<div>
+  <h2>上传<%= @category %>图片</h2>
+  <%= form_for @picture, url: url do |f| %>
+    <div>
+      <p>
+        <%= f.label :resource, '图片' %>
+      </p>
+      <%= f.file_field :resource %>
+    </div>
+    <%= f.submit '上传' %>
+  <% end %>
+</div>

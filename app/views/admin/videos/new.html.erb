@@ -1,6 +1,6 @@
 <div class="video-create-wrap">
   <h2>新建视频</h2>
-  <%= form_for @video, url: videos_path do |f| %>
+  <%= form_for @video, url: admin_videos_path do |f| %>
     <div>
       <p>
         <%= f.label :url, '视频地址' %>
@@ -21,7 +21,7 @@
     </div>
     <div>
       <p>
-        <%= f.label :url, '视频分类' %>
+        <%= f.label :category, '视频分类' %>
       </p>
       <%= f.select :category, options_for_select(@categories) %>
     </div>

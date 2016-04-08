@@ -1,0 +1,12 @@
+<p><a href="/admin/gallery/helicopters/new">上传</a></p>
+<%= render 'admin/gallery/common/index' %>
+
+<script type="text/javascript">
+  $(function() {
+    $(document).on('click', '#js-update-gallery', updateGallery);
+  });
+
+  function updateGallery() {
+    $('#galleryForm').attr('action', '/admin/gallery/helicopters/'+ $(this).data('id')).submit();
+  }
+</script>

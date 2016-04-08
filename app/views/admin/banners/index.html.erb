@@ -1,0 +1,46 @@
+<div class="banner-edit-wrap">
+</div>
+<p><a href="/admin/banners/new">上传</a></p>
+<div class="admin-pictures">
+  <ul>
+    <% @banners.each do |banner| %>
+      <li>
+        <a href="<%= banner.resource.large.url %>" class="fancybox" rel="gallery1">
+          <img src="<%= banner.resource.medium.url %>" />
+          <span class="thumb_overlay"></span>
+        </a>
+        <div style='font-size: 12px'>
+          <% if banner.sort_id.present? %>
+            当前图片是首页顶部第<%= banner.sort_id %>张
+          <% else %>
+            <span class='js-sort cursor-pointer' data-id='<%= banner.id %>'>置顶</span>
+          <% end %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<script type="text/javascript">
+  $(function() {
+    $('.fancybox').fancybox();
+    $(document).on('click', '.js-sort', editBanner);
+    $(document).on('click', '#js-update-banner', updateBanner);
+    $(document).on('click', '#js-cancel', hideFloatwindow);
+  });
+
+  function editBanner() {
+    $('.banner-edit-wrap').html('<%= j render "sort" %>');
+    $('#js-update-banner').data('id', $(this).data('id'));
+    $('.banner-edit-wrap').show();
+  }
+
+  function updateBanner() {
+    $('#bannerForm').attr('action', '/admin/banners/'+ $(this).data('id')).submit();
+  }
+
+  function hideFloatwindow() {
+    $('.banner-edit-wrap').hide();
+    $('.banner-edit-wrap').html("");
+  }
+</script>
