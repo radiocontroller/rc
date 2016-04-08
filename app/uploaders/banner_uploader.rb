@@ -32,8 +32,12 @@ class BannerUploader < CarrierWave::Uploader::Base
   # end
 
   # Create different versions of your uploaded files:
-  version :normal do
+  version :large do
     process :resize_to_fit => [1920, 1030]
+  end
+
+  version :medium do
+    process :resize_to_fit => [270, 200]
   end
 
   version :small do

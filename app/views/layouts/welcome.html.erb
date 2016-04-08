@@ -27,12 +27,11 @@
   <body>
     <div class="main">
       <div class="camera_wrap" id="camera">
-        <div data-thumb="/images/logo.jpg" data-src="/images/top-0.jpg">
-        </div>
-        <div data-thumb="/images/logo.jpg" data-src="/images/top-0.jpg">
-        </div>
-        <div data-thumb="/images/logo.jpg" data-src="/images/top-0.jpg">
-        </div>
+        <% @banners.each do |banner| %>
+          <div data-thumb="<%= banner.resource.small.url %>"
+            data-src="<%= banner.resource.large.url %>">
+          </div>
+        <% end %>
       </div>
 
       <div class="banner">

@@ -19,3 +19,15 @@
   width: 100%;
   height: 100%;
 }
+
+.banner-sort-wrap{
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: transparent;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.4);
+}
