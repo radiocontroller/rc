@@ -3,5 +3,6 @@ class WelcomesController < BaseController
 
   def index
     @article = Article.homepage.first
+    @banners = BannerPicture.where.not(sort_id: nil)
   end
 end

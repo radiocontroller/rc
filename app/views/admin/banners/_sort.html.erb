@@ -1,0 +1,14 @@
+<div class="sweet-alert show-input showSweetAlert visible" data-animation="slide-from-top" style="display: block; margin-top: -256px;">
+  <h2>置顶图片</h2>
+  <%= form_tag('', method: :put, id: 'bannerForm') do %>
+    <select name="sort_id">
+      <% @limit.times do |i| %>
+        <option value='<%= i+1 %>'>置顶为第<%= i+1 %>张图片</option>
+      <% end %>
+    </select>
+  <% end %>
+  <div class="sa-button-container">
+    <button id='js-cancel' class="cancel" style="display: inline-block;">取消</button>
+    <button id='js-update-banner' class="confirm" style="display: inline-block; box-shadow: rgba(174, 222, 244, 0.8) 0px 0px 2px, rgba(0, 0, 0, 0.0470588) 0px 0px 0px 1px inset; background-color: rgb(174, 222, 244);">确定</button>
+  </div>
+</div>

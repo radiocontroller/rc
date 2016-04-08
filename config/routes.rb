@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :welcomes, only: [:index]
-  resources :videos, only: [:index, :show, :create, :update] do
+  resources :videos, only: [:index, :show] do
     collection do
       get 'fixed_wing', 'glider', 'helicopter', 'fpv'
     end
@@ -19,7 +19,8 @@ Rails.application.routes.draw do
   resources :admin, only: [:index]
 
   namespace :admin do
-    resources :videos, only: [:index, :new]
+    resources :videos, only: [:index, :new, :create, :update]
+    resources :banners, only: [:index, :new, :create, :update]
   end
 
   namespace :ajax do
