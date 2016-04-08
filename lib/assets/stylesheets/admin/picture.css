@@ -20,7 +20,7 @@
   height: 100%;
 }
 
-.banner-sort-wrap{
+.banner-sort-wrap, .gallery-sort-wrap{
   position: fixed;
   left: 0;
   top: 0;

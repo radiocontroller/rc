@@ -14,13 +14,17 @@ Rails.application.routes.draw do
     end
   end
   resources :articles, only: [:index]
-  resources :pictures
-
   resources :admin, only: [:index]
 
   namespace :admin do
     resources :videos, only: [:index, :new, :create, :update]
     resources :banners, only: [:index, :new, :create, :update]
+    namespace :gallery do
+      resources :fixed_wings, only: [:index, :new, :create, :update]
+      resources :gliders, only: [:index, :new, :create, :update]
+      resources :helicopters, only: [:index, :new, :create, :update]
+      resources :fpvs, only: [:index, :new, :create, :update]
+    end
   end
 
   namespace :ajax do
