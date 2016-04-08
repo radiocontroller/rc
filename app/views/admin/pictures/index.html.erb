@@ -1,7 +1,0 @@
-<div class="picture-search">
-  视频类别:
-  <%= form_tag(admin_pictures_path, method: :get) do %>
-    <%= select_tag 'q[category_eq]', options_for_select(@categories), include_blank: '全部' %>
-    <%= submit_tag '搜索', class: 'cursor-pointer' %>
-  <% end %>
-</div>

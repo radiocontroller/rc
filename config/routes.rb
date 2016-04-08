@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :videos, only: [:index, :new, :create, :update]
-    resources :pictures, only: [:index, :new, :create]
+    resources :banners, only: [:index]
   end
 
   namespace :ajax do

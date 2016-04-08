@@ -1,3 +1,21 @@
 .picture-search{
   margin-left: 20px;
 }
+
+.admin-pictures{
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.admin-pictures ul li{
+  width: 270px;
+  height: 200px;
+  float: left;
+  margin-right: 40px;
+  margin-bottom: 40px;
+}
+
+.admin-pictures ul li img{
+  width: 100%;
+  height: 100%;
+}
