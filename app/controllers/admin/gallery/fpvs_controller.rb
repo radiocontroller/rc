@@ -2,6 +2,7 @@ module Admin
   module Gallery
     class FpvsController < BaseController
       include GalleryAble
+      layout 'admin'
 
       def chinese_category
         '穿越机'
