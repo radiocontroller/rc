@@ -1,12 +1,1 @@
-<div>
-  <h2>上传首页滑翔机图片</h2>
-  <%= form_for @picture, url: admin_gallery_gliders_path do |f| %>
-    <div>
-      <p>
-        <%= f.label :resource, '图片' %>
-      </p>
-      <%= f.file_field :resource %>
-    </div>
-    <%= f.submit '上传' %>
-  <% end %>
-</div>
+<%= render 'admin/gallery/common/form', url: admin_gallery_gliders_path %>
