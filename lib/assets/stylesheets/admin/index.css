@@ -2,5 +2,6 @@
 *= require admin/left_sidebar
 *= require admin/content
 *= require admin/video
+*= require admin/picture
 *= require_self
 */

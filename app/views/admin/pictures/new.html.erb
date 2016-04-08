@@ -1,0 +1,24 @@
+<div class="picture-create-wrap">
+  <h2>上传图片</h2>
+  <%= form_for @picture, url: pictures_path do |f| %>
+    <div>
+      <p>
+        <%= f.label :description, '图片描述' %>
+      </p>
+      <%= f.text_field :description %>
+    </div>
+    <div>
+      <p>
+        <%= f.label :resource, '图片地址' %>
+      </p>
+      <%= f.file_field :resouce %>
+    </div>
+    <div>
+      <p>
+        <%= f.label :category, '图片分类' %>
+      </p>
+      <%= f.select :category, options_for_select(@categories) %>
+    </div>
+    <%= f.submit '上传' %>
+  <% end %>
+</div>
