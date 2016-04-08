@@ -32,12 +32,10 @@ class GalleryUploader < CarrierWave::Uploader::Base
   # end
 
   # Create different versions of your uploaded files:
-  version :large do
-    process :resize_to_fit => [900, 500]
-  end
+  process resize_to_fit: [900, 600]
 
   version :small do
-    process :resize_to_fit => [270, 270]
+    process :resize_to_fit => [450, 300]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

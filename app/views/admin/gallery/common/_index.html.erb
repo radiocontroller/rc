@@ -2,7 +2,7 @@
   <ul>
     <% @pictures.each do |picture| %>
       <li>
-        <a href="<%= picture.resource.large.url %>" class="fancybox" rel="gallery1">
+        <a href="<%= picture.resource.url %>" class="fancybox" rel="gallery1">
           <img src="<%= picture.resource.small.url %>" />
           <span class="thumb_overlay"></span>
         </a>
@@ -18,6 +18,9 @@
   </ul>
 </div>
 <div class="gallery-edit-wrap">
+</div>
+<div class='paginate'>
+  <%= will_paginate @pictures %>
 </div>
 
 <script type="text/javascript">
