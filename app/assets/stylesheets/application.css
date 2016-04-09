@@ -18,9 +18,9 @@
  *= require admin
  *= require article/article
  *= require comment/comment
- *= require alert/sweetalert
+ *= require sweetalert/sweetalert
  *= require fancybox/jquery.fancybox
  *= require camera/camera
+ *= require trumbowyg/trumbowyg
  *= require_self
- *= require_tree .
  */
