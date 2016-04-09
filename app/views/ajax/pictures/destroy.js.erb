@@ -1,0 +1,7 @@
+<% if @picture.destroyed? %>
+  <% @picture.resource.remove! %>
+  $("#picture-<%= @picture.id %>").remove();
+  swal("操作成功!", "成功删除图片！", "success");
+<% else %>
+  swal("操作失败!", "删除图片失败!", "error");
+<% end %>

@@ -4,7 +4,7 @@ module Admin
     before_action :set_limit, only: [:index]
 
     def index
-      @banners = BannerPicture.order('sort_id asc')
+      @banners = BannerPicture.order('sort_id asc').page(params[:page] || 1).per_page(page_num)
     end
 
     def new
@@ -36,7 +36,12 @@ module Admin
       end
 
       def set_limit
-        @limit = 4
+        @limit = 3
       end
+
+      def page_num
+        12
+      end
+
   end
 end
