@@ -3,6 +3,7 @@ class WelcomesController < BaseController
 
   def index
     @article = Article.homepage.first
+    @video = Video.normal.homepage
     @banners = BannerPicture.sorted
     @fixed_wings = GalleryPicture.fixed_wing.sorted
     @gliders = GalleryPicture.glider.sorted

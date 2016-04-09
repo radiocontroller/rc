@@ -7,6 +7,8 @@ class Video < ActiveRecord::Base
 
   scope :normal, ->{ where(deleted: false) }
 
+  scope :homepage, -> { where(is_homepage: true).first }
+
   validates :description, :url, presence: true
 
   CATEGORIES = {
@@ -29,6 +31,16 @@ class Video < ActiveRecord::Base
 
   def deleted?
     deleted
+  end
+
+  def homepage!
+    previous = Video.find_by(is_homepage: true)
+    previous.update(is_homepage: false) if previous.present?
+    self.update(is_homepage: true)
+  end
+
+  def homepage?
+    is_homepage.present?
   end
 
 end
