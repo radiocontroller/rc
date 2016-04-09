@@ -22,4 +22,5 @@
  *= require fancybox/jquery.fancybox
  *= require camera/camera
  *= require_self
+ *= require_tree .
  */

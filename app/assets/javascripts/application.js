@@ -12,4 +12,15 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require reload_captcha
+//= require sidebar
+//= require sweetalert/sweetalert-dev
+//= require sweetalert/sweetalert.min
+//= require camera/camera.min
+//= require camera/jquery.easing.1.3
+//= require camera/jquery-migrate-1.2.1.min
+//= require trumbowyg/trumbowyg
+//= require trumbowyg/trumbowyg.base64
+//= require trumbowyg/trumbowyg.upload
+//= require fancybox/jquery.fancybox
+//= require fancybox/jquery.mousewheel.pack
