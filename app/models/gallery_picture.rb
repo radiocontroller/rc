@@ -3,4 +3,6 @@ class GalleryPicture < Picture
 
   enum category: [:fixed_wing, :glider, :helicopter, :fpv]
 
+  scope :sorted, -> { where.not(sort_id: nil).order('sort_id asc') }
+
 end

@@ -66,3 +66,5 @@ gem 'sinatra', '>= 1.3.0', :require => nil
 gem 'rucaptcha'
 
 gem 'font-awesome-rails'
+
+gem 'will_paginate', '~> 3.0.6'

@@ -29,6 +29,7 @@ Rails.application.routes.draw do
 
   namespace :ajax do
     resources :videos, only: [:destroy]
+    resources :pictures, only: [:destroy]
   end
 
 end

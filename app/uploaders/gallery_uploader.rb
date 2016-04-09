@@ -32,13 +32,19 @@ class GalleryUploader < CarrierWave::Uploader::Base
   # end
 
   # Create different versions of your uploaded files:
-  version :large do
-    process :resize_to_fit => [270, 270]
-  end
+  process resize_to_fit: [900, 600]
 
   version :small do
-    process :resize_to_fit => [270, 200]
+    process :crop
   end
+
+  def crop
+    manipulate! do |image|
+      crop_params = "450x300+#{(image.width-450)/2}+#{(image.height-300)/2}"
+      image.crop(crop_params)
+      image
+    end
+end
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:

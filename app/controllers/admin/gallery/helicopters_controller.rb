@@ -2,6 +2,7 @@ module Admin
   module Gallery
     class HelicoptersController < BaseController
       include GalleryAble
+      layout 'admin'
 
       def chinese_category
         '直升机'

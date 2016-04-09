@@ -2,6 +2,7 @@ module Admin
   module Gallery
     class GlidersController < BaseController
       include GalleryAble
+      layout 'admin'
 
       def chinese_category
         '滑翔机'

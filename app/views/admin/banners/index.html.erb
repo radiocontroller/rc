@@ -1,6 +1,12 @@
 <div class="banner-edit-wrap">
 </div>
-<p><a href="/admin/banners/new">上传</a></p>
+<div>
+  <a href="/admin/banners/new">
+    <button type="button" class='upload-btn'>
+      上传图片
+    </button>
+  </a>
+</div>
 <div class="admin-pictures">
   <ul>
     <% @banners.each do |banner| %>
@@ -20,7 +26,9 @@
     <% end %>
   </ul>
 </div>
-
+<div class='paginate'>
+  <%= will_paginate @banners %>
+</div>
 <script type="text/javascript">
   $(function() {
     $('.fancybox').fancybox();

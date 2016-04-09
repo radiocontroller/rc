@@ -1,17 +1,18 @@
 <div class="admin-pictures">
   <ul>
     <% @pictures.each do |picture| %>
-      <li>
-        <a href="<%= picture.resource.large.url %>" class="fancybox" rel="gallery1">
+      <li id="picture-<%= picture.id %>">
+        <a href="<%= picture.resource.url %>" class="fancybox" rel="gallery1">
           <img src="<%= picture.resource.small.url %>" />
           <span class="thumb_overlay"></span>
         </a>
-        <div style='font-size: 12px'>
+        <div class='picture-operation'>
           <% if picture.sort_id.present? %>
             当前图片是首页<%= @category %>第<%= picture.sort_id %>张
           <% else %>
             <span class='js-sort cursor-pointer' data-id='<%= picture.id %>'>置顶</span>
           <% end %>
+          <span><%= link_to '删除', 'javascript:void(0)', class: 'js-delete-picture', data: {id: picture.id} %></span>
         </div>
       </li>
     <% end %>
@@ -19,11 +20,15 @@
 </div>
 <div class="gallery-edit-wrap">
 </div>
+<div class='paginate'>
+  <%= will_paginate @pictures %>
+</div>
 
 <script type="text/javascript">
   $(function() {
     $('.fancybox').fancybox();
     $(document).on('click', '.js-sort', editGallery);
+    $(document).on('click', '.js-delete-picture', deletePicture);
     $(document).on('click', '#js-cancel', hideFloatwindow);
   });
 
@@ -31,6 +36,25 @@
     $('.gallery-edit-wrap').html('<%= j render "admin/gallery/common/to_top" %>');
     $('#js-update-gallery').data('id', $(this).data('id'));
     $('.gallery-edit-wrap').show();
+  }
+
+  function deletePicture() {
+    var self = $(this);
+    swal({
+     title: "您确定要删除吗？",
+     type: "warning",
+     showCancelButton: true,
+     closeOnConfirm: false,
+     confirmButtonText: "是的，强行删除",
+     confirmButtonColor: "#ec6c62"
+     }, function() {
+       $.ajax({
+         url: "/ajax/pictures/"+ self.data('id'),
+         type: "DELETE",
+         dataType: 'script',
+         function(){}
+       })
+     });
   }
 
   function hideFloatwindow() {

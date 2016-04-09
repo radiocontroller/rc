@@ -7,7 +7,7 @@ module GalleryAble
   end
 
   def index
-    @pictures = pictures.order('sort_id asc')
+    @pictures = pictures.order('sort_id asc').page(params[:page] || 1).per_page(page_num)
     set_category
   end
 
@@ -51,6 +51,10 @@ module GalleryAble
 
     def set_category
       @category = chinese_category
+    end
+
+    def page_num
+      12
     end
 
 end
