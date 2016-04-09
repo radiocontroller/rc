@@ -49,3 +49,20 @@
   text-align: center;
   margin-top: 50px;
 }
+
+.picture-operation, .picture-operation a{
+  font-size: 12px;
+  color: #5E5E5E;
+}
+
+.picture-operation span{
+  cursor: pointer;
+}
+
+.picture-operation span:hover{
+  color: red;
+}
+
+.picture-operation span:last-child{
+  float: right;
+}

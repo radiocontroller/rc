@@ -5,6 +5,7 @@ class CreateArticles < ActiveRecord::Migration
       t.text :content
       t.integer :type_id
       t.json :images
+      t.integer :user_id
       t.timestamps null: false
     end
   end
