@@ -2,8 +2,10 @@
   <h2>今日视频</h2>
   <div class="video-item">
     <div class="item">
-      <img src="<%= @video.image.normal.url %>" />
-      <span class="thumb_overlay fa fa-play-circle-o"></span>
+      <a href="/videos/<%= @video.id %>">
+        <img src="<%= @video.image.normal.url %>" class='item' />
+        <span class="thumb_overlay fa fa-play-circle-o"></span>
+      </a>
       <h3 class="title"><%= @video.description %></h3>
     </div>
 </div>
