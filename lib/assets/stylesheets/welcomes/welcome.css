@@ -246,13 +246,14 @@ h2,h3{
   position: fixed;
   top: 70px;
   right: 90px;
-  width:60px;
+  width: 60px;
   height: 60px;
   color: #313131;
   display: flex;
   align-items: center;
   justify-content: center;
   background: #000;
+  z-index: 1000;
 }
 
 .setting:hover{

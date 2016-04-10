@@ -1161,7 +1161,7 @@ $.trumbowyg = {
 
 $(function(){
     $.trumbowyg.btnsGrps.test = ['bold','italic','underline','link'];
-    $('#customized-buttonpane').trumbowyg({
+    $('#editor').trumbowyg({
         lang: 'zh_cn',
         closable: false,
         fixedBtnPane: false,
