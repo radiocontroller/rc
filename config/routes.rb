@@ -16,6 +16,10 @@ Rails.application.routes.draw do
   resources :articles, only: [:index]
   resources :admin, only: [:index]
 
+  namespace :upload do
+    resources :images, only: [:create]
+  end
+
   namespace :admin do
     resources :articles, only: [:new, :create]
     resources :videos, only: [:index, :new, :create, :update] do
