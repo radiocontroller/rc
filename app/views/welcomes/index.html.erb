@@ -4,17 +4,7 @@
   <p>新年好问勤联系，远离人群勿炫耀。天下模友一家人，共建美好新生活。</p>
 </div>
 
-<div class="classic-fighter">
-  <h2>经典战机</h2>
-  <ul>
-    <% [].each do |fighter_plane| %>
-      <li>
-        <h2><%= fighter_plane.title %></h2>
-        <p><%=  fighter_plane.content %></p>
-      </li>
-    <% end %>
-  </ul>
-</div>
+<%= render 'battle_planes' %>
 
 <%= render 'gallery' %>
 

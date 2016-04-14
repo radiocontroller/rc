@@ -32,7 +32,7 @@ class Video < ActiveRecord::Base
   end
 
   def homepage!
-    previous = Video.find_by(is_homepage: true)
+    previous = Video.normal.homepage
     previous.update(is_homepage: false) if previous.present?
     self.update(is_homepage: true)
   end

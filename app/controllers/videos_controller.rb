@@ -33,7 +33,7 @@ class VideosController < BaseController
                   {
                     chinese: chinese,
                     english: english,
-                    videos: Video.normal.send(english.to_sym).order('id desc').limit(@limit)
+                    videos: Video.normal.send(english).order('id desc').limit(@limit)
                   }
                end
     end
