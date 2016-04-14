@@ -1,6 +1,6 @@
 /*
+*= require admin/base
 *= require admin/left_sidebar
-*= require admin/content
 *= require admin/video
 *= require admin/page_nav
 *= require admin/picture

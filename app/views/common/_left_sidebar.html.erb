@@ -12,8 +12,8 @@
     <div class="left-sidebar-detail">
       <ul>
     		<li><%= link_to '首页', root_path %></li>
-    		<li>管理设置</li>
-        <li>导航菜单</li>
+    		<!-- <li>管理设置</li>
+        <li>导航菜单</li> -->
       </ul>
     </div>
     <div class="left-sidebar-title">
@@ -21,9 +21,9 @@
     </div>
     <div class="left-sidebar-detail">
       <ul>
-    		<li>管理文章</li>
-    		<li>文章分类</li>
-        <li>添加文章</li>
+    		<!-- <li>管理文章</li>
+    		<li>文章分类</li> -->
+        <a href="/admin/articles/new"><li>添加文章</li></a>
       </ul>
     </div>
     <div class="left-sidebar-title">
@@ -44,6 +44,7 @@
     <div class="left-sidebar-detail">
       <ul>
         <a href="/admin/videos"><li>所有视频</li></a>
+        <a href="/admin/videos/homepage"><li>今日视频</li></a>
         <a href="/admin/videos/new"><li>新建视频</li></a>
       </ul>
     </div>

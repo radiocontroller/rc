@@ -1,0 +1,20 @@
+<div style='margin-left: 20px'>
+  <p>
+    文章标题
+  </p>
+  <input type="text" name="title">
+  <p>
+    文章内容
+  </p>
+  <div id="editor">
+
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(function() {
+    var editor = new wangEditor('editor');
+    editor.config.uploadImgUrl = '/upload/images'
+    editor.create();
+  });
+</script>

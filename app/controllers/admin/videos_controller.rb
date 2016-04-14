@@ -9,6 +9,10 @@ module Admin
       @categories = Video::ID_CATEGORIES.invert.to_a
     end
 
+    def homepage
+      @video = Video.normal.homepage
+    end
+
     def new
       @video = Video.new
       @categories = Video::CATEGORIES.invert.to_a

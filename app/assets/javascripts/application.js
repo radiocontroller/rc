@@ -10,6 +10,15 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
+//= require jquery/jquery-1.10.2.min
 //= require jquery_ujs
-//= require_tree .
+//= require reload_captcha
+//= require sidebar
+//= require sweetalert/sweetalert-dev
+//= require sweetalert/sweetalert.min
+//= require camera/camera.min
+//= require camera/jquery.easing.1.3
+//= require camera/jquery-migrate-1.2.1.min
+//= require fancybox/jquery.fancybox
+//= require fancybox/jquery.mousewheel.pack
+//= require editor/wangEditor.min

@@ -1,0 +1,11 @@
+<div style='margin: 10px 0px 0px 20px'>
+  <h2>今日视频</h2>
+  <div class="video-item">
+    <div class="item">
+      <a href="/videos/<%= @video.id %>">
+        <img src="<%= @video.image.normal.url %>" class='item' />
+        <span class="thumb_overlay fa fa-play-circle-o"></span>
+      </a>
+      <h3 class="title"><%= @video.description %></h3>
+    </div>
+</div>

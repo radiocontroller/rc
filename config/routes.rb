@@ -16,8 +16,17 @@ Rails.application.routes.draw do
   resources :articles, only: [:index]
   resources :admin, only: [:index]
 
+  namespace :upload do
+    resources :images, only: [:create]
+  end
+
   namespace :admin do
-    resources :videos, only: [:index, :new, :create, :update]
+    resources :articles, only: [:new, :create]
+    resources :videos, only: [:index, :new, :create, :update] do
+      collection do
+        get 'homepage'
+      end
+    end
     resources :banners, only: [:index, :new, :create, :update]
     namespace :gallery do
       resources :fixed_wings, only: [:index, :new, :create, :update]
@@ -28,7 +37,7 @@ Rails.application.routes.draw do
   end
 
   namespace :ajax do
-    resources :videos, only: [:destroy]
+    resources :videos, only: [:destroy, :update]
     resources :pictures, only: [:destroy]
   end
 
