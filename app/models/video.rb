@@ -1,15 +1,13 @@
 class Video < ActiveRecord::Base
   mount_uploader :image, VideoImageUploader
 
-  enum category: [:fixed_wing, :glider, :helicopter, :fpv]
-
-  scope :videos_by, ->(type_id){ where(type_id: type_id) }
-
   scope :normal, ->{ where(deleted: false) }
 
-  scope :homepage, -> { where(is_homepage: true).first }
+  scope :homepage, -> { find_by(is_homepage: true) }
 
   validates :description, :url, presence: true
+
+  enum category: [:fixed_wing, :glider, :helicopter, :fpv]
 
   CATEGORIES = {
     'fixed_wing': '固定翼',

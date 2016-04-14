@@ -64,6 +64,7 @@ h2,h3{
   width: 330px;
   display: inline-block;
   padding-right: 79px;
+  vertical-align: top;
 }
 
 .classic-fighter ul li:last-child{
