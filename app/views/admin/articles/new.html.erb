@@ -1,24 +1,20 @@
-<%= form_tag(admin_articles_path, method: :post, id: 'articleForm') do %>
-  <div style='margin-left: 20px'>
-    <p>
-      文章标题
-    </p>
-    <input type="text" name="title">
-    <p>
-      文章内容
-    </p>
+<div style='margin-left: 20px'>
+  <p>
+    文章标题
+  </p>
+  <input type="text" name="title">
+  <p>
+    文章内容
+  </p>
+  <div id="editor">
+
   </div>
-  <input type="textarea" name="content" id='js-article-content'>
-  <div onmousedown="show_element(event)" style="clear:both" id="editor" class="editor"></div>
-  <%= submit_tag '上传' %>
-<% end %>
-<button type="button" name="button" id='btn'>查看html</button>
-<%= render 'picture_operation' %>
+</div>
 
 <script type="text/javascript">
   $(function() {
-    $('#btn').click(function() {
-      console.log($('#editor').html());
-    })
+    var editor = new wangEditor('editor');
+    editor.config.uploadImgUrl = '/article_images'
+    editor.create();
   });
 </script>

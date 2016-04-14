@@ -21,6 +21,6 @@
  *= require sweetalert/sweetalert
  *= require fancybox/jquery.fancybox
  *= require camera/camera
- *= require trumbowyg/trumbowyg
+ *= require editor/wangEditor.min
  *= require_self
  */
