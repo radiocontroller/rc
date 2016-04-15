@@ -74,8 +74,8 @@
 }
 
 .guide-reading .item .date{
-  color: #999;
-  margin-left: 30px;
+  color: #000;
+  margin-left: 6px;
 }
 
 .article-title{
@@ -86,9 +86,15 @@
   padding: 16px 0;
 }
 
-.guide-reading .item .img img{
-  width:213px;
+.guide-reading .item .img{
+  width: 213px;
   height: 126px;
+  overflow: hidden;
+}
+
+.guide-reading .item .img img{
+  max-width: 213px;
+  max-height: 126px;
   border-radius: 7px;
 }
 

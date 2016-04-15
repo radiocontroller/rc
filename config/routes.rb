@@ -13,7 +13,7 @@ Rails.application.routes.draw do
       get 'fixed_wing', 'glider', 'helicopter', 'fpv'
     end
   end
-  resources :articles, only: [:index]
+  resources :articles, only: [:index, :show]
   resources :admin, only: [:index]
 
   namespace :upload do

@@ -1,3 +1,3 @@
 class Article < ActiveRecord::Base
-  enum category: [:homepage]
+  scope :homepage, -> { find_by(is_homepage: true) }
 end
