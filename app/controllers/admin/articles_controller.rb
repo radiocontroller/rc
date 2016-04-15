@@ -3,11 +3,11 @@ module Admin
     layout 'admin'
 
     def new
-
     end
 
     def create
-      binding.pry
+      Article.create(title: params[:title], content: params[:content])
+      redirect_to new_admin_article_path
     end
 
   end

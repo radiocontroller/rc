@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   resources :admin, only: [:index]
 
   namespace :upload do
-    resources :images, only: [:create]
+    resources :pictures, only: [:create]
   end
 
   namespace :admin do
