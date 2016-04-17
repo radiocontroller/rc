@@ -213,12 +213,12 @@ h2,h3{
   border-bottom: 2px solid red;
 }
 
-.video{
+.video-homepage{
   padding: 0 0 228px;
   text-align: center;
 }
 
-.video h2{
+.video-homepage h2{
   margin-bottom: 85px;
   font-size: 36px;
   font-weight: bold;

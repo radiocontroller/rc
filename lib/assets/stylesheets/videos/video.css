@@ -152,3 +152,8 @@
 .more-video a i{
   color: #FF3D53;
 }
+
+.video{
+  height: 500px;
+  margin-bottom: 30px;
+}
