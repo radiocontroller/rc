@@ -34,11 +34,13 @@ Rails.application.routes.draw do
       resources :helicopters, only: [:index, :new, :create, :update]
       resources :fpvs, only: [:index, :new, :create, :update]
     end
+    resources :battle_planes, only: [:index]
   end
 
   namespace :ajax do
     resources :videos, only: [:destroy, :update]
     resources :pictures, only: [:destroy]
+    resources :battle_planes, only: [:update]
   end
 
 end

@@ -4,5 +4,6 @@
 *= require admin/video
 *= require admin/page_nav
 *= require admin/picture
+*= require admin/battle_plane
 *= require_self
 */

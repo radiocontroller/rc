@@ -1,0 +1,43 @@
+<div class="battle-planes">
+  <ul>
+    <% @planes.each do |plane| %>
+      <li id='battleplane-<%= plane.id %>' data-id='<%= plane.id %>'>
+        <h2><%= plane.title %></h2>
+        <span><i class="fa fa-pencil"></i></span>
+        <p><%= plane.content %></p>
+      </li>
+    <% end %>
+  </ul>
+</div>
+<div id='operate-wrap'>
+</div>
+<input type="hidden" id='battleplane-id'>
+
+<script type="text/javascript">
+  $(function() {
+    $(document).on('click', '#js-cancel', cancelOperate);
+    $(document).on('click', '#js-edit', editBattlePlane);
+    $(document).on('click', '#js-update', updateBattlePlane);
+    $('.battle-planes ul li span').on('click', showOperations);
+  });
+
+  function showOperations() {
+    $('#operate-wrap').html('<%= j render "operations" %>');
+    $('#battleplane-id').val($(this).parent().data('id'));
+  }
+
+  function cancelOperate() {
+    $('#operate-wrap').html('');
+  }
+
+  function editBattlePlane() {
+    $('#operate-wrap').html('<%= j render "edit" %>');
+    var battleplaneLi = $('#battleplane-'+$('#battleplane-id').val());
+    $('#js-title').val(battleplaneLi.find('h2').html());
+    $('#js-content').val(battleplaneLi.find('p').html());
+  }
+
+  function updateBattlePlane() {
+    $('#battleplaneForm').attr('action', '/ajax/battle_planes/'+ $('#battleplane-id').val()).submit();
+  }
+</script>
