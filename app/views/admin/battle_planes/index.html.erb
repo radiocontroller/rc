@@ -3,8 +3,11 @@
     <% @planes.each do |plane| %>
       <li id='battleplane-<%= plane.id %>' data-id='<%= plane.id %>'>
         <h2><%= plane.title %></h2>
-        <span><i class="fa fa-pencil"></i></span>
+        <i class="fa fa-pencil"></i>
         <p><%= plane.content %></p>
+        <% if plane.sort_id.present? %>
+          <span>当前战机简介是首页第<%= plane.sort_id %>篇</span>
+        <% end %>
       </li>
     <% end %>
   </ul>
@@ -18,7 +21,9 @@
     $(document).on('click', '#js-cancel', cancelOperate);
     $(document).on('click', '#js-edit', editBattlePlane);
     $(document).on('click', '#js-update', updateBattlePlane);
-    $('.battle-planes ul li span').on('click', showOperations);
+    $(document).on('click', '#js-edit-order', editBattlePlaneOrder);
+    $(document).on('click', '#js-sort', sortBattlePlane);
+    $('.battle-planes ul li i').on('click', showOperations);
   });
 
   function showOperations() {
@@ -39,5 +44,13 @@
 
   function updateBattlePlane() {
     $('#battleplaneForm').attr('action', '/ajax/battle_planes/'+ $('#battleplane-id').val()).submit();
+  }
+
+  function editBattlePlaneOrder() {
+    $('#operate-wrap').html('<%= j render "sort" %>');
+  }
+
+  function sortBattlePlane() {
+    $('#sortForm').attr('action', '/admin/battle_planes/'+$('#battleplane-id').val()+'/sort').submit();
   }
 </script>

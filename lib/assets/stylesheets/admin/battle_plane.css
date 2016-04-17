@@ -10,7 +10,7 @@
   margin-bottom: 20px;
 }
 
-.battle-planes ul li span{
+.battle-planes ul li i{
   margin-left: 15px;
   cursor: pointer;
 }
@@ -27,4 +27,8 @@
   font-size: 16px;
   line-height: 25px;
   text-align: left;
+}
+
+.battle-planes ul li span{
+  font-size: 12px;
 }

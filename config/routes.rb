@@ -23,9 +23,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :articles, only: [:new, :create]
     resources :videos, only: [:index, :new, :create, :update] do
-      collection do
-        get 'homepage'
-      end
+      collection { get 'homepage' }
     end
     resources :banners, only: [:index, :new, :create, :update]
     namespace :gallery do
@@ -34,7 +32,9 @@ Rails.application.routes.draw do
       resources :helicopters, only: [:index, :new, :create, :update]
       resources :fpvs, only: [:index, :new, :create, :update]
     end
-    resources :battle_planes, only: [:index]
+    resources :battle_planes, only: [:index] do
+      member { put 'sort' }
+    end
   end
 
   namespace :ajax do
