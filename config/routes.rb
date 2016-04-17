@@ -32,7 +32,7 @@ Rails.application.routes.draw do
       resources :helicopters, only: [:index, :new, :create, :update]
       resources :fpvs, only: [:index, :new, :create, :update]
     end
-    resources :battle_planes, only: [:index, :update]
+    resources :battle_planes, only: [:index, :update, :new, :create]
   end
 
   namespace :ajax do

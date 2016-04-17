@@ -1,0 +1,17 @@
+<h2>新建战机</h2>
+<%= form_for @plane, url: admin_battle_planes_path do |f| %>
+  <p>
+    战机名称
+  </p>
+  <%= f.text_field :title %>
+  <p>
+    战机简介
+  </p>
+  <%= f.text_area :content %>
+  <select name="battle_plane[sort_id]">
+    <% @limit.times do |i| %>
+      <option value='<%= i+1 %>'>首页第<%= i+1 %>篇</option>
+    <% end %>
+  </select>
+  <%= f.submit '新建' %>
+<% end %>

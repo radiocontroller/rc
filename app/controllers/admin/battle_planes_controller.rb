@@ -1,10 +1,26 @@
 module Admin
   class BattlePlanesController < BaseController
     layout 'admin'
+    before_action :set_limit, only: [:index, :new]
 
     def index
       @planes = BattlePlane.order('sort_id asc')
-      @limit = 3
+    end
+
+    def new
+      @plane = BattlePlane.new
+    end
+
+    def create
+      plane = BattlePlane.new(battle_plane_params)
+      if plane.save
+        previous = BattlePlane.find_by(battle_plane_params.except(:title, :content))
+        previous.update(sort_id: nil) if previous.present?
+        redirect_to admin_battle_planes_path
+      else
+        @plane = BattlePlane.new
+        render :new
+      end
     end
 
     def update
@@ -14,5 +30,16 @@ module Admin
       @plane.update(sort_id: params[:sort_id])
       redirect_to admin_battle_planes_path
     end
+
+    private
+
+      def battle_plane_params
+        params.require(:battle_plane).permit(:title, :content, :sort_id)
+      end
+
+      def set_limit
+        @limit = 3
+      end
+
   end
 end
