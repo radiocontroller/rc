@@ -23,8 +23,7 @@ module Admin
 
     def update
       banner = BannerPicture.find(params[:id])
-      previous = BannerPicture.find_by(sort_id: params[:sort_id])
-      previous.update(sort_id: nil) if previous.present?
+      BannerPicture.find_by(sort_id: params[:sort_id]).try(:empty_order!)
       banner.update(sort_id: params[:sort_id])
       redirect_to admin_banners_path
     end

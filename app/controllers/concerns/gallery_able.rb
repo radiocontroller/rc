@@ -28,10 +28,8 @@ module GalleryAble
   end
 
   def update
-    previous = pictures.find_by(sort_id: params[:sort_id])
-    previous.update(sort_id: nil) if previous.present?
-    current = pictures.find(params[:id])
-    current.update(sort_id: params[:sort_id])
+    pictures.find_by(sort_id: params[:sort_id]).try(:empty_order!)
+    pictures.find(params[:id]).update(sort_id: params[:sort_id])
     redirect_to send("admin_gallery_#{english_category.pluralize}_path")
   end
 

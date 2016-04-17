@@ -13,9 +13,9 @@ module Admin
 
     def create
       plane = BattlePlane.new(battle_plane_params)
+      previous = BattlePlane.find_by(battle_plane_params.except(:title, :content))
       if plane.save
-        previous = BattlePlane.find_by(battle_plane_params.except(:title, :content))
-        previous.update(sort_id: nil) if previous.present?
+        previous.try(:empty_order!)
         redirect_to admin_battle_planes_path
       else
         @plane = BattlePlane.new
@@ -25,8 +25,7 @@ module Admin
 
     def update
       @plane = BattlePlane.find(params[:id])
-      previous = BattlePlane.find_by(sort_id: params[:sort_id])
-      previous.update(sort_id: nil) if previous.present?
+      BattlePlane.find_by(sort_id: params[:sort_id]).try(:empty_order!)
       @plane.update(sort_id: params[:sort_id])
       redirect_to admin_battle_planes_path
     end

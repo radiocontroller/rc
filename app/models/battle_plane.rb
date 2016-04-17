@@ -3,4 +3,8 @@ class BattlePlane < ActiveRecord::Base
   validates :title, uniqueness: true
 
   scope :sorted, -> { where.not(sort_id: nil).order('sort_id asc') }
+
+  def empty_order!
+    update(sort_id: nil)
+  end
 end
