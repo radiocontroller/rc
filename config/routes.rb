@@ -32,9 +32,7 @@ Rails.application.routes.draw do
       resources :helicopters, only: [:index, :new, :create, :update]
       resources :fpvs, only: [:index, :new, :create, :update]
     end
-    resources :battle_planes, only: [:index] do
-      member { put 'sort' }
-    end
+    resources :battle_planes, only: [:index, :update]
   end
 
   namespace :ajax do

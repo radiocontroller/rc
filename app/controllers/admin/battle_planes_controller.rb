@@ -7,7 +7,7 @@ module Admin
       @limit = 3
     end
 
-    def sort
+    def update
       @plane = BattlePlane.find(params[:id])
       previous = BattlePlane.find_by(sort_id: params[:sort_id])
       previous.update(sort_id: nil) if previous.present?
