@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160414102317) do
+ActiveRecord::Schema.define(version: 20160415120030) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,9 +22,10 @@ ActiveRecord::Schema.define(version: 20160414102317) do
     t.integer  "type_id"
     t.json     "images"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.integer  "category"
+    t.boolean  "is_homepage", default: false
   end
 
   create_table "battle_planes", force: :cascade do |t|

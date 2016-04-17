@@ -1,4 +1,3 @@
-<div class="content">
 <div class="guide-reading">
   <div class="title">
     <h2>精选导读</h2>
@@ -9,36 +8,22 @@
   </div>
 
   <div class="items">
-    <div class="item">
-      <div class="text">
-        <a href="#" class="username">心有猛虎，细嗅蔷薇</a>
-        <span class="date">2016-03-08</span>
-        <a class="article-title" href="show.html">如何分辨柴犬与秋田犬</a>
-        <p class="operation">
-          <a href="#" class="fa fa-thumbs-o-up ">366</a>
-          <a href="#" class="fa fa-star-o">366</a>
-          <a href="#" class="fa fa-twitch ">18</a>
-        </p>
+    <% @articles.each do |article| %>
+      <div class="item">
+        <div class="text">
+          <a href="#" class="username">心有猛虎，细嗅蔷薇</a>
+          <span class="date">2016-03-08</span>
+          <a class="article-title" href="/articles/<%= article.id %>"><%= article.title %></a>
+          <p class="operation">
+            <a href="#" class="fa fa-thumbs-o-up">366</a>
+            <a href="#" class="fa fa-star-o">366</a>
+            <a href="#" class="fa fa-twitch ">18</a>
+          </p>
+        </div>
+        <div class="img">
+          <%= article.content[/\<img(.*?)\>/].html_safe %>
+        </div>
       </div>
-      <div class="img">
-        <img src="../../img/plane_01.jpg" alt="">
-      </div>
-    </div>
-
-    <div class="item">
-      <div class="text">
-        <a href="#" class="username">心有猛虎，细嗅蔷薇</a>
-        <span class="date">2016-03-08</span>
-        <h2 class="article-title">如何分辨柴犬与秋田犬</h2>
-        <p class="operation">
-          <a href="#" class="fa fa-thumbs-o-up ">366</a>
-          <a href="#" class="fa fa-star-o">366</a>
-          <a href="#" class="fa fa-twitch ">18</a>
-        </p>
-      </div>
-      <div class="img">
-        <img src="../../img/plane_01.jpg" alt="">
-      </div>
-    </div>
+    <% end %>
   </div>
 </div>

@@ -254,7 +254,6 @@ h2,h3{
   align-items: center;
   justify-content: center;
   background: #000;
-  z-index: 1000;
 }
 
 .setting:hover{

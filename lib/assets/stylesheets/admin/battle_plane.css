@@ -1,0 +1,30 @@
+.battle-planes{
+  text-align: center;
+}
+
+.battle-planes ul li{
+  width: 330px;
+  display: inline-block;
+  padding-right: 79px;
+  vertical-align: top;
+  margin-bottom: 20px;
+}
+
+.battle-planes ul li span{
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+.battle-planes ul li h2{
+  padding: 0;
+  display: inline-block;
+  border-bottom: 3px solid red;
+  margin-bottom: 30px;
+}
+
+.battle-planes ul li p{
+  color: #999;
+  font-size: 16px;
+  line-height: 25px;
+  text-align: left;
+}

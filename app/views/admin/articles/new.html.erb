@@ -1,20 +1,27 @@
 <div style='margin-left: 20px'>
-  <p>
-    文章标题
-  </p>
-  <input type="text" name="title">
-  <p>
-    文章内容
-  </p>
-  <div id="editor">
-
-  </div>
+  <form id="articleForm" action="/admin/articles" method="post">
+    <p>
+      文章标题
+    </p>
+    <input type="text" name="title">
+    <p>
+      文章内容
+    </p>
+    <div id="editor">
+    </div>
+    <textarea id='js-article-content' name="content" style='display: none'></textarea>
+    <input type="submit" value="上传">
+  </form>
 </div>
 
 <script type="text/javascript">
   $(function() {
     var editor = new wangEditor('editor');
-    editor.config.uploadImgUrl = '/upload/images'
+    editor.config.uploadImgUrl = '/upload/pictures'
     editor.create();
+
+    $('#articleForm').submit(function() {
+      $('#js-article-content').val($('#editor').html());
+    });
   });
 </script>

@@ -1,5 +1,5 @@
 class Video < ActiveRecord::Base
-  mount_uploader :image, VideoImageUploader
+  mount_uploader :image, VideoUploader
 
   scope :normal, ->{ where(deleted: false) }
 

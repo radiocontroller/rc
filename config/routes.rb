@@ -13,11 +13,11 @@ Rails.application.routes.draw do
       get 'fixed_wing', 'glider', 'helicopter', 'fpv'
     end
   end
-  resources :articles, only: [:index]
+  resources :articles, only: [:index, :show]
   resources :admin, only: [:index]
 
   namespace :upload do
-    resources :images, only: [:create]
+    resources :pictures, only: [:create]
   end
 
   namespace :admin do
@@ -34,11 +34,13 @@ Rails.application.routes.draw do
       resources :helicopters, only: [:index, :new, :create, :update]
       resources :fpvs, only: [:index, :new, :create, :update]
     end
+    resources :battle_planes, only: [:index]
   end
 
   namespace :ajax do
     resources :videos, only: [:destroy, :update]
     resources :pictures, only: [:destroy]
+    resources :battle_planes, only: [:update]
   end
 
 end
