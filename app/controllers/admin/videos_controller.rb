@@ -4,7 +4,7 @@ module Admin
 
     def index
       q = Video.normal.ransack(params[:q])
-      @videos = q.result(distinct: true).order(created_at: :desc)
+      @videos = q.result.order(created_at: :desc)
       set_search_values
       @categories = Video::ID_CATEGORIES.invert.to_a
     end

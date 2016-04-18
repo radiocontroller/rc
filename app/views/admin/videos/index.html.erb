@@ -1,5 +1,3 @@
-<div class="video-edit-wrap">
-</div>
 <div class="page-nav">
   <ul>
     <li>后台管理</li>
@@ -20,7 +18,8 @@
 <div class="video-items margin-left-20">
   <% @videos.each do |video| %>
     <div class="video-item">
-      <div class="item">
+      <div class="item" id='js-video-<%= video.id %>'>
+        <input type="hidden" value="<%= video.url %>">
         <a href="/videos/<%= video.id %>">
           <img src="<%= video.image.normal.url %>" class='item' />
           <span class="thumb_overlay fa fa-play-circle-o"></span>
@@ -28,29 +27,39 @@
         <h3 class="title"><%= video.description %></h3>
       </div>
       <div class="fns">
-        <% if video.homepage? %>
-          今日视频
-        <% else %>
-          <%= link_to '设为今日视频', 'javascript:void(0)', class: 'js-set-homepage', data: {id: video.id} %>
-        <% end %>
-        <%= link_to '编辑', 'javascript:void(0)', id: "js-video-#{video.id}", class: 'js-edit-video', data: {id: video.id, url: video.url, description: video.description} %>
-        <%= link_to '删除', 'javascript:void(0)', class: 'js-delete-video', data: {id: video.id} %>
+        <i class="fa fa-pencil js-show-operations" data-id='<%= video.id %>'></i>
+        <%= '今日视频' if video.homepage? %>
       </div>
     </div>
   <% end %>
 </div>
+<input type="hidden" id='video-id'>
+<div id='operate-wrap'></div>
 
 <script type="text/javascript">
   $(function() {
-    $(document).on('click', '.js-delete-video', deleteVideo);
-    $(document).on('click', '.js-edit-video', editVideo);
-    $(document).on('click', '.js-set-homepage', setHomepage);
-    $(document).on('click', '#js-update-video', updateVideo)
-    $(document).on('click', '#js-cancel', hideFloatwindow);
+    $(document).on('click', '.js-show-operations', showOperations);
+    $(document).on('click', '#js-edit', editVideo);
+    $(document).on('click', '#js-delete', deleteVideo);
+    $(document).on('click', '#js-set-homepage', setHomepage);
+    $(document).on('click', '#js-update', updateVideo)
+    $(document).on('click', '#js-cancel', hideOperations);
   });
 
+  function showOperations() {
+    $('#operate-wrap').html('<%= j render "operations" %>');
+    $('#video-id').val($(this).data('id'));
+  }
+
+  function editVideo() {
+    var videoId = $('#video-id').val();
+    $('#operate-wrap').html('<%= j render "edit" %>');
+    $('#js-video-url').val($('#js-video-'+videoId).find('input').val());
+    $('#js-video-description').val($('#js-video-'+videoId).find('h3').html());
+  }
+
   function deleteVideo() {
-    var self = $(this);
+    hideOperations();
     swal({
      title: "您确定要删除吗？",
      type: "warning",
@@ -60,7 +69,7 @@
      confirmButtonColor: "#ec6c62"
      }, function() {
        $.ajax({
-         url: "/ajax/videos/"+ self.data('id'),
+         url: "/ajax/videos/"+ $('#video-id').val(),
          type: "DELETE",
          dataType: 'script',
          function(){}
@@ -69,7 +78,7 @@
   }
 
   function setHomepage() {
-    var self = $(this);
+    hideOperations();
     swal({
      title: "设置为今日视频？",
      type: "warning",
@@ -79,7 +88,7 @@
      confirmButtonColor: "#ec6c62"
      }, function() {
        $.ajax({
-         url: "/ajax/videos/"+ self.data('id'),
+         url: "/ajax/videos/"+ $('#video-id').val(),
          type: "PUT",
          dataType: 'script',
          function(){}
@@ -87,20 +96,11 @@
      });
   }
 
-  function editVideo() {
-    $('.video-edit-wrap').html('<%= j render "edit" %>');
-    $('#js-update-video').data('id', $(this).data('id'));
-    $('#js-video-url').val($(this).data('url'));
-    $('#js-video-description').val($(this).data('description'));
-    $('.video-edit-wrap').show();
-  }
-
   function updateVideo() {
-    $('#videoForm').attr('action', '/admin/videos/'+ $(this).data('id')).submit();
+    $('#videoForm').attr('action', '/admin/videos/'+ $('#video-id').val()).submit();
   }
 
-  function hideFloatwindow() {
-    $('.video-edit-wrap').hide();
-    $('.video-edit-wrap').html("");
+  function hideOperations() {
+    $('#operate-wrap').html("");
   }
 </script>

@@ -3,8 +3,6 @@ class Video < ActiveRecord::Base
 
   scope :normal, ->{ where(deleted: false) }
 
-  scope :homepage, -> { find_by(is_homepage: true) }
-
   validates :description, :url, presence: true
 
   enum category: [:fixed_wing, :glider, :helicopter, :fpv]
@@ -34,13 +32,13 @@ class Video < ActiveRecord::Base
   end
 
   def homepage!
-    previous = Video.normal.homepage
+    previous = Video.normal.select{ |video| video.is_homepage }.first
     previous.update(is_homepage: false) if previous.present?
     self.update(is_homepage: true)
   end
 
   def homepage?
-    is_homepage.present?
+    is_homepage
   end
 
   def comment_quantity
