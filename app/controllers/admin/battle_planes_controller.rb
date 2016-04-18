@@ -24,9 +24,8 @@ module Admin
     end
 
     def update
-      @plane = BattlePlane.find(params[:id])
       BattlePlane.find_by(sort_id: params[:sort_id]).try(:empty_order!)
-      @plane.update(sort_id: params[:sort_id])
+      BattlePlane.find(params[:id]).set_order!(params[:sort_id])
       redirect_to admin_battle_planes_path
     end
 

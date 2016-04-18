@@ -7,4 +7,8 @@ class BattlePlane < ActiveRecord::Base
   def empty_order!
     update(sort_id: nil)
   end
+
+  def set_order!(sort_id)
+    update(sort_id: sort_id)
+  end
 end
