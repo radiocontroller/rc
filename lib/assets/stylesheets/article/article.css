@@ -98,12 +98,15 @@
   border-radius: 7px;
 }
 
-.operation a{
+.operation i{
   margin-right: 27px;
   color: #999;
   font-size: 14px;
 }
 
+.operation i:first-child{
+  cursor: pointer;
+}
 
 .infos{
   width: 900px;

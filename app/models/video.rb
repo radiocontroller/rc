@@ -51,4 +51,8 @@ class Video < ActiveRecord::Base
     comments.where(parent_id: nil).order('id desc')
   end
 
+  def user_quantity
+    user_ids.count
+  end
+
 end

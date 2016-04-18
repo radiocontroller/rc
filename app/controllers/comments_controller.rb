@@ -6,7 +6,7 @@ class CommentsController < BaseController
   end
 
   private
-  
+
     def video_params
       { content: params[:content], parent_id: params[:parent_id], user_id: current_user.id }
     end

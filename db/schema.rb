@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160417122759) do
+ActiveRecord::Schema.define(version: 20160418060308) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20160417122759) do
     t.datetime "updated_at",                  null: false
     t.integer  "category"
     t.boolean  "is_homepage", default: false
+    t.json     "user_ids",    default: []
   end
 
   create_table "battle_planes", force: :cascade do |t|
@@ -76,6 +77,8 @@ ActiveRecord::Schema.define(version: 20160417122759) do
     t.string   "avatar"
     t.string   "username",                               null: false
     t.boolean  "admin",                  default: false
+    t.json     "video_ids",              default: []
+    t.json     "article_ids",            default: []
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
@@ -91,6 +94,7 @@ ActiveRecord::Schema.define(version: 20160417122759) do
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
     t.boolean  "is_homepage", default: false
+    t.json     "user_ids",    default: []
   end
 
 end

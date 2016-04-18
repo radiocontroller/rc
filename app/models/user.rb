@@ -24,4 +24,8 @@ class User < ActiveRecord::Base
     self.admin
   end
 
+  def has_video?(video_id)
+    video_ids.include?(video_id)
+  end
+
 end
