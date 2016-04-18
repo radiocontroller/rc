@@ -35,7 +35,8 @@
 
 .sidebar-top .img img{
   width: 152px;
-  border-radius: 76px;
+  height: 152px;
+  border-radius: 50%;
 }
 
 .user-info{

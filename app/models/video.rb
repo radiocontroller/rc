@@ -9,6 +9,8 @@ class Video < ActiveRecord::Base
 
   enum category: [:fixed_wing, :glider, :helicopter, :fpv]
 
+  has_many :comments, as: :commentable
+
   CATEGORIES = {
     'fixed_wing': '固定翼',
     'glider': '滑翔机',

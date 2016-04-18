@@ -1,0 +1,31 @@
+<div class="comment">
+  <div class="comment-title">
+    <h2>所有评论<span class="count">(18)</span></h2>
+  </div>
+
+  <div class="items">
+    <% @video.comments.each do |comment| %>
+      <%= render '/videos/comments/comment', comment: comment %>
+    <% end %>
+  </div>
+
+  <div class="comment-box">
+    <%= form_tag(video_comments_path(@video)) do %>
+      <textarea rows="8" cols="40" name='content'></textarea>
+      <div class="btn-group">
+        <span>表情</span>
+        <button class="btn-submit">发表评论</button>
+      </div>
+    <% end %>
+  </div>
+
+</div>
+<script type="text/javascript">
+  $(function() {
+    $(document).on('click', '.reply a', editReply);
+  });
+
+  function editReply() {
+    $(this).parents('.item').next().html('<%= j render "/videos/comments/reply" %>');
+  }
+</script>

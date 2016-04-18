@@ -127,24 +127,47 @@
   border: 1px solid #dedede;
   text-indent: 16px;
   line-height: 20px;
-  width: 754px;
+  width: 755px;
   box-sizing: border-box;
   height: 105px;
   border-radius: 9px;
   outline: none;
+  margin-left: -1px;
 }
 
-.replay-box .btn-group{
+.replay-box .btn-group, .comment-box .btn-group{
   padding: 9px 20px;
   display: flex;
   justify-content: space-between;
 }
 
-.replay-box  .btn-submit{
+.replay-box  .btn-submit, .comment-box .btn-submit{
   width: 82px;
   height: 30px;
   font-size: 14px;
   color: #fff;
   background: #FF3C57;
   border: 0;
+  cursor: pointer;
+}
+
+.comment-box{
+  width: 900px;
+  border: 1px solid #dedede;
+  border-radius: 9px;
+  box-sizing: border-box;
+  margin-bottom: 21px;
+}
+
+.comment-box textarea{
+  background: #ededed;
+  border: 1px solid #dedede;
+  text-indent: 16px;
+  line-height: 20px;
+  width: 900px;
+  box-sizing: border-box;
+  height: 105px;
+  border-radius: 9px;
+  outline: none;
+  margin-left: -1px;
 }

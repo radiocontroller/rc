@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     collection do
       get 'fixed_wing', 'glider', 'helicopter', 'fpv'
     end
+    resources :comments, only: [:create]
   end
   resources :articles, only: [:index, :show]
   resources :admin, only: [:index]
