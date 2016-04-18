@@ -1,0 +1,9 @@
+<div class="comment-box">
+  <%= form_tag(video_comments_path(@video)) do %>
+    <textarea rows="8" cols="40" name='content'></textarea>
+    <div class="btn-group">
+      <span>表情</span>
+      <%= submit_tag '发表评论', class: 'btn-submit' %>
+    </div>
+  <% end %>
+</div>

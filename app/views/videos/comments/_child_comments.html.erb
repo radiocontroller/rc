@@ -1,0 +1,5 @@
+<div class="other-users">
+  <% comment.children.each do |child_comment| %>
+    <%= render '/videos/comments/child_comment', comment: child_comment %>
+  <% end %>
+</div>

@@ -43,4 +43,12 @@ class Video < ActiveRecord::Base
     is_homepage.present?
   end
 
+  def comments_quantity
+    comments.count
+  end
+
+  def parent_comments
+    comments.where(parent_id: nil).order('id desc')
+  end
+
 end
