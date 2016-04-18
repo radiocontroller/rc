@@ -6,12 +6,7 @@
       <span class="date">发表于<%= @video.created_at.strftime('%Y-%m-%d') %></span>
     </div>
     <div class="operation">
-      <i class="fa fa-heart<%= '-o' if !current_user.has_video?(@video.id) %>" id='js-collect' data-id='<%= @video.id %>' >
-        收藏(<%= @video.user_quantity %>)
-      </i>
-      <i class="fa fa-comment">
-        评论(<%= @video.comments_quantity %>)
-      </i>
+      <%= render '/videos/video_info', video: @video %>
     </div>
   </div>
 
@@ -25,10 +20,10 @@
 </div>
 <script type="text/javascript">
   $(function() {
-    $('#js-collect').on('click', addCollection);
+    $('.js-collect').on('click', collectVideo);
   });
 
-  function addCollection() {
+  function collectVideo() {
     $.post('/ajax/videos/'+$(this).data('id')+'/collections', function(){});
   }
 </script>

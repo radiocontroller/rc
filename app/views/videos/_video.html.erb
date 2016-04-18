@@ -7,13 +7,6 @@
     <h3 class="title"><%= video.description %></h3>
   </div>
   <div class="fns">
-    <a href="javascript:void(0)" class="fn-follow">
-      <i class="fa fa-heart"></i>
-      <span>300</span>
-    </a>
-    <a href="javascript:void(0)">
-      <i class="fa fa-comment"></i>
-      <span>300</span>
-    </a>
+    <%= render '/videos/video_info', video: video %>
   </div>
 </div>

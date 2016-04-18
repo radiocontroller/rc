@@ -40,7 +40,7 @@ class VideosController < BaseController
 
     def set_videos
       q = Video.normal.send(action_name.to_sym).ransack(params[:q])
-      @videos = q.result(distinct: true).order("id desc")
+      @videos = q.result.order("id desc")
     end
 
     def set_search_value

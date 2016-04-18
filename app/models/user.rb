@@ -24,8 +24,12 @@ class User < ActiveRecord::Base
     self.admin
   end
 
-  def has_video?(video_id)
-    video_ids.include?(video_id)
+  def has_collected_video?(id)
+    video_ids.include?(id)
+  end
+
+  def has_commented_video?(video)
+    comments.any?{ |comment| comment.commentable == video }
   end
 
 end

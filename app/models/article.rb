@@ -3,7 +3,7 @@ class Article < ActiveRecord::Base
 
   has_many :comments, as: :commentable
 
-  def user_quantity
+  def collect_quantity
     user_ids.count
   end
 

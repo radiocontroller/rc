@@ -43,7 +43,7 @@ class Video < ActiveRecord::Base
     is_homepage.present?
   end
 
-  def comments_quantity
+  def comment_quantity
     comments.count
   end
 
@@ -51,7 +51,7 @@ class Video < ActiveRecord::Base
     comments.where(parent_id: nil).order('id desc')
   end
 
-  def user_quantity
+  def collect_quantity
     user_ids.count
   end
 
