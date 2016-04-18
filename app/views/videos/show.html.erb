@@ -6,8 +6,12 @@
       <span class="date">发表于<%= @video.created_at.strftime('%Y-%m-%d') %></span>
     </div>
     <div class="operation">
-      <i class="fa fa-heart<%= '-o' if !current_user.has_video?(@video.id) %>" id='js-like' data-id='<%= @video.id %>' >收藏(<%= @video.user_quantity %>)</i>
-      <i class="fa fa-comment">评论(<%= @video.comments_quantity %>)</i>
+      <i class="fa fa-heart<%= '-o' if !current_user.has_video?(@video.id) %>" id='js-collect' data-id='<%= @video.id %>' >
+        收藏(<%= @video.user_quantity %>)
+      </i>
+      <i class="fa fa-comment">
+        评论(<%= @video.comments_quantity %>)
+      </i>
     </div>
   </div>
 
@@ -21,14 +25,10 @@
 </div>
 <script type="text/javascript">
   $(function() {
-    $('#js-like').on('click', addLike);
+    $('#js-collect').on('click', addCollection);
   });
 
-  function addLike() {
-    $.ajax({
-      type: 'POST',
-      url: '/ajax/videos/'+$(this).data('id')+'/likes',
-      success: function(){}
-    });
+  function addCollection() {
+    $.post('/ajax/videos/'+$(this).data('id')+'/collections', function(){});
   }
 </script>
