@@ -98,7 +98,7 @@
   border-radius: 7px;
 }
 
-.operation i{
+.operation i, .operation a{
   margin-right: 27px;
   color: #999;
   font-size: 14px;

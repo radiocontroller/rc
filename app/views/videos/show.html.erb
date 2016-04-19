@@ -27,6 +27,6 @@
     if(<%= current_user.present? %>)
       $.post('/ajax/videos/'+$(this).data('id')+'/collections', function(){});
     else
-      swal("收藏失败!", "请登录后收藏!", "error");
+      swal("收藏失败!", "请登录后收藏!", "warning");
   }
 </script>

@@ -1,13 +1,18 @@
 class CommentsController < BaseController
+  before_action :set_resource
+
   def create
-    video = Video.normal.find(params[:video_id])
-    video.comments.create(video_params)
-    redirect_to video_path(video)
+    @resource.comments.create(comment_params)
+    redirect_to "/#{@resource.class.to_s.downcase.pluralize}/#{@resource.id}"
   end
 
   private
 
-    def video_params
+    def comment_params
       { content: params[:content], parent_id: params[:parent_id], user_id: current_user.id }
+    end
+
+    def set_resource
+      @resource =  params[:video_id].present? ? Video.normal.find(params[:video_id]) : Article.normal.find(params[:article_id])
     end
 end

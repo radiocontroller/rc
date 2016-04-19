@@ -14,7 +14,9 @@ Rails.application.routes.draw do
     end
     resources :comments, only: [:create]
   end
-  resources :articles, only: [:index, :show]
+  resources :articles, only: [:index, :show] do
+    resources :comments, only: [:create]
+  end
   resources :admin, only: [:index]
 
   namespace :upload do
@@ -38,6 +40,9 @@ Rails.application.routes.draw do
 
   namespace :ajax do
     resources :videos, only: [:destroy, :update] do
+      resources :collections, only: [:create]
+    end
+    resources :articles, only: [:index] do
       resources :collections, only: [:create]
     end
     resources :pictures, only: [:destroy]

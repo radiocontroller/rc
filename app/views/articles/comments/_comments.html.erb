@@ -1,0 +1,33 @@
+<div class="comment">
+  <div class="comment-title">
+    <h2>所有评论<span class="count">(<%= @article.comment_quantity %>)</span></h2>
+  </div>
+
+  <div class="items">
+    <% @article.parent_comments.each do |comment| %>
+      <%= render '/articles/comments/comment', comment: comment %>
+    <% end %>
+  </div>
+
+  <%= render '/articles/comments/publish' %>
+
+</div>
+<script type="text/javascript">
+  $(function() {
+    $(document).on('click', '.reply a:first-child', editReply);
+    $(document).on('click', '.reply a:last-child', cancelReply);
+  });
+
+  function editReply() {
+    $(this).parents('.item').next().html('<%= j render "/articles/comments/reply" %>');
+    $('#parent_id').val($(this).data('id'));
+    $(this).hide();
+    $(this).next().show();
+  }
+
+  function cancelReply() {
+    $(this).parents('.item').next().html('');
+    $(this).hide();
+    $(this).prev().show();
+  }
+</script>

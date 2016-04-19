@@ -28,8 +28,16 @@ class User < ActiveRecord::Base
     video_ids.include?(id)
   end
 
+  def has_collected_article?(id)
+    article_ids.include?(id)
+  end
+
   def has_commented_video?(video)
     comments.any?{ |comment| comment.commentable == video }
+  end
+
+  def has_commented_article?(article)
+    comments.any?{ |comment| comment.commentable == article }
   end
 
 end

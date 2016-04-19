@@ -11,6 +11,14 @@ class Article < ActiveRecord::Base
     user_ids.count
   end
 
+  def comment_quantity
+    comments.count
+  end
+
+  def parent_comments
+    comments.where(parent_id: nil).order('id desc')
+  end
+
   def remove_user_id!(id)
     update(user_ids: self.user_ids.reject{|id| id == id})
   end

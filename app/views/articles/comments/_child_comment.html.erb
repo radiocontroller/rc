@@ -1,0 +1,17 @@
+<div class="other-user">
+  <img src="<%= comment.user.avatar.url %>" alt="">
+  <div class="other-comment">
+    <div class="arrow">
+      <em></em>
+      <span></span>
+    </div>
+    <div class="user-title">
+      <b><%= comment.user.username %></b>
+      <span>
+        <i class="fa fa-clock-o"></i>
+        <b><%= comment.created_at.strftime('%Y-%m-%d %H:%M:%S') %></b>
+      </span>
+    </div>
+    <p><%= comment.content %></p>
+  </div>
+</div>
