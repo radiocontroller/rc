@@ -4,7 +4,19 @@
     <textarea rows="8" cols="40" name='content' ></textarea>
     <div class="btn-group">
       <span>表情</span>
-      <%= submit_tag '提交', class: 'btn-submit' %>
+      <button type="button" class='btn-submit' id='js-reply'>提交</button>
     </div>
   <% end %>
 </div>
+<script type="text/javascript">
+  $(function() {
+    $('#js-reply').on('click', replyComment);
+  });
+
+  function replyComment() {
+    if(<%= current_user.present? %>)
+      $(this).closest('form').submit();
+    else
+      swal("回复失败!", "请登录后回复!", "info");
+  }
+</script>

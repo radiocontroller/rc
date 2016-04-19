@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160418060308) do
+ActiveRecord::Schema.define(version: 20160419021752) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20160418060308) do
     t.integer  "category"
     t.boolean  "is_homepage", default: false
     t.json     "user_ids",    default: []
+    t.boolean  "deleted",     default: false
   end
 
   create_table "battle_planes", force: :cascade do |t|

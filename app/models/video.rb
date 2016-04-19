@@ -1,7 +1,9 @@
 class Video < ActiveRecord::Base
   mount_uploader :image, VideoUploader
 
-  scope :normal, ->{ where(deleted: false) }
+  scope :normal, -> { where(deleted: false) }
+
+  scope :homepage, -> { find_by(is_homepage: true) }
 
   validates :description, :url, presence: true
 
@@ -32,7 +34,7 @@ class Video < ActiveRecord::Base
   end
 
   def homepage!
-    previous = Video.normal.select{ |video| video.is_homepage }.first
+    previous = Video.normal.homepage
     previous.update(is_homepage: false) if previous.present?
     self.update(is_homepage: true)
   end

@@ -3,13 +3,7 @@ module Ajax
     before_action :set_attrs
 
     def create
-      if current_user.read_attribute(@column).delete(@resource.id).present?
-        @resource.remove_user_id!(current_user.id)
-      else
-        current_user.read_attribute(@column).push(@resource.id)
-        @resource.add_user_id!(current_user.id)
-      end
-      current_user.save
+      collect_resource
     end
 
     private
@@ -22,6 +16,16 @@ module Ajax
           @column = :article_ids
           @resource = Article.find(params[:article_id])
         end
+      end
+
+      def collect_resource
+        if current_user.read_attribute(@column).delete(@resource.id).present?
+          @resource.remove_user_id!(current_user.id)
+        else
+          current_user.read_attribute(@column).push(@resource.id)
+          @resource.add_user_id!(current_user.id)
+        end
+        current_user.save
       end
 
   end

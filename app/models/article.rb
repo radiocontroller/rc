@@ -1,5 +1,9 @@
 class Article < ActiveRecord::Base
+  scope :normal, -> { where(deleted: false) }
+
   scope :homepage, -> { find_by(is_homepage: true) }
+
+  validates :title, :content, presence: true
 
   has_many :comments, as: :commentable
 
