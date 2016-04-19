@@ -140,6 +140,10 @@
   margin-left: 20px;
 }
 
+.article-content{
+  margin-bottom: 30px;
+}
+
 .infos  .operation{
   display: flex;
   align-items: flex-end;

@@ -72,7 +72,7 @@
          url: "/ajax/videos/"+ $('#video-id').val(),
          type: "DELETE",
          dataType: 'script',
-         function(){}
+         success: function(){}
        })
      });
   }
@@ -91,7 +91,7 @@
          url: "/ajax/videos/"+ $('#video-id').val(),
          type: "PUT",
          dataType: 'script',
-         function(){}
+         success: function(){}
        })
      });
   }

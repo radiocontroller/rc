@@ -15,8 +15,9 @@
 </div>
 <script type="text/javascript">
   $(function() {
-    $(document).on('click', '.reply a:first-child', editReply);
-    $(document).on('click', '.reply a:last-child', cancelReply);
+    $(document).on('click', '.reply .js-edit-reply', editReply);
+    $(document).on('click', '.reply .js-cancel-reply', cancelReply);
+    $(document).on('click', '.reply .js-delete-comment', deleteReply);
     $(document).on('click', '#js-publish, #js-reply', comment);
   });
 
@@ -31,6 +32,25 @@
     $(this).parents('.item').next().html('');
     $(this).hide();
     $(this).prev().show();
+  }
+
+  function deleteReply() {
+    var self = $(this);
+    swal({
+     title: "删除该评论(同时删除子评论)？",
+     type: "warning",
+     showCancelButton: true,
+     closeOnConfirm: false,
+     confirmButtonText: "是的，强行删除",
+     confirmButtonColor: "#ec6c62"
+     }, function() {
+       $.ajax({
+         url: "/ajax/comments/"+ self.data('id'),
+         type: "DELETE",
+         dataType: 'script',
+         success: function(){}
+       });
+     });
   }
 
   function comment() {

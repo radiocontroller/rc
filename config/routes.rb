@@ -47,6 +47,7 @@ Rails.application.routes.draw do
     end
     resources :pictures, only: [:destroy]
     resources :battle_planes, only: [:update]
+    resources :comments, only: [:destroy]
   end
 
 end

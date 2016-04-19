@@ -13,5 +13,10 @@
       </span>
     </div>
     <p><%= comment.content %></p>
+    <div class="reply">
+      <% if current_user.admin? %>
+        <a href="javascript:void(0)" class='js-delete-comment' data-id='<%= comment.id %>'>删除</a>
+      <% end %>
+    </div>
   </div>
 </div>
