@@ -1,6 +1,6 @@
-<div class="other-user">
+<div class="item">
   <img src="<%= comment.user.avatar.url %>" alt="">
-  <div class="other-comment">
+  <div class="user-comment">
     <div class="arrow">
       <em></em>
       <span></span>
@@ -13,5 +13,14 @@
       </span>
     </div>
     <p><%= comment.content %></p>
+
+    <%= render '/common/comments/child_comments', comment: comment %>
+
+    <div class="reply">
+      <a href="javascript:void(0)" data-id='<%= comment.id %>'>回复</a>
+      <a href="javascript:void(0)" style='display: none'>取消</a>
+    </div>
+
   </div>
 </div>
+<div class="reply-wrap"></div>

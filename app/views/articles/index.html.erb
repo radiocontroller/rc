@@ -21,7 +21,7 @@
           </p>
         </div>
         <div class="img">
-          <%= article.content[/\<img(.*?)\>/].html_safe %>
+          <%= article.content[/\<img(.*?)\>/].try(:html_safe) %>
         </div>
       </div>
     <% end %>

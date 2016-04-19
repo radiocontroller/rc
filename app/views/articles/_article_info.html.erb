@@ -1,6 +1,0 @@
-<i class="js-collect fa fa-heart<%= '-o' if current_user.blank? || !current_user.has_collected_article?(article.id) %>" data-id='<%= article.id %>' >
-  收藏(<%= article.collect_quantity %>)
-</i>
-<i class="fa fa-comment<%= '-o' if current_user.blank? || !current_user.has_commented_article?(article) %>">
-  评论(<%= article.comment_quantity %>)
-</i>

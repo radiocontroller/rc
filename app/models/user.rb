@@ -24,20 +24,16 @@ class User < ActiveRecord::Base
     self.admin
   end
 
-  def has_collected_video?(id)
-    video_ids.include?(id)
+  def has_collected?(resource)
+    if resource.instance_of?(Video)
+      video_ids.include?(resource.id)
+    else
+      article_ids.include?(resource.id)
+    end
   end
 
-  def has_collected_article?(id)
-    article_ids.include?(id)
-  end
-
-  def has_commented_video?(video)
-    comments.any?{ |comment| comment.commentable == video }
-  end
-
-  def has_commented_article?(article)
-    comments.any?{ |comment| comment.commentable == article }
+  def has_commented?(resource)
+    comments.any?{ |comment| comment.commentable == resource }
   end
 
 end

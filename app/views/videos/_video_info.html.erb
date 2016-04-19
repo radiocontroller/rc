@@ -1,6 +1,0 @@
-<i class="js-collect fa fa-heart<%= '-o' if current_user.blank? || !current_user.has_collected_video?(video.id) %>" data-id='<%= video.id %>' >
-  收藏(<%= video.collect_quantity %>)
-</i>
-<i class="fa fa-comment<%= '-o' if current_user.blank? || !current_user.has_commented_video?(video) %>">
-  评论(<%= video.comment_quantity %>)
-</i>

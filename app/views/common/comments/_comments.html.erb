@@ -1,15 +1,15 @@
 <div class="comment">
   <div class="comment-title">
-    <h2>所有评论<span class="count">(<%= @article.comment_quantity %>)</span></h2>
+    <h2>所有评论<span class="count">(<%= @resource.comment_quantity %>)</span></h2>
   </div>
 
   <div class="items">
-    <% @article.parent_comments.each do |comment| %>
-      <%= render '/articles/comments/comment', comment: comment %>
+    <% @resource.parent_comments.each do |comment| %>
+      <%= render '/common/comments/comment', comment: comment %>
     <% end %>
   </div>
 
-  <%= render '/articles/comments/publish' %>
+  <%= render '/common/comments/publish' %>
 
 </div>
 <script type="text/javascript">
@@ -19,7 +19,7 @@
   });
 
   function editReply() {
-    $(this).parents('.item').next().html('<%= j render "/articles/comments/reply" %>');
+    $(this).parents('.item').next().html('<%= j render "/common/comments/reply" %>');
     $('#parent_id').val($(this).data('id'));
     $(this).hide();
     $(this).next().show();

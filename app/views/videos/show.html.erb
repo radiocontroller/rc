@@ -6,7 +6,7 @@
       <span class="date">发表于<%= @video.created_at.strftime('%Y-%m-%d') %></span>
     </div>
     <div class="operation">
-      <%= render '/videos/video_info', video: @video %>
+      <%= render '/common/collect', resource: @video %>
     </div>
   </div>
 
@@ -15,18 +15,6 @@
     </embed>
   </div>
 
-  <%= render '/videos/comments/comments' %>
+  <%= render '/common/comments/comments' %>
 
 </div>
-<script type="text/javascript">
-  $(function() {
-    $('.js-collect').on('click', collectVideo);
-  });
-
-  function collectVideo() {
-    if(<%= current_user.present? %>)
-      $.post('/ajax/videos/'+$(this).data('id')+'/collections', function(){});
-    else
-      swal("收藏失败!", "请登录后收藏!", "warning");
-  }
-</script>

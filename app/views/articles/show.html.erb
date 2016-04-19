@@ -1,33 +1,19 @@
-<div class="content">
-  <div class="infos">
-    <div class="title">
-      <div class="text">
-        <h2><%= @article.title %></h2>
-        <a href="#" class="username">心有猛虎，细嗅蔷薇</a>
-        <span class="date"><%= @article.created_at.strftime('%Y-%m-%d') %></span>
-      </div>
-      <div class="operation">
-        <%= render '/articles/article_info', article: @article %>
-      </div>
+<div class="infos">
+  <div class="title">
+    <div class="text">
+      <h2><%= @article.title %></h2>
+      <a href="#" class="username">心有猛虎，细嗅蔷薇</a>
+      <span class="date">发表于<%= @article.created_at.strftime('%Y-%m-%d') %></span>
     </div>
-
-    <div class="details">
-      <%= @article.content.html_safe %>
+    <div class="operation">
+      <%= render '/common/collect', resource: @article %>
     </div>
-
-    <%= render '/articles/comments/comments' %>
-
   </div>
-</div>
-<script type="text/javascript">
-  $(function() {
-    $('.js-collect').on('click', collectArticle);
-  });
 
-  function collectArticle() {
-    if(<%= current_user.present? %>)
-      $.post('/ajax/articles/'+$(this).data('id')+'/collections', function(){});
-    else
-      swal("收藏失败!", "请登录后收藏!", "warning");
-  }
-</script>
+  <div class="details">
+    <%= @article.content.html_safe %>
+  </div>
+
+  <%= render '/common/comments/comments' %>
+
+</div>

@@ -1,0 +1,18 @@
+<i class="js-collect fa fa-heart<%= '-o' if current_user.blank? || !current_user.has_collected?(resource) %>" data-id='<%= resource.id %>' >
+  收藏(<%= resource.collect_quantity %>)
+</i>
+<i class="fa fa-comment<%= '-o' if current_user.blank? || !current_user.has_commented?(resource) %>">
+  评论(<%= resource.comment_quantity %>)
+</i>
+<script type="text/javascript">
+  $(function() {
+    $('.js-collect').on('click', collect);
+  });
+
+  function collect() {
+    if(<%= current_user.present? %>)
+      $.post("/ajax/<%= resource.class.to_s.downcase.pluralize %>/"+$(this).data('id')+"/collections", function(){});
+    else
+      swal("收藏失败!", "请登录后收藏!", "warning");
+  }
+</script>
