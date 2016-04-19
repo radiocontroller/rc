@@ -123,6 +123,9 @@
 .fns i{
   color: #000;
   margin-top: 5px;
+}
+
+.fns i:first-child{
   cursor: pointer;
 }
 

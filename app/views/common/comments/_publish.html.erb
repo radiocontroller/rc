@@ -7,15 +7,3 @@
     </div>
   <% end %>
 </div>
-<script type="text/javascript">
-  $(function() {
-    $('#js-publish').on('click', publishComment);
-  });
-
-  function publishComment() {
-    if(<%= current_user.present? %>)
-      $(this).closest('form').submit();
-    else
-      swal("评论失败!", "请登录后评论!", "warning");
-  }
-</script>

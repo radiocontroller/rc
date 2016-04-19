@@ -1,3 +1,4 @@
+<% @resource = @video || @article %>
 <div class="comment">
   <div class="comment-title">
     <h2>所有评论<span class="count">(<%= @resource.comment_quantity %>)</span></h2>
@@ -16,6 +17,7 @@
   $(function() {
     $(document).on('click', '.reply a:first-child', editReply);
     $(document).on('click', '.reply a:last-child', cancelReply);
+    $(document).on('click', '#js-publish, #js-reply', comment);
   });
 
   function editReply() {
@@ -29,5 +31,12 @@
     $(this).parents('.item').next().html('');
     $(this).hide();
     $(this).prev().show();
+  }
+
+  function comment() {
+    if(<%= current_user.present? %>)
+      $(this).closest('form').submit();
+    else
+      swal("评论失败!", "请登录后评论!", "warning");
   }
 </script>

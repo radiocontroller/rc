@@ -8,15 +8,3 @@
     </div>
   <% end %>
 </div>
-<script type="text/javascript">
-  $(function() {
-    $('#js-reply').on('click', replyComment);
-  });
-
-  function replyComment() {
-    if(<%= current_user.present? %>)
-      $(this).closest('form').submit();
-    else
-      swal("回复失败!", "请登录后回复!", "warning");
-  }
-</script>
