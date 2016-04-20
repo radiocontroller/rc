@@ -113,7 +113,7 @@
   color: #999;
 }
 
-.replay-box{
+.reply-box{
   width: 756px;
   border: 1px solid #dedede;
   border-radius: 9px;
@@ -122,7 +122,7 @@
   margin-bottom: 21px;
 }
 
-.replay-box textarea{
+.reply-box textarea{
   background: #ededed;
   border: 1px solid #dedede;
   text-indent: 16px;
@@ -135,13 +135,13 @@
   margin-left: -1px;
 }
 
-.replay-box .btn-group, .comment-box .btn-group{
+.reply-box .btn-group, .comment-box .btn-group{
   padding: 9px 20px;
   display: flex;
   justify-content: space-between;
 }
 
-.replay-box  .btn-submit, .comment-box .btn-submit{
+.reply-box  .btn-submit, .comment-box .btn-submit{
   width: 82px;
   height: 30px;
   font-size: 14px;

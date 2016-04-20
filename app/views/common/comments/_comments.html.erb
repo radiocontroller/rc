@@ -18,8 +18,8 @@
     $('.comment-content').each(parseEmoji);
     load_emoji();
     $(document).on('click', '.reply .js-edit-reply', editReply);
-    $(document).on('click', '.reply .js-cancel-reply', cancelReply);
     $(document).on('click', '.reply .js-delete-comment', deleteReply);
+    $(document).on('click', '#js-cancel-reply', cancelReply);
     $(document).on('click', '#js-publish, #js-reply', comment);
   });
 
@@ -36,16 +36,13 @@
   }
 
   function editReply() {
+    $('.reply-wrap').html('');
     $(this).parents('.item').next().html('<%= j render "/common/comments/reply" %>');
     $('#parent_id').val($(this).data('id'));
-    $(this).hide();
-    $(this).next().show();
   }
 
   function cancelReply() {
-    $(this).parents('.item').next().html('');
-    $(this).hide();
-    $(this).prev().show();
+    $(this).parents('.reply-box').hide();
   }
 
   function deleteReply() {
