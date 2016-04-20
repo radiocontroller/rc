@@ -17,7 +17,8 @@
   $(function() {
     $('.comment-content').each(parseEmoji);
     $(document).on('click', 'a.face', showEmoji);
-    $(document).on('click', '.SmohanFaceBox h3 a.close', hideEmoji);
+    $(document).on('click', '.SmohanFaceBox h3 a.close', closeEmoji);
+    $(document).on('mouseleave', '.SmohanFaceBox', closeEmoji);
     $(document).on('click', '.SmohanFaceBox li img', insertEmoji);
     $(document).on('click', '.reply .js-edit-reply', editReply);
     $(document).on('click', '.reply .js-delete-comment', deleteReply);
@@ -37,7 +38,7 @@
     $(this).parents('.common-box').prepend("<div class='SmohanFaceBox'><span class='Corner'></span><div class='Content'><h3><span>常用表情</span><a class='close' title='关闭'></a></h3><ul>"+emoji+"</ul></div></div>")
   }
 
-  function hideEmoji() {
+  function closeEmoji() {
     $(this).parents('.common-box').children('div:first').remove();
   }
 

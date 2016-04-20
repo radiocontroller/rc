@@ -12,7 +12,8 @@
 //
 //= require jquery/jquery-1.10.2.min
 //= require jquery_ujs
-//= require sidebar
+//= require slide
+//= require insert_content
 //= require sweetalert/sweetalert-dev
 //= require sweetalert/sweetalert.min
 //= require camera/camera.min
