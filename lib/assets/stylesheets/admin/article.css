@@ -77,14 +77,6 @@
   margin-left: 6px;
 }
 
-.article-title{
-  display: block;
-  font-size: 18px;
-  font-weight: bold;
-  color: #333;
-  padding: 16px 0;
-}
-
 .admin-articles-wrap .item .img{
   width: 213px;
   height: 126px;

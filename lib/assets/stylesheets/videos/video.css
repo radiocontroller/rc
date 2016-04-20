@@ -48,7 +48,7 @@
 }
 
 .btn-search i{
-  padding: 10px 0;
+  padding: 8px 0;
 }
 
 .video-items{
@@ -67,6 +67,14 @@
 
 .video-item .item{
   position: relative;
+}
+
+.video-item .title a{
+  color: #333;
+}
+
+.video-item .title a:hover{
+  color: #FF4040;
 }
 
 .video-item .item img{
@@ -121,12 +129,8 @@
 }
 
 .fns i{
-  color: #000;
+  color: #999;
   margin-top: 5px;
-}
-
-.fns i:first-child{
-  cursor: pointer;
 }
 
 .fns a{
@@ -155,6 +159,10 @@
   font-size: 18px;
   color: #333;
   font-weight: bold;
+}
+
+.more-video a:hover{
+  color: #FF4040;
 }
 
 .more-video a i{

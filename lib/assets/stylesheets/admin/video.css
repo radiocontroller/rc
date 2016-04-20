@@ -22,3 +22,17 @@
   display: none;
   background-color: rgba(0, 0, 0, 0.4);
 }
+
+.video-edit{
+  color: #b0b0b0;
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 69px;
+}
+
+.video-edit i{
+  color: #000;
+  cursor: pointer;
+  margin-top: 5px;
+}

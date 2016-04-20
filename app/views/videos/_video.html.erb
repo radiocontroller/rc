@@ -4,9 +4,12 @@
       <img src="<%= video.image.normal.url %>" class='item' />
       <span class="thumb_overlay fa fa-play-circle-o"></span>
     </a>
-    <h3 class="title"><%= video.description %></h3>
+    <h3 class="title">
+      <a href="/videos/<%= video.id %>"><%= video.description %></a>
+    </h3>
+
   </div>
   <div class="fns">
-    <%= render '/common/collect', resource: video %>
+    <%= render '/common/collect_info', resource: video %>
   </div>
 </div>

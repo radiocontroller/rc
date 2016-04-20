@@ -2,28 +2,18 @@
   <div class="title">
     <h2>精选导读</h2>
     <div class="search">
-      <input type="text" value="" class="search-input">
-      <a class="btn-search" href="#"><i class="fa fa-search"></i></a>
+      <%= form_tag(articles_path, method: :get) do %>
+        <%= text_field_tag 'q[title_cont]', @title, class: 'search-input' %>
+        <a class="btn-search" href="javascript:void(0)" onClick="$(this).closest('form').submit()">
+          <i class="fa fa-search"></i>
+        </a>
+      <% end %>
     </div>
   </div>
 
   <div class="items">
     <% @articles.each do |article| %>
-      <div class="item">
-        <div class="text">
-          <a href="#" class="username">心有猛虎，细嗅蔷薇</a>
-          <span class="date"><%= article.created_at.strftime('%Y-%m-%d') %></span>
-          <%= link_to article.title, article_path(article), class: 'article-title' %>
-          <p class="operation">
-            <a href="#" class="fa fa-thumbs-o-up">366</a>
-            <a href="#" class="fa fa-star-o">366</a>
-            <a href="#" class="fa fa-twitch ">18</a>
-          </p>
-        </div>
-        <div class="img">
-          <%= article.content[/\<img(.*?)\>/].try(:html_safe) %>
-        </div>
-      </div>
+      <%= render 'article', article: article %>
     <% end %>
   </div>
 </div>
