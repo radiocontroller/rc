@@ -3,7 +3,6 @@ class WelcomesController < BaseController
 
   def index
     @battle_planes = BattlePlane.sorted
-    @article = Article.homepage
     @video = Video.normal.homepage
     @banners = BannerPicture.sorted
     @fixed_wings = GalleryPicture.fixed_wing.sorted

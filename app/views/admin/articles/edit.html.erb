@@ -1,0 +1,23 @@
+<div style='margin-left: 20px'>
+  <%= form_for @article, url: admin_article_path(@article), html: {id: 'articleForm'} do |f| %>
+    <p>文章标题</p>
+    <%= f.text_field :title, value: @article.title %>
+    <p>文章内容</p>
+    <%= f.text_area :content, style: 'display: none', id: 'js-article-content' %>
+    <div id="editor">
+      <%= @article.content.html_safe %>
+    </div>
+    <%= f.submit '更新' %>
+  <% end %>
+</div>
+<script type="text/javascript">
+  $(function() {
+    var editor = new wangEditor('editor');
+    editor.config.uploadImgUrl = '/upload/pictures'
+    editor.create();
+
+    $('#articleForm').submit(function() {
+      $('#js-article-content').val($('#editor').html());
+    });
+  });
+</script>

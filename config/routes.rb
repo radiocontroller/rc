@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :articles, only: [:new, :create]
+    resources :articles, only: [:index, :new, :edit, :create, :update]
     resources :videos, only: [:index, :new, :create, :update] do
       collection { get 'homepage' }
     end
