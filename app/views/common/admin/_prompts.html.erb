@@ -1,0 +1,11 @@
+<div class="admin-prompts">
+  <ul class='<%= flash[:alert].present? ? "alert" : "notice" %>'>
+    <% if flash[:alert].present? %>
+      <% [flash[:alert]].flatten.each do |alert| %>
+        <li><%= alert %></li>
+      <% end %>
+    <% else %>
+      <li><%= flash[:notice] %></li>
+    <% end %>
+  </ul>
+</div>

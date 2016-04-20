@@ -1,0 +1,13 @@
+<% content_for :javascripts do %>
+  <script type="text/javascript">
+    $(function() {
+      var editor = new wangEditor('editor');
+      editor.config.uploadImgUrl = '/upload/pictures'
+      editor.create();
+    });
+
+    $('#articleForm').submit(function() {
+      $('#js-article-content').val($('#editor').html());
+    });
+  </script>
+<% end %>

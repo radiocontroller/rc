@@ -7,6 +7,19 @@
   border: 1px solid #CCCCCC;
 }
 
+.admin-prompts{
+  font-size: 14px;
+  text-align: center;
+}
+
+.admin-prompts .notice{
+  color: #3CB371;
+}
+
+.admin-prompts .alert{
+  color: red;
+}
+
 #editor{
   width: 100%;
   height: 500px;

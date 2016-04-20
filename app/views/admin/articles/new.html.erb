@@ -1,27 +1,12 @@
 <div style='margin-left: 20px'>
-  <form id="articleForm" action="/admin/articles" method="post">
-    <p>
-      文章标题
-    </p>
-    <input type="text" name="title">
-    <p>
-      文章内容
-    </p>
-    <div id="editor">
-    </div>
-    <textarea id='js-article-content' name="content" style='display: none'></textarea>
-    <input type="submit" value="上传">
-  </form>
+  <%= form_for @article, url: admin_articles_path, html: {id: 'articleForm'} do |f| %>
+    <p>文章标题</p>
+    <%= f.text_field :title %>
+    <p>文章内容</p>
+    <div id="editor"></div>
+    <%= f.text_area :content, id: 'js-article-content', style: 'display: none' %>
+    <%= f.submit '上传' %>
+  <% end %>
 </div>
 
-<script type="text/javascript">
-  $(function() {
-    var editor = new wangEditor('editor');
-    editor.config.uploadImgUrl = '/upload/pictures'
-    editor.create();
-
-    $('#articleForm').submit(function() {
-      $('#js-article-content').val($('#editor').html());
-    });
-  });
-</script>
+<%= render 'editor_js' %>

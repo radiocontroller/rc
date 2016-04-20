@@ -23,6 +23,8 @@
       <%= render 'common/left_sidebar' %>
 
       <div class="operate-wrap">
+        <%= render 'common/admin/prompts' %>
+        
         <%= yield %>
       </div>
     </div>
@@ -30,6 +32,8 @@
     <div class="right-sidebar-wrap">
       <%= render 'common/right_sidebar' %>
     </div>
+
+    <%= yield :javascripts %>
 
     <script type="text/javascript">
       $(document).ready(function(){
