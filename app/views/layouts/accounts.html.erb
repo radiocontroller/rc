@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8">
-    <title>Rc</title>
-    <link href="/images/favicon.ico" type="image/x-icon" rel=icon>
+    <title>RC</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
@@ -43,6 +43,7 @@
 
   <script type="text/javascript">
     $(function() {
+      $(document).on('click', '.captcha', reload_captcha);
       if($('.tips ul li').length > 0){
         $('.tips').slideDown();
         setTimeout(function() {
@@ -50,5 +51,10 @@
         },3000);
       }
     });
+
+    function reload_captcha() {
+      var img = $('.rucaptcha-image')[0];
+      img.src = img.src.split('?')[0] + '?' + (new Date()).getTime();
+    }
   </script>
 </html>
