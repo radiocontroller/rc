@@ -15,8 +15,11 @@ module Admin
     end
 
     def update
-      @article.update(article_params)
-      redirect_to admin_articles_path, notice: '更新成功!'
+      if @article.update(article_params)
+        redirect_to admin_articles_path, notice: '更新成功!'
+      else
+        redirect_to edit_admin_article_path(@article), alert: @article.errors.full_messages
+      end
     end
 
     def create
@@ -24,7 +27,9 @@ module Admin
       if article.save
         redirect_to admin_articles_path, notice: '创建成功!'
       else
-        redirect_to new_admin_article_path, alert: article.errors.full_messages
+        @article = Article.normal.new
+        flash[:alert] = article.errors.full_messages
+        render :new
       end
     end
 

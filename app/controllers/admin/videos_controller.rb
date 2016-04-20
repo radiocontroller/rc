@@ -19,11 +19,11 @@ module Admin
     end
 
     def create
-      redirect_to '/500' and return if !current_user.try(:admin?)
-      if Video.create(video_params)
-        redirect_to admin_videos_path
+      video = Video.new(video_params)
+      if video.save
+        redirect_to admin_videos_path, notice: '创建成功!'
       else
-        redirect_to new_admin_video_path
+        redirect_to new_admin_video_path, alert: video.errors.full_messages
       end
     end
 
@@ -31,8 +31,11 @@ module Admin
       video = Video.normal.find(params[:id])
       video_params = { description: params[:description], url: params[:url] }
       video_params.merge!(image: params[:image]) if params[:image].present?
-      video.update video_params
-      redirect_to admin_videos_path
+      if video.update(video_params)
+        redirect_to admin_videos_path, notice: '更新成功!'
+      else
+        redirect_to edit_admin_video_path(video), alert: video.errors.full_messages
+      end
     end
 
     private

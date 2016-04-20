@@ -16,17 +16,16 @@ module Admin
       previous = BattlePlane.find_by(battle_plane_params.except(:title, :content))
       if plane.save
         previous.try(:empty_order!)
-        redirect_to admin_battle_planes_path
+        redirect_to admin_battle_planes_path, notice: '创建成功!'
       else
-        @plane = BattlePlane.new
-        render :new
+        redirect_to new_admin_battle_plane_path, alert: plane.errors.full_messages
       end
     end
 
     def update
       BattlePlane.find_by(sort_id: params[:sort_id]).try(:empty_order!)
       BattlePlane.find(params[:id]).set_order!(params[:sort_id])
-      redirect_to admin_battle_planes_path
+      redirect_to admin_battle_planes_path, notice: '更新成功!'
     end
 
     private

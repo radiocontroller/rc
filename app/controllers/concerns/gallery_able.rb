@@ -20,17 +20,16 @@ module GalleryAble
     picture = GalleryPicture.new(picture_params)
     picture.category = english_category
     if picture.save
-      redirect_to send("admin_gallery_#{english_category.pluralize}_path")
+      redirect_to send("admin_gallery_#{english_category.pluralize}_path"), notice: '上传成功!'
     else
-      @picture = GalleryPicture.new
-      render :new
+      redirect_to send("new_admin_gallery_#{english_category}_path"), alert: picture.errors.full_messages
     end
   end
 
   def update
     pictures.find_by(sort_id: params[:sort_id]).try(:empty_order!)
     pictures.find(params[:id]).update(sort_id: params[:sort_id])
-    redirect_to send("admin_gallery_#{english_category.pluralize}_path")
+    redirect_to send("admin_gallery_#{english_category.pluralize}_path"), notice: '更新成功!'
   end
 
   private

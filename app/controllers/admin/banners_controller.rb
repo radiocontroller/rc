@@ -14,10 +14,9 @@ module Admin
     def create
       banner = BannerPicture.new(banner_params)
       if banner.save
-        redirect_to admin_banners_path
+        redirect_to admin_banners_path, notice: '上传成功!'
       else
-        @banner = BannerPicture.new
-        render :new
+        redirect_to new_admin_banner_path, alert: banner.errors.full_messages
       end
     end
 
