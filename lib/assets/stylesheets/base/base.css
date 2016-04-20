@@ -37,3 +37,9 @@ a{
 textarea{
   resize:none;
 }
+
+.confirm-btn{
+  display: inline-block;
+  box-shadow: rgba(174, 222, 244, 0.8) 0px 0px 2px, rgba(0, 0, 0, 0.0470588) 0px 0px 0px 1px inset;
+  background-color: rgb(174, 222, 244);
+}
