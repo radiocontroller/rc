@@ -97,8 +97,12 @@
   border-radius: 7px;
 }
 
-.admin-articles-wrap .article-edit{
+.article-edit, .article-remove{
   color: #000;
   cursor: pointer;
   margin-left: 15px;
+}
+
+.article-remove{
+  font-size: 16px;
 }

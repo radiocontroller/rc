@@ -1,0 +1,6 @@
+<% if @article.deleted? %>
+  $('#js-article-<%= @article.id %>').remove();
+  swal("操作成功!", "成功删除文章！", "success");
+<% else %>
+  swal("操作失败!", "删除文章失败！", "error");
+<% end %>

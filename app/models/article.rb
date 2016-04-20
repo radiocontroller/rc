@@ -26,4 +26,12 @@ class Article < ActiveRecord::Base
   def add_user_id!(id)
     update(user_ids: self.user_ids.push(id))
   end
+
+  def deleted?
+    deleted
+  end
+
+  def remove!
+    self.update(deleted: true)
+  end
 end

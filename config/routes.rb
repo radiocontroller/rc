@@ -42,7 +42,7 @@ Rails.application.routes.draw do
     resources :videos, only: [:destroy, :update] do
       resources :collections, only: [:create]
     end
-    resources :articles, only: [:index] do
+    resources :articles, only: [:destroy] do
       resources :collections, only: [:create]
     end
     resources :pictures, only: [:destroy]
