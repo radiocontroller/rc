@@ -151,6 +151,10 @@
   cursor: pointer;
 }
 
+.common-box{
+  position: relative;
+}
+
 .comment-box{
   width: 900px;
   border: 1px solid #dedede;

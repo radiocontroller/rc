@@ -16,7 +16,9 @@
 <script type="text/javascript">
   $(function() {
     $('.comment-content').each(parseEmoji);
-    load_emoji();
+    $(document).on('click', 'a.face', showEmoji);
+    $(document).on('click', '.SmohanFaceBox h3 a.close', hideEmoji);
+    $(document).on('click', '.SmohanFaceBox li img', insertEmoji);
     $(document).on('click', '.reply .js-edit-reply', editReply);
     $(document).on('click', '.reply .js-delete-comment', deleteReply);
     $(document).on('click', '#js-cancel-reply', cancelReply);
@@ -24,15 +26,27 @@
   });
 
   function parseEmoji() {
-    $(this).replaceface($(this).html());
+    var faces = $(this).html();
+    console.log(faces)
+    for(i=1; i<=60; i++){
+      faces = faces.replace('&lt;emt&gt;'+i+'&lt;/emt&gt;','<img src="/images/emoji/'+i+'.gif">');
+    }
+    $(this).html(faces);
   }
 
-  function load_emoji() {
-    $("a.face").smohanfacebox({
-      Event : "click",
-      divid : "Smohan_FaceBox",
-      textid : "Smohan_text"
-    });
+  function showEmoji() {
+    var emoji = '';
+	  for(i=1; i<=60; i++)
+		    emoji += '<li><a href="javascript:void(0)"><img src="/images/emoji/'+i+'.gif" data-face="<emt>'+i+'</emt>"/></a></li>';
+    $(this).parents('.common-box').prepend("<div class='SmohanFaceBox'><span class='Corner'></span><div class='Content'><h3><span>常用表情</span><a class='close' title='关闭'></a></h3><ul>"+emoji+"</ul></div></div>")
+  }
+
+  function hideEmoji() {
+    $(this).parents('.common-box').children('div:first').remove();
+  }
+
+  function insertEmoji() {
+    $(this).parents('.common-box').find('textarea').insertContent($(this).data("face"));
   }
 
   function editReply() {
