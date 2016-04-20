@@ -22,5 +22,6 @@
  *= require fancybox/jquery.fancybox
  *= require camera/camera
  *= require editor/wangEditor.min
+ *= require emoji/smohan.face
  *= require_self
  */

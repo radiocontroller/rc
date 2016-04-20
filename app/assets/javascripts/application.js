@@ -21,3 +21,4 @@
 //= require fancybox/jquery.fancybox
 //= require fancybox/jquery.mousewheel.pack
 //= require editor/wangEditor.min
+//= require emoji/smohan.face

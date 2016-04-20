@@ -156,7 +156,7 @@
   border: 1px solid #dedede;
   border-radius: 9px;
   box-sizing: border-box;
-  margin-bottom: 21px;
+  margin-bottom: 41px;
 }
 
 .comment-box textarea{
@@ -170,4 +170,9 @@
   border-radius: 9px;
   outline: none;
   margin-left: -1px;
+}
+
+.comment-content img{
+  max-width: 22px;
+  max-height: 22px;
 }

@@ -15,11 +15,25 @@
 </div>
 <script type="text/javascript">
   $(function() {
+    $('.comment-content').each(parseEmoji);
+    load_emoji();
     $(document).on('click', '.reply .js-edit-reply', editReply);
     $(document).on('click', '.reply .js-cancel-reply', cancelReply);
     $(document).on('click', '.reply .js-delete-comment', deleteReply);
     $(document).on('click', '#js-publish, #js-reply', comment);
   });
+
+  function parseEmoji() {
+    $(this).replaceface($(this).html());
+  }
+
+  function load_emoji() {
+    $("a.face").smohanfacebox({
+      Event : "click",
+      divid : "Smohan_FaceBox",
+      textid : "Smohan_text"
+    });
+  }
 
   function editReply() {
     $(this).parents('.item').next().html('<%= j render "/common/comments/reply" %>');

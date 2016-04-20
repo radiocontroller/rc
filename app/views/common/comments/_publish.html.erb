@@ -1,8 +1,8 @@
-<div class="comment-box">
+<div class="comment-box" id='Smohan_FaceBox'>
   <%= form_tag("/#{@resource.class.to_s.downcase.pluralize}/#{@resource.id}/comments") do %>
-    <textarea rows="8" cols="40" name='content'></textarea>
+    <textarea rows="8" cols="40" name='content' id='Smohan_text'></textarea>
     <div class="btn-group">
-      <span>表情</span>
+      <span><a href="javascript:void(0)" class="face" title="表情"></a></span>
       <button type="button" class='btn-submit' id='js-publish'>发表评论</button>
     </div>
   <% end %>

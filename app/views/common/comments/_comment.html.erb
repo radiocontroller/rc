@@ -12,7 +12,7 @@
         <b><%= comment.created_at.strftime('%Y-%m-%d %H:%M:%S') %></b>
       </span>
     </div>
-    <p><%= comment.content %></p>
+    <p class='comment-content'><%= comment.content %></p>
 
     <%= render '/common/comments/child_comments', comment: comment %>
 

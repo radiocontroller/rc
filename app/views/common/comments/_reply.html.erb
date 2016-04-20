@@ -1,9 +1,9 @@
-<div class="replay-box">
+<div class="replay-box" id='Smohan_FaceBox'>
   <%= form_tag("/#{@resource.class.to_s.downcase.pluralize}/#{@resource.id}/comments") do %>
     <%= hidden_field_tag :parent_id %>
-    <textarea rows="8" cols="40" name='content' ></textarea>
+    <textarea rows="8" cols="40" name='content' id='Smohan_text'></textarea>
     <div class="btn-group">
-      <span>表情</span>
+      <span><a href="javascript:void(0)" class="face" title="表情"></a></span>
       <button type="button" class='btn-submit' id='js-reply'>提交</button>
     </div>
   <% end %>
