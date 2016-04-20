@@ -26,12 +26,8 @@
   });
 
   function parseEmoji() {
-    var faces = $(this).html();
-    console.log(faces)
-    for(i=1; i<=60; i++){
-      faces = faces.replace('&lt;emt&gt;'+i+'&lt;/emt&gt;','<img src="/images/emoji/'+i+'.gif">');
-    }
-    $(this).html(faces);
+    var html = $(this).html();
+    $(this).html(html.replace(/&lt;emt&gt;(\d{1,2})&lt;\/emt&gt;/g, '<img src="/images/emoji/$1.gif">'));
   }
 
   function showEmoji() {
