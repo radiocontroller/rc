@@ -1,10 +1,13 @@
 .operate-wrap{
   width: 82%;
-  height: auto;
-  margin: 10px 0px 100px 28px;
+  margin: 10px 0px 100px 0px;
   padding-top: 20px;
   float: right;
   border: 1px solid #CCCCCC;
+}
+
+.operate{
+  margin-left: 20px;
 }
 
 .admin-prompts{

@@ -1,0 +1,16 @@
+<div>
+  <%= f.label :url, '视频地址' %>
+  <%= f.text_field :url, class: 'form-field' %>
+</div>
+<div>
+  <%= f.label :description, '视频描述' %>
+  <%= f.text_field :description, class: 'form-field' %>
+</div>
+<div>
+  <%= f.label :image, '视频封面' %>
+  <%= f.file_field :image, class: 'margin-left-20' %>
+</div>
+<div>
+  <%= f.label :category, '视频分类' %>
+  <%= f.select :category, options_for_select(@categories), {}, class: 'margin-left-20' %>
+</div>

@@ -23,9 +23,18 @@
       <%= render 'common/left_sidebar' %>
 
       <div class="operate-wrap">
-        <%= render 'common/admin/prompts' %>
+        <div class="page-nav">
+          <ul>
+            <li>后台管理</li>
+            <li><i class="fa fa-angle-right"></i></li>
+            <li>视频操作</li>
+          </ul>
+        </div>
+        <div class="operate">
+          <%= render 'common/admin/prompts' %>
 
-        <%= yield %>
+          <%= yield %>
+        </div>
       </div>
     </div>
 

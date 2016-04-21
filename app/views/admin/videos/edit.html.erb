@@ -1,30 +1,7 @@
-<div class="video-create-wrap">
+<div class="video-form-wrap">
   <h2>编辑视频</h2>
   <%= form_for @video, url: admin_video_path(@video) do |f| %>
-    <div>
-      <p>
-        <%= f.label :url, '视频地址' %>
-      </p>
-      <%= f.text_field :url %>
-    </div>
-    <div>
-      <p>
-        <%= f.label :description, '视频描述' %>
-      </p>
-      <%= f.text_field :description %>
-    </div>
-    <div>
-      <p>
-        <%= f.label :image, '视频封面' %>
-      </p>
-      <%= f.file_field :image %>
-    </div>
-    <div>
-      <p>
-        <%= f.label :category, '视频分类' %>
-      </p>
-      <%= f.select :category, options_for_select(@categories) %>
-    </div>
-    <%= f.submit '更新' %>
+    <%= render 'form', f: f %>
+    <%= f.submit '更新', class: 'btn' %>
   <% end %>
 </div>

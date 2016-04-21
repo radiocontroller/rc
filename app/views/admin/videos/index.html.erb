@@ -1,21 +1,20 @@
-<div class="page-nav">
-  <ul>
-    <li>后台管理</li>
-    <li><i class="fa fa-angle-right"></i></li>
-    <li>视频操作</li>
-  </ul>
-</div>
-
 <div class="videos-search">
-  视频类别:
   <%= form_tag(admin_videos_path, method: :get) do %>
-    <%= select_tag 'q[category_eq]', options_for_select(@categories, @search[:category]), include_blank: '全部' %>
-    <%= text_field_tag 'q[description_cont]', @search[:description] %>
-    <%= submit_tag '搜索', class: 'cursor-pointer' %>
+    <div>
+      视频类别:
+      <%= select_tag 'q[category_eq]', options_for_select(@categories, @search[:category]), include_blank: '全部' %>
+    </div>
+    <div>
+      视频描述: <%= text_field_tag 'q[description_cont]', @search[:description] %>
+    </div>
+    <div>
+      今日视频: <%= check_box_tag 'q[is_homepage_true]', 'true', @search[:homepage] %>
+    </div>
+    <%= submit_tag '搜索', class: 'btn' %>
   <% end %>
 </div>
 
-<div class="video-items margin-left-20">
+<div class="video-items">
   <% @videos.each do |video| %>
     <%= render 'video', video: video %>
   <% end %>
