@@ -1,7 +1,7 @@
 $('#operate-wrap').html('');
 <% if @plane.errors.blank? %>
-  $('#battleplane-<%= @plane.id %>').find('h2').html('<%= @plane.title %>');
-  $('#battleplane-<%= @plane.id %>').find('p').html('<%= @plane.content %>');
+  $('#js-battleplane-<%= @plane.id %>').find('h2').html('<%= @plane.title %>');
+  $('#js-battleplane-<%= @plane.id %>').find('p').html('<%= @plane.content %>');
   swal("更新成功!", "", "success");
 <% else %>
   swal("更新失败!", "", "error");

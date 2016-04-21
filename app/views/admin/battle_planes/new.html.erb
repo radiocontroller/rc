@@ -12,6 +12,7 @@
     <div>
       置顶位置:
       <select name="battle_plane[sort_id]">
+        <option value="">无</option>
         <% @limit.times do |i| %>
           <option value='<%= i+1 %>'>首页第<%= i+1 %>篇</option>
         <% end %>

@@ -1,5 +1,6 @@
 .battle-planes{
   text-align: center;
+  margin-top: 10px;
 }
 
 .battle-planes ul li{
@@ -10,9 +11,9 @@
   margin-bottom: 20px;
 }
 
-.battle-planes ul li i{
+.battle-planes ul li a{
+  color: #000;
   margin-left: 15px;
-  cursor: pointer;
 }
 
 .battle-planes ul li h2{

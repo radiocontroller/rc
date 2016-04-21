@@ -4,11 +4,21 @@ class BattlePlane < ActiveRecord::Base
 
   scope :sorted, -> { where.not(sort_id: nil).order('sort_id asc') }
 
+  scope :normal, -> { where(deleted: false) }
+
   def empty_order!
     update(sort_id: nil)
   end
 
   def set_order!(sort_id)
     update(sort_id: sort_id)
+  end
+
+  def remove!
+    update(deleted: true)
+  end
+
+  def deleted?
+    deleted
   end
 end

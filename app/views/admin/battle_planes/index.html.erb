@@ -1,9 +1,10 @@
 <div class="battle-planes">
   <ul>
     <% @planes.each do |plane| %>
-      <li id='battleplane-<%= plane.id %>' data-id='<%= plane.id %>'>
+      <li id='js-battleplane-<%= plane.id %>' data-id='<%= plane.id %>'>
         <h2><%= plane.title %></h2>
-        <i class="fa fa-pencil"></i>
+        <a href="javascript:void(0)" class='js-show-operations'><i class="fa fa-pencil"></i></a>
+        <a href="javascript:void(0)" class='js-delete'><i class="fa fa-remove"></i></a>
         <p><%= plane.content %></p>
         <% if plane.sort_id.present? %>
           <span>当前战机简介是首页第<%= plane.sort_id %>篇</span>
@@ -23,7 +24,8 @@
     $(document).on('click', '#js-update', updateBattlePlane);
     $(document).on('click', '#js-edit-order', editBattlePlaneOrder);
     $(document).on('click', '#js-sort', sortBattlePlane);
-    $('.battle-planes ul li i').on('click', showOperations);
+    $(document).on('click', '.js-show-operations', showOperations);
+    $(document).on('click', '.js-delete', deletePlane);
   });
 
   function showOperations() {
@@ -37,7 +39,7 @@
 
   function editBattlePlane() {
     $('#operate-wrap').html('<%= j render "edit" %>');
-    var battleplaneLi = $('#battleplane-'+$('#battleplane-id').val());
+    var battleplaneLi = $('#js-battleplane-'+$('#battleplane-id').val());
     $('#js-title').val(battleplaneLi.find('h2').html());
     $('#js-content').val(battleplaneLi.find('p').html());
   }
@@ -52,5 +54,24 @@
 
   function sortBattlePlane() {
     $('#sortForm').attr('action', '/admin/battle_planes/'+$('#battleplane-id').val()).submit();
+  }
+
+  function deletePlane() {
+    var self = $(this);
+    swal({
+     title: "您确定要删除吗？",
+     type: "warning",
+     showCancelButton: true,
+     closeOnConfirm: false,
+     confirmButtonText: "是的，强行删除",
+     confirmButtonColor: "#ec6c62"
+     }, function() {
+       $.ajax({
+         url: "/ajax/battle_planes/"+ self.parent().data('id'),
+         type: "DELETE",
+         dataType: 'script',
+         success: function(){}
+       })
+     });
   }
 </script>

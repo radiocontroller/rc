@@ -4,7 +4,7 @@ module Admin
     before_action :set_limit, only: [:index, :new]
 
     def index
-      @planes = BattlePlane.order('sort_id asc')
+      @planes = BattlePlane.normal.order('sort_id asc')
     end
 
     def new
@@ -13,7 +13,7 @@ module Admin
 
     def create
       plane = BattlePlane.new(battle_plane_params)
-      previous = BattlePlane.find_by(battle_plane_params.except(:title, :content))
+      previous = BattlePlane.normal.find_by(battle_plane_params.except(:title, :content))
       if plane.save
         previous.try(:empty_order!)
         redirect_to admin_battle_planes_path, notice: '创建成功!'
@@ -23,8 +23,8 @@ module Admin
     end
 
     def update
-      BattlePlane.find_by(sort_id: params[:sort_id]).try(:empty_order!)
-      BattlePlane.find(params[:id]).set_order!(params[:sort_id])
+      BattlePlane.normal.find_by(sort_id: params[:sort_id]).try(:empty_order!)
+      BattlePlane.normal.find(params[:id]).set_order!(params[:sort_id])
       redirect_to admin_battle_planes_path, notice: '更新成功!'
     end
 
