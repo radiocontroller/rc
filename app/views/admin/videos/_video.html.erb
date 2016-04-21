@@ -1,6 +1,5 @@
-<div class="video-item">
-  <div class="item" id='js-video-<%= video.id %>'>
-    <input type="hidden" value="<%= video.url %>">
+<div class="video-item" id='js-video-<%= video.id %>'>
+  <div class="item">
     <a href="/videos/<%= video.id %>">
       <img src="<%= video.image.normal.url %>" class='item' />
       <span class="thumb_overlay fa fa-play-circle-o"></span>
@@ -18,6 +17,8 @@
         <i class="fa fa-remove"></i>
       </a>
     </span>
-    <%= '今日视频' if video.homepage? %>
+    <span class='js-homepage-info'>
+      <%= '今日视频' if video.homepage? %>
+    </span>
   </div>
 </div>

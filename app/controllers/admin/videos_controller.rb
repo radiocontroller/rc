@@ -1,6 +1,7 @@
 module Admin
   class VideosController < BaseController
     layout 'admin'
+    before_action :set_video, only: [:edit, :update]
 
     def index
       q = Video.normal.ransack(params[:q])
@@ -27,14 +28,15 @@ module Admin
       end
     end
 
+    def edit
+      @categories = Video::CATEGORIES.invert.to_a
+    end
+
     def update
-      video = Video.normal.find(params[:id])
-      video_params = { description: params[:description], url: params[:url] }
-      video_params.merge!(image: params[:image]) if params[:image].present?
-      if video.update(video_params)
+      if @video.update(video_params)
         redirect_to admin_videos_path, notice: '更新成功!'
       else
-        redirect_to edit_admin_video_path(video), alert: video.errors.full_messages
+        redirect_to edit_admin_video_path(@video), alert: @video.errors.full_messages
       end
     end
 
@@ -50,6 +52,10 @@ module Admin
 
       def video_params
         params.require(:video).permit(:description, :url, :image, :category)
+      end
+
+      def set_video
+        @video = Video.normal.find(params[:id])
       end
 
   end

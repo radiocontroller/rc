@@ -26,10 +26,9 @@
 <script type="text/javascript">
   $(function() {
     $(document).on('click', '.js-show-operations', showOperations);
-    $(document).on('click', '#js-edit', editVideo);
+    $(document).on('click', '.js-edit', editVideo);
     $(document).on('click', '.js-delete', deleteVideo);
     $(document).on('click', '#js-set-homepage', setHomepage);
-    $(document).on('click', '#js-update', updateVideo)
     $(document).on('click', '#js-cancel', hideOperations);
   });
 
@@ -39,10 +38,7 @@
   }
 
   function editVideo() {
-    var videoId = $('#video-id').val();
-    $('#operate-wrap').html('<%= j render "edit" %>');
-    $('#js-video-url').val($('#js-video-'+videoId).find('input').val());
-    $('#js-video-description').val($('#js-video-'+videoId).find('h3').html());
+    window.location.href = '/admin/videos/'+$('#video-id').val()+'/edit';
   }
 
   function deleteVideo() {
@@ -82,10 +78,6 @@
          success: function(){}
        })
      });
-  }
-
-  function updateVideo() {
-    $('#videoForm').attr('action', '/admin/videos/'+ $('#video-id').val()).submit();
   }
 
   function hideOperations() {

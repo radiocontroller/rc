@@ -33,9 +33,17 @@ class Video < ActiveRecord::Base
     deleted
   end
 
+  def free_homepage!
+    update(is_homepage: false)
+  end
+
+  def free_previous_homepage
+    Video.normal.homepage.try(:free_homepage!)
+  end
+
   def homepage!
-    previous = Video.normal.homepage
-    previous.update(is_homepage: false) if previous.present?
+    return if self.homepage?
+    free_previous_homepage
     self.update(is_homepage: true)
   end
 

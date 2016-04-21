@@ -1,7 +1,7 @@
 <div style='margin-left: 20px'>
   <%= form_for @article, url: admin_article_path(@article), html: {id: 'articleForm'} do |f| %>
     <p>文章标题</p>
-    <%= f.text_field :title, value: @article.title %>
+    <%= f.text_field :title %>
     <p>文章内容</p>
     <%= f.text_area :content, id: 'js-article-content', style: 'display: none' %>
     <div id="editor">
