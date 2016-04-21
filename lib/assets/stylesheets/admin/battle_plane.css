@@ -32,3 +32,25 @@
 .battle-planes ul li span{
   font-size: 12px;
 }
+
+.battle-form-wrap, .battle-form-wrap div{
+  margin-top: 20px;
+}
+
+.battle-form-wrap input[type='text']{
+  width: 200px;
+  height: 25px;
+}
+
+.battle-form-wrap textarea{
+  vertical-align: middle;
+  width: 350px;
+  height: 100px;
+}
+
+.battle-form-wrap .btn{
+  width: 60px;
+  height: 30px;
+  cursor: pointer;
+  margin-top: 20px;
+}

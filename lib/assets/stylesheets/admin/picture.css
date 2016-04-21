@@ -1,9 +1,4 @@
-.picture-search{
-  margin-left: 20px;
-}
-
 .admin-pictures{
-  margin-left: 20px;
   margin-top: 20px;
   display: inline-block;
 }
@@ -34,7 +29,7 @@
 }
 
 .upload-btn{
-  margin: 10px 0px 0px 20px;
+  margin: 10px 0px 0px 0px;
   width: 80px;
   height: 40px;
   border-radius: 3px;
