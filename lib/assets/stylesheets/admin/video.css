@@ -31,8 +31,16 @@
   margin-bottom: 69px;
 }
 
-.video-edit i{
-  color: #000;
-  cursor: pointer;
+.video-edit span{
   margin-top: 5px;
+}
+
+.video-edit a{
+  color: #000;
+  margin-top: 5px;
+}
+
+.video-remove{
+  font-size: 14px;
+  margin-left: 10px;
 }
