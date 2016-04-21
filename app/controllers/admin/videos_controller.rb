@@ -1,6 +1,7 @@
 module Admin
   class VideosController < BaseController
     layout 'admin'
+    before_action :set_page_nav
     before_action :set_video, only: [:edit, :update]
 
     def index
@@ -53,6 +54,16 @@ module Admin
 
       def set_video
         @video = Video.normal.find(params[:id])
+      end
+
+      def set_page_nav
+        @page_nav = PageNavCollection.to_nav(
+          [
+            { name: '后台管理', url: '/admin' },
+            { name: '视频模块', url: '/admin/videos' },
+            { name: parse_name(request[:action]), url: request.path, end: true }
+          ]
+        )
       end
 
   end

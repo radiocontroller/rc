@@ -1,6 +1,7 @@
 module Admin
   class BattlePlanesController < BaseController
     layout 'admin'
+    before_action :set_page_nav
     before_action :set_limit, only: [:index, :new]
 
     def index
@@ -36,6 +37,16 @@ module Admin
 
       def set_limit
         @limit = 3
+      end
+
+      def set_page_nav
+        @page_nav = PageNavCollection.to_nav(
+          [
+            { name: '后台管理', url: '/admin' },
+            { name: '战机模块', url: '/admin/battle_planes' },
+            { name: parse_name(request[:action]), url: request.path, end: true }
+          ]
+        )
       end
 
   end

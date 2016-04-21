@@ -5,6 +5,7 @@
 }
 
 .page-nav ul{
+  height: 20px;
   margin-left: 20px;
 }
 
@@ -16,4 +17,12 @@
 .page-nav i{
   margin-top: 1px;
   font-size: 20px;
+}
+
+.page-nav a{
+  color: #000;
+}
+
+.page-nav a:hover{
+  color: #206e8a;
 }

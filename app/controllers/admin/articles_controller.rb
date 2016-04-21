@@ -1,6 +1,7 @@
 module Admin
   class ArticlesController < BaseController
     layout 'admin'
+    before_action :set_page_nav
     before_action :set_article, only: [:edit, :update]
 
     def index
@@ -41,6 +42,16 @@ module Admin
 
       def article_params
         params.require(:article).permit(:title, :content)
+      end
+
+      def set_page_nav
+        @page_nav = PageNavCollection.to_nav(
+          [
+            { name: '后台管理', url: '/admin' },
+            { name: '文章模块', url: '/admin/articles' },
+            { name: parse_name(request[:action]), url: request.path, end: true }
+          ]
+        )
       end
 
   end

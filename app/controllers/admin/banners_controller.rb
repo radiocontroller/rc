@@ -1,6 +1,7 @@
 module Admin
   class BannersController < BaseController
     layout 'admin'
+    before_action :set_page_nav
     before_action :set_limit, only: [:index]
 
     def index
@@ -39,6 +40,16 @@ module Admin
 
       def page_num
         12
+      end
+
+      def set_page_nav
+        @page_nav = PageNavCollection.to_nav(
+          [
+            { name: '后台管理', url: '/admin' },
+            { name: '首页顶部图片模块', url: '/admin/banners' },
+            { name: parse_name(request[:action]), url: request.path, end: true }
+          ]
+        )
       end
 
   end

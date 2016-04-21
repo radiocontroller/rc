@@ -2,6 +2,7 @@ module GalleryAble
 
   def self.included(base)
     base.module_eval do
+      before_action :set_page_nav
       before_action :set_limit, only: [:index]
     end
   end
@@ -52,6 +53,16 @@ module GalleryAble
 
     def page_num
       12
+    end
+
+    def set_page_nav
+      @page_nav = PageNavCollection.to_nav(
+        [
+          { name: '后台管理', url: '/admin' },
+          { name: "#{set_category}模块", url: "/admin/gallery/#{english_category.pluralize}" },
+          { name: parse_name(request[:action]), url: request.path, end: true }
+        ]
+      )
     end
 
 end
