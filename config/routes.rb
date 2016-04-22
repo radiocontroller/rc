@@ -34,6 +34,7 @@ Rails.application.routes.draw do
       resources :fpvs, only: [:index, :new, :create, :update]
     end
     resources :battle_planes, only: [:index, :update, :new, :create]
+    resources :users, only: [:index]
   end
 
   namespace :ajax do

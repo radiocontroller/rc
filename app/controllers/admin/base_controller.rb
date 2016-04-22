@@ -8,8 +8,8 @@ module Admin
         redirect_to root_path if !current_user.try(:admin?)
       end
 
-      def parse_name(action)
-        case action
+      def name
+        case request[:action]
         when 'index'
           '列表'
         when 'new'

@@ -21,16 +21,16 @@ module GalleryAble
     picture = GalleryPicture.new(picture_params)
     picture.category = english_category
     if picture.save
-      redirect_to send("admin_gallery_#{english_category.pluralize}_path"), notice: '上传成功!'
+      redirect_to "/admin/gallery/#{english_category.pluralize}", notice: '上传成功!'
     else
-      redirect_to send("new_admin_gallery_#{english_category}_path"), alert: picture.errors.full_messages
+      redirect_to "/admin/gallery/#{english_category}/new", alert: picture.errors.full_messages
     end
   end
 
   def update
     pictures.find_by(sort_id: params[:sort_id]).try(:empty_order!)
     pictures.find(params[:id]).update(sort_id: params[:sort_id])
-    redirect_to send("admin_gallery_#{english_category.pluralize}_path"), notice: '更新成功!'
+    redirect_to "/admin/gallery/#{english_category.pluralize}", notice: '更新成功!'
   end
 
   private
@@ -60,7 +60,7 @@ module GalleryAble
         [
           { name: '后台管理', url: '/admin' },
           { name: "#{set_category}模块", url: "/admin/gallery/#{english_category.pluralize}" },
-          { name: parse_name(request[:action]), url: request.path, end: true }
+          { name: name, url: request.path, end: true }
         ]
       )
     end
