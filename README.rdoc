@@ -1,28 +1,13 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+这是一个基于ruby on rails的航空模型网站项目, 主要以文章, 图片, 视频的类型
+来展示关于航空模型以及无人机相关内容.用户可以对文章, 视频进行评论和收藏.同时有一个
+后台对内容和用户进行操作
 
-Things you may want to cover:
+* 用户模块用户操作模块暂未完成, 其他模块大致完成
 
-* Ruby version
+* ruby版本: 2.2.3
 
-* System dependencies
+* rails版本: 4.2.0
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* postgresql版本: 9.3.10
