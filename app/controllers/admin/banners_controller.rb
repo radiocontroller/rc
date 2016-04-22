@@ -25,7 +25,7 @@ module Admin
       banner = BannerPicture.find(params[:id])
       BannerPicture.find_by(sort_id: params[:sort_id]).try(:empty_order!)
       banner.update(sort_id: params[:sort_id])
-      redirect_to admin_banners_path
+      redirect_to admin_banners_path, notice: '置顶成功!'
     end
 
     private
@@ -47,7 +47,7 @@ module Admin
           [
             { name: '后台管理', url: '/admin' },
             { name: '首页顶部图片模块', url: '/admin/banners' },
-            { name: parse_name(request[:action]), url: request.path, end: true }
+            { name: name, url: request.path, end: true }
           ]
         )
       end

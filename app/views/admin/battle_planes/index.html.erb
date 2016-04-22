@@ -13,13 +13,10 @@
     <% end %>
   </ul>
 </div>
-<div id='operate-wrap'>
-</div>
 <input type="hidden" id='battleplane-id'>
 
 <script type="text/javascript">
   $(function() {
-    $(document).on('click', '#js-cancel', cancelOperate);
     $(document).on('click', '#js-edit', editBattlePlane);
     $(document).on('click', '#js-update', updateBattlePlane);
     $(document).on('click', '#js-edit-order', editBattlePlaneOrder);
@@ -29,16 +26,12 @@
   });
 
   function showOperations() {
-    $('#operate-wrap').html('<%= j render "operations" %>');
+    insertFloatWindow('<%= j render "operations" %>');
     $('#battleplane-id').val($(this).parent().data('id'));
   }
 
-  function cancelOperate() {
-    $('#operate-wrap').html('');
-  }
-
   function editBattlePlane() {
-    $('#operate-wrap').html('<%= j render "edit" %>');
+    insertFloatWindow('<%= j render "edit" %>');
     var battleplaneLi = $('#js-battleplane-'+$('#battleplane-id').val());
     $('#js-title').val(battleplaneLi.find('h2').html());
     $('#js-content').val(battleplaneLi.find('p').html());
@@ -49,7 +42,7 @@
   }
 
   function editBattlePlaneOrder() {
-    $('#operate-wrap').html('<%= j render "sort" %>');
+    insertFloatWindow('<%= j render "sort" %>');
   }
 
   function sortBattlePlane() {

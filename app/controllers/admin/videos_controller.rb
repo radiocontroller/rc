@@ -61,7 +61,7 @@ module Admin
           [
             { name: '后台管理', url: '/admin' },
             { name: '视频模块', url: '/admin/videos' },
-            { name: parse_name(request[:action]), url: request.path, end: true }
+            { name: name, url: request.path, end: true }
           ]
         )
       end

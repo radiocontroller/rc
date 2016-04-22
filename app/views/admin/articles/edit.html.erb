@@ -1,14 +1,1 @@
-<div style='margin-left: 20px'>
-  <%= form_for @article, url: admin_article_path(@article), html: {id: 'articleForm'} do |f| %>
-    <p>文章标题</p>
-    <%= f.text_field :title %>
-    <p>文章内容</p>
-    <%= f.text_area :content, id: 'js-article-content', style: 'display: none' %>
-    <div id="editor">
-      <%= @article.content.html_safe %>
-    </div>
-    <%= f.submit '更新' %>
-  <% end %>
-</div>
-
-<%= render 'editor_js' %>
+<%= render 'form', url: admin_article_path(@article), btn_name: '更新' %>

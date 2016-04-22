@@ -1,4 +1,4 @@
-$('#operate-wrap').html('');
+emptyFloatWindow();
 <% if @plane.errors.blank? %>
   $('#js-battleplane-<%= @plane.id %>').find('h2').html('<%= @plane.title %>');
   $('#js-battleplane-<%= @plane.id %>').find('p').html('<%= @plane.content %>');

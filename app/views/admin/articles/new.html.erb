@@ -1,10 +1,1 @@
-<%= form_for @article, url: admin_articles_path, html: {id: 'articleForm'} do |f| %>
-  <p>文章标题</p>
-  <%= f.text_field :title %>
-  <p>文章内容</p>
-  <div id="editor"></div>
-  <%= f.text_area :content, id: 'js-article-content', style: 'display: none' %>
-  <%= f.submit '上传' %>
-<% end %>
-
-<%= render 'editor_js' %>
+<%= render 'form', url: admin_articles_path, btn_name: '创建' %>

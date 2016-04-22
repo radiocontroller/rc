@@ -20,7 +20,6 @@
   <% end %>
 </div>
 <input type="hidden" id='video-id'>
-<div id='operate-wrap'></div>
 
 <script type="text/javascript">
   $(function() {
@@ -28,11 +27,10 @@
     $(document).on('click', '.js-edit', editVideo);
     $(document).on('click', '.js-delete', deleteVideo);
     $(document).on('click', '#js-set-homepage', setHomepage);
-    $(document).on('click', '#js-cancel', hideOperations);
   });
 
   function showOperations() {
-    $('#operate-wrap').html('<%= j render "operations" %>');
+    insertFloatWindow('<%= j render "operations" %>');
     $('#video-id').val($(this).data('id'));
   }
 
@@ -41,8 +39,6 @@
   }
 
   function deleteVideo() {
-    var self = $(this);
-    hideOperations();
     swal({
      title: "您确定要删除吗？",
      type: "warning",
@@ -61,7 +57,7 @@
   }
 
   function setHomepage() {
-    hideOperations();
+    emptyFloatWindow();
     swal({
      title: "设置为今日视频？",
      type: "warning",
@@ -79,7 +75,4 @@
      });
   }
 
-  function hideOperations() {
-    $('#operate-wrap').html("");
-  }
 </script>

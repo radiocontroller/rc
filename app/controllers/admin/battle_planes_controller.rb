@@ -44,7 +44,7 @@ module Admin
           [
             { name: '后台管理', url: '/admin' },
             { name: '战机模块', url: '/admin/battle_planes' },
-            { name: parse_name(request[:action]), url: request.path, end: true }
+            { name: name, url: request.path, end: true }
           ]
         )
       end

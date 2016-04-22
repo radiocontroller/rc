@@ -49,7 +49,7 @@ module Admin
           [
             { name: '后台管理', url: '/admin' },
             { name: '文章模块', url: '/admin/articles' },
-            { name: parse_name(request[:action]), url: request.path, end: true }
+            { name: name, url: request.path, end: true }
           ]
         )
       end

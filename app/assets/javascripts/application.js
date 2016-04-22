@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require slide
 //= require insert_content
+//= require floatwindow
 //= require sweetalert/sweetalert-dev
 //= require sweetalert/sweetalert.min
 //= require camera/camera.min

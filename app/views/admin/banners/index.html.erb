@@ -1,5 +1,3 @@
-<div class="banner-edit-wrap">
-</div>
 <div>
   <a href="/admin/banners/new">
     <button type="button" class='upload-btn'>
@@ -34,21 +32,15 @@
     $('.fancybox').fancybox();
     $(document).on('click', '.js-sort', editBanner);
     $(document).on('click', '#js-update-banner', updateBanner);
-    $(document).on('click', '#js-cancel', hideFloatwindow);
   });
 
   function editBanner() {
-    $('.banner-edit-wrap').html('<%= j render "sort" %>');
+    insertFloatWindow('<%= j render "sort" %>');
     $('#js-update-banner').data('id', $(this).data('id'));
-    $('.banner-edit-wrap').show();
   }
 
   function updateBanner() {
     $('#bannerForm').attr('action', '/admin/banners/'+ $(this).data('id')).submit();
   }
 
-  function hideFloatwindow() {
-    $('.banner-edit-wrap').hide();
-    $('.banner-edit-wrap').html("");
-  }
 </script>
