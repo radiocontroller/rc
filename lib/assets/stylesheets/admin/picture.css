@@ -61,3 +61,13 @@
 .picture-operation span:last-child{
   float: right;
 }
+
+.gallery h2, .gallery div{
+  margin-bottom: 20px;
+}
+
+.gallery .btn{
+  width: 60px;
+  height: 30px;
+  cursor: pointer;
+}

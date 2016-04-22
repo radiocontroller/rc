@@ -1,12 +1,19 @@
-<div>
+<div class='gallery'>
   <h2>上传<%= @category %>图片</h2>
-  <%= form_for @picture, url: url do |f| %>
+  <%= form_for @picture, url: @url do |f| %>
     <div>
-      <p>
-        <%= f.label :resource, '图片' %>
-      </p>
+      <%= f.label '选择图片:' %>
       <%= f.file_field :resource %>
     </div>
-    <%= f.submit '上传' %>
+    <div>
+      <%= f.label '置顶位置:' %>
+      <select name="gallery_picture[sort_id]">
+        <option value=''>无</option>
+        <% @limit.times do |i| %>
+          <option value='<%= i+1 %>'>首页第<%= i+1 %>张图片</option>
+        <% end %>
+      </select>
+    </div>
+    <%= f.submit '上传', class: 'btn' %>
   <% end %>
 </div>

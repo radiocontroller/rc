@@ -3,6 +3,7 @@ module Admin
     layout 'admin'
     before_action :set_page_nav
     before_action :set_video, only: [:edit, :update]
+    before_action :set_categories, only: [:new, :edit]
 
     def index
       q = Video.normal.ransack(params[:q])
@@ -13,7 +14,6 @@ module Admin
 
     def new
       @video = Video.new
-      @categories = Video::CATEGORIES.invert.to_a
     end
 
     def create
@@ -26,7 +26,6 @@ module Admin
     end
 
     def edit
-      @categories = Video::CATEGORIES.invert.to_a
     end
 
     def update
@@ -64,6 +63,10 @@ module Admin
             { name: name, url: request.path, end: true }
           ]
         )
+      end
+
+      def set_categories
+        @categories = Video::CATEGORIES.invert.to_a
       end
 
   end

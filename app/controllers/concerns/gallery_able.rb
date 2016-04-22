@@ -3,33 +3,31 @@ module GalleryAble
   def self.included(base)
     base.module_eval do
       before_action :set_page_nav
-      before_action :set_limit, only: [:index]
+      before_action :set_limit, :set_category, only: [:index, :new]
     end
   end
 
   def index
     @pictures = pictures.order('sort_id asc').page(params[:page] || 1).per_page(page_num)
-    set_category
   end
 
   def new
     @picture = GalleryPicture.new
-    set_category
+    @url = request.path.split('/new').first
   end
 
   def create
     picture = GalleryPicture.new(picture_params)
-    picture.category = english_category
     if picture.save
       redirect_to "/admin/gallery/#{english_category.pluralize}", notice: '上传成功!'
     else
-      redirect_to "/admin/gallery/#{english_category}/new", alert: picture.errors.full_messages
+      redirect_to "/admin/gallery/#{english_category.pluralize}/new", alert: picture.errors.full_messages
     end
   end
 
   def update
-    pictures.find_by(sort_id: params[:sort_id]).try(:empty_order!)
-    pictures.find(params[:id]).update(sort_id: params[:sort_id])
+    pictures.find_by(sort_params).try(:empty_order!)
+    pictures.find(params[:id]).update(sort_params)
     redirect_to "/admin/gallery/#{english_category.pluralize}", notice: '更新成功!'
   end
 
@@ -40,7 +38,11 @@ module GalleryAble
     end
 
     def picture_params
-      params.require(:gallery_picture).permit(:resource)
+      params.require(:gallery_picture).permit(:resource).merge(category: english_category)
+    end
+
+    def sort_params
+      { sort_id: params[:sort_id] }
     end
 
     def pictures
