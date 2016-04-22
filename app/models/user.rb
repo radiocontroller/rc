@@ -21,7 +21,11 @@ class User < ActiveRecord::Base
   has_many :comments
 
   def admin?
-    self.admin
+    admin
+  end
+
+  def deleted?
+    deleted
   end
 
   def has_collected?(resource)
@@ -34,6 +38,14 @@ class User < ActiveRecord::Base
 
   def has_commented?(resource)
     comments.any?{ |comment| comment.commentable == resource }
+  end
+
+  def role
+    admin? ? '管理员' : '用户'
+  end
+
+  def status
+    deleted? ? '禁用' : '正常'
   end
 
 end

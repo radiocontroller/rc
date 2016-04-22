@@ -6,5 +6,6 @@
 *= require admin/picture
 *= require admin/battle_plane
 *= require admin/article
+*= require admin/user
 *= require_self
 */

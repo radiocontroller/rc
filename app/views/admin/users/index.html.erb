@@ -1,0 +1,29 @@
+<div class='users'>
+  <table>
+    <thead>
+      <tr>
+        <th>用户名</th>
+        <th>邮箱</th>
+        <th>注册日期</th>
+        <th>角色</th>
+        <th>状态</th>
+        <th>操作</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.username %></td>
+          <td><%= user.email %></td>
+          <td><%= user.created_at.strftime('%Y-%m-%d %H:%M:%S') %></td>
+          <td><%= user.role %></td>
+          <td><%= user.status %></td>
+          <td>禁用</td>
+          <td>设为管理员</td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>

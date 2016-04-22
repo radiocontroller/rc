@@ -46,7 +46,7 @@ module Admin
         @page_nav = PageNavCollection.to_nav(
           [
             { name: '后台管理', url: '/admin' },
-            { name: '首页顶部图片模块', url: '/admin/banners' },
+            { name: '首页大图模块', url: '/admin/banners' },
             { name: name, url: request.path, end: true }
           ]
         )

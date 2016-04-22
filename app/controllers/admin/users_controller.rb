@@ -4,6 +4,7 @@ module Admin
     before_action :set_page_nav
 
     def index
+      @users = User.all
     end
 
     private
