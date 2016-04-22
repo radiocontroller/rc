@@ -1,28 +1,19 @@
-<script type="text/javascript">
-  $(function() {
-    $('#js-search-videos').on('click', function() {
-      $(this).closest('form').submit();
-    });
-  })
-</script>
-<div class="content">
-  <div class="video-list">
-    <div class="title">
-      <h2><%= category %></h2>
-      <div class="search">
-        <%= form_tag(send("#{action_name}_videos_path"), method: :get) do %>
-          <%= text_field_tag 'q[description_cont]', @search %>
-          <a id='js-search-videos' class="btn-search" href="javascript:void(0)">
-            <i class="fa fa-search"></i>
-          </a>
-        <% end %>
-      </div>
-    </div>
-
-    <div class="video-items">
-      <% videos.each do |video| %>
-        <%= render 'video', video: video %>
+<div class="video-list">
+  <div class="title">
+    <h2><%= category %></h2>
+    <div class="search">
+      <%= form_tag(send("#{action_name}_videos_path"), method: :get) do %>
+        <%= text_field_tag 'q[description_cont]', @search %>
+        <a class="btn-search" href="javascript:void(0)" onClick="$(this).closest('form').submit();">
+          <i class="fa fa-search"></i>
+        </a>
       <% end %>
     </div>
+  </div>
+
+  <div class="video-items">
+    <% videos.each do |video| %>
+      <%= render 'video', video: video %>
+    <% end %>
   </div>
 </div>

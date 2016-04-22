@@ -32,6 +32,15 @@
   border-color:  rgba(82,168,236,0.8);
 }
 
+.video-list .search .btn-search{
+  color: #333;
+  background: none;
+  text-align: center;
+  box-sizing: border-box;
+  border: 1px solid #e5e5e5;
+  border-left: none;
+}
+
 .video-list .video-items{
   margin-top: 70px;
   text-align: left;
@@ -48,7 +57,7 @@
 }
 
 .btn-search i{
-  padding: 8px 0;
+  padding: 10px 0;
 }
 
 .video-items{
