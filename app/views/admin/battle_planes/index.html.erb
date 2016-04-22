@@ -1,16 +1,6 @@
 <div class="battle-planes">
   <ul>
-    <% @planes.each do |plane| %>
-      <li id='js-battleplane-<%= plane.id %>' data-id='<%= plane.id %>'>
-        <h2><%= plane.title %></h2>
-        <a href="javascript:void(0)" class='js-show-operations'><i class="fa fa-pencil"></i></a>
-        <a href="javascript:void(0)" class='js-delete'><i class="fa fa-remove"></i></a>
-        <p><%= plane.content %></p>
-        <% if plane.sort_id.present? %>
-          <span>当前战机简介是首页第<%= plane.sort_id %>篇</span>
-        <% end %>
-      </li>
-    <% end %>
+    <%= render @battle_planes %>
   </ul>
 </div>
 <input type="hidden" id='battleplane-id'>

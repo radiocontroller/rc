@@ -2,6 +2,7 @@
   <table>
     <thead>
       <tr>
+        <th>序号</th>
         <th>用户名</th>
         <th>邮箱</th>
         <th>注册日期</th>
@@ -12,18 +13,7 @@
       </tr>
     </thead>
     <tbody>
-      <% @users.each do |user| %>
-        <tr>
-          <td><%= user.username %></td>
-          <td><%= user.email %></td>
-          <td><%= user.created_at.strftime('%Y-%m-%d %H:%M:%S') %></td>
-          <td><%= user.role %></td>
-          <td><%= user.status %></td>
-          <td>禁用</td>
-          <td>设为管理员</td>
-        </tr>
-      <% end %>
+      <%= render @users %>
     </tbody>
   </table>
-
 </div>

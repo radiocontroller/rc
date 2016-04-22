@@ -1,0 +1,13 @@
+<li>
+  <a href="<%= banner.resource.large.url %>" class="fancybox" rel="gallery1">
+    <img src="<%= banner.resource.medium.url %>" />
+    <span class="thumb_overlay"></span>
+  </a>
+  <div style='font-size: 12px'>
+    <% if banner.sort_id.present? %>
+      当前图片是首页顶部第<%= banner.sort_id %>张
+    <% else %>
+      <span class='js-sort cursor-pointer' data-id='<%= banner.id %>'>置顶</span>
+    <% end %>
+  </div>
+</li>

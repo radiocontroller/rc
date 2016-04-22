@@ -12,8 +12,6 @@
   </div>
 
   <div class="video-items">
-    <% videos.each do |video| %>
-      <%= render 'video', video: video %>
-    <% end %>
+    <%= render @videos %>
   </div>
 </div>

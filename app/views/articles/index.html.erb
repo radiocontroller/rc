@@ -12,8 +12,6 @@
   </div>
 
   <div class="items">
-    <% @articles.each do |article| %>
-      <%= render 'article', article: article %>
-    <% end %>
+    <%= render @articles %>
   </div>
 </div>

@@ -15,9 +15,7 @@
 </div>
 
 <div class="video-items">
-  <% @videos.each do |video| %>
-    <%= render 'video', video: video %>
-  <% end %>
+  <%= render @videos %>
 </div>
 <input type="hidden" id='video-id'>
 

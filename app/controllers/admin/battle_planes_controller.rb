@@ -5,7 +5,7 @@ module Admin
     before_action :set_limit, only: [:index, :new]
 
     def index
-      @planes = BattlePlane.normal.order('sort_id asc')
+      @battle_planes = BattlePlane.normal.order('sort_id asc')
     end
 
     def new

@@ -1,21 +1,6 @@
 <div class="admin-pictures">
   <ul>
-    <% @pictures.each do |picture| %>
-      <li id="picture-<%= picture.id %>">
-        <a href="<%= picture.resource.url %>" class="fancybox" rel="gallery1">
-          <img src="<%= picture.resource.small.url %>" />
-          <span class="thumb_overlay"></span>
-        </a>
-        <div class='picture-operation'>
-          <% if picture.sort_id.present? %>
-            当前图片是首页<%= @category %>第<%= picture.sort_id %>张
-          <% else %>
-            <span class='js-sort cursor-pointer' data-id='<%= picture.id %>'>置顶</span>
-          <% end %>
-          <span><%= link_to '删除', 'javascript:void(0)', class: 'js-delete-picture', data: {id: picture.id} %></span>
-        </div>
-      </li>
-    <% end %>
+    <%= render partial: 'admin/gallery/common/picture', collection: @pictures %>
   </ul>
 </div>
 <div class='paginate'>

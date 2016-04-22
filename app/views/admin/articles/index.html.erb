@@ -1,10 +1,9 @@
 <div class="admin-articles-wrap">
   <div class="items">
-    <% @articles.each do |article| %>
-      <%= render 'article', article: article %>
-    <% end %>
+    <%= render @articles %>
   </div>
 </div>
+
 <script type="text/javascript">
   $(function() {
     $(document).on('click', '.js-remove', removeArticle);

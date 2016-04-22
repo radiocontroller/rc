@@ -1,5 +1,3 @@
 <div class="other-users">
-  <% comment.children.each do |child_comment| %>
-    <%= render '/common/comments/child_comment', comment: child_comment %>
-  <% end %>
+  <%= render partial: '/common/comments/child_comment', collection: comment.children, as: :comment %>
 </div>
