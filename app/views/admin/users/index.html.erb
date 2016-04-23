@@ -1,19 +1,22 @@
-<div class='users'>
-  <table>
-    <thead>
-      <tr>
-        <th>序号</th>
-        <th>用户名</th>
-        <th>邮箱</th>
-        <th>注册日期</th>
-        <th>角色</th>
-        <th>状态</th>
-        <th>操作</th>
-        <th>操作</th>
-      </tr>
-    </thead>
-    <tbody>
-      <%= render @users %>
-    </tbody>
-  </table>
+<div class="user-search">
+  <div class="user-count">
+    用户总数: <%= @user_quantity %>
+  </div>
+  <div class="guide-reading">
+    <div class="search">
+      <%= form_tag(admin_users_path, method: :get) do %>
+        <%= text_field_tag 'q[username_cont]', @username, class: 'search-input' %>
+        <a class="btn-search" href="javascript:void(0)" onClick="$(this).closest('form').submit()">
+          <i class="fa fa-search"></i>
+        </a>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<%= render 'users' %>
+
+
+<div class='paginate'>
+  <%= will_paginate @users %>
 </div>

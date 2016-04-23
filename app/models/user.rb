@@ -44,7 +44,7 @@ class User < ActiveRecord::Base
     admin? ? '管理员' : '用户'
   end
 
-  def status
+  def state
     deleted? ? '禁用' : '正常'
   end
 

@@ -1,8 +1,10 @@
 class Admin::UsersController < Admin::BaseController
   before_action :set_page_nav
+  before_action :set_search_value, :set_user_quantity, only: [:index]
 
   def index
-    @users = User.all
+    q = User.ransack(params[:q])
+    @users = q.result.order('id desc').page(params[:page] || 1).per_page(page_num)
   end
 
   private
@@ -15,5 +17,17 @@ class Admin::UsersController < Admin::BaseController
           { name: name, url: request.path, end: true }
         ]
       )
+    end
+
+    def set_search_value
+      @username = (params[:q] || {})[:username_cont]
+    end
+
+    def set_user_quantity
+      @user_quantity = User.count
+    end
+
+    def page_num
+      15
     end
 end
