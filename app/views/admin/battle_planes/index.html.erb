@@ -23,6 +23,7 @@
   function editBattlePlane() {
     insertFloatWindow('<%= j render "edit" %>');
     var battleplaneLi = $('#js-battleplane-'+$('#battleplane-id').val());
+    console.log(battleplaneLi)
     $('#js-title').val(battleplaneLi.find('h2').html());
     $('#js-content').val(battleplaneLi.find('p').html());
   }

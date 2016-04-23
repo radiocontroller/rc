@@ -1,19 +1,13 @@
-.left-sidebar-wrap{
-  width: 200px;
-  height: 100%;
-  border-right: 1px solid #CCCCCC;
-  color: #000000;
+.left-sidebar{
+  width: 16%;
+  border-top: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  color: #000;
   font-size: 14px;
   text-align: center;
   margin-top: 10px;
-  float: left;
-}
-
-.left-sidebar{
-  text-align: center;
-  width: 100%;
   padding-top: 10px;
-  border-top: #ccc 1px solid;
+  float: left;
 }
 
 .left-sidebar-title{

@@ -22,10 +22,11 @@
 
       <%= render 'common/left_sidebar' %>
 
-      <div class="operate-wrap">
+      <div class="operate">
         <%= render 'common/page_nav' %>
-        <div class="operate">
+        <div class="operate-main">
           <div id="floatWindow"></div>
+
           <%= render 'common/admin/prompts' %>
 
           <%= yield %>
@@ -33,7 +34,7 @@
       </div>
     </div>
 
-    <div class="right-sidebar-wrap">
+    <div class="right-sidebar">
       <%= render 'common/right_sidebar' %>
     </div>
 
