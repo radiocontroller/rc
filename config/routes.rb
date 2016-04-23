@@ -7,7 +7,12 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :users, only: [:show]
+  resources :users, only: [:show] do
+    namespace :collections do
+      resources :videos, only: [:index]
+      resources :articles, only: [:index]
+    end
+  end
   resources :welcomes, only: [:index]
   resources :videos, only: [:index, :show] do
     collection do

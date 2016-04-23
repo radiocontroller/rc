@@ -5,7 +5,7 @@
     </div>
     <% if current_user.present? %>
       <div class="user-info">
-        <span class="name"><%= current_user.username %></span>
+        <span class="name"><%= link_to current_user.username, user_path(current_user) %></span>
         <div class="message">
           <a>消息<span class="number">(6)</span></a>|
           <%= link_to '退出', destroy_user_session_path, method: :delete %>

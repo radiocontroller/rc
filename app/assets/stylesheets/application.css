@@ -16,6 +16,7 @@
  *= require welcomes
  *= require videos
  *= require admin
+ *= require user/user
  *= require article/article
  *= require comment/comment
  *= require sweetalert/sweetalert
