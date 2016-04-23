@@ -1,4 +1,4 @@
 class UsersController < BaseController
-  def index
+  def show
   end
 end
