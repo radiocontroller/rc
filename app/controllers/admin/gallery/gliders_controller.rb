@@ -1,17 +1,12 @@
-module Admin
-  module Gallery
-    class GlidersController < BaseController
-      include GalleryAble
-      layout 'admin'
+class Admin::Gallery::GlidersController < Admin::BaseController
+  include GalleryAble
 
-      def chinese_category
-        '滑翔机'
-      end
-
-      def english_category
-        'glider'
-      end
-
-    end
+  def chinese_category
+    '滑翔机'
   end
+
+  def english_category
+    'glider'
+  end
+
 end

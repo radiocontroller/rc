@@ -32,7 +32,7 @@
   width: 190px;
   padding: 5px;
   box-sizing: border-box;
-  height: 35px;
+  height: 38px;
   border: 1px solid #e5e5e5;
   font-size: 14px;
 }
@@ -46,12 +46,12 @@
   color: #333;
   background: none;
   width: 36px;
-  height: 35px;
+  height: 38px;
   text-align: center;
   box-sizing: border-box;
   border: 1px solid #e5e5e5;
   border-left: none;
-  margin-top: -3px;
+  margin-top: -2px;
 }
 
 .guide-reading  .items{

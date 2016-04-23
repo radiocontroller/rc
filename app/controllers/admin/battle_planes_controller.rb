@@ -1,6 +1,4 @@
-module Admin
-  class BattlePlanesController < BaseController
-    layout 'admin'
+  class Admin::BattlePlanesController < Admin::BaseController
     before_action :set_page_nav
     before_action :set_limit, only: [:index, :new]
 
@@ -50,4 +48,3 @@ module Admin
       end
 
   end
-end
