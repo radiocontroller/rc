@@ -1,48 +1,14 @@
-.content .video-list{
-  width: 1200px;
+.video-enjoy{
   text-align: center;
-  margin: 0 auto;
+  margin-top: 100px;
 }
 
-.video-list .title{
-  margin-top: 150px;
-  position: relative;
-  height: 38px;
-}
-
-.video-list .title>h2{
+.video-enjoy h2{
   font-size: 36px;
   color: #333;
 }
 
-.video-list .title .search{
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-.video-list .title .search input{
-  width: 210px;
-  height: 38px;
-  border: 1px solid #e5e5e5;
-  box-sizing: border-box;
-}
-
-.video-list .title .search input:focus{
-  outline: none;
-  border-color:  rgba(82,168,236,0.8);
-}
-
-.video-list .search .btn-search{
-  color: #333;
-  background: none;
-  text-align: center;
-  box-sizing: border-box;
-  border: 1px solid #e5e5e5;
-  border-left: none;
-}
-
-.video-list .video-items{
+.video-items{
   margin-top: 70px;
   text-align: left;
 }
@@ -151,12 +117,20 @@
   padding-bottom: 198px;
 }
 
+.clasification .category-title{
+  border-bottom: 3px solid #e5e5e5;
+  height: 143px;
+  margin-bottom: 40px;
+}
+
 .clasification h2{
+  width: 165px;
   font-size: 30px;
   color: #333;
   text-align: left;
-  padding-bottom: 30px;
   padding-top: 84px;
+  padding-bottom: 20px;
+  border-bottom: 3px solid #FF3D53;
 }
 
 .more-video{

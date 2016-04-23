@@ -1,17 +1,17 @@
-<div class="video-list">
+<div class="guide-reading">
   <div class="title">
     <h2><%= category %></h2>
     <div class="search">
       <%= form_tag("/videos/#{action_name}", method: :get) do %>
-        <%= text_field_tag 'q[description_cont]', @search %>
-        <a class="btn-search" href="javascript:void(0)" onClick="$(this).closest('form').submit();">
+        <%= text_field_tag 'q[description_cont]', @username, class: 'search-input' %>
+        <a class="btn-search" href="javascript:void(0)" onClick="$(this).closest('form').submit()">
           <i class="fa fa-search"></i>
         </a>
       <% end %>
     </div>
   </div>
+</div>
 
-  <div class="video-items">
-    <%= render @videos %>
-  </div>
+<div class="video-items">
+  <%= render @videos %>
 </div>
