@@ -1,0 +1,15 @@
+<div class="item">
+  <div class="text">
+    <a href="#" class="username">心有猛虎，细嗅蔷薇</a>
+    <span class="date"><%= article.created_at.strftime('%Y-%m-%d') %></span>
+    <div>
+      <%= link_to article.title, article_path(article), class: 'article-title' %>
+    </div>
+    <p class="operation">
+      <%= render '/common/collect_info', resource: article %>
+    </p>
+  </div>
+  <div class="img">
+    <%= article.content[/\<img(.*?)\>/].try(:html_safe) %>
+  </div>
+</div>

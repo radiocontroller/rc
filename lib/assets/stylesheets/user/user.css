@@ -11,13 +11,13 @@
 }
 
 .user-left-wrap{
-  width: 33.33%;
+  width: 22%;
   float: left;
   background-color: #FAFAFA;
 }
 
 .user-right-wrap{
-  width: 66.67%;
+  width: 78%;
   float: left;
   background-color: #fff;
   background: white;
@@ -32,7 +32,6 @@
   width: 160px;
   height: 160px;
   border-radius: 3px;
-  background-color: red;
 }
 
 .user-left i{
@@ -41,7 +40,9 @@
 }
 
 .user-right{
-  min-height: 410px;
+  min-height: 400px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .user-nav{
@@ -64,6 +65,6 @@
   margin-right: 3px;
 }
 
-.user-collections{
-  margin-top: 10px;
+.user-videos{
+  padding-top: 20px;
 }
