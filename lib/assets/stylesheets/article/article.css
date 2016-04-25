@@ -84,7 +84,8 @@
   font-size: 18px;
   font-weight: bold;
   color: #333;
-  margin: 27px 0;
+  margin-top: 27px;
+  margin-bottom: 15px;
 }
 
 .article-title:hover{
@@ -111,7 +112,7 @@
 
 .infos{
   width: 900px;
-  margin: 138px auto 0 auto;
+  margin: 90px auto 0 auto;
 }
 
 .infos .title{

@@ -20,7 +20,6 @@
 }
 .camera_wrap {
 	display: none;
-	float: left;
 	position: relative;
 	z-index: 0;
 }
@@ -357,7 +356,6 @@
 	float: left;
 	width: 100%;
 	margin-bottom: 90px;
-	border-bottom: 1px solid #ededed;
 }
 .camera_thumbs_cont ul {
 	overflow: hidden;
