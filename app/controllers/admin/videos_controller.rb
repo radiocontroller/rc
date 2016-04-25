@@ -1,5 +1,4 @@
 class Admin::VideosController < Admin::BaseController
-  before_action :set_page_nav
   before_action :set_video, only: [:edit, :update]
   before_action :set_categories, only: [:new, :edit]
 
@@ -58,7 +57,7 @@ class Admin::VideosController < Admin::BaseController
         [
           { name: '后台管理', url: '/admin' },
           { name: '视频模块', url: '/admin/videos' },
-          { name: name, url: request.path, end: true }
+          { name: Settings.action[request[:action]], url: request.path, end: true }
         ]
       )
     end

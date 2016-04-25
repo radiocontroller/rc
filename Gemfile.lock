@@ -179,6 +179,7 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    settingslogic (2.0.9)
     sidekiq (3.3.4)
       celluloid (>= 0.16.0)
       connection_pool (>= 2.1.1)
@@ -245,6 +246,7 @@ DEPENDENCIES
   rucaptcha
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
+  settingslogic
   sidekiq (= 3.3.4)
   sidekiq-scheduler (~> 1.1)
   sinatra (>= 1.3.0)

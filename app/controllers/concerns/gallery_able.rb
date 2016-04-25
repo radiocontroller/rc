@@ -2,7 +2,6 @@ module GalleryAble
 
   def self.included(base)
     base.module_eval do
-      before_action :set_page_nav
       before_action :set_limit, :set_category, only: [:index, :new]
     end
   end
@@ -62,7 +61,7 @@ module GalleryAble
         [
           { name: '后台管理', url: '/admin' },
           { name: "#{set_category}模块", url: "/admin/gallery/#{english_category.pluralize}" },
-          { name: name, url: request.path, end: true }
+          { name: Settings.action[request[:action]], url: request.path, end: true }
         ]
       )
     end

@@ -1,5 +1,4 @@
   class Admin::BattlePlanesController < Admin::BaseController
-    before_action :set_page_nav
     before_action :set_limit, only: [:index, :new]
 
     def index
@@ -42,7 +41,7 @@
           [
             { name: '后台管理', url: '/admin' },
             { name: '战机模块', url: '/admin/battle_planes' },
-            { name: name, url: request.path, end: true }
+            { name: Settings.action[request[:action]], url: request.path, end: true }
           ]
         )
       end
