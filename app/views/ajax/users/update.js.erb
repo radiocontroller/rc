@@ -1,0 +1,7 @@
+<% if @user.errors.blank? %>
+  $('#js-user-<%= @user.id %>').find('.toggle').html('<%= @user.role_operation %>');
+  $('#js-user-<%= @user.id %>').find('.user-role').html('<%= @user.role %>');
+  swal("操作成功!", "", "success");
+<% else %>
+  swal("操作失败!", "", "error");
+<% end %>

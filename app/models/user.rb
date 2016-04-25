@@ -44,8 +44,16 @@ class User < ActiveRecord::Base
     admin? ? '管理员' : '用户'
   end
 
+  def role_operation
+    admin? ? '解除管理员' : '设为管理员'
+  end
+
   def state
     deleted? ? '禁用' : '正常'
+  end
+
+  def toggle!
+    update(admin: !self.admin)
   end
 
 end

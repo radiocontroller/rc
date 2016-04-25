@@ -5,7 +5,7 @@ class Devise::RegistrationsController < Devise::BaseController
 
   def create
     if verify_rucaptcha?
-      create_user!
+      create_user
     else
       redirect_to new_user_registration_path, alert: '验证码错误'
     end
@@ -22,7 +22,7 @@ class Devise::RegistrationsController < Devise::BaseController
       )
     end
 
-    def create_user!
+    def create_user
       user = User.new(user_params)
       if user.save
         redirect_to new_user_session_path, notice: '系统已经发送一封验证邮件,请注意查收'
