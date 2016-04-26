@@ -70,3 +70,5 @@ gem 'font-awesome-rails'
 gem 'will_paginate', '~> 3.0.6'
 
 gem 'settingslogic'
+
+gem 'devise-i18n'
