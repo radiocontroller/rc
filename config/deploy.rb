@@ -3,24 +3,10 @@ lock '3.5.0'
 
 set :application, 'rc'
 set :repo_url, 'git@github.com:radiocontroller/rc.git'
-
-# Default branch is :master
-ask :production
-
-# Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, '/var/www/rc'
-
-# Default value for :scm is :git
+set :deploy_user, 'deploy'
 set :scm, :git
-
-# Default value for :format is :airbrussh.
-# set :format, :airbrussh
-
-# You can configure the Airbrussh format using :format_options.
-# These are the defaults.
-# set :format_options, command_output: true, log_file: 'log/capistrano.log', color: :auto, truncate: :auto
-
-# Default value for :pty is false
+set :format, :pretty
 set :pty, true
 
 # Default value for :linked_files is []
@@ -37,6 +23,7 @@ set :keep_releases, 5
 
 set :rvm_type, :system
 set :rvm_ruby_string, '2.2.3'
+set :rvm_roles, [:app, :web, :db]
 
 namespace :deploy do
   after :finishing, 'deploy:cleanup'
