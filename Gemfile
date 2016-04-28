@@ -45,7 +45,6 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano-rvm'
-  gem 'capistrano-puma'
 end
 
 gem 'responders', '~> 2.0'
@@ -76,5 +75,3 @@ gem 'font-awesome-rails'
 gem 'will_paginate', '~> 3.0.6'
 
 gem 'settingslogic'
-
-gem 'puma'
