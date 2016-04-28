@@ -63,6 +63,8 @@ GEM
       capistrano (~> 3.1)
       sshkit (~> 1.2)
     capistrano-harrow (0.3.2)
+    capistrano-puma (0.2.3)
+      capistrano (>= 3.0)
     capistrano-rails (1.1.6)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
@@ -145,6 +147,7 @@ GEM
       slop (~> 3.4)
     pry-nav (0.2.4)
       pry (>= 0.9.10, < 0.11.0)
+    puma (3.4.0)
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
@@ -255,6 +258,7 @@ DEPENDENCIES
   byebug
   capistrano
   capistrano-bundler
+  capistrano-puma
   capistrano-rails
   capistrano-rvm
   carrierwave!
@@ -267,6 +271,7 @@ DEPENDENCIES
   pg (~> 0.18.3)
   pry (~> 0.9.12)
   pry-nav (~> 0.2.3)
+  puma
   rails (= 4.2.0)
   ransack (~> 1.6.6)
   redis (~> 3.2.1)
