@@ -1,5 +1,4 @@
 class Admin::ArticlesController < Admin::BaseController
-  before_action :set_page_nav
   before_action :set_article, only: [:edit, :update]
 
   def index
@@ -47,7 +46,7 @@ class Admin::ArticlesController < Admin::BaseController
         [
           { name: '后台管理', url: '/admin' },
           { name: '文章模块', url: '/admin/articles' },
-          { name: name, url: request.path, end: true }
+          { name: Settings.action[request[:action]], url: request.path, end: true }
         ]
       )
     end

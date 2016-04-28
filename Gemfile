@@ -40,6 +40,11 @@ group :development, :test do
 
   gem 'pry', "~> 0.9.12"
   gem 'pry-nav', "~> 0.2.3"
+
+  gem 'capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rvm'
 end
 
 gem 'responders', '~> 2.0'
@@ -68,3 +73,5 @@ gem 'rucaptcha'
 gem 'font-awesome-rails'
 
 gem 'will_paginate', '~> 3.0.6'
+
+gem 'settingslogic'

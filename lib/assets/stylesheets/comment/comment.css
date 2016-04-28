@@ -27,7 +27,7 @@
   margin-bottom: 21px;
 }
 
-.comment  .items .item img{
+.comment  .items .item span img{
   width: 108px;
   height: 108px;
   border-radius: 50%;
@@ -60,6 +60,14 @@
 
 .other-user{
   position: relative;
+  margin-bottom: 10px;
+}
+
+.other-user img{
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin-top: -18px;
 }
 
 .other-user .other-comment{

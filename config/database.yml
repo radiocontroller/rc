@@ -11,8 +11,8 @@ development:
   username: postgres
   password: postgres
 
-test:
+production:
   <<: *default
-  database: store_test
+  database: rc
   username: postgres
   password: postgres

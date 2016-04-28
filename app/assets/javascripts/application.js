@@ -15,6 +15,7 @@
 //= require slide
 //= require insert_content
 //= require floatwindow
+//= require lazy_load
 //= require sweetalert/sweetalert-dev
 //= require sweetalert/sweetalert.min
 //= require camera/camera.min
@@ -23,3 +24,4 @@
 //= require fancybox/jquery.fancybox
 //= require fancybox/jquery.mousewheel.pack
 //= require editor/wangEditor.min
+//= require lazy_load/jquery.lazyload.min.js

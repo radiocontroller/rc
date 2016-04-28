@@ -1,5 +1,4 @@
 class Admin::BannersController < Admin::BaseController
-  before_action :set_page_nav
   before_action :set_limit, only: [:index]
 
   def index
@@ -45,7 +44,7 @@ class Admin::BannersController < Admin::BaseController
         [
           { name: '后台管理', url: '/admin' },
           { name: '首页大图模块', url: '/admin/banners' },
-          { name: name, url: request.path, end: true }
+          { name: Settings.action[request[:action]], url: request.path, end: true }
         ]
       )
     end

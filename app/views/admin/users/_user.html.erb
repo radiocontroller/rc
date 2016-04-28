@@ -1,10 +1,10 @@
-<tr>
+<tr data-id='<%= user.id %>' id='js-user-<%= user.id %>'>
   <td><%= user_counter + 1 %></td>
   <td><%= user.username %></td>
   <td><%= user.email %></td>
   <td><%= user.created_at.strftime('%Y-%m-%d %H:%M:%S') %></td>
-  <td><%= user.role %></td>
+  <td class='user-role'><%= user.role %></td>
   <td><%= user.state %></td>
   <td>禁用</td>
-  <td>设为管理员</td>
+  <td class='toggle'><%= user.role_operation %></td>
 </tr>

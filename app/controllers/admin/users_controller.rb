@@ -1,5 +1,4 @@
 class Admin::UsersController < Admin::BaseController
-  before_action :set_page_nav
   before_action :set_search_value, :set_user_quantity, only: [:index]
 
   def index
@@ -14,7 +13,7 @@ class Admin::UsersController < Admin::BaseController
         [
           { name: '后台管理', url: '/admin' },
           { name: '用户模块', url: '/admin/users' },
-          { name: name, url: request.path, end: true }
+          { name: Settings.action[request[:action]], url: request.path, end: true }
         ]
       )
     end

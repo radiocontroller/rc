@@ -20,3 +20,29 @@
 <div class='paginate'>
   <%= will_paginate @users %>
 </div>
+
+
+<script type="text/javascript">
+  $(function() {
+    $(document).on('click', '.toggle', toggle);
+  });
+
+  function toggle() {
+    var self = $(this);
+    swal({
+     title: "您确定此操作吗？",
+     type: "warning",
+     showCancelButton: true,
+     closeOnConfirm: false,
+     confirmButtonText: "是的",
+     confirmButtonColor: "#ec6c62"
+     }, function() {
+       $.ajax({
+         url: "/ajax/users/"+ self.parent().data('id'),
+         type: "PUT",
+         dataType: 'script',
+         success: function(){}
+       })
+     });
+  }
+</script>

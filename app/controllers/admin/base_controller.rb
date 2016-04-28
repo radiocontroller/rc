@@ -1,6 +1,7 @@
 class Admin::BaseController < ActionController::Base
   layout 'admin'
   before_action :verify_admin
+  before_action :set_page_nav
 
   private
 
@@ -8,16 +9,4 @@ class Admin::BaseController < ActionController::Base
       redirect_to root_path if !current_user.try(:admin?)
     end
 
-    def name
-      case request[:action]
-      when 'index'
-        '列表'
-      when 'new'
-        '新建'
-      when 'edit'
-        '编辑'
-      when 'show'
-        '详情'
-      end
-    end
 end
