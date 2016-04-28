@@ -1,5 +1,5 @@
 class Collections::ArticlesController < ActionController::Base
-  layout 'user'
+  layout 'application'
 
   def index
     @articles = current_user.article_ids.map { |id| Article.find(id) }
