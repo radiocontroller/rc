@@ -8,4 +8,4 @@
 
 * rails版本: 4.2.0
 
-* postgresql版本: 9.3.10
+* postgresql版本: 9.1
