@@ -24,7 +24,7 @@ set :rvm_roles, [:app, :web, :db]
 
 namespace :deploy do
   desc 'soft link to database.yml'
-  task :link_database_file, roles: %w{app web db} do
+  task :link_database_file, :roles => [:app, :web, :db] do
     run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
   end
 
