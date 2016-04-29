@@ -20,11 +20,11 @@ class User < ActiveRecord::Base
   validates_confirmation_of :password
   validates :username, presence: true, length: { minimum: 3 }
 
-  after_save :activate
+  after_create :activate
 
 
   def activate
-    self.send_confirmation_instructions if Rails.env == 'production'
+    self.send_confirmation_instructions
   end
 
   def admin?
