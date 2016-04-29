@@ -8,6 +8,7 @@ require 'capistrano/rvm'
 require 'capistrano/bundler'
 require 'capistrano/rails/assets'
 require 'capistrano/rails/migrations'
+require 'capistrano/rails/console'
 
 # Include tasks from other gems included in your Gemfile
 #
