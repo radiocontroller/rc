@@ -1,4 +1,4 @@
-class Devise::BaseController < ApplicationController
+class Devise::BaseController < ActionController::Base
   layout 'accounts'
 
   protect_from_forgery with: :exception
