@@ -23,9 +23,10 @@ set :rvm_ruby_string, '2.2.3'
 set :rvm_roles, [:app, :web, :db]
 
 namespace :deploy do
-  desc 'soft link to database.yml'
-  task :link_database_file, :roles => :web do
-    run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+  task :link_database_file do
+    on roles(:all) do
+      execute :ln, "-nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+    end
   end
 
   after :finishing, 'deploy:cleanup'
