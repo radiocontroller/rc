@@ -1,7 +1,7 @@
 <div class="sidebar">
   <div class="sidebar-top">
     <div class="img">
-      <img src="<%= current_user.avatar.url if current_user.present? %>" alt="" />
+      <img src="<%= current_user.try(:avatar).try(:url) || '/images/avatar.png' %>" alt="" />
     </div>
     <% if current_user.present? %>
       <div class="user-info">

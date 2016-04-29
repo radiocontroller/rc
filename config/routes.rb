@@ -34,10 +34,7 @@ Rails.application.routes.draw do
     resources :videos, only: [:index, :new, :create, :update, :edit]
     resources :banners, only: [:index, :new, :create, :update]
     namespace :gallery do
-      resources :fixed_wings, only: [:index, :new, :create, :update]
-      resources :gliders, only: [:index, :new, :create, :update]
-      resources :helicopters, only: [:index, :new, :create, :update]
-      resources :fpvs, only: [:index, :new, :create, :update]
+      resources :fixed_wings, :gliders, :helicopters, :fpvs, only: [:index, :new, :create, :update]
     end
     resources :battle_planes, only: [:index, :update, :new, :create]
     resources :users, only: [:index]
