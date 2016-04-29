@@ -31,10 +31,8 @@ namespace :deploy do
 
   task :link_images do
     on roles(:all) do
-      execute :rm, "-rf #{release_path}/public/images"
-      execute :ln, "-nfs /var/www/rc_images #{release_path}/public/images"
-      execute :rm, "-rf ../#{release_path}/current/public/images"
-      execute :ln, "-nfs /var/www/rc_images ../#{release_path}/current/public/images"
+      execute "rm -rf #{release_path}/public/images"
+      execute "ln -nfs /var/www/rc_images #{release_path}/public/images"
     end
   end
 
