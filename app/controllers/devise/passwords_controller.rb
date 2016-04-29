@@ -18,8 +18,12 @@ class Devise::PasswordsController < Devise::BaseController
 
   def update
     user = User.find(params[:id])
-    user.update(password: params[:password], password_confirmation: params[:password_confirmation])
-    redirect_to new_user_session_path, notice: '密码重置成功'
+    user.reset_password(params[:password], params[:password_confirmation])
+    if user.errors.present?
+      redirect_to new_user_password_path, alert: user.errors.full_messages
+    else
+      redirect_to new_user_session_path, notice: '密码重置成功'
+    end
   end
 
   private
