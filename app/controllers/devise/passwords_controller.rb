@@ -18,7 +18,7 @@ class Devise::PasswordsController < Devise::BaseController
 
   def update
     user = User.find(params[:id])
-    user.reset_password(params[:password], params[:password_confirmation])
+    user.reset_password(params[:user][:password], params[:user][:password_confirmation])
     if user.errors.present?
       redirect_to new_user_password_path, alert: user.errors.full_messages
     else
