@@ -1,25 +1,5 @@
-<div class="user-left-wrap">
-  <div class="user-left">
-    <div class="user-avatar">
-      <img src="<%= current_user.avatar.url if current_user.present? %>" alt="" />
-    </div>
-    <p><i class='fa fa-user'></i><%= current_user.username %></p>
-    <p><i class='fa fa-envelope'></i><%= current_user.email %></p>
-  </div>
-</div>
-
-<div class="user-right-wrap">
-  <div class="user-right">
-    <div class="user-nav">
-      <a href="/users/<%= current_user.id %>/collections/videos"><i class="fa fa-youtube-play"></i>收藏的视频</a>
-      <a href="/users/<%= current_user.id %>/collections/articles"><i class="fa fa-newspaper-o"></i>收藏的文章</a>
-    </div>
-    <div class="user-collections">
-      <div class="guide-reading">
-        <div class="items">
-          <%= render @articles %>
-        </div>
-      </div>
-    </div>
+<div class="guide-reading">
+  <div class="items">
+    <%= render @articles %>
   </div>
 </div>

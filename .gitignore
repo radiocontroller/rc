@@ -16,6 +16,7 @@
 !/log/.keep
 /tmp
 /test
+/public/
 /config/initializers/app_env_vars.rb
 redis.log
 redis.pid

@@ -25,3 +25,4 @@
 //= require fancybox/jquery.mousewheel.pack
 //= require editor/wangEditor.min
 //= require lazy_load/jquery.lazyload.min.js
+//= require cropper/cropper.min

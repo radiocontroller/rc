@@ -1,7 +1,7 @@
-class Collections::ArticlesController < ActionController::Base
-  layout 'application'
+class Collections::ArticlesController < Collections::BaseController
+  before_action :set_user
 
   def index
-    @articles = current_user.article_ids.map { |id| Article.find(id) }
+    @articles = @user.article_ids.map { |id| Article.find(id) }
   end
 end
