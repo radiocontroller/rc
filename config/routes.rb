@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       resources :videos, only: [:index]
       resources :articles, only: [:index]
     end
+    member { put 'upload' }
   end
   resources :welcomes, only: [:index]
   resources :videos, only: [:index, :show] do

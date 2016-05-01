@@ -40,8 +40,8 @@
 
 .user-avatar a{
   position: absolute;
-  bottom: 8px;
-  left: 12px;
+  bottom: 0px;
+  right: -10px;
   font-size: 12px;
 }
 
