@@ -28,26 +28,24 @@
   min-height: 400px;
 }
 
-.user-avatar{
-  position: relative;
-}
-
 .user-avatar img{
   width: 160px;
   height: 160px;
   border-radius: 3px;
 }
 
-.user-avatar a{
-  position: absolute;
-  bottom: 0px;
-  right: -10px;
-  font-size: 12px;
-}
-
 .user-left i{
   margin-right: 10px;
   color: #696969;
+}
+
+.user-left .operation{
+  color: #000;
+  font-size: 14px;
+}
+
+.user-left .operation:hover{
+  text-decoration: underline;
 }
 
 .user-right{

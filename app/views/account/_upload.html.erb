@@ -3,7 +3,7 @@
   <div id="preview">
     <img id="imghead" width=100% height=auto border=0>
   </div>
-  <%= form_for @user, url: upload_user_path(@user), method: :put do |f| %>
+  <%= form_for @user, url: upload_user_account_index_path(@user), method: :put do |f| %>
     <a href="javascript: void(0)" class='file' style='margin-top: 10px;'>
       选择文件<%= f.file_field :avatar, onChange: 'previewImage(this)', required: true %>
     </a>

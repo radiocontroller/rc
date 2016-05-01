@@ -8,11 +8,15 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :users, only: [:show] do
+    resources :account, only: [:index] do
+      collection do
+        get 'upload', 'edit'
+      end
+    end
     namespace :collections do
       resources :videos, only: [:index]
       resources :articles, only: [:index]
     end
-    member { put 'upload' }
   end
   resources :welcomes, only: [:index]
   resources :videos, only: [:index, :show] do

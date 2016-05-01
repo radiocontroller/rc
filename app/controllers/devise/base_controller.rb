@@ -1,5 +1,5 @@
 class Devise::BaseController < ActionController::Base
-  layout 'accounts'
+  layout 'login'
 
   protect_from_forgery with: :exception
 

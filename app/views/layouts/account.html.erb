@@ -7,6 +7,10 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
+    <style type="text/css">
+      #preview{margin: 0 auto;width:260px;height:190px;border:1px solid rgba(0,0,0,0.2);overflow:hidden;}
+      #imghead{filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=image);}
+    </style>
   </head>
 
   <body>
@@ -23,9 +27,7 @@
         <div class="user-left-wrap">
           <div class="user-left">
             <div class="user-avatar">
-              <a href="/users/<%= @user.id %>/account">
-                <img src="<%= @user.avatar.present? ? @user.avatar.url : '/images/avatar.png' %>" alt="" />
-              </a>
+              <img src="<%= @user.avatar.present? ? @user.avatar.url : '/images/avatar.png' %>" alt="" />
             </div>
             <p><i class='fa fa-user'></i><%= @user.username %></p>
             <p><i class='fa fa-envelope'></i><%= @user.email %></p>
@@ -34,13 +36,7 @@
 
         <div class="user-right-wrap">
           <div class="user-right">
-            <div class="user-nav">
-              <a href="/users/<%= @user.id %>/collections/videos"><i class="fa fa-youtube-play"></i>收藏的视频</a>
-              <a href="/users/<%= @user.id %>/collections/articles"><i class="fa fa-newspaper-o"></i>收藏的文章</a>
-            </div>
-            <div class="user-collections">
-              <%= yield %>
-            </div>
+            
           </div>
         </div>
 
