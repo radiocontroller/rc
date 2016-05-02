@@ -1,11 +1,18 @@
-<div>
+<div class="battle-form-wrap">
   <h2>上传首页顶部展示图片</h2>
   <%= form_for @banner, url: admin_banners_path do |f| %>
     <div>
-      <p>
-        <%= f.label :resource, '图片' %>
-      </p>
+      图片:
       <%= f.file_field :resource %>
+    </div>
+    <div>
+      置顶位置:
+      <select name="banner_picture[sort_id]">
+        <option value="">无</option>
+        <% @limit.times do |i| %>
+          <option value='<%= i+1 %>'>首页第<%= i+1 %>张</option>
+        <% end %>
+      </select>
     </div>
     <%= f.submit '上传' %>
   <% end %>

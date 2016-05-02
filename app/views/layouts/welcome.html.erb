@@ -27,10 +27,12 @@
   <body>
     <div class="main">
       <div class="camera_wrap" id="camera">
-        <% @banners.each do |banner| %>
-          <div data-thumb="<%= banner.resource.small.url %>"
-            data-src="<%= banner.resource.large.url %>">
-          </div>
+        <% cache [:banners, @banners.map(&:updated_at).max] do %>
+          <% @banners.each do |banner| %>
+            <div data-thumb="<%= banner.resource.small.url %>"
+              data-src="<%= banner.resource.large.url %>">
+            </div>
+          <% end %>
         <% end %>
       </div>
 

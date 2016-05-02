@@ -1,5 +1,5 @@
 class Admin::BannersController < Admin::BaseController
-  before_action :set_limit, only: [:index]
+  before_action :set_limit, only: [:index, :new]
 
   def index
     @banners = BannerPicture.order('sort_id asc').page(params[:page] || 1).per_page(page_num)
@@ -28,7 +28,7 @@ class Admin::BannersController < Admin::BaseController
   private
 
     def banner_params
-      params.require(:banner_picture).permit(:resource)
+      params.require(:banner_picture).permit(:resource, :sort_id)
     end
 
     def set_limit
