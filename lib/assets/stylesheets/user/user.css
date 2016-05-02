@@ -47,7 +47,7 @@
 }
 
 .user-right{
-  min-height: 400px;
+  min-height: 420px;
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -80,6 +80,7 @@
   width: 49%;
   float: left;
   font-size: 14px;
+  min-height: 440px;
 }
 
 .edit-account .main, .edit-password .main{
@@ -121,4 +122,13 @@
 
 .edit-account .main div, .edit-password .main div{
   margin: 20px 0;
+}
+
+.user-left a{
+  color: #000;
+  font-size: 14px;
+}
+
+.user-left a:hover{
+  text-decoration: underline;
 }
