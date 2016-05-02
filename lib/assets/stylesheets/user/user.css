@@ -14,6 +14,7 @@
   width: 22%;
   float: left;
   background-color: #FAFAFA;
+  font-size: 15px;
 }
 
 .user-right-wrap{
@@ -35,15 +36,6 @@
 .user-left i{
   margin-right: 10px;
   color: #696969;
-}
-
-.user-left .operation{
-  color: #000;
-  font-size: 14px;
-}
-
-.user-left .operation:hover{
-  text-decoration: underline;
 }
 
 .user-right{
@@ -79,7 +71,6 @@
 .edit-account, .edit-password{
   width: 49%;
   float: left;
-  font-size: 14px;
   min-height: 440px;
 }
 
