@@ -33,12 +33,11 @@ namespace :deploy do
   desc 'restart nginx'
   task :restart_nginx do
     on roles(:all) do
-      execute :sudo, "fuser -k 80/tcp"
-      execute :sudo, "service nginx restart"
+      execute :sudo, "fuser -k 80/tcp && sudo service nginx restart"
     end
   end
 
   after :finishing, 'deploy:cleanup'
-  after :finishing, 'deploy:link_to_images'
-  after :finishing, 'deploy:restart_nginx'
+  after :finishing, 'link_to_images'
+  after :finishing, 'restart_nginx'
 end
