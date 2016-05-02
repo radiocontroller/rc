@@ -1,4 +1,4 @@
-class UsersController < BaseController
+class UsersController < ApplicationController
   layout 'user'
 
   def show

@@ -1,4 +1,4 @@
-class VideosController < BaseController
+class VideosController < ApplicationController
   before_action :set_limit, only: [:index]
   before_action :set_videos, :set_search_value, only: [:fixed_wing, :helicopter, :fpv, :glider]
 

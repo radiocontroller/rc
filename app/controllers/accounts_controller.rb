@@ -1,4 +1,4 @@
-class AccountsController < BaseController
+class AccountsController < ApplicationController
   layout 'account'
   before_action :set_user
   before_action :verify_user
@@ -29,13 +29,11 @@ class AccountsController < BaseController
     end
 
     def password_params
-      params.require(:user).permit(:password, :password_confirmation)
+      params.require(:user).permit(:current_password, :password, :password_confirmation)
     end
 
     def update_account
-      avatar = @user.avatar
       if @user.update(user_params)
-        avatar.remove!
         redirect_to edit_user_account_path(@user), notice: '资料修改成功!'
       else
         redirect_to edit_user_account_path(@user), alert: @user.errors.full_messages
@@ -43,9 +41,12 @@ class AccountsController < BaseController
     end
 
     def update_password
-      redirect_to edit_user_account_path(@user) and return if !@user.valid_password?(params[:user][:current_password])
-      @user.update(password_params)
-      redirect_to edit_user_account_path(@user)
+      if @user.update_with_password(password_params)
+        sign_in(@user, :bypass => true)
+        redirect_to edit_user_account_path(@user), notice: '密码修改成功!'
+      else
+        redirect_to edit_user_account_path(@user), alert: @user.errors.full_messages
+      end
     end
 
 end

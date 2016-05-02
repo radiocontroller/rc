@@ -1,4 +1,4 @@
-class ArticlesController < BaseController
+class ArticlesController < ApplicationController
   def index
     q = Article.normal.ransack(params[:q])
     @articles = q.result.order('id desc')

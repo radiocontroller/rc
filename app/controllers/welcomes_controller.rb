@@ -1,4 +1,4 @@
-class WelcomesController < BaseController
+class WelcomesController < ApplicationController
   layout 'welcome'
 
   def index

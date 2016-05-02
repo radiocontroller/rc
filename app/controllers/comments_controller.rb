@@ -1,4 +1,4 @@
-class CommentsController < BaseController
+class CommentsController < ApplicationController
   before_action :verify_admin
   before_action :set_resource
 
