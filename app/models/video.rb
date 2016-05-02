@@ -5,7 +5,7 @@ class Video < ActiveRecord::Base
 
   scope :homepage, -> { find_by(is_homepage: true) }
 
-  validates :description, :url, presence: true
+  validates :description, :url, :image, presence: true
 
   enum category: [:fixed_wing, :glider, :helicopter, :fpv]
 

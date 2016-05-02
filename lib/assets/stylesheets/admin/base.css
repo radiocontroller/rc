@@ -11,16 +11,16 @@
   padding-bottom: 100px;
 }
 
-.admin-prompts{
+.flash-messages{
   font-size: 14px;
   text-align: center;
 }
 
-.admin-prompts .notice{
+.flash-messages .notice{
   color: #3CB371;
 }
 
-.admin-prompts .alert{
+.flash-messages .alert{
   color: red;
 }
 

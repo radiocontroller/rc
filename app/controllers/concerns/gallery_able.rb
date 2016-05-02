@@ -37,7 +37,7 @@ module GalleryAble
     end
 
     def picture_params
-      params.require(:gallery_picture).permit(:resource).merge(category: english_category)
+      params.require(:gallery_picture).permit(:resource, :sort_id).merge(category: english_category)
     end
 
     def sort_params

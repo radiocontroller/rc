@@ -1,15 +1,29 @@
 zh-CN:
   activerecord:
     attributes:
+      models:
+        user: "用户"
+        video: '视频'
+        article: '文章'
+        battle_plane: '战机'
       user:
         username: '用户名'
         current_password: "旧密码"
-        email: "电子邮箱"
-        password: "新密码"
+        email: "邮箱"
+        password: "密码"
         password_confirmation: "确认密码"
         remember_me: "记住登录信息"
-    models:
-      user: "用户"
+      video:
+        description: '描述'
+        url: 'flash地址'
+        image: '封面图片'
+      article:
+        title: '标题'
+      battle_plane:
+        title: '名称'
+        content: '简介'
+      picture:
+        resource: '图片'
     errors:
       template:
         header:
@@ -23,7 +37,7 @@ zh-CN:
         confirmation: "与确认值不匹配"
         accepted: "必须是可被接受的"
         empty: "不能留空"
-        blank: "不能为空字符"
+        blank: "不能为空"
         too_long: "最长为%{count}个字符"
         too_short: "最短为%{count}个字符"
         wrong_length: "长度必须为%{count}个字符"
