@@ -16,7 +16,6 @@
 //= require insert_content
 //= require floatwindow
 //= require lazy_load
-//= require preview
 //= require sweetalert/sweetalert-dev
 //= require sweetalert/sweetalert.min
 //= require camera/camera.min

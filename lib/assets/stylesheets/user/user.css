@@ -19,8 +19,6 @@
 .user-right-wrap{
   width: 78%;
   float: left;
-  background-color: #fff;
-  background: white;
 }
 
 .user-left{
@@ -76,4 +74,51 @@
 
 .user-videos{
   padding-top: 20px;
+}
+
+.edit-account, .edit-password{
+  width: 49%;
+  float: left;
+  font-size: 14px;
+}
+
+.edit-account .main, .edit-password .main{
+  margin: 0 30px;
+}
+
+.edit-account .main input, .edit-password .main input{
+  margin-top: 8px;
+  display: block;
+  width: 100%;
+  height: 20px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+  -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.edit-account .main input[type='submit'], .edit-password .main input[type='submit']{
+  width: 40%;
+  height: 35px;
+  margin: 0 auto;
+  background-color: #548B54;
+  cursor: pointer;
+  color: white;
+}
+
+.edit-account .main input:focus, .edit-password .main input:focus{
+  outline: 0;
+  border-color: rgba(82,168,236,0.8);
+}
+
+.edit-account .main div, .edit-password .main div{
+  margin: 20px 0;
 }

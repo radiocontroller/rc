@@ -7,10 +7,6 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
-    <style type="text/css">
-      #preview{margin: 0 auto;width:260px;height:190px;border:1px solid rgba(0,0,0,0.2);overflow:hidden;}
-      #imghead{filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=image);}
-    </style>
   </head>
 
   <body>
@@ -35,9 +31,7 @@
         </div>
 
         <div class="user-right-wrap">
-          <div class="user-right">
-            
-          </div>
+          <%= yield %>
         </div>
 
       </div>

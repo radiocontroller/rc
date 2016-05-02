@@ -1,0 +1,47 @@
+<div class="edit-account">
+  <div class="main">
+    <%= form_for @user, url: "/users/#{@user.id}/account", method: :put do |f| %>
+      <div>
+        <%= f.label '用户名' %>
+        <%= f.text_field :username %>
+      </div>
+      <div>
+        <%= f.label '邮箱' %>
+        <%= f.text_field :email, disabled: true, style: 'background-color: #eee' %>
+      </div>
+      <div>
+        <%= f.label '注册日期' %>
+        <%= f.text_field :created_at, value: @user.created_at.strftime("%Y-%m-%d %H:%M"), disabled: true, style: 'background-color: #eee' %>
+      </div>
+      <div>
+        <%= f.label '头像' %>
+        <%= f.file_field :avatar %>
+      </div>
+      <div>
+        <%= f.submit '更新' %>
+      </div>
+    <% end %>
+
+  </div>
+</div>
+<div class="edit-password">
+  <div class="main">
+    <%= form_for @user, url: "/users/#{@user.id}/account?by=passwd", method: :put do |f| %>
+      <div>
+        <%= f.label '旧密码' %>
+        <input type="password" name="user[current_password]">
+      </div>
+      <div>
+        <%= f.label '新密码' %>
+        <%= f.password_field :password %>
+      </div>
+      <div>
+        <%= f.label '确认密码' %>
+        <%= f.password_field :password_confirmation %>
+      </div>
+      <div>
+        <%= f.submit '修改密码' %>
+      </div>
+    <% end %>
+  </div>
+</div>
