@@ -26,13 +26,13 @@
   left: 50%;
   margin-left: -130px;
   margin-top: 20px;
-  border-radius: 3px;
+  border-radius: 5px;
   background-color: #f73a4c;
   color: #fff;
   font-size: 14px;
 }
 
 .tips ul{
-  margin-top: 18px;
+  margin-top: 10px;
   width: 240px;
 }

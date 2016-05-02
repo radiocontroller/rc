@@ -52,11 +52,15 @@
 
     function showMessages() {
       if($('.tips ul li').html()){
-        $(".tips").animate({height: 60}, 1500);
+        $(".tips").animate({height: 40}, 1500);
         setTimeout(function() {
-          $(".tips").animate({height: 0}, 1500);
+          $(".tips").animate({height: 0}, 1500, emptyMessages);
         }, 5000);
       }
+    }
+
+    function emptyMessages() {
+      $('.tips').html('');
     }
   </script>
 </html>
