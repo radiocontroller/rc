@@ -23,11 +23,22 @@ set :rvm_ruby_string, '2.2.3'
 set :rvm_roles, [:app, :web, :db]
 
 namespace :deploy do
-  task :link_database_file do
+  desc 'symbolic link to images folder'
+  task :link_to_images do
     on roles(:all) do
-      execute :ln, "-nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+      execute :ln, "-nfs /var/www/rc_images #{release_path}/public/images"
+    end
+  end
+
+  desc 'restart nginx'
+  task :restart_nginx do
+    on roles(:all) do
+      execute :sudo, "fuser -k 80/tcp"
+      execute :sudo, "service nginx restart"
     end
   end
 
   after :finishing, 'deploy:cleanup'
+  after :finishing, 'deploy:link_to_images'
+  after :finishing, 'deploy:restart_nginx'
 end
