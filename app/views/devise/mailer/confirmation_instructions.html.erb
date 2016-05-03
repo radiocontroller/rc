@@ -1,5 +1,7 @@
-<p>Welcome <%= @user.email %>!</p>
+<h2>RC网</h2>
 
-<p>点击下方链接激活邮箱!</p>
+<p>您好 <%= @user.email %>!</p>
+
+<p>点击下方链接激活邮箱,请确认是否本人操作.</p>
 
 <p><%= link_to '激活邮箱', confirmation_url(@user, confirmation_token: @token) %></p>
