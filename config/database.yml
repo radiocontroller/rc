@@ -7,12 +7,12 @@ default: &default
 
 development:
   <<: *default
-  database: rc
-  username: postgres
-  password: postgres
+  database: <%= ENV['DB'] %>
+  username: <%= ENV['DBUSERNAME'] %>
+  password: <%= ENV['DBPASSWORD'] %>
 
 production:
   <<: *default
-  database: rc
-  username: postgres
-  password: postgres
+  database: <%= ENV['DB'] %>
+  username: <%= ENV['DBUSERNAME'] %>
+  password: <%= ENV['DBPASSWORD'] %>
