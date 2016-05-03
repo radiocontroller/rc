@@ -1,5 +1,9 @@
 <div class="item">
-  <span><img src="<%= comment.user.avatar.url %>" alt=""></span>
+  <span>
+    <a href="/users/<%= comment.user.id %>">
+      <img src="<%= comment.user.avatar.url %>" alt="">
+    </a>
+  </span>
   <div class="user-comment">
     <div class="arrow">
       <em></em>

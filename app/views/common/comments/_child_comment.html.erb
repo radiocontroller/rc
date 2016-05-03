@@ -1,5 +1,7 @@
 <div class="other-user">
-  <img src="<%= comment.user.avatar.url %>" alt="">
+  <a href="/users/<%= comment.user.id %>">
+    <img src="<%= comment.user.avatar.url %>" alt="">
+  </a>
   <div class="other-comment">
     <div class="arrow">
       <em></em>
