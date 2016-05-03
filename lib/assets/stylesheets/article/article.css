@@ -150,16 +150,3 @@
   display: flex;
   align-items: flex-end;
 }
-
-.infos .details img{
-  width: 900px;
-  height: 510px;
-  border-radius: 9px;
-}
-
-.infos .details p{
-  color: #333;
-  font-size: 14px;
-  text-indent: 27px;
-  margin-bottom: 54px;
-}
