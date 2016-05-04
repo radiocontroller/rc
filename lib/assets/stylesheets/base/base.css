@@ -74,3 +74,33 @@ textarea{
     color: #004974;
     text-decoration: none;
 }
+
+.breadcrumb {
+  width: 300px;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+.breadcrumb>li {
+  display: inline-block;
+}
+
+.breadcrumb>.active {
+  color: #999;
+}
+
+.breadcrumb a{
+ color: #428bca;
+ text-decoration: none;
+ background: transparent;
+}
+
+.breadcrumb a:hover{
+  text-decoration: underline;
+}
+
+.breadcrumb i{
+  color: #CDCDB4;
+  margin: 0 10px;
+}
