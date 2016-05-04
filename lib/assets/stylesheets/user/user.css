@@ -123,3 +123,30 @@
 .user-left a:hover{
   text-decoration: underline;
 }
+
+.my-comment{
+  padding: 10px 0px;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+.my-comment .title a{
+  color: #303030;
+}
+
+.my-comment .title a:hover{
+  text-decoration: underline;
+}
+
+.my-comment p{
+  font-size: 14px;
+  color: #7A7A7A;
+}
+
+.my-comment .title span{
+  margin-left: 20px;
+  color: #B5B5B5;
+}
+
+.my-comment .title span i{
+  margin-right: 3px;
+}

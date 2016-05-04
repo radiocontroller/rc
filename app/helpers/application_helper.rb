@@ -7,8 +7,8 @@ module ApplicationHelper
     return '-o' if current_user.blank? || !current_user.has_commented?(resource)
   end
 
-  def login?
-    return 'js-collect cursor-pointer' if current_user.present?
+  def comment_title(comment)
+    comment.commentable_type == 'Article' ? '[文章]' : '[视频]'
   end
 
 end

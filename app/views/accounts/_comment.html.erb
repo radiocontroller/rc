@@ -1,0 +1,10 @@
+<div class="my-comment">
+  <div class="title">
+    <a href="/<%= comment.commentable_type.downcase.pluralize %>/<%= comment.commentable_id %>">
+      <%= comment_title(comment) %>
+      <%= comment.commentable.title %>
+    </a>
+    <span><i class="fa fa-history"></i><%= comment.created_at.strftime('%Y-%m-%d %H:%M') %></span>
+  </div>
+  <p><%= comment.content %></p>
+</div>
