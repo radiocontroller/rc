@@ -19,12 +19,12 @@
 
     <div class="main">
       <div class="content">
-        <ul class="breadcrumb">
-          <li><a href="#">Home</a></li><i>/</i>
-          <li><a href="#">2013</a></li><i>/</i>
-          <li class="active">十一月</li>
+        <ul class="breadcrumb" style='margin-top: 40px;'>
+          <%= @page_nav %>
         </ul>
+
         <%= yield %>
+        
       </div>
       <%= render 'common/setting' %>
     </div>

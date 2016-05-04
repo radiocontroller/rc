@@ -4,6 +4,10 @@ defaults: &defaults
     new: '新建'
     edit: '编辑'
     show: '详情'
+    fixed_wing: '固定翼'
+    glider: '滑翔机'
+    helicopter: '直升机'
+    fpv: '穿越机'
 
 development:
   <<: *defaults

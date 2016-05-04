@@ -20,6 +20,11 @@
     <div class="main">
       <div class="content">
 
+        <ul class='breadcrumb' style='margin-top: 20px;'>
+          <li><%= link_to '首页', '/' %></li><i>/</i>
+          <li class='active'>个人中心</li>
+        </ul>
+
         <div class="user-left-wrap">
           <div class="user-left">
             <div class="user-avatar">
@@ -35,7 +40,7 @@
 
         <div class="user-right-wrap">
           <%= render '/common/flash_messages' %>
-          
+
           <%= yield %>
         </div>
 

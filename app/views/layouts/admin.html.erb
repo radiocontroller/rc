@@ -23,7 +23,10 @@
       <%= render 'common/left_sidebar' %>
 
       <div class="operate">
-        <%= render 'common/page_nav' %>
+        <ul class='breadcrumb' style='margin: 0px 0px 20px 20px;'>
+          <%= @page_nav %>
+        </ul>
+
         <div class="operate-main">
           <div id="floatWindow"></div>
 

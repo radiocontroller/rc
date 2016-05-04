@@ -1,13 +1,14 @@
 class VideosController < ApplicationController
   before_action :set_limit, only: [:index]
   before_action :set_videos, :set_search_value, only: [:fixed_wing, :helicopter, :fpv, :glider]
+  before_action :set_video, only: [:show]
+  before_action :set_page_nav
 
   def index
     set_categories
   end
 
   def show
-    @video = Video.normal.find(params[:id])
   end
 
   def fixed_wing
@@ -46,6 +47,20 @@ class VideosController < ApplicationController
     def set_search_value
       params[:q] ||= {}
       @search = params[:q][:description_cont]
+    end
+
+    def set_video
+      @video = Video.normal.find(params[:id])
+    end
+
+    def set_page_nav
+      @page_nav = PageNavCollection.to_nav(
+        [
+          { name: '首页', url: '/' },
+          { name: '视频', url: '/videos' },
+          { name: @video.try(:description) || Settings.action[request[:action]], end: true }
+        ]
+      )
     end
 
 end

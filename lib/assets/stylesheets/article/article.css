@@ -1,15 +1,14 @@
 .guide-reading{
   margin: 0 auto;
+  margin-top: 56px;
 }
 
 .guide-reading .title{
-  margin-top: 156px;
   height: 50px;
   display: flex;
   justify-content: space-between;
   border-bottom: 3px solid #e5e5e5;
 }
-
 
 .guide-reading .title h2{
   font-size: 24px;
