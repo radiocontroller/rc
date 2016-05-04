@@ -5,7 +5,7 @@
   </div>
 
   <div class="items">
-    <%= render partial: '/common/comments/comment', collection: @resource.parent_comments, as: :comment %>
+    <%= render partial: '/common/comments/comment', collection: @resource.parent_comments.normal, as: :comment %>
   </div>
 
   <%= render '/common/comments/publish' %>

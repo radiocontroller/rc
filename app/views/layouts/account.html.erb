@@ -28,12 +28,17 @@
         <div class="user-left-wrap">
           <div class="user-left">
             <div class="user-avatar">
-              <img src="<%= @user.avatar.present? ? @user.avatar.url : '/images/avatar.png' %>" alt="" />
+              <a href="/users/<%= @user.id %>/account/edit">
+                <img src="<%= @user.avatar.present? ? @user.avatar.url : '/images/avatar.png' %>" alt="" />
+              </a>
             </div>
             <p><i class='fa fa-user'></i><%= @user.username %></p>
             <p><i class='fa fa-envelope'></i><%= @user.email %></p>
             <p>
               <a href="/users/<%= @user.id %>"><i class='fa fa-heart'></i>我的收藏</a>
+            </p>
+            <p>
+              <a href="/users/<%= @user.id %>/account/comments"><i class="fa fa-comment"></i>我的评论</a>
             </p>
           </div>
         </div>

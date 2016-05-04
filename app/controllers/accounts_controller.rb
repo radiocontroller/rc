@@ -14,6 +14,10 @@ class AccountsController < ApplicationController
     end
   end
 
+  def comments
+    @comments = @user.comments.normal
+  end
+
   private
 
     def verify_user
