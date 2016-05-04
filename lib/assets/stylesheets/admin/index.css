@@ -2,7 +2,6 @@
 *= require admin/base
 *= require admin/left_sidebar
 *= require admin/video
-*= require admin/page_nav
 *= require admin/picture
 *= require admin/battle_plane
 *= require admin/article

@@ -57,7 +57,7 @@ class Admin::VideosController < Admin::BaseController
         [
           { name: '后台管理', url: '/admin' },
           { name: '视频模块', url: '/admin/videos' },
-          { name: Settings.action[request[:action]], url: request.path, end: true }
+          { name: Settings.action[request[:action]], end: true }
         ]
       )
     end

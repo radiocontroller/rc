@@ -8,10 +8,11 @@ class PageNav
   end
 
   def to_nav
-    html = "<li>"
-    html += "#{ link_to @name, @url }</li>"
-    html += "<li><i class='fa fa-angle-right'></i></li>" if !end?
-    html
+    if end?
+      "<li class='active'>#{@name}</li>"
+    else
+      "<li>#{ link_to @name, @url }</li><i>/</i>"
+    end
   end
 
   private

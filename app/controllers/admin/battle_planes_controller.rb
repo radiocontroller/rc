@@ -41,7 +41,7 @@
           [
             { name: '后台管理', url: '/admin' },
             { name: '战机模块', url: '/admin/battle_planes' },
-            { name: Settings.action[request[:action]], url: request.path, end: true }
+            { name: Settings.action[request[:action]], end: true }
           ]
         )
       end

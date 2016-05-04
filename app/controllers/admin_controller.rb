@@ -8,7 +8,7 @@ class AdminController < Admin::BaseController
       @page_nav = PageNavCollection.to_nav(
         [
           { name: '后台管理', url: '/admin' },
-          { name: Settings.action[request[:action]], url: request.path, end: true }
+          { name: Settings.action[request[:action]], end: true }
         ]
       )
     end

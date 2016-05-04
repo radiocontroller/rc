@@ -61,7 +61,7 @@ module GalleryAble
         [
           { name: '后台管理', url: '/admin' },
           { name: "#{set_category}模块", url: "/admin/gallery/#{english_category.pluralize}" },
-          { name: Settings.action[request[:action]], url: request.path, end: true }
+          { name: Settings.action[request[:action]], end: true }
         ]
       )
     end
