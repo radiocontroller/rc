@@ -1,6 +1,6 @@
-<i class="fa fa-heart<%= '-o' if current_user.blank? || !current_user.has_collected?(resource) %>">
+<i class="fa fa-heart<%= has_collected?(resource) %>">
   收藏(<%= resource.collect_quantity %>)
 </i>
-<i class="fa fa-comment<%= '-o' if current_user.blank? || !current_user.has_commented?(resource) %>">
+<i class="fa fa-comment<%= has_commented?(resource) %>">
   评论(<%= resource.comment_quantity %>)
 </i>

@@ -1,7 +1,7 @@
-<i class="js-collect fa fa-heart<%= '-o' if current_user.blank? || !current_user.has_collected?(resource) %> cursor-pointer" data-id='<%= resource.id %>' >
+<i class="js-collect cursor-pointer fa fa-heart<%= has_collected?(resource) %>" data-id='<%= resource.id %>' >
   收藏(<%= resource.collect_quantity %>)
 </i>
-<i class="fa fa-comment<%= '-o' if current_user.blank? || !current_user.has_commented?(resource) %>">
+<i class="fa fa-comment<%= has_commented?(resource) %>">
   评论(<%= resource.comment_quantity %>)
 </i>
 <script type="text/javascript">
