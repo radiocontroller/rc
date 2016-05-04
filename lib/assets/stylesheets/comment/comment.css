@@ -42,9 +42,8 @@
   border-radius: 9px;
   padding: 18px;
   box-sizing: border-box;
-  margin-left: 18px;
+  margin-left: 28px;
 }
-
 
 .user-comment .user-title{
   font-size: 14px;
@@ -66,8 +65,9 @@
 .other-user img{
   width: 90px;
   height: 90px;
+  position: absolute;
   border-radius: 50%;
-  margin-top: -18px;
+  top: 10px;
 }
 
 .other-user .other-comment{
@@ -79,7 +79,7 @@
   border-radius: 9px;
   padding: 18px;
   box-sizing: border-box;
-  margin-left: 18px;
+  margin-left: 120px;
 }
 
 
