@@ -1,9 +1,13 @@
 class UsersController < ApplicationController
   layout 'user'
-  before_action :set_user, only: [:show]
+  before_action :set_user, only: [:show, :comments]
   before_action :set_page_nav
 
   def show
+  end
+
+  def comments
+    @comments = @user.comments.normal
   end
 
   private

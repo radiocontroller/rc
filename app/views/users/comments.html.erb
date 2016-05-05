@@ -1,0 +1,12 @@
+<%= render partial: 'comment', collection: @comments %>
+
+<script type="text/javascript">
+  $(function() {
+    $('.my-comment p').each(parseEmoji);
+  });
+
+  function parseEmoji() {
+    var html = $(this).html();
+    $(this).html(html.replace(/&lt;emt&gt;(\d{1,2})&lt;\/emt&gt;/g, '<img src="/images/emoji/$1.gif">'));
+  }
+</script>
