@@ -25,6 +25,7 @@
 .user-left{
   margin: 20px;
   min-height: 400px;
+  font-size: 14px;
 }
 
 .user-avatar img{
