@@ -3,7 +3,7 @@
     <h2><%= category %></h2>
     <div class="search">
       <%= form_tag("/videos/#{action_name}", method: :get) do %>
-        <%= text_field_tag 'q[description_cont]', @username, class: 'search-input' %>
+        <%= text_field_tag 'q[title_cont]', @title, class: 'search-input' %>
         <a class="btn-search" href="javascript:void(0)" onClick="$(this).closest('form').submit()">
           <i class="fa fa-search"></i>
         </a>

@@ -45,8 +45,7 @@ class VideosController < ApplicationController
     end
 
     def set_search_value
-      params[:q] ||= {}
-      @search = params[:q][:description_cont]
+      @title = params[:q] && params[:q][:title_cont]
     end
 
     def set_video

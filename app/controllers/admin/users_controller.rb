@@ -19,7 +19,7 @@ class Admin::UsersController < Admin::BaseController
     end
 
     def set_search_value
-      @username = (params[:q] || {})[:username_cont]
+      @username = params[:q] && params[:q][:username_cont]
     end
 
     def set_user_quantity

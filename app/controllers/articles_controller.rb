@@ -14,7 +14,7 @@ class ArticlesController < ApplicationController
   private
 
     def set_search_value
-      @title = (params[:q] || {})[:title_cont]
+      @title = params[:q] && params[:q][:title_cont]
     end
 
     def set_article
