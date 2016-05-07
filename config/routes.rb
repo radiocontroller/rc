@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :users, only: [:show] do
-    member { get 'comments' }
+    member { get 'comments', 'replies' }
     resource :account, only: [:edit, :update]
     namespace :collections do
       resources :videos, only: [:index]

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   layout 'user'
-  before_action :set_user, only: [:show, :comments]
+  before_action :set_user
   before_action :set_page_nav
 
   def show
@@ -8,6 +8,10 @@ class UsersController < ApplicationController
 
   def comments
     @comments = @user.comments.normal
+  end
+
+  def replies
+    @replies = @user.replies
   end
 
   private

@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :verify_admin
+  before_action :verify_user
   before_action :set_resource
 
   def create
@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
       @resource =  params[:video_id].present? ? Video.normal.find(params[:video_id]) : Article.normal.find(params[:article_id])
     end
 
-    def verify_admin
-      render :file => "/public/500.html", layout: false, status: 500 if !current_user.try(:admin?)
+    def verify_user
+      render :file => "/public/500.html", layout: false, status: 500 if current_user.blank?
     end
 end

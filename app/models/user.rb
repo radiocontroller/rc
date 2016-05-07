@@ -56,4 +56,10 @@ class User < ActiveRecord::Base
     update(admin: !self.admin)
   end
 
+  def replies
+    comment_ids = self.comments.where(parent_id: nil).ids
+    return nil if comment_ids.empty?
+    Comment.normal.find_by_sql("select * from comments where comments.parent_id in (#{comment_ids.join(',')})")
+  end
+
 end
