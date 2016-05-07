@@ -70,7 +70,7 @@ h2,h3{
 .classic-fighter ul li h2{
   padding: 0;
   display: inline-block;
-  border-bottom: 3px solid red;
+  border-bottom: none;
   margin-bottom: 30px;
 }
 
