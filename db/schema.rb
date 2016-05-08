@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160504123540) do
+ActiveRecord::Schema.define(version: 20160508104052) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,17 @@ ActiveRecord::Schema.define(version: 20160504123540) do
     t.boolean  "deleted",          default: false
   end
 
+  create_table "notifications", force: :cascade do |t|
+    t.integer  "actor_id"
+    t.integer  "user_id"
+    t.integer  "targetable_id"
+    t.string   "targetable_type"
+    t.string   "notify_type"
+    t.datetime "read_at"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
   create_table "pictures", force: :cascade do |t|
     t.integer  "category"
     t.string   "resource"
@@ -61,28 +72,29 @@ ActiveRecord::Schema.define(version: 20160504123540) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "",    null: false
-    t.string   "encrypted_password",     default: "",    null: false
+    t.string   "email",                  default: "",                    null: false
+    t.string   "encrypted_password",     default: "",                    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,     null: false
+    t.integer  "sign_in_count",          default: 0,                     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
-    t.boolean  "status",                 default: false, null: false
+    t.datetime "created_at",                                             null: false
+    t.datetime "updated_at",                                             null: false
+    t.boolean  "status",                 default: false,                 null: false
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
-    t.string   "username",                               null: false
+    t.string   "username",                                               null: false
     t.boolean  "admin",                  default: false
     t.json     "video_ids",              default: []
     t.json     "article_ids",            default: []
     t.boolean  "deleted",                default: false
     t.string   "avatar"
+    t.datetime "free_at",                default: '2016-05-08 18:43:05'
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree

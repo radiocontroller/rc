@@ -52,7 +52,9 @@ Rails.application.routes.draw do
     resources :pictures, only: [:destroy]
     resources :battle_planes, only: [:update, :destroy]
     resources :comments, only: [:destroy]
-    resources :users, only: [:update]
+    resources :users, only: [:update] do
+      member { put 'limit', 'release' }
+    end
   end
 
 end

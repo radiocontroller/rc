@@ -2,9 +2,19 @@
   <td><%= user_counter + 1 %></td>
   <td><%= user.username %></td>
   <td><%= user.email %></td>
-  <td><%= user.created_at.strftime('%Y-%m-%d %H:%M:%S') %></td>
-  <td class='user-role'><%= user.role %></td>
-  <td><%= user.state %></td>
-  <td>禁用</td>
-  <td class='toggle'><%= user.role_operation %></td>
+  <td><%= user.created_at.strftime('%Y-%m-%d %H:%M') %></td>
+  <td><%= user.confirmed? ? '已验证' : '未验证' %></td>
+  <td><%= user.role %></td>
+  <td><%= user.limit? ? "限制登录至#{user.free_at.strftime('%Y-%m-%d %H:%M')}" : '正常' %></td>
+  <% if user != current_user %>
+    <% if user.limit? %>
+      <td><a href="javascript:void(0)" class='js-release operate'>解封</a></td>
+    <% else %>
+      <td><a href="javascript:void(0)" class='js-limit-opts operate'>封号</a></td>
+    <% end %>
+    <td><a href='javascript:void(0)' class='js-toggle operate'><%= user.role_operation %></a></td>
+  <% else %>
+    <td></td>
+    <td></td>
+  <% end %>
 </tr>

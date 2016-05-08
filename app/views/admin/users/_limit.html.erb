@@ -1,0 +1,15 @@
+<div class="sweet-alert show-input showSweetAlert visible" data-animation="slide-from-top" style="display: block; margin-top: -256px;">
+  <h2>封号处理</h2>
+  <%= form_tag('', method: :put, id: 'limitForm', remote: true) do %>
+    <select name="days">
+      <% 7.times do |i| %>
+        <option value='<%= i+1 %>'>封号<%= i+1 %>天</option>
+      <% end %>
+      <option value='99999'>永久封号</option>
+    </select>
+  <% end %>
+  <div class="sa-button-container">
+    <button id='js-cancel' class="cancel" style="display: inline-block;">取消</button>
+    <button id='js-limit' class="confirm confirm-btn">确定</button>
+  </div>
+</div>

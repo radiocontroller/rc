@@ -28,6 +28,18 @@ class User < ActiveRecord::Base
     deleted
   end
 
+  def confirmed?
+    confirmed_at.present?
+  end
+
+  def limit?
+    free_at > Time.now
+  end
+
+  def release?
+    free_at < Time.now
+  end
+
   def has_collected?(resource)
     if resource.instance_of?(Video)
       video_ids.include?(resource.id)
@@ -48,12 +60,16 @@ class User < ActiveRecord::Base
     admin? ? '解除管理员' : '设为管理员'
   end
 
-  def state
-    deleted? ? '禁用' : '正常'
-  end
-
   def toggle!
     update(admin: !self.admin)
+  end
+
+  def release!
+    update(free_at: Time.now)
+  end
+
+  def limit!(days)
+    update(free_at: Time.now + days.to_i.days)
   end
 
   def replies

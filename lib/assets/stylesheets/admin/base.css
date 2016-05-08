@@ -1,4 +1,4 @@
-.operate{
+.admin-operate{
   width: 83%;
   margin: 10px 0 100px 0;
   padding-top: 20px;
@@ -6,7 +6,7 @@
   border: 1px solid #CCCCCC;
 }
 
-.operate-main{
+.admin-operate .main{
   margin-left: 20px;
   padding-bottom: 100px;
 }
