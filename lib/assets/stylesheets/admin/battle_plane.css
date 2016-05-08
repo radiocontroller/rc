@@ -34,24 +34,51 @@
   font-size: 12px;
 }
 
-.battle-form-wrap, .battle-form-wrap div{
-  margin-top: 20px;
+.battle-form {
+  width: 300px;
 }
 
-.battle-form-wrap input[type='text']{
-  width: 200px;
-  height: 25px;
+.battle-form div {
+  margin-bottom: 30px;
 }
 
-.battle-form-wrap textarea{
-  vertical-align: middle;
-  width: 350px;
-  height: 100px;
+.battle-form input, .battle-form textarea {
+  margin-top: 8px;
+  display: block;
+  width: 100%;
+  height: 20px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+  -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
 
-.battle-form-wrap .btn{
-  width: 60px;
-  height: 30px;
+.battle-form textarea {
+  height: 140px;
+}
+
+.battle-form input[type='submit']{
+  width: 40%;
+  height: 35px;
+  background-color: #548B54;
   cursor: pointer;
-  margin-top: 20px;
+  color: white;
+}
+
+.battle-form input:focus, .battle-form textarea:focus{
+  outline: 0;
+  border-color: rgba(82,168,236,0.8);
+}
+
+.battle-form select {
+  display: block;
+  margin-top: 15px;
 }

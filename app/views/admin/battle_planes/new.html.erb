@@ -1,16 +1,15 @@
-<div class="battle-form-wrap">
-  <h2>新建战机</h2>
+<div class="battle-form">
   <%= form_for @plane, url: admin_battle_planes_path do |f| %>
     <div>
-      战机名称:
+      <%= f.label '战机名称' %>
       <%= f.text_field :title %>
     </div>
     <div>
-      战机简介:
+      <%= f.label '战机简介' %>
       <%= f.text_area :content %>
     </div>
     <div>
-      置顶位置:
+      <%= f.label '排序' %>
       <select name="battle_plane[sort_id]">
         <option value="">无</option>
         <% @limit.times do |i| %>
@@ -20,5 +19,4 @@
     </div>
     <%= f.submit '新建', class: 'btn' %>
   <% end %>
-
 </div>

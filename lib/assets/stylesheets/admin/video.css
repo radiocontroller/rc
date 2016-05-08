@@ -9,8 +9,12 @@
 }
 
 .videos-search input[type='text']{
-  width: 160px;
-  height: 20px;
+  width: 180px;
+  height: 25px;
+}
+
+.videos-search input:focus{
+  outline: 0;
 }
 
 .videos-search input[type='checkbox']{
@@ -20,14 +24,10 @@
   cursor: pointer;
 }
 
-.videos-search select{
-  width: 75px;
-  height: 25px;
-}
-
 .videos-search .btn{
-  width: 50px;
-  height: 27px;
+  width: 60px;
+  height: 35px;
+  background-color: #A6A6A6;
   cursor: pointer;
 }
 
@@ -63,26 +63,4 @@
 .video-remove{
   font-size: 14px;
   margin-left: 10px;
-}
-
-.video-form-wrap div, .video-form-wrap h2{
-  margin-bottom: 30px;
-}
-
-.video-form-wrap .form-field{
-  width: 350px;
-  height: 30px;
-  font-size: 14px;
-  margin-left: 20px;
-}
-
-.video-form-wrap .btn{
-  width: 80px;
-  height: 40px;
-  border-radius: 3px;
-  cursor: pointer;
-  border: 1px solid #64c878;
-  color: #4D4D4D;
-  box-shadow: 0 1px 2px #b9ecc4 inset,0 -1px 0 #6c9f76 inset,0 -2px 3px #b9ecc4 inset;
-  background: -webkit-linear-gradient(top,#90dfa2,#84d494);
 }

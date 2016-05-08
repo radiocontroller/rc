@@ -26,6 +26,18 @@ img{
   border:0 none;
 }
 
+select {
+  background: transparent;
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  height: 30px;
+}
+
+select:focus {
+  outline: 0;
+}
+
 .circle{
   border-radius: 50%;
 }
@@ -46,33 +58,6 @@ textarea{
   display: inline-block;
   box-shadow: rgba(174, 222, 244, 0.8) 0px 0px 2px, rgba(0, 0, 0, 0.0470588) 0px 0px 0px 1px inset;
   background-color: rgb(174, 222, 244);
-}
-
-.file {
-    position: relative;
-    display: inline-block;
-    background: #D0EEFF;
-    border: 1px solid #99D3F5;
-    border-radius: 4px;
-    padding: 4px 12px;
-    overflow: hidden;
-    color: #1E88C7;
-    text-decoration: none;
-    text-indent: 0;
-    line-height: 20px;
-}
-.file input {
-    position: absolute;
-    font-size: 100px;
-    right: 0;
-    top: 0;
-    opacity: 0;
-}
-.file:hover {
-    background: #AADFFD;
-    border-color: #78C3F3;
-    color: #004974;
-    text-decoration: none;
 }
 
 .breadcrumb {

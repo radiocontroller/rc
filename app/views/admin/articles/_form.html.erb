@@ -1,11 +1,15 @@
 <%= form_for @article, url: url, html: {id: 'articleForm'} do |f| %>
-  <p>文章标题</p>
-  <%= f.text_field :title %>
+  <div class="battle-form">
+    <p>文章标题</p>
+    <%= f.text_field :title %>
+  </div>
   <p>文章内容</p>
   <%= f.text_area :content, id: 'js-article-content', style: 'display: none' %>
   <div id="editor">
     <%= @article.content.try :html_safe %>
   </div>
-  <%= f.submit btn_name, class: 'cursor-pointer' %>
+  <div class="battle-form" style='margin-top: 30px;'>
+    <%= f.submit btn_name, class: 'cursor-pointer' %>
+  </div>
 <% end %>
 <%= render 'editor_js' %>

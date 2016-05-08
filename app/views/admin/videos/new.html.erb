@@ -1,5 +1,4 @@
-<div class="video-form-wrap">
-  <h2>新建视频</h2>
+<div class="battle-form">
   <%= form_for @video, url: admin_videos_path do |f| %>
     <%= render 'form', f: f %>
     <%= f.submit '创建', class: 'btn' %>

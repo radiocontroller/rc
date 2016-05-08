@@ -60,7 +60,7 @@ module GalleryAble
       @page_nav = PageNavCollection.to_nav(
         [
           { name: '后台管理', url: '/admin' },
-          { name: "#{set_category}模块", url: "/admin/gallery/#{english_category.pluralize}" },
+          { name: "#{set_category}图片", url: "/admin/gallery/#{english_category.pluralize}" },
           { name: Settings.action[request[:action]], end: true }
         ]
       )
