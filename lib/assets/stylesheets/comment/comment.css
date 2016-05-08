@@ -62,7 +62,7 @@
   margin-bottom: 10px;
 }
 
-.other-user img{
+.other-user a img{
   width: 90px;
   height: 90px;
   position: absolute;
@@ -187,4 +187,6 @@
 .comment-content img{
   max-width: 22px;
   max-height: 22px;
+  margin: -5px 2px 0px 2px;
+  vertical-align: middle;
 }
