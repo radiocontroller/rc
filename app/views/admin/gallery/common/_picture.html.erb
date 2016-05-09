@@ -9,6 +9,6 @@
     <% else %>
       <span class='js-sort cursor-pointer' data-id='<%= picture.id %>'>置顶</span>
     <% end %>
-    <span><%= link_to '删除', 'javascript:void(0)', class: 'js-delete-picture', data: {id: picture.id} %></span>
+    <span><%= link_to '删除', 'javascript:void(0)', class: 'js-delete-gallery', data: {id: picture.id} %></span>
   </div>
 </li>

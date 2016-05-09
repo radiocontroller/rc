@@ -3,28 +3,3 @@
     <%= render @articles %>
   </div>
 </div>
-
-<script type="text/javascript">
-  $(function() {
-    $(document).on('click', '.js-remove', removeArticle);
-  });
-
-  function removeArticle() {
-    var self = $(this);
-    swal({
-     title: "您确定要删除吗？",
-     type: "warning",
-     showCancelButton: true,
-     closeOnConfirm: false,
-     confirmButtonText: "是的，强行删除",
-     confirmButtonColor: "#ec6c62"
-     }, function() {
-       $.ajax({
-         url: "/ajax/articles/"+ self.data('id'),
-         type: "DELETE",
-         dataType: 'script',
-         success: function(){}
-       })
-     });
-  }
-</script>

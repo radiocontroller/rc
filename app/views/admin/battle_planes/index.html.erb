@@ -12,7 +12,6 @@
     $(document).on('click', '#js-edit-order', editBattlePlaneOrder);
     $(document).on('click', '#js-sort', sortBattlePlane);
     $(document).on('click', '.js-show-operations', showOperations);
-    $(document).on('click', '.js-delete', deletePlane);
   });
 
   function showOperations() {
@@ -23,7 +22,6 @@
   function editBattlePlane() {
     insertFloatWindow('<%= j render "edit" %>');
     var battleplaneLi = $('#js-battleplane-'+$('#battleplane-id').val());
-    console.log(battleplaneLi)
     $('#js-title').val(battleplaneLi.find('h2').html());
     $('#js-content').val(battleplaneLi.find('p').html());
   }
@@ -40,22 +38,4 @@
     $('#sortForm').attr('action', '/admin/battle_planes/'+$('#battleplane-id').val()).submit();
   }
 
-  function deletePlane() {
-    var self = $(this);
-    swal({
-     title: "您确定要删除吗？",
-     type: "warning",
-     showCancelButton: true,
-     closeOnConfirm: false,
-     confirmButtonText: "是的，强行删除",
-     confirmButtonColor: "#ec6c62"
-     }, function() {
-       $.ajax({
-         url: "/ajax/battle_planes/"+ self.parent().data('id'),
-         type: "DELETE",
-         dataType: 'script',
-         success: function(){}
-       })
-     });
-  }
 </script>

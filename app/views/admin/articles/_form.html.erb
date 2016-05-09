@@ -12,4 +12,10 @@
     <%= f.submit btn_name, class: 'cursor-pointer' %>
   </div>
 <% end %>
-<%= render 'editor_js' %>
+<script type="text/javascript">
+  $(function() {
+    var editor = new wangEditor('editor');
+    editor.config.uploadImgUrl = '/upload/pictures';
+    editor.create();
+  });
+</script>

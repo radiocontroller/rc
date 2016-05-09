@@ -5,7 +5,7 @@
       <%= select_tag 'q[category_eq]', options_for_select(@categories, @search[:category]), include_blank: '全部' %>
     </div>
     <div>
-      视频标题: <%= text_field_tag 'q[title_cont]', @search[:description] %>
+      视频标题: <%= text_field_tag 'q[title_cont]', @search[:title] %>
     </div>
     <div>
       今日视频: <%= check_box_tag 'q[is_homepage_true]', 'true', @search[:homepage] %>
@@ -25,8 +25,6 @@
   $(function() {
     $(document).on('click', '.js-show-operations', showOperations);
     $(document).on('click', '.js-edit', editVideo);
-    $(document).on('click', '.js-delete', deleteVideo);
-    $(document).on('click', '#js-set-homepage', setHomepage);
   });
 
   function showOperations() {
@@ -37,43 +35,4 @@
   function editVideo() {
     window.location.href = '/admin/videos/'+$('#video-id').val()+'/edit';
   }
-
-  function deleteVideo() {
-    var self = $(this);
-    swal({
-     title: "您确定要删除吗？",
-     type: "warning",
-     showCancelButton: true,
-     closeOnConfirm: false,
-     confirmButtonText: "是的，强行删除",
-     confirmButtonColor: "#ec6c62"
-     }, function() {
-       $.ajax({
-         url: "/ajax/videos/"+ self.data('id'),
-         type: "DELETE",
-         dataType: 'script',
-         success: function(){}
-       })
-     });
-  }
-
-  function setHomepage() {
-    emptyFloatWindow();
-    swal({
-     title: "设置为今日视频？",
-     type: "warning",
-     showCancelButton: true,
-     closeOnConfirm: false,
-     confirmButtonText: "是的",
-     confirmButtonColor: "#ec6c62"
-     }, function() {
-       $.ajax({
-         url: "/ajax/videos/"+ $('#video-id').val(),
-         type: "PUT",
-         dataType: 'script',
-         success: function(){}
-       })
-     });
-  }
-
 </script>

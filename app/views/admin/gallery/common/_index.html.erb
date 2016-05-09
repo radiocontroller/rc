@@ -9,9 +9,7 @@
 
 <script type="text/javascript">
   $(function() {
-    $('.fancybox').fancybox();
     $(document).on('click', '.js-sort', editGallery);
-    $(document).on('click', '.js-delete-picture', deletePicture);
   });
 
   function editGallery() {
@@ -19,23 +17,6 @@
     $('#js-update-gallery').data('id', $(this).data('id'));
   }
 
-  function deletePicture() {
-    var self = $(this);
-    swal({
-     title: "您确定要删除吗？",
-     type: "warning",
-     showCancelButton: true,
-     closeOnConfirm: false,
-     confirmButtonText: "是的，强行删除",
-     confirmButtonColor: "#ec6c62"
-     }, function() {
-       $.ajax({
-         url: "/ajax/pictures/"+ self.data('id'),
-         type: "DELETE",
-         dataType: 'script',
-         function(){}
-       })
-     });
-  }
+  
 
 </script>
