@@ -60,3 +60,7 @@
   color: #000;
   margin-right: 10px;
 }
+
+.video-edit span a:focus{
+  outline: 0;
+}

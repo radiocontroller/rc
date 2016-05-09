@@ -10,10 +10,6 @@ class BattlePlane < ActiveRecord::Base
     update(sort_id: nil)
   end
 
-  def set_order!(sort_id)
-    update(sort_id: sort_id)
-  end
-
   def remove!
     update(deleted: true)
   end

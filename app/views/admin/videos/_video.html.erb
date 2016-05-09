@@ -10,17 +10,11 @@
   </div>
   <div class="video-edit">
     <span data-id='<%= video.id %>'>
-      <a href="javascript:void(0)" class='js-edit-video'>
-        <i class="fa fa-pencil"></i>
-      </a>
+      <a href="/admin/videos/<%= video.id %>/edit"><i class="fa fa-pencil"></i></a>
       <% if !video.homepage? %>
-        <a href="javascript:void(0)" class='js-set-homepage'>
-          <i class="fa fa-thumbs-up"></i>
-        </a>
+        <a href="javascript:void(0)" class='js-set-homepage'><i class="fa fa-thumbs-up"></i></a>
       <% end %>
-      <a href="javascript:void(0)" class='js-delete-video'>
-        <i class="fa fa-trash"></i>
-      </a>
+      <a href="javascript:void(0)" class='js-delete-video'><i class="fa fa-trash"></i></a>
     </span>
     <span class='js-homepage-info'>
       <%= '今日视频' if video.homepage? %>

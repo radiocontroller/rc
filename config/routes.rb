@@ -38,7 +38,7 @@ Rails.application.routes.draw do
     namespace :gallery do
       resources :fixed_wings, :gliders, :helicopters, :fpvs, only: [:index, :new, :create, :update]
     end
-    resources :battle_planes, only: [:index, :update, :new, :create]
+    resources :battle_planes, only: [:index, :update, :new, :create, :edit]
     resources :users, only: [:index]
   end
 
@@ -50,7 +50,7 @@ Rails.application.routes.draw do
       resources :collections, only: [:create]
     end
     resources :pictures, only: [:destroy]
-    resources :battle_planes, only: [:update, :destroy]
+    resources :battle_planes, only: [:destroy]
     resources :comments, only: [:destroy]
     resources :users, only: [:update] do
       member { put 'limit', 'release' }
