@@ -1,3 +1,8 @@
+<div>
+  <a href="/admin/gallery/<%= category %>/new">
+    <button type="button" class='upload-btn'>上传图片</button>
+  </a>
+</div>
 <div class="admin-pictures">
   <ul>
     <%= render partial: 'admin/gallery/common/picture', collection: @pictures %>
@@ -10,6 +15,7 @@
 <script type="text/javascript">
   $(function() {
     $(document).on('click', '.js-sort', editGallery);
+    $(document).on('click', '#js-update-gallery', updateGallery);
   });
 
   function editGallery() {

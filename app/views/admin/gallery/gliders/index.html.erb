@@ -1,15 +1,6 @@
-<div>
-  <a href="/admin/gallery/gliders/new">
-    <button type="button" class='upload-btn'>上传图片</button>
-  </a>
-</div>
-<%= render 'admin/gallery/common/index' %>
+<%= render partial: 'admin/gallery/common/index', locals: { category: "gliders" } %>
 
 <script type="text/javascript">
-  $(function() {
-    $(document).on('click', '#js-update-gallery', updateGallery);
-  });
-
   function updateGallery() {
     $('#galleryForm').attr('action', '/admin/gallery/gliders/'+ $(this).data('id')).submit();
   }
