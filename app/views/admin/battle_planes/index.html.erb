@@ -3,39 +3,3 @@
     <%= render @battle_planes %>
   </ul>
 </div>
-<input type="hidden" id='battleplane-id'>
-
-<script type="text/javascript">
-  $(function() {
-    $(document).on('click', '#js-edit', editBattlePlane);
-    $(document).on('click', '#js-update', updateBattlePlane);
-    $(document).on('click', '#js-edit-order', editBattlePlaneOrder);
-    $(document).on('click', '#js-sort', sortBattlePlane);
-    $(document).on('click', '.js-show-operations', showOperations);
-  });
-
-  function showOperations() {
-    insertFloatWindow('<%= j render "operations" %>');
-    $('#battleplane-id').val($(this).parent().data('id'));
-  }
-
-  function editBattlePlane() {
-    insertFloatWindow('<%= j render "edit" %>');
-    var battleplaneLi = $('#js-battleplane-'+$('#battleplane-id').val());
-    $('#js-title').val(battleplaneLi.find('h2').html());
-    $('#js-content').val(battleplaneLi.find('p').html());
-  }
-
-  function updateBattlePlane() {
-    $('#battleplaneForm').attr('action', '/ajax/battle_planes/'+ $('#battleplane-id').val()).submit();
-  }
-
-  function editBattlePlaneOrder() {
-    insertFloatWindow('<%= j render "sort" %>');
-  }
-
-  function sortBattlePlane() {
-    $('#sortForm').attr('action', '/admin/battle_planes/'+$('#battleplane-id').val()).submit();
-  }
-
-</script>

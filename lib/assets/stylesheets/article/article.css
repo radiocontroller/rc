@@ -96,8 +96,8 @@
 }
 
 .guide-reading .item .img img{
-  max-width: 213px;
-  max-height: 126px;
+  width: 100%;
+  height: 126px;
   border-radius: 7px;
 }
 

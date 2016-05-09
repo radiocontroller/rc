@@ -1,0 +1,22 @@
+<div class="battle-form">
+  <%= form_for @battle_plane, url: url do |f| %>
+    <div>
+      <%= f.label '战机名称' %>
+      <%= f.text_field :title %>
+    </div>
+    <div>
+      <%= f.label '战机简介' %>
+      <%= f.text_area :content %>
+    </div>
+    <div>
+      <%= f.label '排序' %>
+      <select name="battle_plane[sort_id]">
+        <option value="">无</option>
+        <% @limit.times do |i| %>
+          <option value='<%= i+1 %>'>首页第<%= i+1 %>篇</option>
+        <% end %>
+      </select>
+    </div>
+    <%= f.submit btn_name, class: 'btn' %>
+  <% end %>
+</div>
