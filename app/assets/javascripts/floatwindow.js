@@ -5,6 +5,7 @@ function insertFloatWindow(html) {
 
 function emptyFloatWindow() {
   $('#floatWindow').html('');
+  $('.sweet-alert').remove();
   removeMask();
 }
 

@@ -1,1 +1,8 @@
-window.location.href = window.location;
+emptyFloatWindow();
+<% if @user.limit? %>
+  $('#js-user-<%= @user.id %>').find('td:eq(6)').html("限制登录至<%= @user.free_at.strftime('%Y-%m-%d %H:%M') %>");
+  $('#js-user-<%= @user.id %>').find('td:eq(7)').html(<%= raw('<a href="javascript:void(0)" class="js-release operate">解封</a>'.to_json) %>);
+  swal("封号成功!", "", "success");
+<% else %>
+  swal("封号失败!", "", "error");
+<% end %>

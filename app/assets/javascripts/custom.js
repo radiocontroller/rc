@@ -10,6 +10,9 @@ $(function() {
   $(document).on('click', '.js-delete-video', deleteVideo);
   $(document).on('click', '.reply .js-delete-comment', deleteComment);
   $(document).on('click', '.js-set-homepage', setHomepage);
+  $(document).on('click', '.js-toggle', toggle);
+  $(document).on('click', '.js-release', release);
+  $(document).on('click', '#js-limit', limit);
 });
 
 function initializeFancyBox() {
@@ -83,4 +86,21 @@ function deleteComment() {
 
 function setHomepage() {
   swalAlert("设置为今日视频？", "warning", "PUT", "/ajax/videos/"+ $(this).parent().data('id'));
+}
+
+function toggle() {
+  var td = $(this).parent();
+  var username = td.siblings().eq(1).html();
+  var title = "您确定将"+ username + $(this).html() + "吗?";
+  swalAlert(title, "warning", "PUT", "/ajax/users/"+ td.parent().data('id'));
+}
+
+function release() {
+  var td = $(this).parent();
+  var username = td.siblings().eq(1).html();
+  swalAlert("您确定解封"+ username +"吗？", "warning", "PUT", "/ajax/users/"+ td.parent().data('id') + "/release");
+}
+
+function limit() {
+  $('#limitForm').attr('action', '/ajax/users/'+$('#limitForm').data('id')+'/limit').submit();
 }

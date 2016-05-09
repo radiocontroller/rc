@@ -14,8 +14,6 @@
   </div>
 </div>
 
-<input type="hidden" name="name" id='user-id'>
-
 <%= render 'users' %>
 
 <div class='paginate'>
@@ -29,6 +27,7 @@
 
   function showLimitOptions() {
     insertFloatWindow("<%= j render 'limit' %>");
-    $('#user-id').val($(this).parents('tr').data('id'));
+    $('#limitForm').prev().html('对'+ $(this).parent().siblings().eq(1).html() +'进行封号处理');
+    $('#limitForm').data('id', $(this).parents('tr').data('id'));
   }
 </script>

@@ -1,1 +1,7 @@
-window.location.href = window.location;
+<% if @user.release? %>
+  $('#js-user-<%= @user.id %>').find('td:eq(6)').html("正常");
+  $('#js-user-<%= @user.id %>').find('td:eq(7)').html(<%= raw('<a href="javascript:void(0)" class="js-limit-opts operate">封号</a>'.to_json) %>);
+  swal("解封成功!", "", "success");
+<% else %>
+  swal("解封失败!", "", "error");
+<% end %>

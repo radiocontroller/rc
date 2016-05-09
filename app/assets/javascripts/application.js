@@ -25,5 +25,4 @@
 //= require insert_content
 //= require floatwindow
 //= require emoji
-//= require operate_user
 //= require custom
