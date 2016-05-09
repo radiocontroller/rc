@@ -23,7 +23,7 @@
   <body>
     <div class="main">
       <div class="camera_container">
-        <div class="camera_wrap" id="camera" style='display: block; height: 643px; margin-bottom: 106px;'>
+        <div class="camera_wrap" id="camera" style='display: block; height: 643px; margin-bottom: 230px;'>
           <% cache [:banners, @banners.map(&:updated_at).max] do %>
             <% @banners.each do |banner| %>
               <div data-thumb="<%= banner.resource.small.url %>"

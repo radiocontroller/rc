@@ -6,9 +6,11 @@
 .battle-planes ul li{
   width: 330px;
   float: left;
+  min-height: 300px;
   display: inline-block;
   vertical-align: top;
   margin-bottom: 20px;
+  margin-right: 15px;
 }
 
 .battle-planes ul li a{
