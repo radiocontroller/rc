@@ -1,9 +1,9 @@
 <div class="sweet-alert show-input showSweetAlert visible" data-animation="slide-from-top" style="display: block; margin-top: -256px;">
-  <h2>置顶战机简介</h2>
+  <h2>排序战机</h2>
   <%= form_tag('', method: :put, id: 'sortForm') do %>
     <select name="sort_id">
       <% @limit.times do |i| %>
-        <option value='<%= i+1 %>'>置顶为首页第<%= i+1 %>篇战机简介</option>
+        <option value='<%= i+1 %>'>首页第<%= i+1 %>篇</option>
       <% end %>
     </select>
   <% end %>
