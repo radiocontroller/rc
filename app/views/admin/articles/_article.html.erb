@@ -3,7 +3,7 @@
     <a href="#" class="username">心有猛虎，细嗅蔷薇</a>
     <span class="date"><%= article.created_at.strftime('%Y-%m-%d') %></span>
     <a href="/admin/articles/<%= article.id %>/edit" class='article-edit'><i class="fa fa-pencil"></i></a>
-    <a href="javascript:void(0)" class='article-remove js-remove-article' data-id='<%= article.id %>'><i class="fa fa-remove"></i></a>
+    <a href="javascript:void(0)" class='article-remove js-remove-article' data-id='<%= article.id %>'><i class="fa fa-trash"></i></a>
     <div>
       <%= link_to article.title, article_path(article), class: 'article-title' %>
     </div>

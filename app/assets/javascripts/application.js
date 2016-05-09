@@ -11,12 +11,12 @@
 // about supported directives.
 //
 //= require jquery/jquery-1.10.2.min
+//= require jquery/jquery-migrate-1.2.1.min
 //= require jquery_ujs
 //= require sweetalert/sweetalert-dev
 //= require sweetalert/sweetalert.min
 //= require camera/camera.min
 //= require camera/jquery.easing.1.3
-//= require camera/jquery-migrate-1.2.1.min
 //= require fancybox/jquery.fancybox
 //= require fancybox/jquery.mousewheel.pack
 //= require editor/wangEditor.min

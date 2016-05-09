@@ -7,9 +7,10 @@ $(function() {
   $(document).on('click', '.js-remove-article', deleteArticle);
   $(document).on('click', '.js-delete-plane', deleteBattlePlane);
   $(document).on('click', '.js-delete-gallery', deleteGallery);
+  $(document).on('click', '.js-edit-video', editVideo);
   $(document).on('click', '.js-delete-video', deleteVideo);
   $(document).on('click', '.reply .js-delete-comment', deleteComment);
-  $(document).on('click', '#js-set-homepage', setHomepage);
+  $(document).on('click', '.js-set-homepage', setHomepage);
 });
 
 function initializeFancyBox() {
@@ -71,9 +72,13 @@ function deleteGallery() {
   swalAlert("您确定要删除吗？", "warning", "DELETE", "/ajax/pictures/"+ self.data('id'));
 }
 
+function editVideo() {
+  window.location.href = '/admin/videos/'+$(this).parent().data('id')+'/edit';
+}
+
 function deleteVideo() {
   var self = $(this);
-  swalAlert("您确定要删除吗？", "warning", "DELETE", "/ajax/videos/"+ self.data('id'));
+  swalAlert("您确定要删除吗？", "warning", "DELETE", "/ajax/videos/"+ self.parent().data('id'));
 }
 
 function deleteComment() {
@@ -82,6 +87,5 @@ function deleteComment() {
 }
 
 function setHomepage() {
-  emptyFloatWindow();
-  swalAlert("设置为今日视频？", "warning", "PUT", "/ajax/videos/"+ $('#video-id').val());
+  swalAlert("设置为今日视频？", "warning", "PUT", "/ajax/videos/"+ $(this).parent().data('id'));
 }

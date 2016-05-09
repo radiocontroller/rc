@@ -14,7 +14,7 @@ zh-CN:
         password_confirmation: "确认密码"
         remember_me: "记住登录信息"
       video:
-        description: '描述'
+        title: '标题'
         url: 'flash地址'
         image: '封面图片'
       article:
