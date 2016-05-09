@@ -19,20 +19,3 @@
 <div class="video-items">
   <%= render @videos %>
 </div>
-<input type="hidden" id='video-id'>
-
-<script type="text/javascript">
-  $(function() {
-    $(document).on('click', '.js-show-operations', showOperations);
-    $(document).on('click', '.js-edit', editVideo);
-  });
-
-  function showOperations() {
-    insertFloatWindow('<%= j render "operations" %>');
-    $('#video-id').val($(this).data('id'));
-  }
-
-  function editVideo() {
-    window.location.href = '/admin/videos/'+$('#video-id').val()+'/edit';
-  }
-</script>

@@ -9,12 +9,17 @@
     </h3>
   </div>
   <div class="video-edit">
-    <span>
-      <a href="javascript:void(0)" class='js-show-operations' data-id='<%= video.id %>'>
+    <span data-id='<%= video.id %>'>
+      <a href="javascript:void(0)" class='js-edit-video'>
         <i class="fa fa-pencil"></i>
       </a>
-      <a href="javascript:void(0)" class='video-remove js-delete-video' data-id='<%= video.id %>'>
-        <i class="fa fa-remove"></i>
+      <% if !video.homepage? %>
+        <a href="javascript:void(0)" class='js-set-homepage'>
+          <i class="fa fa-thumbs-up"></i>
+        </a>
+      <% end %>
+      <a href="javascript:void(0)" class='js-delete-video'>
+        <i class="fa fa-trash"></i>
       </a>
     </span>
     <span class='js-homepage-info'>

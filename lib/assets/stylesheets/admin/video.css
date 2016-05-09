@@ -52,15 +52,11 @@
 }
 
 .video-edit span{
-  margin-top: 5px;
-}
-
-.video-edit a{
-  color: #000;
-  margin-top: 5px;
-}
-
-.video-remove{
   font-size: 14px;
-  margin-left: 10px;
+  margin-top: 5px;
+}
+
+.video-edit span a{
+  color: #000;
+  margin-right: 10px;
 }

@@ -39,13 +39,13 @@ class Admin::VideosController < Admin::BaseController
       params[:q] ||= {}
       @search = {
         category: params[:q][:category_eq],
-        description: params[:q][:description_cont],
+        title: params[:q][:title_cont],
         homepage: params[:q][:is_homepage_true]
       }
     end
 
     def video_params
-      params.require(:video).permit(:description, :url, :image, :category)
+      params.require(:video).permit(:title, :url, :image, :category)
     end
 
     def set_video

@@ -1,7 +1,7 @@
 <li id='js-battleplane-<%= battle_plane.id %>' data-id='<%= battle_plane.id %>'>
   <h2><%= battle_plane.title %></h2>
   <a href="javascript:void(0)" class='js-show-operations'><i class="fa fa-pencil"></i></a>
-  <a href="javascript:void(0)" class='js-delete-plane'><i class="fa fa-remove"></i></a>
+  <a href="javascript:void(0)" class='js-delete-plane'><i class="fa fa-trash"></i></a>
   <p><%= battle_plane.content %></p>
   <% if battle_plane.sort_id.present? %>
     <span>当前战机是首页第<%= battle_plane.sort_id %>篇</span>
