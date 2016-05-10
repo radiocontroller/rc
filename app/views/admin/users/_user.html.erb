@@ -5,7 +5,7 @@
   <td><%= user.created_at.strftime('%Y-%m-%d %H:%M') %></td>
   <td><%= user.confirmed? ? '已验证' : '未验证' %></td>
   <td><%= user.role %></td>
-  <td><%= user.limit? ? "限制登录至#{user.free_at.strftime('%Y-%m-%d %H:%M')}" : '正常' %></td>
+  <td><%= user.limit? ? user.limit_info : '正常' %></td>
   <% if user != current_user %>
     <% if user.limit? %>
       <td><a href="javascript:void(0)" class='js-release operate'>解封</a></td>

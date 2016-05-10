@@ -3,5 +3,5 @@
   $('#js-user-<%= @user.id %>').find('td:eq(5)').html('<%= @user.role %>');
   swal("操作成功!", "", "success");
 <% else %>
-  swal("操作失败!", "", "error");
+  swal("操作失败!", '<%= @user.errors[:toggle].first %>', "error");
 <% end %>

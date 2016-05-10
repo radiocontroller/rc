@@ -20,6 +20,8 @@ class User < ActiveRecord::Base
   validates_confirmation_of :password
   validates :username, presence: true, length: { minimum: 3 }
 
+  scope :admins, -> { where(admin: true) }
+
   def admin?
     admin
   end
@@ -70,6 +72,10 @@ class User < ActiveRecord::Base
 
   def limit!(days)
     update(free_at: Time.now + days.to_i.days)
+  end
+
+  def limit_info
+    "限制登录至#{self.free_at.strftime('%Y-%m-%d %H:%M')}"
   end
 
   def replies
