@@ -95,15 +95,12 @@
 
 .login .captcha-img{
   display: inline-block;
-  vertical-align: middle;
   width: 162px;
-  margin-left: 7px;
 }
 
 .login .captcha-img img{
   height: 50px;
   width: 162px;
-  vertical-align: middle;
   background: #efefef;
 }
 
