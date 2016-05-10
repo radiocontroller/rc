@@ -1,4 +1,4 @@
-server 'www.rcer.top', user: 'deploy', roles: %w{web app db}, primary: true
+server '115.29.43.142', user: 'deploy', roles: %w{web app db}, primary: true
 
 set :stage, :production
 set :branch, :master
