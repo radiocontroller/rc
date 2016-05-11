@@ -11,7 +11,7 @@
 
   <div class="img">
     <ul>
-      <%= render 'fixed_wings' %>
+      <%= render partial: 'picture', collection: @fixed_wings, as: :picture %>
     </ul>
   </div>
 </div>
@@ -26,16 +26,16 @@
     $(this).addClass('active');
     switch ($(this).html()) {
       case '固定翼':
-        $('.picture .img ul').html('<%= j render "fixed_wings" %>');
+        $('.picture .img ul').html('<%= j render partial: "picture", collection: @fixed_wings, as: :picture %>');
         break;
       case '滑翔机':
-        $('.picture .img ul').html('<%= j render "gliders" %>');
+        $('.picture .img ul').html('<%= j render partial: "picture", collection: @gliders, as: :picture %>');
         break;
       case '直升机':
-        $('.picture .img ul').html('<%= j render "helicopters" %>');
+        $('.picture .img ul').html('<%= j render partial: "picture", collection: @helicopters, as: :picture %>');
         break;
       case '穿越机':
-        $('.picture .img ul').html('<%= j render "fpvs" %>');
+        $('.picture .img ul').html('<%= j render partial: "picture", collection: @fpvs, as: :picture %>');
         break;
     }
 
