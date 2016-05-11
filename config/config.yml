@@ -8,6 +8,7 @@ defaults: &defaults
     glider: '滑翔机'
     helicopter: '直升机'
     fpv: '穿越机'
+  default_avatar: '/images/avatar.png'
 
 development:
   <<: *defaults
