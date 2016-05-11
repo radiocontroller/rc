@@ -1,13 +1,13 @@
 <div class="sidebar">
   <div class="sidebar-top">
     <div class="img">
-      <img src="<%= current_user.try(:avatar).try(:url) || '/images/avatar.png' %>" alt="" />
+      <img src="<%= (current_user.try(:avatar?) && current_user.avatar.large.url) || '/images/avatar.png' %>" alt="" />
     </div>
     <% if current_user.present? %>
       <div class="user-info">
         <span class="name"><%= link_to current_user.username, user_path(current_user) %></span>
         <div class="message">
-          <a>消息<span class="number">(6)</span></a>|
+          <!-- <a>消息<span class="number">(6)</span></a>| -->
           <%= link_to '退出', destroy_user_session_path, method: :delete %>
         </div>
       </div>
@@ -32,13 +32,6 @@
       <% if current_user.try(:admin?) %>
         <li><%= link_to '后台管理', admin_index_path %></li>
       <% end %>
-      <!-- <li>
-        <a href="#" class="rd-width-ul"><span>其他板块</span><span class="fa fa-chevron-down submenu-toggle"></span></a>
-        <ul class="sub-nav">
-          <li><a href="#">地区交流区</a></li>
-          <li><a href="#">闲置物品交易区</a></li>
-        </ul>
-      </li> -->
     </ul>
   </div>
 </div>

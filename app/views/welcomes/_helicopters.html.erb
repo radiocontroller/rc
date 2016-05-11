@@ -1,7 +1,7 @@
 <% @helicopters.each do |helicopter| %>
   <li>
-    <a href="<%= helicopter.resource.url %>" class="fancybox thumb" rel="gallery1">
-      <img src="<%= helicopter.resource.small.url %>" class="circle" />
+    <a href="<%= helicopter.resource.large.url %>" class="fancybox thumb" rel="gallery1">
+      <img src="<%= helicopter.resource.normal.url %>" class="circle" />
       <span class="thumb_overlay"></span>
     </a>
   </li>

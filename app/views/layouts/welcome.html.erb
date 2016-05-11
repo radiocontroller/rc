@@ -27,7 +27,7 @@
           <% cache [:banners, @banners.map(&:updated_at).max] do %>
             <% @banners.each do |banner| %>
               <div data-thumb="<%= banner.resource.small.url %>"
-                data-src="<%= banner.resource.large.url %>">
+                data-src="<%= banner.resource.big.url %>">
               </div>
             <% end %>
           <% end %>
