@@ -4,7 +4,7 @@ class BaseUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
   def store_dir
-    "images/#{model.class.to_s.underscore.pluralize}/#{mounted_as}/#{model.id}"
+    "images/#{model.class.to_s.underscore.pluralize}/#{model.id}"
   end
 
   def extension_white_list

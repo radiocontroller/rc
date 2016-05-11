@@ -28,7 +28,7 @@
           <div class="user-left">
             <div class="user-avatar">
               <a href="/users/<%= @user.id %>/account/edit">
-                <img src="<%= @user.avatar.try(:large).try(:url) %>" alt="" />
+                <img src="<%= @user.avatar %>" alt="" />
               </a>
             </div>
             <p><i class='fa fa-user'></i><%= @user.username %></p>
