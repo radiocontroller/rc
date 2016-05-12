@@ -4,10 +4,15 @@ class WelcomesController < ApplicationController
   def index
     @battle_planes = BattlePlane.sorted
     @video = Video.normal.homepage
-    @banners = BannerPicture.sorted
-    @fixed_wings = GalleryPicture.fixed_wing.sorted
-    @gliders = GalleryPicture.glider.sorted
-    @fpvs = GalleryPicture.fpv.sorted
-    @helicopters = GalleryPicture.helicopter.sorted
+    @banners = BannerPicture.normal.sorted
+    set_gallery_pictures
+  end
+
+  def set_gallery_pictures
+    galler_pictures = GalleryPicture.normal.sorted
+    @fixed_wings = galler_pictures.fixed_wing
+    @gliders = galler_pictures.glider
+    @fpvs = galler_pictures.fpv
+    @helicopters = galler_pictures.helicopter
   end
 end
