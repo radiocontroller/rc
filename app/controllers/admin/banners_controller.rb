@@ -2,7 +2,7 @@ class Admin::BannersController < Admin::BaseController
   before_action :set_limit, only: [:index, :new]
 
   def index
-    @banners = BannerPicture.order('sort_id asc').page(params[:page] || 1).per_page(page_num)
+    @banners = BannerPicture.normal.order('sort_id asc').page(params[:page] || 1).per_page(page_num)
   end
 
   def new

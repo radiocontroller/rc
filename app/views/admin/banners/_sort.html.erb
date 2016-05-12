@@ -2,6 +2,7 @@
   <h2>排序图片</h2>
   <%= form_tag('', method: :put, id: 'bannerForm') do %>
     <select name="sort_id">
+      <option value=''>无排序</option>
       <% @limit.times do |i| %>
         <option value='<%= i+1 %>'>排序为第<%= i+1 %>张图片</option>
       <% end %>

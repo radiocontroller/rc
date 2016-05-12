@@ -7,6 +7,7 @@ $(function() {
   $(document).on('click', '.js-remove-article', deleteArticle);
   $(document).on('click', '.js-delete-plane', deleteBattlePlane);
   $(document).on('click', '.js-delete-gallery', deleteGallery);
+  $(document).on('click', '.js-delete-banner', deleteBanner);
   $(document).on('click', '.js-delete-video', deleteVideo);
   $(document).on('click', '.reply .js-delete-comment', deleteComment);
   $(document).on('click', '.js-set-homepage', setHomepage);
@@ -70,6 +71,11 @@ function deleteBattlePlane() {
 }
 
 function deleteGallery() {
+  var self = $(this);
+  swalAlert("您确定要删除吗？", "warning", "DELETE", "/ajax/pictures/"+ self.parent().data('id'));
+}
+
+function deleteBanner() {
   var self = $(this);
   swalAlert("您确定要删除吗？", "warning", "DELETE", "/ajax/pictures/"+ self.parent().data('id'));
 }

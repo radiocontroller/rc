@@ -45,7 +45,7 @@ module GalleryAble
     end
 
     def pictures
-      GalleryPicture.send(english_category.to_sym)
+      GalleryPicture.normal.send(english_category.to_sym)
     end
 
     def set_category

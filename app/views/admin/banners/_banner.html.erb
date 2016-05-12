@@ -1,13 +1,17 @@
-<li>
+<li id="js-picture-<%= banner.id %>">
   <a href="<%= banner.resource.large.url %>" class="fancybox" rel="gallery1">
     <img src="<%= banner.resource.normal.url %>" />
     <span class="thumb_overlay"></span>
   </a>
-  <div style='font-size: 12px'>
-    <% if banner.sort_id.present? %>
-      当前图片是首页顶部第<%= banner.sort_id %>张
-    <% else %>
-      <span class='js-sort cursor-pointer' data-id='<%= banner.id %>'>排序</span>
-    <% end %>
+  <div class='picture-operation'>
+    <span data-id='<%= banner.id %>'>
+      <a href="javascript:void(0)" class='js-sort'><i class="fa fa-sort"></i></a>
+      <a href="javascript:void(0)" class='js-delete-banner'><i class="fa fa-trash"></i></a>
+    </span>
+    <span>
+      <% if banner.sort_id.present? %>
+        当前图片是首页顶部第<%= banner.sort_id %>张
+      <% end %>
+    </span>
   </div>
 </li>

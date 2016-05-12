@@ -2,7 +2,7 @@
   <h2>排序<%= @category %>图片</h2>
   <%= form_tag('', method: :put, id: 'galleryForm') do %>
     <select name="sort_id">
-      <option value=''>无</option>
+      <option value=''>无排序</option>
       <% @limit.times do |i| %>
         <option value='<%= i+1 %>'>首页第<%= i+1 %>张</option>
       <% end %>

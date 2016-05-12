@@ -21,7 +21,7 @@
 
   function editBanner() {
     insertFloatWindow('<%= j render "sort" %>');
-    $('#js-update-banner').data('id', $(this).data('id'));
+    $('#js-update-banner').data('id', $(this).parent().data('id'));
   }
 
   function updateBanner() {
