@@ -3,7 +3,7 @@ module Ajax
 
     def destroy
       @picture = Picture.find(params[:id])
-      @picture.delete
+      @picture.remove!
     end
 
   end

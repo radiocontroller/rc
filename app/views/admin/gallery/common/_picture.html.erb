@@ -4,11 +4,14 @@
     <span class="thumb_overlay"></span>
   </a>
   <div class='picture-operation'>
-    <% if picture.sort_id.present? %>
-      当前图片是首页<%= @category %>第<%= picture.sort_id %>张
-    <% else %>
-      <span class='js-sort cursor-pointer' data-id='<%= picture.id %>'>排序</span>
-    <% end %>
-    <span><%= link_to '删除', 'javascript:void(0)', class: 'js-delete-gallery', data: {id: picture.id} %></span>
+    <span data-id='<%= picture.id %>'>
+      <a href="javascript:void(0)" class='js-sort'><i class="fa fa-sort"></i></a>
+      <a href="javascript:void(0)" class='js-delete-gallery'><i class="fa fa-trash"></i></a>
+    </span>
+    <span>
+      <% if picture.sort_id.present? %>
+        当前图片是首页<%= @category %>第<%= picture.sort_id %>张
+      <% end %>
+    </span>
   </div>
 </li>

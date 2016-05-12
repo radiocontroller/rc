@@ -20,6 +20,6 @@
 
   function editGallery() {
     insertFloatWindow('<%= j render "admin/gallery/common/sort" %>');
-    $('#js-update-gallery').data('id', $(this).data('id'));
+    $('#js-update-gallery').data('id', $(this).parent().data('id'));
   }
 </script>

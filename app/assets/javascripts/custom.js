@@ -71,7 +71,7 @@ function deleteBattlePlane() {
 
 function deleteGallery() {
   var self = $(this);
-  swalAlert("您确定要删除吗？", "warning", "DELETE", "/ajax/pictures/"+ self.data('id'));
+  swalAlert("您确定要删除吗？", "warning", "DELETE", "/ajax/pictures/"+ self.parent().data('id'));
 }
 
 function deleteVideo() {
