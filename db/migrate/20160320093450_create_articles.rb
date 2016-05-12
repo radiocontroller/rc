@@ -3,7 +3,7 @@ class CreateArticles < ActiveRecord::Migration
     create_table :articles do |t|
       t.string :title
       t.text :content
-      t.integer :type_id
+      t.integer :category
       t.json :images
       t.integer :user_id
       t.timestamps null: false

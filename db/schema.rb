@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160512111534) do
+ActiveRecord::Schema.define(version: 20160512142933) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,15 +19,12 @@ ActiveRecord::Schema.define(version: 20160512111534) do
   create_table "articles", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
-    t.integer  "type_id"
-    t.json     "images"
-    t.integer  "user_id"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
     t.integer  "category"
-    t.boolean  "is_homepage", default: false
-    t.json     "user_ids",    default: []
-    t.boolean  "deleted",     default: false
+    t.integer  "user_id"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.json     "user_ids",   default: []
+    t.boolean  "deleted",    default: false
   end
 
   create_table "battle_planes", force: :cascade do |t|
@@ -53,12 +50,11 @@ ActiveRecord::Schema.define(version: 20160512111534) do
   create_table "pictures", force: :cascade do |t|
     t.integer  "category"
     t.string   "resource"
-    t.string   "description"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.integer  "sort_id"
     t.string   "type"
-    t.boolean  "deleted",     default: false
+    t.boolean  "deleted",    default: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -84,7 +80,7 @@ ActiveRecord::Schema.define(version: 20160512111534) do
     t.json     "article_ids",            default: []
     t.boolean  "deleted",                default: false
     t.string   "avatar"
-    t.datetime "free_at",                default: '2016-05-08 18:43:05'
+    t.datetime "free_at",                default: '2016-05-12 22:27:33'
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
