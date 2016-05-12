@@ -50,17 +50,6 @@ ActiveRecord::Schema.define(version: 20160512111534) do
     t.boolean  "deleted",          default: false
   end
 
-  create_table "notifications", force: :cascade do |t|
-    t.integer  "actor_id"
-    t.integer  "user_id"
-    t.integer  "targetable_id"
-    t.string   "targetable_type"
-    t.string   "notify_type"
-    t.datetime "read_at"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-  end
-
   create_table "pictures", force: :cascade do |t|
     t.integer  "category"
     t.string   "resource"
