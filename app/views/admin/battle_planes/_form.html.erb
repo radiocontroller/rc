@@ -2,11 +2,11 @@
   <%= form_for @battle_plane, url: url do |f| %>
     <div>
       <%= f.label '战机名称' %>
-      <%= f.text_field :title %>
+      <%= f.text_field :title, autoComplete: 'off', required: true %>
     </div>
     <div>
       <%= f.label '战机简介' %>
-      <%= f.text_area :content %>
+      <%= f.text_area :content, autoComplete: 'off', required: true %>
     </div>
     <div>
       <%= f.label '排序' %>

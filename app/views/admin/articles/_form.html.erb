@@ -1,7 +1,7 @@
 <%= form_for @article, url: url, html: {id: 'articleForm'} do |f| %>
   <div class="battle-form">
     <p>文章标题</p>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, autoComplete: 'off', required: true %>
   </div>
   <p>文章内容</p>
   <%= f.text_area :content, id: 'js-article-content', style: 'display: none' %>

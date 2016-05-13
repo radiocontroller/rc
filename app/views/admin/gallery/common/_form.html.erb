@@ -2,7 +2,7 @@
   <%= form_for @picture, url: @url do |f| %>
     <div>
       <%= f.label '选择图片' %>
-      <%= f.file_field :resource %>
+      <%= f.file_field :resource, required: true %>
     </div>
     <div>
       <%= f.label '排序' %>
