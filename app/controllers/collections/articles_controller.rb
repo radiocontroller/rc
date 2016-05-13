@@ -2,7 +2,7 @@ class Collections::ArticlesController < Collections::BaseController
   before_action :set_page_nav
 
   def index
-    @articles = @user.article_ids.map { |id| Article.normal.find(id) }
+    @articles = Article.normal.find(@user.article_ids)
   end
 
   private

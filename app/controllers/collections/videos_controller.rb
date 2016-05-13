@@ -2,7 +2,7 @@ class Collections::VideosController < Collections::BaseController
   before_action :set_page_nav
 
   def index
-    @videos = @user.video_ids.map { |id| Video.normal.find(id) }
+    @videos = Video.normal.find(@user.video_ids)
   end
 
   private

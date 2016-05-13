@@ -17,4 +17,12 @@ module ApplicationHelper
     end
   end
 
+  def flash_message
+    flash[:notice].present? ? flash[:notice] : flash[:alert]
+  end
+
+  def flash_style
+    flash[:notice].present? ? "notice" : "alert"
+  end
+
 end

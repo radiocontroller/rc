@@ -1,12 +1,13 @@
 .battle-planes{
   text-align: center;
-  margin-top: 10px;
+  clear: both;
+  overflow: hidden;
 }
 
 .battle-planes ul li{
   width: 330px;
+  min-height: 340px;
   float: left;
-  min-height: 300px;
   display: inline-block;
   vertical-align: top;
   margin-bottom: 20px;
@@ -23,14 +24,18 @@
   padding: 0;
   display: inline-block;
   border-bottom: 3px solid red;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 }
 
 .battle-planes ul li p{
+  width: 330px;
   color: #999;
   font-size: 16px;
   line-height: 25px;
   text-align: left;
+  height: 245px;
+  margin-bottom: 10px;
+  overflow: hidden;
 }
 
 .battle-planes ul li span{
