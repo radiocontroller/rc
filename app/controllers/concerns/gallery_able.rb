@@ -2,7 +2,8 @@ module GalleryAble
 
   def self.included(base)
     base.module_eval do
-      before_action :set_limit, :set_category, only: [:index, :new]
+      before_action :set_limit, only: [:index, :new, :create]
+      before_action :set_category, only: [:index, :new]
     end
   end
 
@@ -12,15 +13,14 @@ module GalleryAble
 
   def new
     @picture = GalleryPicture.new
-    @url = request.path.split('/new').first
   end
 
   def create
-    picture = GalleryPicture.new(picture_params)
-    if picture.save
+    @picture = GalleryPicture.new(picture_params)
+    if @picture.save
       redirect_to "/admin/gallery/#{english_category.pluralize}", notice: '上传成功!'
     else
-      redirect_to "/admin/gallery/#{english_category.pluralize}/new", alert: picture.errors.full_messages
+      render :new
     end
   end
 

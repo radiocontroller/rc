@@ -1,5 +1,5 @@
   class Admin::BattlePlanesController < Admin::BaseController
-    before_action :set_limit, only: [:new, :edit]
+    before_action :set_limit, except: [:index]
     before_action :set_battle_plane, only: [:edit, :update]
 
     def index
@@ -14,12 +14,12 @@
     end
 
     def create
-      plane = BattlePlane.new(battle_plane_params)
-      if plane.save
-        free_order!(plane)
+      @battle_plane = BattlePlane.new(battle_plane_params)
+      if @battle_plane.save
+        free_order!(@battle_plane)
         redirect_to admin_battle_planes_path, notice: '创建成功!'
       else
-        redirect_to new_admin_battle_plane_path, alert: plane.errors.full_messages
+        render :new
       end
     end
 
@@ -28,7 +28,7 @@
         free_order!(@battle_plane)
         redirect_to admin_battle_planes_path, notice: '更新成功!'
       else
-        redirect_to edit_admin_battle_plane_path(@battle_plane), alert: @battle_plane.errors.full_messages
+        render :edit
       end
     end
 

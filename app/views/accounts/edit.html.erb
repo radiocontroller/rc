@@ -3,7 +3,7 @@
     <%= form_for @user, url: "/users/#{@user.id}/account", method: :put do |f| %>
       <div>
         <%= f.label '用户名' %>
-        <%= f.text_field :username %>
+        <%= f.text_field :username, autoComplete: 'off', required: true %>
       </div>
       <div>
         <%= f.label '邮箱' %>
@@ -15,7 +15,7 @@
       </div>
       <div>
         <%= f.label '头像' %>
-        <%= f.file_field :avatar %>
+        <%= f.file_field :avatar, required: !@user.avatar? %>
       </div>
       <div>
         <%= f.submit '更新' %>
@@ -29,15 +29,15 @@
     <%= form_for @user, url: "/users/#{@user.id}/account?by=passwd", method: :put do |f| %>
       <div>
         <%= f.label '旧密码' %>
-        <%= f.password_field :current_password %>
+        <%= f.password_field :current_password, required: true %>
       </div>
       <div>
         <%= f.label '新密码' %>
-        <%= f.password_field :password %>
+        <%= f.password_field :password, required: true %>
       </div>
       <div>
         <%= f.label '确认密码' %>
-        <%= f.password_field :password_confirmation %>
+        <%= f.password_field :password_confirmation, required: true %>
       </div>
       <div>
         <%= f.submit '修改密码' %>

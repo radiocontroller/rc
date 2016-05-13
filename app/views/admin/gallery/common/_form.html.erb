@@ -1,5 +1,5 @@
 <div class='battle-form'>
-  <%= form_for @picture, url: @url do |f| %>
+  <%= form_for @picture, url: request.path.split('/new').first do |f| %>
     <div>
       <%= f.label '选择图片' %>
       <%= f.file_field :resource, required: true %>

@@ -1,6 +1,6 @@
 class Admin::VideosController < Admin::BaseController
   before_action :set_video, only: [:edit, :update]
-  before_action :set_categories, only: [:new, :edit]
+  before_action :set_categories, except: [:index]
 
   def index
     q = Video.normal.ransack(params[:q])
@@ -14,11 +14,11 @@ class Admin::VideosController < Admin::BaseController
   end
 
   def create
-    video = Video.new(video_params)
-    if video.save
+    @video = Video.new(video_params)
+    if @video.save
       redirect_to admin_videos_path, notice: '创建成功!'
     else
-      redirect_to new_admin_video_path, alert: video.errors.full_messages
+      render :new
     end
   end
 
@@ -29,7 +29,7 @@ class Admin::VideosController < Admin::BaseController
     if @video.update(video_params)
       redirect_to admin_videos_path, notice: '更新成功!'
     else
-      redirect_to edit_admin_video_path(@video), alert: @video.errors.full_messages
+      render :edit
     end
   end
 

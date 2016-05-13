@@ -17,7 +17,7 @@ class AccountsController < ApplicationController
   private
 
     def verify_user
-      redirect_to user_path(@user) if @user.id != current_user.try(:id)
+      redirect_to user_path(@user) if @user != current_user
     end
 
     def set_user
@@ -36,7 +36,7 @@ class AccountsController < ApplicationController
       if @user.update(user_params)
         redirect_to edit_user_account_path(@user), notice: '资料修改成功!'
       else
-        redirect_to edit_user_account_path(@user), alert: @user.errors.full_messages
+        render :edit
       end
     end
 
@@ -45,7 +45,7 @@ class AccountsController < ApplicationController
         sign_in(@user, :bypass => true)
         redirect_to edit_user_account_path(@user), notice: '密码修改成功!'
       else
-        redirect_to edit_user_account_path(@user), alert: @user.errors.full_messages
+        render :edit
       end
     end
 

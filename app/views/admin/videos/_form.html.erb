@@ -8,7 +8,7 @@
 </div>
 <div>
   <%= f.label :image, '视频封面' %>
-  <%= f.file_field :image, required: (@video.id.present? ? false : true) %>
+  <%= f.file_field :image, required: !@video.image? %>
 </div>
 <div>
   <%= f.label :category, '视频分类' %>

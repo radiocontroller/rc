@@ -1,5 +1,5 @@
 class Admin::BannersController < Admin::BaseController
-  before_action :set_limit, only: [:index, :new]
+  before_action :set_limit, only: [:index, :new, :create]
 
   def index
     @banners = BannerPicture.normal.order('sort_id asc').page(params[:page] || 1).per_page(page_num)
@@ -10,16 +10,16 @@ class Admin::BannersController < Admin::BaseController
   end
 
   def create
-    banner = BannerPicture.new(banner_params)
-    if banner.save
+    @banner = BannerPicture.new(banner_params)
+    if @banner.save
       redirect_to admin_banners_path, notice: '上传成功!'
     else
-      redirect_to new_admin_banner_path, alert: banner.errors.full_messages
+      render :new
     end
   end
 
   def update
-    banner = BannerPicture.find(params[:id])
+    banner = BannerPicture.normal.find(params[:id])
     BannerPicture.find_by(sort_id: params[:sort_id]).try(:empty_order!)
     banner.update(sort_id: params[:sort_id])
     redirect_to admin_banners_path, notice: '排序成功!'

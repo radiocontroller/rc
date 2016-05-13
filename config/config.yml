@@ -2,7 +2,9 @@ defaults: &defaults
   action:
     index: '列表'
     new: '新建'
+    create: '新建'
     edit: '编辑'
+    update: '编辑'
     show: '详情'
     fixed_wing: '固定翼'
     glider: '滑翔机'

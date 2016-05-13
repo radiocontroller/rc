@@ -6,7 +6,7 @@ class Admin::ArticlesController < Admin::BaseController
   end
 
   def new
-    @article = Article.normal.new
+    @article = Article.new
   end
 
   def edit
@@ -16,17 +16,15 @@ class Admin::ArticlesController < Admin::BaseController
     if @article.update(article_params)
       redirect_to admin_articles_path, notice: '更新成功!'
     else
-      redirect_to edit_admin_article_path(@article), alert: @article.errors.full_messages
+      render :edit
     end
   end
 
   def create
-    article = Article.new(article_params)
-    if article.save
+    @article = Article.new(article_params)
+    if @article.save
       redirect_to admin_articles_path, notice: '创建成功!'
     else
-      @article = Article.normal.new
-      flash[:alert] = article.errors.full_messages
       render :new
     end
   end
