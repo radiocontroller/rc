@@ -6,12 +6,7 @@
     </div>
     <div>
       <%= f.label '排序' %>
-      <select name="gallery_picture[sort_id]">
-        <option value=''>无</option>
-        <% @limit.times do |i| %>
-          <option value='<%= i+1 %>'>首页第<%= i+1 %>张</option>
-        <% end %>
-      </select>
+      <%= f.select :sort_id, options_for_select(options("张"), @picture.sort_id), include_blank: "无排序" %>
     </div>
     <%= f.submit '上传', class: 'btn' %>
   <% end %>

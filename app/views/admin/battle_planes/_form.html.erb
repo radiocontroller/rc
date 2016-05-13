@@ -10,12 +10,7 @@
     </div>
     <div>
       <%= f.label '排序' %>
-      <select name="battle_plane[sort_id]">
-        <option value="">无</option>
-        <% @limit.times do |i| %>
-          <option value='<%= i+1 %>'>首页第<%= i+1 %>篇</option>
-        <% end %>
-      </select>
+      <%= f.select :sort_id, options_for_select(options("篇"), @battle_plane.sort_id), include_blank: '无排序' %>
     </div>
     <%= f.submit btn_name, class: 'btn' %>
   <% end %>
