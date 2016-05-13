@@ -25,9 +25,13 @@ module GalleryAble
   end
 
   def update
-    pictures.find_by(sort_params).try(:empty_order!)
-    pictures.find(params[:id]).update(sort_params)
-    redirect_to "/admin/gallery/#{english_category.pluralize}", notice: '更新成功!'
+    @picture = pictures.find(params[:id])
+    if @picture.update(sort_id: params[:sort_id])
+      empty_order!
+      redirect_to "/admin/gallery/#{english_category.pluralize}", notice: '排序成功!'
+    else
+      redirect_to "/admin/gallery/#{english_category.pluralize}", alert: '排序失败!'
+    end
   end
 
   private
@@ -40,8 +44,8 @@ module GalleryAble
       params.require(:gallery_picture).permit(:resource, :sort_id).merge(category: english_category)
     end
 
-    def sort_params
-      { sort_id: params[:sort_id] }
+    def empty_order!
+      pictures.where(sort_id: @picture.sort_id).where.not(id: @picture.id).each(&:empty_order!)
     end
 
     def pictures

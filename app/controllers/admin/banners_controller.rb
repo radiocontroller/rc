@@ -19,10 +19,12 @@ class Admin::BannersController < Admin::BaseController
   end
 
   def update
-    banner = BannerPicture.normal.find(params[:id])
-    BannerPicture.find_by(sort_id: params[:sort_id]).try(:empty_order!)
-    banner.update(sort_id: params[:sort_id])
-    redirect_to admin_banners_path, notice: '排序成功!'
+    @banner = BannerPicture.normal.find(params[:id])
+    if @banner.update(sort_id: params[:sort_id])
+      redirect_to admin_banners_path, notice: '排序成功!'
+    else
+      redirect_to admin_banners_path, alert: '排序失败!'
+    end
   end
 
   private

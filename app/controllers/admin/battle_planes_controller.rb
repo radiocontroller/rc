@@ -16,7 +16,6 @@
     def create
       @battle_plane = BattlePlane.new(battle_plane_params)
       if @battle_plane.save
-        free_order!(@battle_plane)
         redirect_to admin_battle_planes_path, notice: '创建成功!'
       else
         render :new
@@ -25,7 +24,6 @@
 
     def update
       if @battle_plane.update(battle_plane_params)
-        free_order!(@battle_plane)
         redirect_to admin_battle_planes_path, notice: '更新成功!'
       else
         render :edit
@@ -54,9 +52,5 @@
             { name: Settings.action[request[:action]], end: true }
           ]
         )
-      end
-
-      def free_order!(plane)
-        BattlePlane.normal.where(sort_id: plane.sort_id).where.not(id: plane.id).map(&:empty_order!)
       end
   end

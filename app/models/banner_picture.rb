@@ -1,9 +1,9 @@
 class BannerPicture < Picture
   mount_uploader :resource, BannerUploader
 
-  scope :sorted, -> { where.not(sort_id: nil).order('sort_id asc') }
+  after_commit :empty_order
 
-  def empty_order!
-    update(sort_id: nil)
+  def empty_order
+    BannerPicture.normal.where(sort_id: self.sort_id).where.not(id: self.id).each(&:empty_order!)
   end
 end

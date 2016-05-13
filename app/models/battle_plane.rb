@@ -6,8 +6,14 @@ class BattlePlane < ActiveRecord::Base
 
   scope :normal, -> { where(deleted: false) }
 
+  after_commit :empty_order
+
+  def empty_order
+    BattlePlane.normal.where(sort_id: self.sort_id).where.not(id: self.id).each(&:empty_order!)
+  end
+
   def empty_order!
-    update(sort_id: nil)
+    update_column(:sort_id, nil)
   end
 
   def remove!
