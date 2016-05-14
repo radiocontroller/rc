@@ -68,12 +68,12 @@
 
 .guide-reading .item .username{
   font-size: 14px;
-  color: #206ea8;
+  color: #000;
 }
 
 .guide-reading .item .date{
-  color: #000;
-  margin-left: 6px;
+  color: #717171;
+  font-size: 12px;
 }
 
 .article-title{
@@ -128,15 +128,9 @@
   padding: 30px 0;
 }
 
-.infos .text .username{
-  font-size: 14px;
-  color: #206ea8;
-}
-
 .infos .text .date{
-  color: #999;
+  color: #717171;
   font-size: 12px;
-  margin-left: 20px;
 }
 
 .article-content{

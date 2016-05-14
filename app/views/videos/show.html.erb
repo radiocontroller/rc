@@ -2,8 +2,9 @@
   <div class="title">
     <div class="text">
       <h2><%= @video.title %></h2>
-      <a href="#" class="username">心有猛虎，细嗅蔷薇</a>
-      <span class="date">发表于<%= @video.created_at.strftime('%Y-%m-%d') %></span>
+      <span class="date">
+        管理员发布于<span><%= @video.created_at.strftime('%Y年%m月%d日 %H时%M分') %></span>
+      </span>
     </div>
     <div class="operation">
       <%= render '/common/collect', resource: @video %>
@@ -11,7 +12,8 @@
   </div>
 
   <div class="video">
-    <embed src="<%= @video.url %>" width="900" height="500">
+    <embed src="<%= @video.url %>" width="900" height="520" allowfullscreen="true"
+      allowfullscreeninteractive="true">
     </embed>
   </div>
 

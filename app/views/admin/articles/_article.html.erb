@@ -1,7 +1,6 @@
 <div class="item" id='js-article-<%= article.id %>'>
   <div class="text">
-    <a href="#" class="username">心有猛虎，细嗅蔷薇</a>
-    <span class="date"><%= article.created_at.strftime('%Y-%m-%d') %></span>
+    <span class="date">管理员发布于<%= article.created_at.strftime('%Y年%m月%d日 %H时%M分') %></span>
     <a href="/admin/articles/<%= article.id %>/edit" class='article-edit'><i class="fa fa-pencil"></i></a>
     <a href="javascript:void(0)" class='article-remove js-remove-article' data-id='<%= article.id %>'><i class="fa fa-trash"></i></a>
     <div>

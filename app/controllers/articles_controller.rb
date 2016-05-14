@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  before_action :set_article, only: [:show]
   before_action :set_page_nav
 
   def index
@@ -8,13 +9,16 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @article = Article.normal.find(params[:id])
   end
 
   private
 
     def set_search_value
       @title = params[:q] && params[:q][:title_cont]
+    end
+
+    def set_article
+      @article = Article.normal.find(params[:id])
     end
 
     def set_page_nav
