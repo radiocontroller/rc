@@ -1,7 +1,5 @@
 class Article < ActiveRecord::Base
-  scope :normal, -> { where(deleted: false) }
-
-  scope :homepage, -> { find_by(is_homepage: true) }
+  include BaseModel
 
   validates :title, :content, presence: true
 
@@ -27,11 +25,4 @@ class Article < ActiveRecord::Base
     update(user_ids: self.user_ids.push(id))
   end
 
-  def deleted?
-    deleted
-  end
-
-  def remove!
-    self.update(deleted: true)
-  end
 end

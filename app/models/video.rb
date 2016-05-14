@@ -1,7 +1,7 @@
 class Video < ActiveRecord::Base
-  mount_uploader :image, VideoUploader
+  include BaseModel
 
-  scope :normal, -> { where(deleted: false) }
+  mount_uploader :image, VideoUploader
 
   scope :homepage, -> { find_by(is_homepage: true) }
 
@@ -24,14 +24,6 @@ class Video < ActiveRecord::Base
     2 => '直升机',
     3 => '穿越机'
   }
-
-  def remove!
-    self.update(deleted: true)
-  end
-
-  def deleted?
-    deleted
-  end
 
   def free_homepage!
     update(is_homepage: false)
