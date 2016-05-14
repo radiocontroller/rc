@@ -28,7 +28,7 @@ class Video < ActiveRecord::Base
   }
 
   def empty_order
-    Video.normal.where(sort_id: self.sort_id).where.not(id: self.id).each(&:empty_order!)
+    Video.normal.send(self.category).where(sort_id: self.sort_id).where.not(id: self.id).each(&:empty_order!)
   end
 
   def free_homepage
