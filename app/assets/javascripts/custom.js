@@ -10,7 +10,6 @@ $(function() {
   $(document).on('click', '.js-delete-banner', deleteBanner);
   $(document).on('click', '.js-delete-video', deleteVideo);
   $(document).on('click', '.reply .js-delete-comment', deleteComment);
-  $(document).on('click', '.js-set-homepage', setHomepage);
   $(document).on('click', '.js-toggle', toggle);
   $(document).on('click', '.js-release', release);
   $(document).on('click', '#js-limit', limit);
@@ -88,10 +87,6 @@ function deleteVideo() {
 function deleteComment() {
   var self = $(this);
   swalAlert("您确定要删除吗？", "warning", "DELETE", "/ajax/comments/"+ self.data('id'));
-}
-
-function setHomepage() {
-  swalAlert("设置为今日视频？", "warning", "PUT", "/ajax/videos/"+ $(this).parent().data('id'));
 }
 
 function toggle() {

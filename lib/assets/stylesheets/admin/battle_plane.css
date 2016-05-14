@@ -81,6 +81,13 @@
   color: white;
 }
 
+.battle-form input[type='checkbox']{
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
 .battle-form input:focus, .battle-form textarea:focus{
   outline: 0;
   border-color: rgba(82,168,236,0.8);

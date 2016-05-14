@@ -43,7 +43,7 @@ Rails.application.routes.draw do
   end
 
   namespace :ajax do
-    resources :videos, only: [:destroy, :update] do
+    resources :videos, only: [:destroy] do
       resources :collections, only: [:create]
     end
     resources :articles, only: [:destroy] do

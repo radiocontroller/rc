@@ -45,7 +45,7 @@ class Admin::VideosController < Admin::BaseController
     end
 
     def video_params
-      params.require(:video).permit(:title, :url, :image, :category)
+      params.require(:video).permit(:title, :url, :image, :category, :is_homepage)
     end
 
     def set_video

@@ -11,6 +11,8 @@ class Video < ActiveRecord::Base
 
   has_many :comments, as: :commentable
 
+  after_commit :empty_order, :free_homepage
+
   CATEGORIES = {
     'fixed_wing': '固定翼',
     'glider': '滑翔机',
@@ -25,18 +27,16 @@ class Video < ActiveRecord::Base
     3 => '穿越机'
   }
 
+  def empty_order
+    Video.normal.where(sort_id: self.sort_id).where.not(id: self.id).each(&:empty_order!)
+  end
+
+  def free_homepage
+    Video.normal.where(is_homepage: true).where.not(id: self.id).each(&:free_homepage!)
+  end
+
   def free_homepage!
-    update(is_homepage: false)
-  end
-
-  def free_previous_homepage
-    Video.normal.homepage.try(:free_homepage!)
-  end
-
-  def homepage!
-    return if self.homepage?
-    free_previous_homepage
-    self.update(is_homepage: true)
+    update_column(:is_homepage, nil)
   end
 
   def homepage?

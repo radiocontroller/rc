@@ -1,7 +1,0 @@
-<% if @video.homepage? %>
-  $('.js-homepage-info').html('');
-  $('#js-video-<%= @video.id %>').find('.js-homepage-info').html('今日视频');
-  swal("操作成功!", "成功设置为今日视频！", "success");
-<% else %>
-  swal("操作失败!", "设置失败!", "error");
-<% end %>
