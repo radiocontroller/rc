@@ -13,8 +13,11 @@
       <a href="/admin/videos/<%= video.id %>/edit"><i class="fa fa-pencil"></i></a>
       <a href="javascript:void(0)" class='js-delete-video'><i class="fa fa-trash"></i></a>
     </span>
-    <span class='js-homepage-info'>
-      <%= '今日视频' if video.homepage? %>
-    </span>
+    <% if video.homepage?  %>
+      <span>今日视频</span>
+    <% end %>
+    <% if video.sorted? %>
+      <span>首页第<%= video.sort_id %>位</span>
+    <% end %>
   </div>
 </div>

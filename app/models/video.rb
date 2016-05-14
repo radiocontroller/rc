@@ -32,7 +32,7 @@ class Video < ActiveRecord::Base
   end
 
   def free_homepage
-    Video.normal.where(is_homepage: true).where.not(id: self.id).each(&:free_homepage!)
+    Video.normal.where(is_homepage: true).where.not(id: self.id).each(&:free_homepage!) if homepage?
   end
 
   def free_homepage!
@@ -41,6 +41,10 @@ class Video < ActiveRecord::Base
 
   def homepage?
     is_homepage
+  end
+
+  def sorted?
+    sort_id.present?
   end
 
   def comment_quantity

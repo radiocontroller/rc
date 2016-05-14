@@ -1,6 +1,7 @@
 class Admin::VideosController < Admin::BaseController
   before_action :set_video, only: [:edit, :update]
   before_action :set_categories, except: [:index]
+  before_action :set_limit
 
   def index
     q = Video.normal.ransack(params[:q])
@@ -44,8 +45,12 @@ class Admin::VideosController < Admin::BaseController
       }
     end
 
+    def set_limit
+      @limit = 4
+    end
+
     def video_params
-      params.require(:video).permit(:title, :url, :image, :category, :is_homepage)
+      params.require(:video).permit(:title, :url, :image, :category, :is_homepage, :sort_id)
     end
 
     def set_video
