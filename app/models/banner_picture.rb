@@ -6,4 +6,5 @@ class BannerPicture < Picture
   def empty_order
     BannerPicture.normal.where(sort_id: self.sort_id).where.not(id: self.id).each(&:empty_order!)
   end
+
 end
