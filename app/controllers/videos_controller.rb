@@ -1,5 +1,4 @@
 class VideosController < ApplicationController
-  before_action :set_limit, only: [:index]
   before_action :set_videos, :set_search_value, only: [:fixed_wing, :helicopter, :fpv, :glider]
   before_action :set_video, only: [:show]
   before_action :set_page_nav
@@ -25,16 +24,12 @@ class VideosController < ApplicationController
 
   private
 
-    def set_limit
-      @limit = 4
-    end
-
     def set_categories
       @categories = Video::CATEGORIES.map do |english, chinese|
                   {
                     chinese: chinese,
                     english: english,
-                    videos: Video.normal.send(english).order('id desc').limit(@limit)
+                    videos: Video.normal.send(english).sorted
                   }
                end
     end
