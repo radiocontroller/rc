@@ -16,7 +16,7 @@
 </div>
 <div>
   <%= f.label :sort_id, '排序' %>
-  <%= f.select :sort_id, options_for_select(options("位"), @video.sort_id), include_blank: '无' %>
+  <%= f.select :sort_id, options_for_select(options, @video.sort_id), include_blank: '无' %>
 </div>
 <div>
   <%= f.label :is_homepage, '今日视频' %>

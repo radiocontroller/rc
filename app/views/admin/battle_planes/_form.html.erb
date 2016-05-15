@@ -10,7 +10,7 @@
     </div>
     <div>
       <%= f.label '排序' %>
-      <%= f.select :sort_id, options_for_select(options("篇"), @battle_plane.sort_id), include_blank: '无排序' %>
+      <%= f.select :sort_id, options_for_select(options, @battle_plane.sort_id), include_blank: '无排序' %>
     </div>
     <%= f.submit btn_name, class: 'btn' %>
   <% end %>

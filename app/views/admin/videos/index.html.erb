@@ -1,6 +1,11 @@
 <div class="videos-search">
   <%= form_tag(admin_videos_path, method: :get) do %>
     <span>
+      <a href="/admin/videos/new">
+        <button type="button" class='upload-btn'>添加视频</button>
+      </a>
+    </span>
+    <span>
       视频类别:
       <%= select_tag 'q[category_eq]', options_for_select(Video::ID_CATEGORIES.invert.to_a, @search[:category]), include_blank: '全部' %>
     </span>

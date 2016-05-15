@@ -11,9 +11,9 @@ module ApplicationHelper
     comment.commentable_type == 'Article' ? '[文章]' : '[视频]'
   end
 
-  def options(name)
+  def options
     @limit.times.map do |i|
-      ["首页第#{i+1}#{name}", i+1]
+      ["第#{i+1}位", i+1]
     end
   end
 
