@@ -1,5 +1,5 @@
 class VideosController < ApplicationController
-  before_action :set_videos, :set_search_value, only: [:fixed_wing, :helicopter, :fpv, :glider]
+  before_action :set_videos, :set_search, only: [:fixed_wing, :helicopter, :fpv, :glider]
   before_action :set_video, only: [:show]
   before_action :set_page_nav
 
@@ -43,8 +43,9 @@ class VideosController < ApplicationController
       @video = Video.normal.find(params[:id])
     end
 
-    def set_search_value
-      @title = params[:q] && params[:q][:title_cont]
+    def set_search
+      @search = {}
+      @search[:title] = params[:q] && params[:q][:title_cont]
     end
 
     def set_page_nav

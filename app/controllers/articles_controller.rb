@@ -1,11 +1,11 @@
 class ArticlesController < ApplicationController
+  before_action :set_search, only: [:index]
   before_action :set_article, only: [:show]
   before_action :set_page_nav
 
   def index
     q = Article.normal.ransack(params[:q])
     @articles = q.result.order('id desc')
-    set_search_value
   end
 
   def show
@@ -13,8 +13,9 @@ class ArticlesController < ApplicationController
 
   private
 
-    def set_search_value
-      @title = params[:q] && params[:q][:title_cont]
+    def set_search
+      @search = {}
+      @search[:title] = params[:q] && params[:q][:title_cont]
     end
 
     def set_article

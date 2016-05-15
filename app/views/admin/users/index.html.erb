@@ -5,7 +5,7 @@
   <div class="guide-reading">
     <div class="search">
       <%= form_tag(admin_users_path, method: :get) do %>
-        <%= text_field_tag 'q[username_cont]', @username, class: 'search-input' %>
+        <%= text_field_tag 'q[username_cont]', @search[:username], class: 'search-input' %>
         <a class="btn-search" href="javascript:void(0)" onClick="$(this).closest('form').submit()">
           <i class="fa fa-search"></i>
         </a>

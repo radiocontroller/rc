@@ -9,6 +9,8 @@
 }
 
 .video-items{
+  width: 100%;
+  margin-bottom: 264px;
   margin-top: 70px;
   text-align: left;
 }
@@ -25,12 +27,6 @@
 
 .btn-search i{
   padding: 10px 0;
-}
-
-.video-items{
-  width: 100%;
-  margin-bottom: 264px;
-
 }
 
 .video-item{

@@ -17,7 +17,7 @@
       <span>今日视频</span>
     <% end %>
     <% if video.sorted? %>
-      <span>首页第<%= video.sort_id %>位</span>
+      <span><%= "#{Video::CATEGORIES[video.category.to_sym]}第#{video.sort_id}位" %></span>
     <% end %>
   </div>
 </div>

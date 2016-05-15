@@ -1,4 +1,5 @@
 class Admin::VideosController < Admin::BaseController
+  before_action :set_search, only: [:index]
   before_action :set_video, only: [:edit, :update]
   before_action :set_categories, except: [:index]
   before_action :set_limit
@@ -6,8 +7,6 @@ class Admin::VideosController < Admin::BaseController
   def index
     q = Video.normal.ransack(params[:q])
     @videos = q.result.order(created_at: :desc)
-    set_search_values
-    @categories = Video::ID_CATEGORIES.invert.to_a
   end
 
   def new
@@ -36,13 +35,13 @@ class Admin::VideosController < Admin::BaseController
 
   private
 
-    def set_search_values
-      params[:q] ||= {}
+    def set_search
+      @search = {}
       @search = {
         category: params[:q][:category_eq],
         title: params[:q][:title_cont],
         homepage: params[:q][:is_homepage_true]
-      }
+      } if params[:q].present?
     end
 
     def set_limit

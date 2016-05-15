@@ -1,21 +1,22 @@
 <div class="videos-search">
   <%= form_tag(admin_videos_path, method: :get) do %>
-    <div>
+    <span>
       视频类别:
-      <%= select_tag 'q[category_eq]', options_for_select(@categories, @search[:category]), include_blank: '全部' %>
-    </div>
-    <div>
-      视频标题: <%= text_field_tag 'q[title_cont]', @search[:title] %>
-    </div>
-    <div>
+      <%= select_tag 'q[category_eq]', options_for_select(Video::ID_CATEGORIES.invert.to_a, @search[:category]), include_blank: '全部' %>
+    </span>
+    <span>
+      视频标题:
+      <%= text_field_tag 'q[title_cont]', @search[:title], autoComplete: 'off' %>
+    </span>
+    <span>
       今日视频: <%= check_box_tag 'q[is_homepage_true]', 'true', @search[:homepage] %>
-    </div>
+    </span>
     <a href="javascript:void(0)">
       <%= submit_tag '搜索', class: 'btn file' %>
     </a>
   <% end %>
 </div>
 
-<div class="video-items">
+<div class="admin-video-items">
   <%= render @videos %>
 </div>

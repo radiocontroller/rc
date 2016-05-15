@@ -1,5 +1,5 @@
 class Admin::UsersController < Admin::BaseController
-  before_action :set_search_value, :set_user_quantity, only: [:index]
+  before_action :set_search, :set_user_quantity, only: [:index]
 
   def index
     q = User.ransack(params[:q])
@@ -18,8 +18,9 @@ class Admin::UsersController < Admin::BaseController
       )
     end
 
-    def set_search_value
-      @username = params[:q] && params[:q][:username_cont]
+    def set_search
+      @search = {}
+      @search[:username] = params[:q] && params[:q][:username_cont]
     end
 
     def set_user_quantity

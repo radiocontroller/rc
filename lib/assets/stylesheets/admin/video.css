@@ -1,11 +1,16 @@
+.admin-video-items{
+  width: 100%;
+  margin-top: 20px;
+  text-align: left;
+}
+
 .videos-search{
   font-size: 14px;
   margin-top: 10px;
-  margin-bottom: 10px;
 }
 
-.videos-search div{
-  margin-bottom: 20px;
+.videos-search span{
+  margin-right: 20px;
 }
 
 .videos-search input[type='text']{
@@ -48,7 +53,7 @@
   font-size: 12px;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 69px;
+  margin-bottom: 20px;
 }
 
 .video-edit span{
