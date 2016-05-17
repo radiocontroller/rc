@@ -19,8 +19,15 @@ class Admin::UsersController < Admin::BaseController
     end
 
     def set_search
-      @search = {}
-      @search[:username] = params[:q] && params[:q][:username_cont]
+      params[:q] ||= {}
+      @search = {
+        username: params[:q][:username_cont],
+        email: params[:q][:email_cont],
+        start_time: params[:q][:created_at_gteq],
+        end_time: params[:q][:created_at_lteq]
+      }
+      params[:q][:created_at_gteq] = params[:q][:created_at_gteq].try(:to_time)
+      params[:q][:created_at_lteq] = params[:q][:created_at_lteq].try(:to_time).try(:end_of_day)
     end
 
     def set_user_quantity

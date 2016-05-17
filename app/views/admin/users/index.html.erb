@@ -2,15 +2,26 @@
   <div class="user-count">
     用户总数: <%= @user_quantity %>
   </div>
-  <div class="guide-reading">
-    <div class="search">
-      <%= form_tag(admin_users_path, method: :get) do %>
-        <%= text_field_tag 'q[username_cont]', @search[:username], class: 'search-input' %>
-        <a class="btn-search" href="javascript:void(0)" onClick="$(this).closest('form').submit()">
-          <i class="fa fa-search"></i>
-        </a>
-      <% end %>
-    </div>
+  <div class="videos-search">
+    <%= form_tag(admin_users_path, method: :get) do %>
+      <span>
+        用户名:
+        <%= text_field_tag 'q[username_cont]', @search[:username], autoComplete: 'off', class: 'search-input' %>
+      </span>
+      <span>
+        注册邮箱:
+        <%= text_field_tag 'q[email_cont]', @search[:email], autoComplete: 'off', class: 'search-input' %>
+      </span>
+      <span>
+        注册日期:
+        <%= date_field_tag 'q[created_at_gteq]', @search[:start_time] %>
+        ~
+        <%= date_field_tag 'q[created_at_lteq]', @search[:end_time] %>
+      </span>
+      <a href="javascript:void(0)">
+        <%= submit_tag '搜索', class: 'btn' %>
+      </a>
+    <% end %>
   </div>
 </div>
 

@@ -48,7 +48,7 @@ class Video < ActiveRecord::Base
   end
 
   def comment_quantity
-    comments.count
+    comments.normal.count
   end
 
   def parent_comments
