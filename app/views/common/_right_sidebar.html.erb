@@ -29,6 +29,7 @@
       </li>
       <li><%= link_to '文章专区', articles_path %></li>
       <li><%= link_to '视频赏析', videos_path %></li>
+      <li><%= link_to '浙科院3D全景图', "http://720yun.com/t/48325wbvqcs?pano_id=115693", target: '_blank' %></li>
       <% if current_user.try(:admin?) %>
         <li><%= link_to '后台管理', admin_index_path %></li>
       <% end %>

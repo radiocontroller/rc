@@ -49,7 +49,7 @@
           [
             { name: '后台管理', url: '/admin' },
             { name: '战机模块', url: '/admin/battle_planes' },
-            { name: Settings.action[request[:action]], end: true }
+            { name: Settings.action[action_name], end: true }
           ]
         )
       end

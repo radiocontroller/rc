@@ -63,7 +63,7 @@ module GalleryAble
         [
           { name: '后台管理', url: '/admin' },
           { name: "#{@chinese_category}图片", url: index_path },
-          { name: Settings.action[request[:action]], end: true }
+          { name: Settings.action[action_name], end: true }
         ]
       )
     end

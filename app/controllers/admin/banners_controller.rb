@@ -46,7 +46,7 @@ class Admin::BannersController < Admin::BaseController
         [
           { name: '后台管理', url: '/admin' },
           { name: '首页大图模块', url: '/admin/banners' },
-          { name: Settings.action[request[:action]], end: true }
+          { name: Settings.action[action_name], end: true }
         ]
       )
     end

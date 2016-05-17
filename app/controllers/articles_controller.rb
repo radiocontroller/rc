@@ -27,7 +27,7 @@ class ArticlesController < ApplicationController
         [
           { name: '首页', url: '/' },
           { name: '文章', url: '/articles' },
-          { name: @article.try(:title) || Settings.action[request[:action]], end: true }
+          { name: @article.try(:title) || Settings.action[action_name], end: true }
         ]
       )
     end

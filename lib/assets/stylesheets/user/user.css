@@ -31,7 +31,7 @@
 .user-avatar img{
   width: 152px;
   height: 152px;
-  border-radius: 50%;
+  border-radius: 8px;
 }
 
 .user-left i{
@@ -50,6 +50,10 @@
   height: 40px;
   margin-top: 20px;
   border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+.user-nav .active{
+  color: #428bca;
 }
 
 .user-nav a{

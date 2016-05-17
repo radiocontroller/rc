@@ -3,7 +3,7 @@
     <%= form_for @user, url: "/users/#{@user.id}/account", method: :put do |f| %>
       <div>
         <%= f.label '用户名' %>
-        <%= f.text_field :username, autoComplete: 'off', required: true %>
+        <%= f.text_field :username, disabled: true, style: 'background-color: #eee' %>
       </div>
       <div>
         <%= f.label '邮箱' %>

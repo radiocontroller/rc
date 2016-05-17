@@ -53,7 +53,7 @@ class VideosController < ApplicationController
         [
           { name: '首页', url: '/' },
           { name: '视频', url: '/videos' },
-          { name: @video.try(:title) || Settings.action[request[:action]], end: true }
+          { name: @video.try(:title) || Settings.action[action_name], end: true }
         ]
       )
     end

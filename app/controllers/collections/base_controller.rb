@@ -1,6 +1,5 @@
 class Collections::BaseController < ActionController::Base
   layout 'user'
-  before_action :set_user
 
   private
 

@@ -1,4 +1,5 @@
 class Collections::ArticlesController < Collections::BaseController
+  before_action :set_user
   before_action :set_page_nav
 
   def index

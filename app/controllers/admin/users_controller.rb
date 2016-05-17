@@ -13,7 +13,7 @@ class Admin::UsersController < Admin::BaseController
         [
           { name: '后台管理', url: '/admin' },
           { name: '用户模块', url: '/admin/users' },
-          { name: Settings.action[request[:action]], end: true }
+          { name: Settings.action[action_name], end: true }
         ]
       )
     end

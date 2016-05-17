@@ -25,7 +25,8 @@ class AccountsController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:username, :avatar)
+      return {} if params[:user].blank?
+      params.require(:user).permit(:avatar)
     end
 
     def password_params
