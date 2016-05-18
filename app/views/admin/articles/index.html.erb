@@ -1,8 +1,21 @@
-<a href="/admin/articles/new">
-  <button type="button" class='upload-btn'>添加文章</button>
-</a>
 <div class="guide-reading">
-  <div class="items">
+  <div class="title" style='border-bottom: 0'>
+    <a href="/admin/articles/new">
+      <button type="button" class='upload-btn'>添加文章</button>
+    </a>
+    <div class="search">
+      <%= form_tag("/admin/articles", method: :get) do %>
+      <%= text_field_tag 'q[title_cont]', @title, class: 'search-input', autoComplete: 'off' %>
+      <a class="btn-search" href="javascript:void(0)" onClick="$(this).closest('form').submit()">
+        <i class="fa fa-search"></i>
+      </a>
+      <% end %>
+    </div>
+  </div>
+  <div class="items" style='margin-bottom: 20px;'>
     <%= render @articles %>
   </div>
+</div>
+<div class='paginate'>
+  <%= will_paginate @articles %>
 </div>

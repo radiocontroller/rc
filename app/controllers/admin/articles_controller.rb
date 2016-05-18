@@ -1,8 +1,10 @@
 class Admin::ArticlesController < Admin::BaseController
+  before_action :set_search, only: [:index]
   before_action :set_article, only: [:edit, :update]
 
   def index
-    @articles = Article.normal.order('id desc')
+    q = Article.normal.ransack(params[:q])
+    @articles = q.result.order('id desc').page(params[:page] || 1).per_page(page_num)
   end
 
   def new
@@ -31,12 +33,21 @@ class Admin::ArticlesController < Admin::BaseController
 
   private
 
+    def set_search
+      @title = {}
+      @title = params[:q] && params[:q][:title_cont]
+    end
+
     def set_article
       @article = Article.normal.find(params[:id])
     end
 
     def article_params
       params.require(:article).permit(:title, :content)
+    end
+
+    def page_num
+      10
     end
 
     def set_page_nav
