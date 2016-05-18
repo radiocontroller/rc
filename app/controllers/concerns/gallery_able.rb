@@ -51,7 +51,7 @@ module GalleryAble
     end
 
     def page_num
-      12
+      6
     end
 
     def index_path

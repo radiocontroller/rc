@@ -1,5 +1,13 @@
+<div style="margin-bottom: 10px;">
+  <a href="/admin/battle_planes/new">
+    <button type="button" class='upload-btn'>添加战机</button>
+  </a>
+</div>
 <div class="battle-planes">
   <ul>
     <%= render @battle_planes %>
   </ul>
+</div>
+<div class="paginate">
+  <%= will_paginate @battle_planes %>
 </div>

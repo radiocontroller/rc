@@ -38,7 +38,7 @@ class Admin::BannersController < Admin::BaseController
     end
 
     def page_num
-      12
+      6
     end
 
     def set_page_nav

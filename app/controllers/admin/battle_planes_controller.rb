@@ -3,7 +3,7 @@
     before_action :set_battle_plane, only: [:edit, :update]
 
     def index
-      @battle_planes = BattlePlane.normal.order('sort_id asc')
+      @battle_planes = BattlePlane.normal.order('sort_id asc').page(params[:page] || 1).per_page(page_num)
     end
 
     def new
@@ -38,6 +38,10 @@
 
       def set_battle_plane
         @battle_plane = BattlePlane.normal.find(params[:id])
+      end
+
+      def page_num
+        6
       end
 
       def set_limit
