@@ -2,7 +2,7 @@ class BattlePlane < ActiveRecord::Base
   include BaseModel
 
   validates :title, :content, presence: true
-  validates :title, uniqueness: true
+  validates :title, uniqueness: { scope: :deleted }
 
   after_commit :empty_order
 

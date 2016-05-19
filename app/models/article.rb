@@ -2,6 +2,7 @@ class Article < ActiveRecord::Base
   include BaseModel
 
   validates :title, :content, presence: true
+  validates :title, uniqueness: { scope: :deleted }
 
   has_many :comments, as: :commentable
 
