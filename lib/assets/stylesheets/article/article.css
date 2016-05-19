@@ -51,10 +51,6 @@
   margin-top: -2px;
 }
 
-.guide-reading  .items{
-  margin-bottom: 121px;
-}
-
 .guide-reading  .items .item{
   display: flex;
   justify-content: space-between;

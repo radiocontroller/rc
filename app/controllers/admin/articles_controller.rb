@@ -47,7 +47,7 @@ class Admin::ArticlesController < Admin::BaseController
     end
 
     def page_num
-      10
+      8
     end
 
     def set_page_nav

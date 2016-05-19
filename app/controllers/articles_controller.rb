@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
 
   def index
     q = Article.normal.ransack(params[:q])
-    @articles = q.result.order('id desc')
+    @articles = q.result.order('id desc').page(params[:page] || 1).per_page(page_num)
   end
 
   def show
@@ -20,6 +20,10 @@ class ArticlesController < ApplicationController
 
     def set_article
       @article = Article.normal.find(params[:id])
+    end
+
+    def page_num
+      8
     end
 
     def set_page_nav

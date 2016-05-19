@@ -6,7 +6,7 @@ class Admin::VideosController < Admin::BaseController
 
   def index
     q = Video.normal.ransack(params[:q])
-    @videos = q.result.order(created_at: :desc)
+    @videos = q.result.order(created_at: :desc).page(params[:page] || 1).per_page(page_num)
   end
 
   def new
@@ -46,6 +46,10 @@ class Admin::VideosController < Admin::BaseController
 
     def set_limit
       @limit = 4
+    end
+
+    def page_num
+      12
     end
 
     def video_params

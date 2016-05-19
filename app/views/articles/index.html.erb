@@ -10,8 +10,10 @@
       <% end %>
     </div>
   </div>
-
   <div class="items">
     <%= render @articles %>
   </div>
+</div>
+<div class="paginate" style='margin-bottom: 56px;'>
+  <%= will_paginate @articles %>
 </div>
