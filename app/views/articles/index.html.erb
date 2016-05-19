@@ -15,5 +15,5 @@
   </div>
 </div>
 <div class="paginate" style='margin-bottom: 56px;'>
-  <%= will_paginate @articles %>
+  <%= will_paginate @articles, class: 'apple_pagination', previous_label: '上一页', next_label: '下一页' %>
 </div>

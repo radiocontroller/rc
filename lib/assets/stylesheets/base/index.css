@@ -2,5 +2,6 @@
 *= require base/base
 *= require base/header
 *= require base/sidebar
+*= require base/paginate
 *= require_self
 */
