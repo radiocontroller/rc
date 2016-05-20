@@ -111,7 +111,6 @@
 .infos .title{
   display: flex;
   justify-content: space-between;
-  padding-bottom: 36px;
 }
 
 .infos .text{

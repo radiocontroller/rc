@@ -19,7 +19,7 @@
 //= require camera/jquery.easing.1.3
 //= require fancybox/jquery.fancybox
 //= require fancybox/jquery.mousewheel.pack
-//= require editor/wangEditor.min
+//= require editor/wangEditor
 //= require lazy_load/jquery.lazyload.min
 //= require slide
 //= require insert_content
