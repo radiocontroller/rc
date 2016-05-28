@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   require 'sidekiq/web'
-  mount Sidekiq::Web => '/sidekiq'
+  authenticate :user, lambda { |u| u.admin? } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
   mount RuCaptcha::Engine => "/rucaptcha"
 
   root 'welcomes#index'

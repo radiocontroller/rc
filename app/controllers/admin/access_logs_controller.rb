@@ -10,7 +10,7 @@ class Admin::AccessLogsController < Admin::BaseController
       @page_nav = PageNavCollection.to_nav(
         [
           { name: '后台管理', url: '/admin' },
-          { name: '日志模块', url: '/admin/users' },
+          { name: '日志模块', url: '/admin/access_logs' },
           { name: Settings.action[action_name], end: true }
         ]
       )
