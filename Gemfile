@@ -78,3 +78,7 @@ gem 'will_paginate', '~> 3.0.6'
 gem 'settingslogic'
 
 gem 'devise-i18n'
+
+gem 'mechanize'
+
+gem 'nokogiri'

@@ -2,6 +2,7 @@ class WelcomesController < ApplicationController
   layout 'welcome'
 
   def index
+    AccessLogJob.perform_later request.ip
     @battle_planes = BattlePlane.normal.sorted
     @video = Video.normal.homepage
     @banners = BannerPicture.normal.sorted
