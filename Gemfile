@@ -82,3 +82,5 @@ gem 'devise-i18n'
 gem 'mechanize'
 
 gem 'nokogiri'
+
+gem "devise-async"

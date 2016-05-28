@@ -105,6 +105,8 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    devise-async (0.10.2)
+      devise (>= 3.2, < 4.0)
     devise-i18n (1.0.1)
     domain_name (0.5.20160310)
       unf (>= 0.0.5, < 1.0.0)
@@ -284,6 +286,7 @@ DEPENDENCIES
   carrierwave!
   coffee-rails (~> 4.1.0)
   devise
+  devise-async
   devise-i18n
   font-awesome-rails
   jbuilder (~> 2.0)

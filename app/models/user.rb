@@ -13,7 +13,8 @@ class User < ActiveRecord::Base
          :trackable,
          :validatable,
          :confirmable,
-         :timeoutable
+         :timeoutable,
+         :async
 
   validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
   validates_uniqueness_of :email, on: :create
