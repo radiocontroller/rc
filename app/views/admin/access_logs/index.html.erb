@@ -1,0 +1,23 @@
+<div class="user-search">
+  <div class="user-count">
+    登录日志总数: <%= @access_quantity %>
+  </div>
+</div>
+<div class='users'>
+  <table>
+    <thead>
+      <tr>
+        <th>序号</th>
+        <th>登录ip</th>
+        <th>登录地</th>
+        <th>登录时间</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @access_logs %>
+    </tbody>
+  </table>
+</div>
+<div class='paginate'>
+  <%= will_paginate @access_logs, class: 'apple_pagination', previous_label: '上一页', next_label: '下一页' %>
+</div>

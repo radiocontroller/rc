@@ -40,6 +40,7 @@ Rails.application.routes.draw do
     end
     resources :battle_planes, only: [:index, :update, :new, :create, :edit]
     resources :users, only: [:index]
+    resources :access_logs, only: [:index]
   end
 
   namespace :ajax do
