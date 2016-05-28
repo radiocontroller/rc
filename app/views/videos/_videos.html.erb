@@ -13,5 +13,7 @@
 </div>
 
 <div class="video-items">
-  <%= render @videos %>
+  <%= cache [:videos, category, @videos.maximum(:updated_at)] do %>
+    <%= render @videos %>
+  <% end %>
 </div>
