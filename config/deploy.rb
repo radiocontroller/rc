@@ -37,6 +37,13 @@ namespace :deploy do
     end
   end
 
+  desc 'check log'
+  task :check_log do
+    on roles(:all) do
+      execute :tail, "-f /var/www/rc/current/log/production.log"
+    end
+  end
+
   after :finishing, 'deploy:cleanup'
   after :finishing, 'link_to_images'
   after :finishing, 'restart_nginx'
