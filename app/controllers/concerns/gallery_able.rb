@@ -1,9 +1,8 @@
 module GalleryAble
+  extend ActiveSupport::Concern
 
-  def self.included(base)
-    base.module_eval do
-      before_action :set_chinese_category, :set_limit, :set_page_nav
-    end
+  included do
+    before_action :set_chinese_category, :set_limit, :set_page_nav
   end
 
   def index

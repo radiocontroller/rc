@@ -1,10 +1,8 @@
 module Serviceable
-  def self.included(base)
-    base.send(:extend, ClassMethods)
-	end
+  extend ActiveSupport::Concern
 
-  module ClassMethods
-    def call(*args)
+  included do
+    def self.call(*args)
       new(*args).call
     end
   end
