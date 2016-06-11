@@ -22,3 +22,5 @@ redis.log
 redis.pid
 redis.pid.lock
 dump.rdb
+Gemfile.lock
+/db/schema.rb

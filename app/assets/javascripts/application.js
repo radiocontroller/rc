@@ -26,3 +26,12 @@
 //= require floatwindow
 //= require emoji
 //= require custom
+
+// 百度统计
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e161cf26a8d47c5e9f4c1cd5975f7198";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
