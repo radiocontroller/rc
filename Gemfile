@@ -76,3 +76,7 @@ gem 'mechanize'
 gem 'nokogiri'
 
 gem "devise-async"
+
+gem 'turbolinks'
+
+gem 'font-awesome-rails'
