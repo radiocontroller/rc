@@ -22,7 +22,7 @@
 
   <body>
     <div class="main">
-      <div class="camera_container">
+      <div class="camera_container" style="min-width: 1200px;">
         <div class="camera_wrap" id="camera" style='display: block; height: 643px; margin-bottom: 230px;'>
           <% @banners.each do |banner| %>
             <div data-thumb="<%= banner.resource.small.url %>"
