@@ -16,6 +16,7 @@
 !/log/.keep
 /tmp
 /public/
+/public/images
 /test
 redis.log
 redis.pid
