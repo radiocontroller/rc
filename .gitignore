@@ -17,9 +17,9 @@
 /tmp
 /public/
 /test
-/config/initializers/app_env_vars.rb
 redis.log
 redis.pid
 redis.pid.lock
 dump.rdb
 /db/schema.rb
+/config/database.yml
