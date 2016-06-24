@@ -1,4 +1,4 @@
-server '115.29.43.142', user: 'deploy', roles: %w{web app db}, primary: true
+server '115.29.43.142', user: 'deploy', roles: %w{web app db}, primary: true, port: 8889
 
 set :stage, :production
 set :branch, :master
