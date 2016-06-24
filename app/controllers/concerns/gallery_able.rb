@@ -38,7 +38,7 @@ module GalleryAble
     end
 
     def set_limit
-      @limit = 16
+      @limit = 8
     end
 
     def picture_params
@@ -50,7 +50,7 @@ module GalleryAble
     end
 
     def page_num
-      6
+      16
     end
 
     def index_path
