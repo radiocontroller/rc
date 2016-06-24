@@ -38,7 +38,7 @@ module GalleryAble
     end
 
     def set_limit
-      @limit = 8
+      @limit = 16
     end
 
     def picture_params
