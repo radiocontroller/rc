@@ -130,8 +130,12 @@ h2,h3{
   width: 270px;
   height: 270px;
   display: inline-block;
-  padding-right: 26px;
+  padding-right: 35px;
   padding-bottom: 30px;
+}
+
+.picture .img ul li:nth-child(4n){
+  padding-right: 0px;
 }
 
 .picture .img .thumb{
