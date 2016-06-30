@@ -1,17 +1,15 @@
 == README
 
-这是一个基于ruby on rails的航空模型网站项目, 主要以文章, 图片, 视频的类型
-来展示关于航空模型以及无人机相关内容.用户可以对文章, 视频进行评论和收藏.
-后台能够对前台展示内容和用户进行操作
+This project aim to show something about radio control with articles, pictures and videos
 
-访问地址: www.rcer.top
+website: http://rcer.top
 
-* 操作系统: ubuntu 14.04 LTS
+* ruby version: 2.2.3
 
-* ruby版本: 2.2.3
+* rails version: 4.2.0
 
-* rails版本: 4.2.0
+* pg version: 9.3.12
 
-* postgresql版本: 9.3.12
+* redis version: 2.8.4
 
-* 部署方案: passenger + nginx + capistrano
+* deploy: passenger + nginx + capistrano
