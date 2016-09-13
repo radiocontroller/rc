@@ -15,10 +15,10 @@ class Video < ActiveRecord::Base
   after_commit :empty_order, :free_homepage
 
   CATEGORIES = {
-    'fixed_wing': '固定翼',
-    'glider': '滑翔机',
-    'helicopter': '直升机',
-    'fpv': '穿越机'
+    'fixed_wing' => '固定翼',
+    'glider' => '滑翔机',
+    'helicopter' => '直升机',
+    'fpv' => '穿越机'
   }
 
   ID_CATEGORIES = {
