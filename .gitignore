@@ -24,3 +24,5 @@ redis.pid.lock
 dump.rdb
 /db/schema.rb
 /config/database.yml
+/config/deploy.rb
+/config/deploy/*
