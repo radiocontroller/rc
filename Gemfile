@@ -37,7 +37,9 @@ group :development, :test do
 
   gem 'pry', "~> 0.9.12"
   gem 'pry-nav', "~> 0.2.3"
+end
 
+group :production do
   gem 'capistrano'
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
