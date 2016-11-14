@@ -26,3 +26,5 @@ dump.rdb
 /config/database.yml
 /config/deploy.rb
 /config/deploy/*
+.byebug_history
+Gemfile.lock
