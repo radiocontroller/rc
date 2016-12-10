@@ -1,6 +1,8 @@
 class Admin::AccessLogsController < Admin::BaseController
   def index
-    @access_logs = AccessLog.all.order('created_at desc').page(params[:page] || 1).per_page(page_num)
+    @access_logs = AccessLog.distinct(:created_at)
+                      .order('created_at desc')
+                          .page(params[:page] || 1).per_page(page_num)
     @access_quantity = AccessLog.count
   end
 
