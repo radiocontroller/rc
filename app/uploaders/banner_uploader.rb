@@ -1,7 +1,7 @@
 class BannerUploader < BaseUploader
 
   version :big do
-    process :resize_to_fit => [1920, nil]
+    process :resize_to_fit => [1000, 667]
   end
 
   version :large do

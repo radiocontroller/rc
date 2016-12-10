@@ -2,7 +2,7 @@
 
 This project aim to show something about radio control with articles, pictures and videos
 
-website: http://rcer.top
+website: http://rc.rcer.top
 
 * ruby version: 2.2.3
 
@@ -11,5 +11,3 @@ website: http://rcer.top
 * pg version: 9.3.12
 
 * redis version: 2.8.4
-
-* deploy: passenger + nginx + capistrano
