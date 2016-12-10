@@ -27,4 +27,3 @@ dump.rdb
 /config/deploy.rb
 /config/deploy/*
 .byebug_history
-Gemfile.lock

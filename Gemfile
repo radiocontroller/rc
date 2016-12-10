@@ -84,3 +84,5 @@ gem 'turbolinks'
 gem 'font-awesome-rails'
 
 gem 'rest-client'
+
+gem 'thin'
