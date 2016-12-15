@@ -1,8 +1,8 @@
 class WelcomesController < ApplicationController
   layout 'welcome'
+  after_action :add_access_log, only: [:index]
 
   def index
-    AccessLogJob.perform_later request.ip
     @battle_planes = BattlePlane.normal.sorted
     @video = Video.normal.homepage
     @banners = BannerPicture.normal.sorted
@@ -16,4 +16,11 @@ class WelcomesController < ApplicationController
     @fpvs = galler_pictures.fpv
     @helicopters = galler_pictures.helicopter
   end
+
+  private
+
+  def add_access_log
+      AccessLogJob.perform_later(request.ip) if "127.0.0.1" != request.ip
+  end
+
 end
