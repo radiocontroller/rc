@@ -132,6 +132,10 @@
   margin-bottom: 30px;
 }
 
+.article-content p{
+  line-height: 30px;
+}
+
 .infos  .operation{
   display: flex;
   align-items: flex-end;
