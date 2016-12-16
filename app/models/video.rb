@@ -68,4 +68,8 @@ class Video < ActiveRecord::Base
     update(user_ids: self.user_ids.push(id))
   end
 
+  def set_default_sort_id
+      self.sort_id = 1
+  end
+
 end

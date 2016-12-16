@@ -7,9 +7,7 @@
       <div class="category-title">
         <h2><%= category[:chinese] %></h2>
       </div>
-      <%= cache [:videos, category[:videos].maximum(:updated_at)] do %>
-        <%= render partial: 'video', collection: category[:videos], as: :video %>
-      <% end %>
+      <%= render partial: 'video', collection: category[:videos], as: :video %>
       <div class="more-video">
         <a href="/videos/<%= category[:english] %>", target="_blank">
           更多视频

@@ -15,6 +15,7 @@ class Admin::VideosController < Admin::BaseController
 
   def create
     @video = Video.new(video_params)
+    @video.set_default_sort_id if @video.homepage?
     if @video.save
       redirect_to admin_videos_path, notice: '创建成功!'
     else
