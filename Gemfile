@@ -85,4 +85,4 @@ gem 'font-awesome-rails'
 
 gem 'rest-client'
 
-gem 'thin'
+gem 'unicorn'
