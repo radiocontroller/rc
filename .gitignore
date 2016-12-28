@@ -27,5 +27,4 @@ dump.rdb
 /config/database.yml
 /config/deploy.rb
 /config/deploy/*
-/config/unicorn.rb
 .byebug_history
