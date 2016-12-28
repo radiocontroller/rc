@@ -57,13 +57,9 @@ gem 'mini_magick'
 
 gem 'devise'
 
-gem 'sidekiq', '3.3.4'
-
-gem 'sidekiq-scheduler', '~> 1.1'
+gem 'sidekiq', '~> 4.2.6'
 
 gem 'redis', '~> 3.2.1'
-
-gem 'sinatra', '>= 1.3.0', :require => nil
 
 gem 'rucaptcha'
 
@@ -73,13 +69,7 @@ gem 'settingslogic'
 
 gem 'devise-i18n'
 
-gem 'mechanize'
-
-gem 'nokogiri'
-
 gem "devise-async"
-
-gem 'turbolinks'
 
 gem 'font-awesome-rails'
 
