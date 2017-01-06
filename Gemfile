@@ -57,7 +57,7 @@ gem 'mini_magick'
 
 gem 'devise'
 
-gem 'sidekiq', '~> 4.2.6'
+gem 'sidekiq', '~> 3.4.2'
 
 gem 'redis', '~> 3.2.1'
 
