@@ -59,6 +59,8 @@ gem 'devise'
 
 gem 'sidekiq', '~> 3.4.2'
 
+gem 'sinatra', '>= 1.3.0', :require => nil
+
 gem 'redis', '~> 3.2.1'
 
 gem 'rucaptcha'
