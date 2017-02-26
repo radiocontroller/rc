@@ -216,7 +216,8 @@ h2,h3{
 }
 
 .video-homepage{
-  padding: 0 0 228px;
+  /*padding: 0 0 228px;*/
+  padding: 0;
   text-align: center;
 }
 
@@ -242,10 +243,10 @@ h2,h3{
   min-width: 1200px;
 }
 
-.foot img{
+/*.foot img{
   width: 100%;
   height: 100%;
-}
+}*/
 
 .foot .record{
   width: 100%;
@@ -258,7 +259,8 @@ h2,h3{
 }
 
 .foot .record a{
-  color: #CDC5BF;
+  /*color: #CDC5BF;*/
+  color: #3B3B3B;
 }
 
 .foot .record a:hover{
