@@ -1,6 +1,5 @@
 $(function() {
   initializeFancyBox();
-  initializeLazyLoad();
   articleFormSubmit();
   $(document).on('click', '.left-sidebar-title', slideToggle);
   $(document).on('click', '.captcha', reloadCaptcha);
@@ -20,10 +19,6 @@ function initializeFancyBox() {
     maxWidth: 900,
     openEffect: 'elastic'
   });
-}
-
-function initializeLazyLoad() {
-  $("img.lazy").lazyload({effect: "fadeIn"});
 }
 
 function articleFormSubmit() {
