@@ -9,12 +9,12 @@
   <%= form_for @user, url: user_registration_path do |f| %>
     <div class="pass-form-item  pass-form-email">
       <label class="form-label"><i class="fa fa-envelope"></i></label>
-      <%= f.text_field :email, class: 'form-item', placeholder: '邮箱' %>
+      <%= f.text_field :email, class: 'form-item', placeholder: '邮箱', autocomplete: 'off' %>
     </div>
 
     <div class="pass-form-item  pass-form-username">
       <label class="form-label"><i class="fa fa-user"></i></label>
-      <%= f.text_field :username, class: 'form-item', placeholder: '昵称' %>
+      <%= f.text_field :username, class: 'form-item', placeholder: '昵称', autocomplete: 'off' %>
     </div>
 
     <div class="pass-form-item  pass-form-password">
