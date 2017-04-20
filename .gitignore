@@ -25,6 +25,7 @@ redis.pid.lock
 dump.rdb
 /db/schema.rb
 /config/database.yml
+/config/secrets.yml
 /config/deploy.rb
 /config/deploy/*
 /config/unicorn.rb

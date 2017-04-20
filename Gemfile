@@ -57,7 +57,7 @@ gem 'mini_magick'
 
 gem 'devise'
 
-gem 'sidekiq', '~> 3.4.2'
+gem 'sidekiq'
 
 gem 'sinatra', '>= 1.3.0', :require => nil
 
