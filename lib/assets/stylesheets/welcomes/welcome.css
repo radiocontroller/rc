@@ -216,8 +216,8 @@ h2,h3{
 }
 
 .video-homepage{
-  /*padding: 0 0 228px;*/
   padding: 0;
+  margin-bottom: 40px;
   text-align: center;
 }
 
