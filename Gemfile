@@ -37,6 +37,10 @@ group :development, :test do
 
   gem 'pry', "~> 0.9.12"
   gem 'pry-nav', "~> 0.2.3"
+
+  gem 'capistrano-rails'
+  gem 'capistrano3-puma'
+  gem 'capistrano-rvm'
 end
 
 group :production do
@@ -78,3 +82,5 @@ gem 'font-awesome-rails'
 gem 'rest-client'
 
 gem 'unicorn'
+
+gem 'puma'    #使用puma做server
